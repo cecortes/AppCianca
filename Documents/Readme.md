@@ -1,0 +1,1 @@
+<h2> En esta carpeta se encontrarán toda la documentación auxiliar de la wiki. </h2>
