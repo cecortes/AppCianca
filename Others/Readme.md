@@ -1,1 +1,1 @@
-<h1> Referente a otros archivos o recursos se enecontrarán en esta carpeta </h1>
+<h1> Referente a otros archivos o recursos se encontrarán en esta carpeta </h1>
