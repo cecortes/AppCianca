@@ -1,0 +1,619 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+UbiActivosMaq
+</name>
+</assembly>
+<members>
+<member name="T:UbiActivosMaq.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:UbiActivosMaq.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:UbiActivosMaq.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="P:UbiActivosMaq.My.Resources.Resources.cancel">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:UbiActivosMaq.My.Resources.Resources.excel">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:UbiActivosMaq.My.Resources.Resources.excel__3_">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:UbiActivosMaq.My.Resources.Resources.list">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:UbiActivosMaq.My.Resources.Resources.minimize">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:UbiActivosMaq.My.Resources.Resources.minus">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="M:UbiActivosMaq.scrGrafAnti.IniciarConexFirebase">
+ <summary>
+ Se encarga de iniciar la conexión con la base de datos
+ Maneja la excepción por problema de conexión
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrGrafAnti.Graficar">
+ <summary>
+ Consulta INVENTARIO_AF/
+ Almacena el resultado en un array
+ Recorre el array para evaluar si hay claves repetidas
+ Si las hay aumenta el contador de repeticiones
+ En un diccionario se guarda el año como clave y el numero de repeticiones como entero
+ Re inicia el gráfico
+ Recorre el diccionario para agregar la clave como serie y las repeticiones como valor
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrGrafAnti.scrGrafAnti_Load(System.Object,System.EventArgs)">
+ <summary>
+ 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrGrafAnti.tmrProg_Tick(System.Object,System.EventArgs)">
+ <summary>
+ Incrementa el contador
+ Evalúa si llego al máximo
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrGrafPasi.IniciarConexFirebase">
+ <summary>
+ Se encarga de iniciar la conexión con la base de datos
+ Maneja la excepción por problema de conexión
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrGrafPasi.Graficar">
+ <summary>
+ Consulta INVENTARIO_AF/
+ Almacena el resultado en un array
+ Recorre el array para evaluar si hay claves repetidas
+ Si las hay aumenta el contador de repeticiones
+ En un diccionario se guarda el año como clave y el numero de repeticiones como entero
+ Re inicia el gráfico
+ Recorre el diccionario para agregar la clave como serie y las repeticiones como valor
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrGrafPasi.scrGrafPasi_Load(System.Object,System.EventArgs)">
+ <summary>
+ Habilita el tmr
+ Hace visible el splash
+ Inicia con valor 10
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrGrafPasi.tmrProg_Tick(System.Object,System.EventArgs)">
+ <summary>
+ Incrementa el contador
+ Evalúa si llego al máximo
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrMain.HideSubMenu">
+ <summary>
+ Oculta el sub menu indicado por la validación
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrMain.ShowSubMenu(System.Windows.Forms.Panel)">
+ <summary>
+ Muestra el sub menu que recibe como parámetro
+ </summary>
+ <param name="subMenu">Panel a mostrar</param>
+</member>
+<member name="M:UbiActivosMaq.scrMain.AbrirFormPanel``1">
+ <summary>
+ Se encarga de crear un nuevo objeto del tipo Form
+ Busca el formulario recibido como parámetro en la colección
+ Asigna la creación del formulario recibido al objeto creado
+ Le asigna los parámetros necesarios para mostrarlo
+ Lo muestra y lo trae al frente
+ </summary>
+ <typeparam name="MiForm"></typeparam>
+</member>
+<member name="M:UbiActivosMaq.scrMain.btnMini_Click(System.Object,System.EventArgs)">
+ <summary>
+ Minimiza el formulario
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrMain.btnMax_Click(System.Object,System.EventArgs)">
+ <summary>
+ Maximiza el formulario
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrMain.btnClose_Click(System.Object,System.EventArgs)">
+ <summary>
+ Cierra el formulario
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrMain.btnTools_Click(System.Object,System.EventArgs)">
+ <summary>
+ Muestra el panel de herramientas
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrMain.btnSearch_Click(System.Object,System.EventArgs)">
+ <summary>
+ Muestra el panel de búsqueda
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrMain.btnDash_Click(System.Object,System.EventArgs)">
+ <summary>
+ Muestra el panel de dash
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrMain.btnAlta_Click(System.Object,System.EventArgs)">
+ <summary>
+ Muestra el formulario de Nueva Entrada
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrMain.btnEditar_Click(System.Object,System.EventArgs)">
+ <summary>
+ Muestra el formulario de Editar Entrada
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrMain.btnDel_Click(System.Object,System.EventArgs)">
+ <summary>
+ Muestra el formulario de Borrar Entrada
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrMain.btnSearchAdv_Click(System.Object,System.EventArgs)">
+ <summary>
+ Muestra el formulario de Búsqueda 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrMain.btnGrafAnti_Click(System.Object,System.EventArgs)">
+ <summary>
+ Abre el formulario GrafAnti
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrMain.btnGrafPrecio_Click(System.Object,System.EventArgs)">
+ <summary>
+ Abre el formulario GrafPasi
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.Base64ToImage(System.String)">
+ <summary>
+ String to array byte
+ Objeto stream
+ Convierte de arreglo a imágen
+ Objeto imágen para almacenar la conversión
+ Devuelve la imágen
+ </summary>
+ <param name="base64String"></param>
+ <returns></returns>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.IniciarConexFirebase">
+ <summary>
+ Se encarga de iniciar la conexión con la base de datos
+ Maneja la excepción por problema de conexión
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.ChkOpt">
+ <summary>
+ Se encarga de mantener sólo un check a la vez
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.FillSerie">
+ <summary>
+ Limpia los datos del cbo
+ Consulta en la tabla de INVENTARIO_AF
+ Dentro de una rutina capturamos el serial y lo agregamos al cbo
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.FillMarca">
+ <summary>
+ Limpia los datos del cbo
+ Consulta en la tabla de INVENTARIO_AF
+ Dentro de una rutina capturamos la marca y la agregamos al cbo
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.FillArea">
+ <summary>
+ Limpia los datos del cbo
+ Consulta en la tabla de INVENTARIO_AF
+ Dentro de una rutina capturamos el área y la agregamos al cbo
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.GetSerie(System.String)">
+ <summary>
+ Recibe el dato a consultar como parámetro
+ Realiza una consulta a INVENTARIO_AF/
+ Evalúa que el no de serie sea el mismo que el dato
+ Agrega la info al datagrid
+ </summary>
+ <param name="dato"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.GetMarca(System.String)">
+ <summary>
+ Recibe el dato a consultar como parámetro
+ Realiza una consulta a INVENTARIO_AF/
+ Evalúa que la marca sea la misma que el dato
+ Agrega la info al datagrid
+ </summary>
+ <param name="dato"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.GetArea(System.String)">
+ <summary>
+ Recibe el dato a consultar como parámetro
+ Realiza una consulta a INVENTARIO_AF/
+ Evalúa que la marca sea la misma que el dato
+ Agrega la info al datagrid
+ </summary>
+ <param name="dato"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.ExcelExport(System.Windows.Forms.DataGridView,System.String)">
+ <summary>
+ Se encarga de exportar el datagridview a una hoja de cálculo en excel
+ Mediante un try para el manejo de excepciones
+ </summary>
+ <param name="datos"></param>
+ <param name="path"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.scrSearch_Load(System.Object,System.EventArgs)">
+ <summary>
+ 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.chkSerie_Click(System.Object,System.EventArgs)">
+ <summary>
+ Valida las opciones
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.chkSerie_OnChange(System.Object,System.EventArgs)">
+ <summary>
+ Valida que no sea nulo
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.chkMarca_Click(System.Object,System.EventArgs)">
+ <summary>
+ Valida las opciones
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.chkMarca_OnChange(System.Object,System.EventArgs)">
+ <summary>
+ Valida que no sea nulo
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.chkArea_Click(System.Object,System.EventArgs)">
+ <summary>
+ Valida las opciones
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.chkArea_OnChange(System.Object,System.EventArgs)">
+ <summary>
+ Valida que no sea nulo
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.cboGral_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ Captura el texto del cbo
+ Evalúa en un case el texto para llamar al método correspondiente
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.btnSearch_Click(System.Object,System.EventArgs)">
+ <summary>
+ Captura el cbo.text
+ Evalúa la opción para llamar al método correspondiente para consultar
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.btnExcel_Click(System.Object,System.EventArgs)">
+ <summary>
+ Crea un objeto para guardar la ruta y nombre del archivo
+ Llamamos a la función para exportar a un archivo excel toda la información del datagridview
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.tmrProg_Tick(System.Object,System.EventArgs)">
+ <summary>
+ Incrementa el contador
+ Evalúa si llego al máximo
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrSearch.btnSearchAdv_Click(System.Object,System.EventArgs)">
+ <summary>
+ Consulta INVENTARIO_AF/
+ Valida el resultado
+ Agrega los elementos en el dgv
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrAdd.VerifyText">
+ <summary>
+ Verifica que los cuadros de texto no sean nulos y tengan información válida
+ Regresa el estado de la bandera
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:UbiActivosMaq.scrAdd.ImgIntoBase64Str(System.Windows.Forms.PictureBox)">
+ <summary>
+ Se encarga de recibir el pbox con la imágen
+ La convierte en cadena
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:UbiActivosMaq.scrAdd.Base64ToImage(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="base64String"></param>
+ <returns></returns>
+</member>
+<member name="M:UbiActivosMaq.scrAdd.IniciarConexFirebase">
+ <summary>
+ Se encarga de iniciar la conexión con la base de datos
+ Maneja la excepción por problema de conexión
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrAdd.RstText">
+ <summary>
+ Se encarga de re iniciar los cuadros de texto
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrAdd.btnAdd_Click(System.Object,System.EventArgs)">
+ <summary>
+ Verifica los cuadros de texto
+ Captura la información de los caudros de texto
+ Set de la clase INVENTARIO_AF
+ Firebase Insert
+ Re inicia los cuadros de texto
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrAdd.scrAdd_Load(System.Object,System.EventArgs)">
+ <summary>
+ 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrAdd.pbFoto_Click(System.Object,System.EventArgs)">
+ <summary>
+ Se encarga de abrir el cuadro de diálogo para cargar la imágen
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrAdd.tmrProg_Tick(System.Object,System.EventArgs)">
+ <summary>
+ Incrementa el contador
+ Evalúa si llego al máximo
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrDel.Base64ToImage(System.String)">
+ <summary>
+ String to array byte
+ Objeto stream
+ Convierte de arreglo a imágen
+ Objeto imágen para almacenar la conversión
+ Devuelve la imágen
+ </summary>
+ <param name="base64String"></param>
+ <returns></returns>
+</member>
+<member name="M:UbiActivosMaq.scrDel.IniciarConexFirebase">
+ <summary>
+ Se encarga de iniciar la conexión con la base de datos
+ Maneja la excepción por problema de conexión
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrDel.FillCboSerie">
+ <summary>
+ Consulta el nodo INVENTARIO_AF
+ Evalúa not null para Serie
+ Añade serie en cboSerie
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrDel.GetEntry(System.String)">
+ <summary>
+ Realiza la consulta de acuerdo al serial recibido como parámetro
+ Actualiza los textbox
+ Carga la imágen en el pbox
+ </summary>
+ <param name="serie"></param>
+</member>
+<member name="M:UbiActivosMaq.scrDel.RstText">
+ <summary>
+ Se encarga de re iniciar los cuadros de texto
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrDel.scrDel_Load(System.Object,System.EventArgs)">
+ <summary>
+ 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrDel.cboSerie_SelectedValueChanged(System.Object,System.EventArgs)">
+ <summary>
+ Captura el valor del cboSerie
+ Llama al método para realizar la búsqueda de acuerdo al serial capturado
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrDel.btnDel_Click(System.Object,System.EventArgs)">
+ <summary>
+ Validación del id
+ Borra la entrada de acuerdo al id
+ Reset a los textbox, pbox y cbo
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrDel.tmrProg_Tick(System.Object,System.EventArgs)">
+ <summary>
+ Incrementa el contador
+ Evalúa si llego al máximo
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrEdit.ImgIntoBase64Str(System.Windows.Forms.PictureBox)">
+ <summary>
+ Se encarga de recibir el pbox con la imágen
+ La convierte en cadena
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:UbiActivosMaq.scrEdit.Base64ToImage(System.String)">
+ <summary>
+ String to array byte
+ Objeto stream
+ Convierte de arreglo a imágen
+ Objeto imágen para almacenar la conversión
+ Devuelve la imágen
+ </summary>
+ <param name="base64String"></param>
+ <returns></returns>
+</member>
+<member name="M:UbiActivosMaq.scrEdit.VerifyText">
+ <summary>
+ Verifica que los cuadros de texto no sean nulos y tengan información válida
+ Regresa el estado de la bandera
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:UbiActivosMaq.scrEdit.IniciarConexFirebase">
+ <summary>
+ Se encarga de iniciar la conexión con la base de datos
+ Maneja la excepción por problema de conexión
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrEdit.FillCboSerie">
+ <summary>
+ Consulta el nodo INVENTARIO_AF
+ Evalúa not null para Serie
+ Añade serie en cboSerie
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrEdit.GetEntry(System.String)">
+ <summary>
+ Realiza la consulta de acuerdo al serial recibido como parámetro
+ Actualiza los textbox
+ Carga la imágen en el pbox
+ </summary>
+ <param name="serie"></param>
+</member>
+<member name="M:UbiActivosMaq.scrEdit.RstText">
+ <summary>
+ Se encarga de re iniciar los cuadros de texto
+ </summary>
+</member>
+<member name="M:UbiActivosMaq.scrEdit.scrEdit_Load(System.Object,System.EventArgs)">
+ <summary>
+ 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrEdit.cboSerie_SelectedValueChanged(System.Object,System.EventArgs)">
+ <summary>
+ Captura el valor del cboSerie
+ Llama al método para realizar la búsqueda de acuerdo al serial capturado
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrEdit.pbFoto_Click(System.Object,System.EventArgs)">
+ <summary>
+ Se encarga de abrir el cuadro de diálogo para cargar la imágen
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrEdit.btnEdit_Click(System.Object,System.EventArgs)">
+ <summary>
+ Verifica que el id no sea nulo
+ Valida los text box
+ Captura los valores
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:UbiActivosMaq.scrEdit.tmrProg_Tick(System.Object,System.EventArgs)">
+ <summary>
+ Incrementa el contador
+ Evalúa si llego al máximo
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+</members>
+</doc>
