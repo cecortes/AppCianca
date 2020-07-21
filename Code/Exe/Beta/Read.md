@@ -1,1 +1,1 @@
-Contiene las
+Contiene las versiones beta de las compilaciones.
