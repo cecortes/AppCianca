@@ -160,6 +160,33 @@
     End Sub
 
     ''' <summary>
+    ''' Muestra el formulario para nuevo reporte de vehículos
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnNewRepAut_Click(sender As Object, e As EventArgs) Handles btnNewRepAut.Click
+        AbrirFormPanel(Of ScrNewAuto)()
+    End Sub
+
+    ''' <summary>
+    ''' Muestra el formulario para editar reporte de vehículos
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnEditRepAut_Click(sender As Object, e As EventArgs) Handles btnEditRepAut.Click
+        AbrirFormPanel(Of ScrEditAuto)()
+    End Sub
+
+    ''' <summary>
+    ''' Muestra el formulario para borrar reporte de vehículos
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnDelRepAut_Click(sender As Object, e As EventArgs) Handles btnDelRepAut.Click
+        AbrirFormPanel(Of ScrDelAuto)()
+    End Sub
+
+    ''' <summary>
     ''' Muestra el formulario para Consultar Maquinaria
     ''' </summary>
     ''' <param name="sender"></param>

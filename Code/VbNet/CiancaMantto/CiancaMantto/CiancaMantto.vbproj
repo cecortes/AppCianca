@@ -95,6 +95,24 @@
     <Compile Include="Pantallas\Reportes Maquinaria\ScrNewMaq.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pantallas\Reportes Vehiculos\ScrDelAuto.Designer.vb">
+      <DependentUpon>ScrDelAuto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes Vehiculos\ScrDelAuto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes Vehiculos\ScrEditAuto.Designer.vb">
+      <DependentUpon>ScrEditAuto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes Vehiculos\ScrEditAuto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes Vehiculos\ScrNewAuto.Designer.vb">
+      <DependentUpon>ScrNewAuto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes Vehiculos\ScrNewAuto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantallas\ScrMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +145,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Reportes Maquinaria\ScrNewMaq.resx">
       <DependentUpon>ScrNewMaq.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes Vehiculos\ScrDelAuto.resx">
+      <DependentUpon>ScrDelAuto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes Vehiculos\ScrEditAuto.resx">
+      <DependentUpon>ScrEditAuto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes Vehiculos\ScrNewAuto.resx">
+      <DependentUpon>ScrNewAuto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\ScrMain.resx">
       <DependentUpon>ScrMain.vb</DependentUpon>
