@@ -22,6 +22,7 @@ Partial Class ScrMain
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ScrMain))
         Me.pnlSide = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.pnlMaq = New System.Windows.Forms.Panel()
@@ -32,7 +33,7 @@ Partial Class ScrMain
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblMenu = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pbMenu = New System.Windows.Forms.PictureBox()
-        Me.pnlMenu = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.pnlTop = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.lblCianca = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.btnClose = New Bunifu.Framework.UI.BunifuImageButton()
         Me.btnMax = New Bunifu.Framework.UI.BunifuImageButton()
@@ -42,11 +43,12 @@ Partial Class ScrMain
         Me.BunifuThinButton21 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.BunifuThinButton22 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.BunifuThinButton23 = New Bunifu.Framework.UI.BunifuThinButton2()
+        Me.DragTop = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.pnlSide.SuspendLayout()
         Me.pnlMaq.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.pbMenu, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlMenu.SuspendLayout()
+        Me.pnlTop.SuspendLayout()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMax, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMini, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -225,24 +227,24 @@ Partial Class ScrMain
         Me.pbMenu.TabIndex = 0
         Me.pbMenu.TabStop = False
         '
-        'pnlMenu
+        'pnlTop
         '
-        Me.pnlMenu.BackgroundImage = CType(resources.GetObject("pnlMenu.BackgroundImage"), System.Drawing.Image)
-        Me.pnlMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pnlMenu.Controls.Add(Me.lblCianca)
-        Me.pnlMenu.Controls.Add(Me.btnClose)
-        Me.pnlMenu.Controls.Add(Me.btnMax)
-        Me.pnlMenu.Controls.Add(Me.btnMini)
-        Me.pnlMenu.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlMenu.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.pnlMenu.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.pnlMenu.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.pnlMenu.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.pnlMenu.Location = New System.Drawing.Point(0, 0)
-        Me.pnlMenu.Name = "pnlMenu"
-        Me.pnlMenu.Quality = 10
-        Me.pnlMenu.Size = New System.Drawing.Size(1024, 50)
-        Me.pnlMenu.TabIndex = 1
+        Me.pnlTop.BackgroundImage = CType(resources.GetObject("pnlTop.BackgroundImage"), System.Drawing.Image)
+        Me.pnlTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pnlTop.Controls.Add(Me.lblCianca)
+        Me.pnlTop.Controls.Add(Me.btnClose)
+        Me.pnlTop.Controls.Add(Me.btnMax)
+        Me.pnlTop.Controls.Add(Me.btnMini)
+        Me.pnlTop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlTop.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.pnlTop.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
+        Me.pnlTop.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.pnlTop.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
+        Me.pnlTop.Location = New System.Drawing.Point(0, 0)
+        Me.pnlTop.Name = "pnlTop"
+        Me.pnlTop.Quality = 10
+        Me.pnlTop.Size = New System.Drawing.Size(1024, 50)
+        Me.pnlTop.TabIndex = 1
         '
         'lblCianca
         '
@@ -417,6 +419,13 @@ Partial Class ScrMain
         Me.BunifuThinButton23.TabIndex = 2
         Me.BunifuThinButton23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'DragTop
+        '
+        Me.DragTop.Fixed = True
+        Me.DragTop.Horizontal = True
+        Me.DragTop.TargetControl = Me
+        Me.DragTop.Vertical = True
+        '
         'ScrMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 21.0!)
@@ -424,7 +433,7 @@ Partial Class ScrMain
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1024, 768)
         Me.Controls.Add(Me.pnlSide)
-        Me.Controls.Add(Me.pnlMenu)
+        Me.Controls.Add(Me.pnlTop)
         Me.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -436,8 +445,8 @@ Partial Class ScrMain
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.pbMenu, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlMenu.ResumeLayout(False)
-        Me.pnlMenu.PerformLayout()
+        Me.pnlTop.ResumeLayout(False)
+        Me.pnlTop.PerformLayout()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnMax, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnMini, System.ComponentModel.ISupportInitialize).EndInit()
@@ -446,7 +455,7 @@ Partial Class ScrMain
 
     End Sub
 
-    Friend WithEvents pnlMenu As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents pnlTop As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents lblCianca As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents btnClose As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents btnMax As Bunifu.Framework.UI.BunifuImageButton
@@ -465,4 +474,5 @@ Partial Class ScrMain
     Friend WithEvents BunifuThinButton21 As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents BunifuThinButton22 As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents BunifuThinButton23 As Bunifu.Framework.UI.BunifuThinButton2
+    Friend WithEvents DragTop As Bunifu.Framework.UI.BunifuDragControl
 End Class

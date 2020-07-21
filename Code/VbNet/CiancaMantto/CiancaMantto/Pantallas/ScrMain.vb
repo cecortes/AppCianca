@@ -29,7 +29,16 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub btnMax_Click(sender As Object, e As EventArgs) Handles btnMax.Click
-        Me.WindowState = FormWindowState.Maximized
+
+        'Valida el estado de la pantalla para tomar la acción correspondiente
+        If Me.WindowState = 0 Then
+            'Max
+            Me.WindowState = FormWindowState.Maximized
+        ElseIf Me.WindowState = 2 Then
+            'Min
+            Me.WindowState = FormWindowState.Normal
+        End If
+
     End Sub
 
     ''' <summary>
