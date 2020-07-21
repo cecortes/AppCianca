@@ -77,6 +77,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pantallas\Consulta Maquinaria\ScrSearchMaq.Designer.vb">
+      <DependentUpon>ScrSearchMaq.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Consulta Maquinaria\ScrSearchMaq.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Consulta Vehiculos\ScrSearchAuto.Designer.vb">
+      <DependentUpon>ScrSearchAuto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Consulta Vehiculos\ScrSearchAuto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantallas\Reportes Maquinaria\ScrDelMaq.Designer.vb">
       <DependentUpon>ScrDelMaq.vb</DependentUpon>
     </Compile>
@@ -137,6 +149,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Pantallas\Consulta Maquinaria\ScrSearchMaq.resx">
+      <DependentUpon>ScrSearchMaq.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Consulta Vehiculos\ScrSearchAuto.resx">
+      <DependentUpon>ScrSearchAuto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Reportes Maquinaria\ScrDelMaq.resx">
       <DependentUpon>ScrDelMaq.vb</DependentUpon>
     </EmbeddedResource>

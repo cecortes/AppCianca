@@ -192,7 +192,7 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub btnConsulMaq_Click(sender As Object, e As EventArgs) Handles btnConsulMaq.Click
-
+        AbrirFormPanel(Of ScrSearchMaq)()
     End Sub
 
     ''' <summary>
@@ -201,7 +201,7 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub btnConsulAut_Click(sender As Object, e As EventArgs) Handles btnConsulAut.Click
-
+        AbrirFormPanel(Of ScrSearchAuto)()
     End Sub
 
 #End Region
