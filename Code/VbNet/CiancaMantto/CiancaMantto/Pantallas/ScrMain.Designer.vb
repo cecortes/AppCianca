@@ -23,10 +23,18 @@ Partial Class ScrMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ScrMain))
+        Me.pnlWrapper = New System.Windows.Forms.Panel()
         Me.pnlSide = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.btnConsulAut = New Bunifu.Framework.UI.BunifuThinButton2()
+        Me.btnConsulMaq = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.pnlAutos = New System.Windows.Forms.Panel()
+        Me.btnDelRepAut = New Bunifu.Framework.UI.BunifuThinButton2()
+        Me.btnEditRepAut = New Bunifu.Framework.UI.BunifuThinButton2()
+        Me.btnNewRepAut = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.btnAutos = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.pnlMaq = New System.Windows.Forms.Panel()
+        Me.btnDelMaq = New Bunifu.Framework.UI.BunifuThinButton2()
+        Me.btnEdiMaq = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.btnNewMaq = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.btnMaq = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -37,14 +45,6 @@ Partial Class ScrMain
         Me.btnClose = New Bunifu.Framework.UI.BunifuImageButton()
         Me.btnMax = New Bunifu.Framework.UI.BunifuImageButton()
         Me.btnMini = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.btnEdiMaq = New Bunifu.Framework.UI.BunifuThinButton2()
-        Me.btnDelMaq = New Bunifu.Framework.UI.BunifuThinButton2()
-        Me.btnNewRepAut = New Bunifu.Framework.UI.BunifuThinButton2()
-        Me.btnEditRepAut = New Bunifu.Framework.UI.BunifuThinButton2()
-        Me.btnDelRepAut = New Bunifu.Framework.UI.BunifuThinButton2()
-        Me.btnConsulMaq = New Bunifu.Framework.UI.BunifuThinButton2()
-        Me.btnConsulAut = New Bunifu.Framework.UI.BunifuThinButton2()
-        Me.pnlWrapper = New System.Windows.Forms.Panel()
         Me.pnlSide.SuspendLayout()
         Me.pnlAutos.SuspendLayout()
         Me.pnlMaq.SuspendLayout()
@@ -55,6 +55,14 @@ Partial Class ScrMain
         CType(Me.btnMax, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMini, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'pnlWrapper
+        '
+        Me.pnlWrapper.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlWrapper.Location = New System.Drawing.Point(147, 50)
+        Me.pnlWrapper.Name = "pnlWrapper"
+        Me.pnlWrapper.Size = New System.Drawing.Size(877, 718)
+        Me.pnlWrapper.TabIndex = 3
         '
         'pnlSide
         '
@@ -79,6 +87,58 @@ Partial Class ScrMain
         Me.pnlSide.Size = New System.Drawing.Size(147, 718)
         Me.pnlSide.TabIndex = 2
         '
+        'btnConsulAut
+        '
+        Me.btnConsulAut.ActiveBorderThickness = 1
+        Me.btnConsulAut.ActiveCornerRadius = 20
+        Me.btnConsulAut.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.btnConsulAut.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnConsulAut.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnConsulAut.BackColor = System.Drawing.Color.Transparent
+        Me.btnConsulAut.BackgroundImage = CType(resources.GetObject("btnConsulAut.BackgroundImage"), System.Drawing.Image)
+        Me.btnConsulAut.ButtonText = "Consultar Vehículos"
+        Me.btnConsulAut.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnConsulAut.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnConsulAut.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConsulAut.ForeColor = System.Drawing.Color.Transparent
+        Me.btnConsulAut.IdleBorderThickness = 1
+        Me.btnConsulAut.IdleCornerRadius = 20
+        Me.btnConsulAut.IdleFillColor = System.Drawing.Color.Transparent
+        Me.btnConsulAut.IdleForecolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.btnConsulAut.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.btnConsulAut.Location = New System.Drawing.Point(0, 493)
+        Me.btnConsulAut.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.btnConsulAut.Name = "btnConsulAut"
+        Me.btnConsulAut.Size = New System.Drawing.Size(147, 72)
+        Me.btnConsulAut.TabIndex = 7
+        Me.btnConsulAut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnConsulMaq
+        '
+        Me.btnConsulMaq.ActiveBorderThickness = 1
+        Me.btnConsulMaq.ActiveCornerRadius = 20
+        Me.btnConsulMaq.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.btnConsulMaq.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnConsulMaq.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnConsulMaq.BackColor = System.Drawing.Color.Transparent
+        Me.btnConsulMaq.BackgroundImage = CType(resources.GetObject("btnConsulMaq.BackgroundImage"), System.Drawing.Image)
+        Me.btnConsulMaq.ButtonText = "Consultar Maquinaria"
+        Me.btnConsulMaq.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnConsulMaq.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnConsulMaq.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConsulMaq.ForeColor = System.Drawing.Color.Transparent
+        Me.btnConsulMaq.IdleBorderThickness = 1
+        Me.btnConsulMaq.IdleCornerRadius = 20
+        Me.btnConsulMaq.IdleFillColor = System.Drawing.Color.Transparent
+        Me.btnConsulMaq.IdleForecolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.btnConsulMaq.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.btnConsulMaq.Location = New System.Drawing.Point(0, 421)
+        Me.btnConsulMaq.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.btnConsulMaq.Name = "btnConsulMaq"
+        Me.btnConsulMaq.Size = New System.Drawing.Size(147, 72)
+        Me.btnConsulMaq.TabIndex = 6
+        Me.btnConsulMaq.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'pnlAutos
         '
         Me.pnlAutos.Controls.Add(Me.btnDelRepAut)
@@ -90,6 +150,84 @@ Partial Class ScrMain
         Me.pnlAutos.Size = New System.Drawing.Size(147, 142)
         Me.pnlAutos.TabIndex = 5
         Me.pnlAutos.Visible = False
+        '
+        'btnDelRepAut
+        '
+        Me.btnDelRepAut.ActiveBorderThickness = 1
+        Me.btnDelRepAut.ActiveCornerRadius = 20
+        Me.btnDelRepAut.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.btnDelRepAut.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnDelRepAut.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnDelRepAut.BackColor = System.Drawing.Color.Transparent
+        Me.btnDelRepAut.BackgroundImage = CType(resources.GetObject("btnDelRepAut.BackgroundImage"), System.Drawing.Image)
+        Me.btnDelRepAut.ButtonText = "Borrar Reporte"
+        Me.btnDelRepAut.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDelRepAut.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnDelRepAut.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelRepAut.ForeColor = System.Drawing.Color.Transparent
+        Me.btnDelRepAut.IdleBorderThickness = 1
+        Me.btnDelRepAut.IdleCornerRadius = 20
+        Me.btnDelRepAut.IdleFillColor = System.Drawing.Color.Transparent
+        Me.btnDelRepAut.IdleForecolor = System.Drawing.Color.White
+        Me.btnDelRepAut.IdleLineColor = System.Drawing.Color.Transparent
+        Me.btnDelRepAut.Location = New System.Drawing.Point(0, 80)
+        Me.btnDelRepAut.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnDelRepAut.Name = "btnDelRepAut"
+        Me.btnDelRepAut.Size = New System.Drawing.Size(147, 40)
+        Me.btnDelRepAut.TabIndex = 7
+        Me.btnDelRepAut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnEditRepAut
+        '
+        Me.btnEditRepAut.ActiveBorderThickness = 1
+        Me.btnEditRepAut.ActiveCornerRadius = 20
+        Me.btnEditRepAut.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.btnEditRepAut.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnEditRepAut.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnEditRepAut.BackColor = System.Drawing.Color.Transparent
+        Me.btnEditRepAut.BackgroundImage = CType(resources.GetObject("btnEditRepAut.BackgroundImage"), System.Drawing.Image)
+        Me.btnEditRepAut.ButtonText = "Editar Reporte"
+        Me.btnEditRepAut.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEditRepAut.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnEditRepAut.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditRepAut.ForeColor = System.Drawing.Color.Transparent
+        Me.btnEditRepAut.IdleBorderThickness = 1
+        Me.btnEditRepAut.IdleCornerRadius = 20
+        Me.btnEditRepAut.IdleFillColor = System.Drawing.Color.Transparent
+        Me.btnEditRepAut.IdleForecolor = System.Drawing.Color.White
+        Me.btnEditRepAut.IdleLineColor = System.Drawing.Color.Transparent
+        Me.btnEditRepAut.Location = New System.Drawing.Point(0, 40)
+        Me.btnEditRepAut.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnEditRepAut.Name = "btnEditRepAut"
+        Me.btnEditRepAut.Size = New System.Drawing.Size(147, 40)
+        Me.btnEditRepAut.TabIndex = 6
+        Me.btnEditRepAut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnNewRepAut
+        '
+        Me.btnNewRepAut.ActiveBorderThickness = 1
+        Me.btnNewRepAut.ActiveCornerRadius = 20
+        Me.btnNewRepAut.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.btnNewRepAut.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnNewRepAut.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnNewRepAut.BackColor = System.Drawing.Color.Transparent
+        Me.btnNewRepAut.BackgroundImage = CType(resources.GetObject("btnNewRepAut.BackgroundImage"), System.Drawing.Image)
+        Me.btnNewRepAut.ButtonText = "Nuevo Reporte"
+        Me.btnNewRepAut.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNewRepAut.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnNewRepAut.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNewRepAut.ForeColor = System.Drawing.Color.Transparent
+        Me.btnNewRepAut.IdleBorderThickness = 1
+        Me.btnNewRepAut.IdleCornerRadius = 20
+        Me.btnNewRepAut.IdleFillColor = System.Drawing.Color.Transparent
+        Me.btnNewRepAut.IdleForecolor = System.Drawing.Color.White
+        Me.btnNewRepAut.IdleLineColor = System.Drawing.Color.Transparent
+        Me.btnNewRepAut.Location = New System.Drawing.Point(0, 0)
+        Me.btnNewRepAut.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnNewRepAut.Name = "btnNewRepAut"
+        Me.btnNewRepAut.Size = New System.Drawing.Size(147, 40)
+        Me.btnNewRepAut.TabIndex = 5
+        Me.btnNewRepAut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnAutos
         '
@@ -128,6 +266,58 @@ Partial Class ScrMain
         Me.pnlMaq.Size = New System.Drawing.Size(147, 142)
         Me.pnlMaq.TabIndex = 3
         Me.pnlMaq.Visible = False
+        '
+        'btnDelMaq
+        '
+        Me.btnDelMaq.ActiveBorderThickness = 1
+        Me.btnDelMaq.ActiveCornerRadius = 20
+        Me.btnDelMaq.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.btnDelMaq.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnDelMaq.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnDelMaq.BackColor = System.Drawing.Color.Transparent
+        Me.btnDelMaq.BackgroundImage = CType(resources.GetObject("btnDelMaq.BackgroundImage"), System.Drawing.Image)
+        Me.btnDelMaq.ButtonText = "Borrar Reporte"
+        Me.btnDelMaq.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDelMaq.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnDelMaq.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelMaq.ForeColor = System.Drawing.Color.Transparent
+        Me.btnDelMaq.IdleBorderThickness = 1
+        Me.btnDelMaq.IdleCornerRadius = 20
+        Me.btnDelMaq.IdleFillColor = System.Drawing.Color.Transparent
+        Me.btnDelMaq.IdleForecolor = System.Drawing.Color.White
+        Me.btnDelMaq.IdleLineColor = System.Drawing.Color.Transparent
+        Me.btnDelMaq.Location = New System.Drawing.Point(0, 80)
+        Me.btnDelMaq.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnDelMaq.Name = "btnDelMaq"
+        Me.btnDelMaq.Size = New System.Drawing.Size(147, 40)
+        Me.btnDelMaq.TabIndex = 4
+        Me.btnDelMaq.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnEdiMaq
+        '
+        Me.btnEdiMaq.ActiveBorderThickness = 1
+        Me.btnEdiMaq.ActiveCornerRadius = 20
+        Me.btnEdiMaq.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.btnEdiMaq.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnEdiMaq.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnEdiMaq.BackColor = System.Drawing.Color.Transparent
+        Me.btnEdiMaq.BackgroundImage = CType(resources.GetObject("btnEdiMaq.BackgroundImage"), System.Drawing.Image)
+        Me.btnEdiMaq.ButtonText = "Editar Reporte"
+        Me.btnEdiMaq.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEdiMaq.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnEdiMaq.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEdiMaq.ForeColor = System.Drawing.Color.Transparent
+        Me.btnEdiMaq.IdleBorderThickness = 1
+        Me.btnEdiMaq.IdleCornerRadius = 20
+        Me.btnEdiMaq.IdleFillColor = System.Drawing.Color.Transparent
+        Me.btnEdiMaq.IdleForecolor = System.Drawing.Color.White
+        Me.btnEdiMaq.IdleLineColor = System.Drawing.Color.Transparent
+        Me.btnEdiMaq.Location = New System.Drawing.Point(0, 40)
+        Me.btnEdiMaq.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnEdiMaq.Name = "btnEdiMaq"
+        Me.btnEdiMaq.Size = New System.Drawing.Size(147, 40)
+        Me.btnEdiMaq.TabIndex = 3
+        Me.btnEdiMaq.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnNewMaq
         '
@@ -291,196 +481,6 @@ Partial Class ScrMain
         Me.btnMini.TabIndex = 10
         Me.btnMini.TabStop = False
         Me.btnMini.Zoom = 10
-        '
-        'btnEdiMaq
-        '
-        Me.btnEdiMaq.ActiveBorderThickness = 1
-        Me.btnEdiMaq.ActiveCornerRadius = 20
-        Me.btnEdiMaq.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnEdiMaq.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnEdiMaq.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnEdiMaq.BackColor = System.Drawing.Color.Transparent
-        Me.btnEdiMaq.BackgroundImage = CType(resources.GetObject("btnEdiMaq.BackgroundImage"), System.Drawing.Image)
-        Me.btnEdiMaq.ButtonText = "Editar Reporte"
-        Me.btnEdiMaq.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEdiMaq.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnEdiMaq.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEdiMaq.ForeColor = System.Drawing.Color.Transparent
-        Me.btnEdiMaq.IdleBorderThickness = 1
-        Me.btnEdiMaq.IdleCornerRadius = 20
-        Me.btnEdiMaq.IdleFillColor = System.Drawing.Color.Transparent
-        Me.btnEdiMaq.IdleForecolor = System.Drawing.Color.White
-        Me.btnEdiMaq.IdleLineColor = System.Drawing.Color.Transparent
-        Me.btnEdiMaq.Location = New System.Drawing.Point(0, 40)
-        Me.btnEdiMaq.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.btnEdiMaq.Name = "btnEdiMaq"
-        Me.btnEdiMaq.Size = New System.Drawing.Size(147, 40)
-        Me.btnEdiMaq.TabIndex = 3
-        Me.btnEdiMaq.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnDelMaq
-        '
-        Me.btnDelMaq.ActiveBorderThickness = 1
-        Me.btnDelMaq.ActiveCornerRadius = 20
-        Me.btnDelMaq.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnDelMaq.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnDelMaq.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnDelMaq.BackColor = System.Drawing.Color.Transparent
-        Me.btnDelMaq.BackgroundImage = CType(resources.GetObject("btnDelMaq.BackgroundImage"), System.Drawing.Image)
-        Me.btnDelMaq.ButtonText = "Borrar Reporte"
-        Me.btnDelMaq.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDelMaq.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnDelMaq.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelMaq.ForeColor = System.Drawing.Color.Transparent
-        Me.btnDelMaq.IdleBorderThickness = 1
-        Me.btnDelMaq.IdleCornerRadius = 20
-        Me.btnDelMaq.IdleFillColor = System.Drawing.Color.Transparent
-        Me.btnDelMaq.IdleForecolor = System.Drawing.Color.White
-        Me.btnDelMaq.IdleLineColor = System.Drawing.Color.Transparent
-        Me.btnDelMaq.Location = New System.Drawing.Point(0, 80)
-        Me.btnDelMaq.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.btnDelMaq.Name = "btnDelMaq"
-        Me.btnDelMaq.Size = New System.Drawing.Size(147, 40)
-        Me.btnDelMaq.TabIndex = 4
-        Me.btnDelMaq.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnNewRepAut
-        '
-        Me.btnNewRepAut.ActiveBorderThickness = 1
-        Me.btnNewRepAut.ActiveCornerRadius = 20
-        Me.btnNewRepAut.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnNewRepAut.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnNewRepAut.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnNewRepAut.BackColor = System.Drawing.Color.Transparent
-        Me.btnNewRepAut.BackgroundImage = CType(resources.GetObject("btnNewRepAut.BackgroundImage"), System.Drawing.Image)
-        Me.btnNewRepAut.ButtonText = "Nuevo Reporte"
-        Me.btnNewRepAut.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNewRepAut.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnNewRepAut.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNewRepAut.ForeColor = System.Drawing.Color.Transparent
-        Me.btnNewRepAut.IdleBorderThickness = 1
-        Me.btnNewRepAut.IdleCornerRadius = 20
-        Me.btnNewRepAut.IdleFillColor = System.Drawing.Color.Transparent
-        Me.btnNewRepAut.IdleForecolor = System.Drawing.Color.White
-        Me.btnNewRepAut.IdleLineColor = System.Drawing.Color.Transparent
-        Me.btnNewRepAut.Location = New System.Drawing.Point(0, 0)
-        Me.btnNewRepAut.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.btnNewRepAut.Name = "btnNewRepAut"
-        Me.btnNewRepAut.Size = New System.Drawing.Size(147, 40)
-        Me.btnNewRepAut.TabIndex = 5
-        Me.btnNewRepAut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnEditRepAut
-        '
-        Me.btnEditRepAut.ActiveBorderThickness = 1
-        Me.btnEditRepAut.ActiveCornerRadius = 20
-        Me.btnEditRepAut.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnEditRepAut.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnEditRepAut.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnEditRepAut.BackColor = System.Drawing.Color.Transparent
-        Me.btnEditRepAut.BackgroundImage = CType(resources.GetObject("btnEditRepAut.BackgroundImage"), System.Drawing.Image)
-        Me.btnEditRepAut.ButtonText = "Editar Reporte"
-        Me.btnEditRepAut.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEditRepAut.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnEditRepAut.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEditRepAut.ForeColor = System.Drawing.Color.Transparent
-        Me.btnEditRepAut.IdleBorderThickness = 1
-        Me.btnEditRepAut.IdleCornerRadius = 20
-        Me.btnEditRepAut.IdleFillColor = System.Drawing.Color.Transparent
-        Me.btnEditRepAut.IdleForecolor = System.Drawing.Color.White
-        Me.btnEditRepAut.IdleLineColor = System.Drawing.Color.Transparent
-        Me.btnEditRepAut.Location = New System.Drawing.Point(0, 40)
-        Me.btnEditRepAut.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.btnEditRepAut.Name = "btnEditRepAut"
-        Me.btnEditRepAut.Size = New System.Drawing.Size(147, 40)
-        Me.btnEditRepAut.TabIndex = 6
-        Me.btnEditRepAut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnDelRepAut
-        '
-        Me.btnDelRepAut.ActiveBorderThickness = 1
-        Me.btnDelRepAut.ActiveCornerRadius = 20
-        Me.btnDelRepAut.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnDelRepAut.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnDelRepAut.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnDelRepAut.BackColor = System.Drawing.Color.Transparent
-        Me.btnDelRepAut.BackgroundImage = CType(resources.GetObject("btnDelRepAut.BackgroundImage"), System.Drawing.Image)
-        Me.btnDelRepAut.ButtonText = "Borrar Reporte"
-        Me.btnDelRepAut.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDelRepAut.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnDelRepAut.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelRepAut.ForeColor = System.Drawing.Color.Transparent
-        Me.btnDelRepAut.IdleBorderThickness = 1
-        Me.btnDelRepAut.IdleCornerRadius = 20
-        Me.btnDelRepAut.IdleFillColor = System.Drawing.Color.Transparent
-        Me.btnDelRepAut.IdleForecolor = System.Drawing.Color.White
-        Me.btnDelRepAut.IdleLineColor = System.Drawing.Color.Transparent
-        Me.btnDelRepAut.Location = New System.Drawing.Point(0, 80)
-        Me.btnDelRepAut.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.btnDelRepAut.Name = "btnDelRepAut"
-        Me.btnDelRepAut.Size = New System.Drawing.Size(147, 40)
-        Me.btnDelRepAut.TabIndex = 7
-        Me.btnDelRepAut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnConsulMaq
-        '
-        Me.btnConsulMaq.ActiveBorderThickness = 1
-        Me.btnConsulMaq.ActiveCornerRadius = 20
-        Me.btnConsulMaq.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnConsulMaq.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnConsulMaq.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnConsulMaq.BackColor = System.Drawing.Color.Transparent
-        Me.btnConsulMaq.BackgroundImage = CType(resources.GetObject("btnConsulMaq.BackgroundImage"), System.Drawing.Image)
-        Me.btnConsulMaq.ButtonText = "Consultar Maquinaria"
-        Me.btnConsulMaq.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnConsulMaq.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnConsulMaq.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConsulMaq.ForeColor = System.Drawing.Color.Transparent
-        Me.btnConsulMaq.IdleBorderThickness = 1
-        Me.btnConsulMaq.IdleCornerRadius = 20
-        Me.btnConsulMaq.IdleFillColor = System.Drawing.Color.Transparent
-        Me.btnConsulMaq.IdleForecolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.btnConsulMaq.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.btnConsulMaq.Location = New System.Drawing.Point(0, 421)
-        Me.btnConsulMaq.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.btnConsulMaq.Name = "btnConsulMaq"
-        Me.btnConsulMaq.Size = New System.Drawing.Size(147, 72)
-        Me.btnConsulMaq.TabIndex = 6
-        Me.btnConsulMaq.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnConsulAut
-        '
-        Me.btnConsulAut.ActiveBorderThickness = 1
-        Me.btnConsulAut.ActiveCornerRadius = 20
-        Me.btnConsulAut.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnConsulAut.ActiveForecolor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnConsulAut.ActiveLineColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnConsulAut.BackColor = System.Drawing.Color.Transparent
-        Me.btnConsulAut.BackgroundImage = CType(resources.GetObject("btnConsulAut.BackgroundImage"), System.Drawing.Image)
-        Me.btnConsulAut.ButtonText = "Consultar Vehículos"
-        Me.btnConsulAut.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnConsulAut.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnConsulAut.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConsulAut.ForeColor = System.Drawing.Color.Transparent
-        Me.btnConsulAut.IdleBorderThickness = 1
-        Me.btnConsulAut.IdleCornerRadius = 20
-        Me.btnConsulAut.IdleFillColor = System.Drawing.Color.Transparent
-        Me.btnConsulAut.IdleForecolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.btnConsulAut.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.btnConsulAut.Location = New System.Drawing.Point(0, 493)
-        Me.btnConsulAut.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.btnConsulAut.Name = "btnConsulAut"
-        Me.btnConsulAut.Size = New System.Drawing.Size(147, 72)
-        Me.btnConsulAut.TabIndex = 7
-        Me.btnConsulAut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'pnlWrapper
-        '
-        Me.pnlWrapper.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlWrapper.Location = New System.Drawing.Point(147, 50)
-        Me.pnlWrapper.Name = "pnlWrapper"
-        Me.pnlWrapper.Size = New System.Drawing.Size(877, 718)
-        Me.pnlWrapper.TabIndex = 3
         '
         'ScrMain
         '

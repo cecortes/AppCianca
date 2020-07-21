@@ -77,6 +77,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pantallas\Reportes Maquinaria\ScrDelMaq.Designer.vb">
+      <DependentUpon>ScrDelMaq.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes Maquinaria\ScrDelMaq.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes Maquinaria\ScrEditMaq.Designer.vb">
+      <DependentUpon>ScrEditMaq.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes Maquinaria\ScrEditMaq.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Reportes Maquinaria\ScrNewMaq.Designer.vb">
+      <DependentUpon>ScrNewMaq.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Reportes Maquinaria\ScrNewMaq.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantallas\ScrMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +119,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Pantallas\Reportes Maquinaria\ScrDelMaq.resx">
+      <DependentUpon>ScrDelMaq.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes Maquinaria\ScrEditMaq.resx">
+      <DependentUpon>ScrEditMaq.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Reportes Maquinaria\ScrNewMaq.resx">
+      <DependentUpon>ScrNewMaq.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\ScrMain.resx">
       <DependentUpon>ScrMain.vb</DependentUpon>
     </EmbeddedResource>
