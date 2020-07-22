@@ -67,14 +67,15 @@ Public Class ScrNewMaq
         buscar.getSerialMaq()
 
         'Cargamos los datos de la tabla en el combo para actualizar
-        cboPersonal.DataSource = buscar.cboUsrDS.Tables("MAQ")
+        cboSerial.DataSource = buscar.cboMaqDS.Tables("MAQ")
 
         'Cargamos los datos de la columna apellidos en el combo para actualizar
-        cboPersonal.DisplayMember = "Serial"
+        cboSerial.DisplayMember = "Serial"
 
         'Index a cero
-        cboPersonal.SelectedIndex = 0
+        cboSerial.SelectedIndex = 0
     End Sub
+
 
 #End Region
 
