@@ -52,6 +52,30 @@ Public Class ScrNewMaq
         cboPersonal.SelectedIndex = 0
     End Sub
 
+    ''' <summary>
+    ''' Re inicia los datos del cbo
+    ''' Consulta a la tabla de inventarios_af
+    ''' Carga la tabla y actualiza los valores
+    ''' Pone el index en 0
+    ''' </summary>
+    Private Sub FillSerialAF()
+
+        'Reset
+        buscar.cboMaqDS.Reset()
+
+        'Llamamos a la consulta de los datos
+        buscar.getSerialMaq()
+
+        'Cargamos los datos de la tabla en el combo para actualizar
+        cboPersonal.DataSource = buscar.cboUsrDS.Tables("MAQ")
+
+        'Cargamos los datos de la columna apellidos en el combo para actualizar
+        cboPersonal.DisplayMember = "Serial"
+
+        'Index a cero
+        cboPersonal.SelectedIndex = 0
+    End Sub
+
 #End Region
 
 #Region "EVENTOS"
@@ -59,6 +83,7 @@ Public Class ScrNewMaq
     ''' <summary>
     ''' Método para formato dtp
     ''' Método para cargar el cboPersonal
+    ''' Método para cargar el cboSerial
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
@@ -69,6 +94,7 @@ Public Class ScrNewMaq
 
         'Referente a los combo box
         FillCboNomApll()
+        FillSerialAF()
 
     End Sub
 

@@ -594,7 +594,7 @@ Public Class Consulta
                 'Validamos que no sea null
                 If String.IsNullOrEmpty(item.Value.Serie_af) Then
                 Else
-                    cboUsrDS.Tables("MAQ").Rows.Add(item.Value.Serie_af)
+                    cboMaqDS.Tables("MAQ").Rows.Add(item.Value.Serie_af)
                 End If
             Next
 
