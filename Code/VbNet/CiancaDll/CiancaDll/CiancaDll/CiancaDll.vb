@@ -407,7 +407,6 @@ Public Class Consulta
         'Init Tabla, hardcode USR
         cboUsrDS.Tables.Add("USR")
         cboUsrDS.Tables("USR").Columns.Add("NomApll", GetType(String))
-        'cboUsrDS.Tables("USR").Columns.Add("Apellidos", GetType(String))
 
         'Manejo de excepciones
         Try
