@@ -1,7 +1,12 @@
-﻿Public Class ScrNewMaq
+﻿'Imports
+Imports CiancaDll
+
+Public Class ScrNewMaq
 
 #Region "VARIABLES"
-
+    'CiancaDll
+    Dim data As New Datos
+    Dim buscar As New Consulta
 #End Region
 
 #Region "FUNCIONES"
@@ -23,12 +28,37 @@
 
     End Sub
 
+    ''' <summary>
+    ''' Re inicia los datos del cbo
+    ''' Consulta a la tabla de usuarios
+    ''' Carga la tabla y actualiza los valores
+    ''' Pone el index en 0
+    ''' </summary>
+    Private Sub FillCboNomApll()
+
+        'Reset
+        buscar.cboUsrDS.Reset()
+
+        'Llamamos a la consulta de los datos
+        buscar.getNomApllUsr()
+
+        'Cargamos los datos de la tabla en el combo para actualizar
+        cboPersonal.DataSource = buscar.cboUsrDS.Tables("USR")
+
+        'Cargamos los datos de la columna apellidos en el combo para actualizar
+        cboPersonal.DisplayMember = "NomApll"
+
+        'Index a cero
+        cboPersonal.SelectedIndex = 0
+    End Sub
+
 #End Region
 
 #Region "EVENTOS"
 
     ''' <summary>
     ''' Método para formato dtp
+    ''' Método para cargar el cboPersonal
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
@@ -36,6 +66,9 @@
 
         'DTP
         FormatDtp()
+
+        'Referente a los combo box
+        FillCboNomApll()
 
     End Sub
 

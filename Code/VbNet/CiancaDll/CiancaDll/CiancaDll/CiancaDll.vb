@@ -406,7 +406,8 @@ Public Class Consulta
 
         'Init Tabla, hardcode USR
         cboUsrDS.Tables.Add("USR")
-        cboUsrDS.Tables("USR").Columns.Add("Nombre", GetType(String))
+        cboUsrDS.Tables("USR").Columns.Add("NomApll", GetType(String))
+        'cboUsrDS.Tables("USR").Columns.Add("Apellidos", GetType(String))
 
         'Manejo de excepciones
         Try
@@ -425,7 +426,7 @@ Public Class Consulta
                 'Validamos que no sea null
                 If String.IsNullOrEmpty(item.Value.Nombre) Then
                 Else
-                    cboUsrDS.Tables("USR").Rows.Add(item.Value.Nombre)
+                    cboUsrDS.Tables("USR").Rows.Add(item.Value.Nombre + "," + item.Value.Apellidos)
                 End If
             Next
 
