@@ -374,6 +374,130 @@ Public Class Datos
 #End Region
 
 #End Region
+
+#Region "MAQUINARIA"
+
+#Region "DATAMEMBERS"
+
+    Private _Area_af As String
+    Private _Catego_af As String
+    Private _Desc_af As String
+    Private _Id_af As String
+    Private _Marca_af As String
+    Private _Modelo_af As String
+    Private _Pic_af As String
+    Private _Precio_af As String
+    Private _Serie_af As String
+    Private _YearA_af As String
+    Private _Year_af As String
+
+#End Region
+
+#Region "PROPIEDADES"
+
+    Public Property Area_af As String
+        Get
+            Return _Area_af
+        End Get
+        Set(value As String)
+            _Area_af = value
+        End Set
+    End Property
+
+    Public Property Catego_af As String
+        Get
+            Return _Catego_af
+        End Get
+        Set(value As String)
+            _Catego_af = value
+        End Set
+    End Property
+
+    Public Property Desc_af As String
+        Get
+            Return _Desc_af
+        End Get
+        Set(value As String)
+            _Desc_af = value
+        End Set
+    End Property
+
+    Public Property Id_af As String
+        Get
+            Return _Id_af
+        End Get
+        Set(value As String)
+            _Id_af = value
+        End Set
+    End Property
+
+    Public Property Marca_af As String
+        Get
+            Return _Marca_af
+        End Get
+        Set(value As String)
+            _Marca_af = value
+        End Set
+    End Property
+
+    Public Property Modelo_af As String
+        Get
+            Return _Modelo_af
+        End Get
+        Set(value As String)
+            _Modelo_af = value
+        End Set
+    End Property
+
+    Public Property Pic_af As String
+        Get
+            Return _Pic_af
+        End Get
+        Set(value As String)
+            _Pic_af = value
+        End Set
+    End Property
+
+    Public Property Precio_af As String
+        Get
+            Return _Precio_af
+        End Get
+        Set(value As String)
+            _Precio_af = value
+        End Set
+    End Property
+
+    Public Property Serie_af As String
+        Get
+            Return _Serie_af
+        End Get
+        Set(value As String)
+            _Serie_af = value
+        End Set
+    End Property
+
+    Public Property YearA_af As String
+        Get
+            Return _YearA_af
+        End Get
+        Set(value As String)
+            _YearA_af = value
+        End Set
+    End Property
+
+    Public Property Year_af As String
+        Get
+            Return _Year_af
+        End Get
+        Set(value As String)
+            _Year_af = value
+        End Set
+    End Property
+
+#End Region
+
+#End Region
+
 End Class
 
 Public Class Consulta
@@ -389,6 +513,7 @@ Public Class Consulta
 
     'Referente a los cbo
     Public cboUsrDS As New DataSet      'ComboBox Only USUARIOS
+    Public cboMaqDS As New DataSet      'ComboBox Only INVENTARIO_AF
 
     'Referente a los dgv
     'Public dgvPedidosDS As New DataSet  'Datagrid Only PEDIDOS
@@ -435,6 +560,51 @@ Public Class Consulta
             MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
 
         End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Se encarga de obtener el número de serie de las maquinas en el nodo INVENTARIO_AF para
+    ''' pasarlo a una tabla.
+    ''' </summary>
+    Public Sub getSerialMaq()
+
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode USR
+        cboMaqDS.Tables.Add("MAQ")
+        cboMaqDS.Tables("MAQ").Columns.Add("Serial", GetType(String))
+
+        'Manejo de excepciones
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("INVENTARIO_AF/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Serie_af) Then
+                Else
+                    cboUsrDS.Tables("MAQ").Rows.Add(item.Value.Serie_af)
+                End If
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
     End Sub
 
 #End Region
