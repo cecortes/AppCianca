@@ -43,20 +43,20 @@ Partial Class ScrNewMaq
         Me.dtpFechaFalla = New Bunifu.Framework.UI.BunifuDatepicker()
         Me.lblTitleFallaFecha = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlMaq = New System.Windows.Forms.Panel()
-        Me.pbFoto = New System.Windows.Forms.PictureBox()
-        Me.lbl1 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.lblArea = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.lblMarca = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.lbl2 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.lblDesc = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.lbl5 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.lbl4 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.cboSerial = New System.Windows.Forms.ComboBox()
         Me.lblModelo = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl3 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.cboSerial = New System.Windows.Forms.ComboBox()
-        Me.lbl4 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.lbl5 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.lblDesc = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.lblMarca = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.lbl2 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.lblArea = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.lbl1 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.pbFoto = New System.Windows.Forms.PictureBox()
         Me.pnlDatos = New System.Windows.Forms.Panel()
-        Me.lbl6 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.txtTareas = New System.Windows.Forms.TextBox()
+        Me.lbl6 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlReco = New System.Windows.Forms.Panel()
         Me.txtRecomen = New System.Windows.Forms.TextBox()
         Me.lbl7 = New Bunifu.Framework.UI.BunifuCustomLabel()
@@ -342,43 +342,82 @@ Partial Class ScrNewMaq
         Me.pnlMaq.Size = New System.Drawing.Size(1024, 216)
         Me.pnlMaq.TabIndex = 2
         '
-        'pbFoto
+        'lblDesc
         '
-        Me.pbFoto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pbFoto.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.pbFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbFoto.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbFoto.Image = Global.CiancaMantto.My.Resources.Resources.camera
-        Me.pbFoto.Location = New System.Drawing.Point(752, 17)
-        Me.pbFoto.Name = "pbFoto"
-        Me.pbFoto.Size = New System.Drawing.Size(227, 177)
-        Me.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbFoto.TabIndex = 45
-        Me.pbFoto.TabStop = False
+        Me.lblDesc.AutoSize = True
+        Me.lblDesc.BackColor = System.Drawing.Color.Transparent
+        Me.lblDesc.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDesc.ForeColor = System.Drawing.Color.White
+        Me.lblDesc.Location = New System.Drawing.Point(109, 163)
+        Me.lblDesc.Name = "lblDesc"
+        Me.lblDesc.Size = New System.Drawing.Size(40, 31)
+        Me.lblDesc.TabIndex = 55
+        Me.lblDesc.Text = "NA"
         '
-        'lbl1
+        'lbl5
         '
-        Me.lbl1.AutoSize = True
-        Me.lbl1.BackColor = System.Drawing.Color.Transparent
-        Me.lbl1.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.lbl1.Location = New System.Drawing.Point(339, 17)
-        Me.lbl1.Name = "lbl1"
-        Me.lbl1.Size = New System.Drawing.Size(65, 31)
-        Me.lbl1.TabIndex = 46
-        Me.lbl1.Text = "Área:"
+        Me.lbl5.AutoSize = True
+        Me.lbl5.BackColor = System.Drawing.Color.Transparent
+        Me.lbl5.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.lbl5.Location = New System.Drawing.Point(12, 132)
+        Me.lbl5.Name = "lbl5"
+        Me.lbl5.Size = New System.Drawing.Size(131, 31)
+        Me.lbl5.TabIndex = 54
+        Me.lbl5.Text = "Descripción:"
         '
-        'lblArea
+        'lbl4
         '
-        Me.lblArea.AutoSize = True
-        Me.lblArea.BackColor = System.Drawing.Color.Transparent
-        Me.lblArea.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblArea.ForeColor = System.Drawing.Color.White
-        Me.lblArea.Location = New System.Drawing.Point(470, 17)
-        Me.lblArea.Name = "lblArea"
-        Me.lblArea.Size = New System.Drawing.Size(40, 31)
-        Me.lblArea.TabIndex = 47
-        Me.lblArea.Text = "NA"
+        Me.lbl4.AutoSize = True
+        Me.lbl4.BackColor = System.Drawing.Color.Transparent
+        Me.lbl4.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.lbl4.Location = New System.Drawing.Point(12, 17)
+        Me.lbl4.Name = "lbl4"
+        Me.lbl4.Size = New System.Drawing.Size(221, 31)
+        Me.lbl4.TabIndex = 53
+        Me.lbl4.Text = "No de control interno:"
+        '
+        'cboSerial
+        '
+        Me.cboSerial.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboSerial.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboSerial.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.cboSerial.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cboSerial.Font = New System.Drawing.Font("Poppins Medium", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSerial.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.cboSerial.FormattingEnabled = True
+        Me.cboSerial.Location = New System.Drawing.Point(18, 51)
+        Me.cboSerial.Name = "cboSerial"
+        Me.cboSerial.Size = New System.Drawing.Size(215, 33)
+        Me.cboSerial.TabIndex = 52
+        Me.cboSerial.Text = "No. de Serie"
+        '
+        'lblModelo
+        '
+        Me.lblModelo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblModelo.AutoSize = True
+        Me.lblModelo.BackColor = System.Drawing.Color.Transparent
+        Me.lblModelo.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblModelo.ForeColor = System.Drawing.Color.White
+        Me.lblModelo.Location = New System.Drawing.Point(470, 161)
+        Me.lblModelo.Name = "lblModelo"
+        Me.lblModelo.Size = New System.Drawing.Size(40, 31)
+        Me.lblModelo.TabIndex = 51
+        Me.lblModelo.Text = "NA"
+        '
+        'lbl3
+        '
+        Me.lbl3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lbl3.AutoSize = True
+        Me.lbl3.BackColor = System.Drawing.Color.Transparent
+        Me.lbl3.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.lbl3.Location = New System.Drawing.Point(339, 161)
+        Me.lbl3.Name = "lbl3"
+        Me.lbl3.Size = New System.Drawing.Size(90, 31)
+        Me.lbl3.TabIndex = 50
+        Me.lbl3.Text = "Modelo:"
         '
         'lblMarca
         '
@@ -408,82 +447,43 @@ Partial Class ScrNewMaq
         Me.lbl2.TabIndex = 48
         Me.lbl2.Text = "Marca:"
         '
-        'lblModelo
+        'lblArea
         '
-        Me.lblModelo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblModelo.AutoSize = True
-        Me.lblModelo.BackColor = System.Drawing.Color.Transparent
-        Me.lblModelo.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblModelo.ForeColor = System.Drawing.Color.White
-        Me.lblModelo.Location = New System.Drawing.Point(470, 161)
-        Me.lblModelo.Name = "lblModelo"
-        Me.lblModelo.Size = New System.Drawing.Size(40, 31)
-        Me.lblModelo.TabIndex = 51
-        Me.lblModelo.Text = "NA"
+        Me.lblArea.AutoSize = True
+        Me.lblArea.BackColor = System.Drawing.Color.Transparent
+        Me.lblArea.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblArea.ForeColor = System.Drawing.Color.White
+        Me.lblArea.Location = New System.Drawing.Point(470, 17)
+        Me.lblArea.Name = "lblArea"
+        Me.lblArea.Size = New System.Drawing.Size(40, 31)
+        Me.lblArea.TabIndex = 47
+        Me.lblArea.Text = "NA"
         '
-        'lbl3
+        'lbl1
         '
-        Me.lbl3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lbl3.AutoSize = True
-        Me.lbl3.BackColor = System.Drawing.Color.Transparent
-        Me.lbl3.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.lbl3.Location = New System.Drawing.Point(339, 161)
-        Me.lbl3.Name = "lbl3"
-        Me.lbl3.Size = New System.Drawing.Size(90, 31)
-        Me.lbl3.TabIndex = 50
-        Me.lbl3.Text = "Modelo:"
+        Me.lbl1.AutoSize = True
+        Me.lbl1.BackColor = System.Drawing.Color.Transparent
+        Me.lbl1.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.lbl1.Location = New System.Drawing.Point(339, 17)
+        Me.lbl1.Name = "lbl1"
+        Me.lbl1.Size = New System.Drawing.Size(65, 31)
+        Me.lbl1.TabIndex = 46
+        Me.lbl1.Text = "Área:"
         '
-        'cboSerial
+        'pbFoto
         '
-        Me.cboSerial.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboSerial.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboSerial.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.cboSerial.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cboSerial.Font = New System.Drawing.Font("Poppins Medium", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboSerial.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.cboSerial.FormattingEnabled = True
-        Me.cboSerial.Location = New System.Drawing.Point(18, 51)
-        Me.cboSerial.Name = "cboSerial"
-        Me.cboSerial.Size = New System.Drawing.Size(215, 33)
-        Me.cboSerial.TabIndex = 52
-        Me.cboSerial.Text = "No. de Serie"
-        '
-        'lbl4
-        '
-        Me.lbl4.AutoSize = True
-        Me.lbl4.BackColor = System.Drawing.Color.Transparent
-        Me.lbl4.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.lbl4.Location = New System.Drawing.Point(12, 17)
-        Me.lbl4.Name = "lbl4"
-        Me.lbl4.Size = New System.Drawing.Size(221, 31)
-        Me.lbl4.TabIndex = 53
-        Me.lbl4.Text = "No de control interno:"
-        '
-        'lbl5
-        '
-        Me.lbl5.AutoSize = True
-        Me.lbl5.BackColor = System.Drawing.Color.Transparent
-        Me.lbl5.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.lbl5.Location = New System.Drawing.Point(12, 132)
-        Me.lbl5.Name = "lbl5"
-        Me.lbl5.Size = New System.Drawing.Size(131, 31)
-        Me.lbl5.TabIndex = 54
-        Me.lbl5.Text = "Descripción:"
-        '
-        'lblDesc
-        '
-        Me.lblDesc.AutoSize = True
-        Me.lblDesc.BackColor = System.Drawing.Color.Transparent
-        Me.lblDesc.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDesc.ForeColor = System.Drawing.Color.White
-        Me.lblDesc.Location = New System.Drawing.Point(109, 163)
-        Me.lblDesc.Name = "lblDesc"
-        Me.lblDesc.Size = New System.Drawing.Size(40, 31)
-        Me.lblDesc.TabIndex = 55
-        Me.lblDesc.Text = "NA"
+        Me.pbFoto.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pbFoto.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.pbFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbFoto.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pbFoto.Image = Global.CiancaMantto.My.Resources.Resources.camera
+        Me.pbFoto.Location = New System.Drawing.Point(752, 17)
+        Me.pbFoto.Name = "pbFoto"
+        Me.pbFoto.Size = New System.Drawing.Size(227, 177)
+        Me.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbFoto.TabIndex = 45
+        Me.pbFoto.TabStop = False
         '
         'pnlDatos
         '
@@ -494,18 +494,6 @@ Partial Class ScrNewMaq
         Me.pnlDatos.Name = "pnlDatos"
         Me.pnlDatos.Size = New System.Drawing.Size(1024, 140)
         Me.pnlDatos.TabIndex = 3
-        '
-        'lbl6
-        '
-        Me.lbl6.AutoSize = True
-        Me.lbl6.BackColor = System.Drawing.Color.Transparent
-        Me.lbl6.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.lbl6.Location = New System.Drawing.Point(12, 3)
-        Me.lbl6.Name = "lbl6"
-        Me.lbl6.Size = New System.Drawing.Size(150, 25)
-        Me.lbl6.TabIndex = 16
-        Me.lbl6.Text = "Tareas realizadas:"
         '
         'txtTareas
         '
@@ -519,6 +507,18 @@ Partial Class ScrNewMaq
         Me.txtTareas.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.txtTareas.Size = New System.Drawing.Size(992, 81)
         Me.txtTareas.TabIndex = 17
+        '
+        'lbl6
+        '
+        Me.lbl6.AutoSize = True
+        Me.lbl6.BackColor = System.Drawing.Color.Transparent
+        Me.lbl6.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.lbl6.Location = New System.Drawing.Point(12, 3)
+        Me.lbl6.Name = "lbl6"
+        Me.lbl6.Size = New System.Drawing.Size(150, 25)
+        Me.lbl6.TabIndex = 16
+        Me.lbl6.Text = "Tareas realizadas:"
         '
         'pnlReco
         '

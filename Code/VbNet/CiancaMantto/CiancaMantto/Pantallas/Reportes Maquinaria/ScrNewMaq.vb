@@ -4,12 +4,38 @@ Imports CiancaDll
 Public Class ScrNewMaq
 
 #Region "VARIABLES"
+    Public strMsgTitle As String = "Empacadora Cianca - 2020 (C)"
+
     'CiancaDll
     Dim data As New Datos
     Dim buscar As New Consulta
 #End Region
 
 #Region "FUNCIONES"
+
+    ''' <summary>
+    ''' Se encarga de validar que los textos necesarios no sean nulos.
+    ''' </summary>
+    ''' <returns>El estado de la validación como boolean</returns>
+    Private Function ValidTxt() As Boolean
+        'Local
+        Dim status As Boolean = False
+
+        'Validate
+        If (String.IsNullOrEmpty(mskHoraFalla.Text.ToString) Or String.IsNullOrEmpty(mskHoraEntrega.Text.ToString) Or String.IsNullOrEmpty(mskCantidad.Text.ToString) Or String.IsNullOrEmpty(txtTareas.Text.ToString)) Then
+
+            'Usuario
+            MsgBox("Los campos:" + vbCrLf + "Hora de falla" + vbCrLf + "Hora de entrega" + vbCrLf + "Cantidad" + vbCrLf + "Tareas Realizadas" + vbCrLf + "No pueden estar vacíos", MsgBoxStyle.Critical, strMsgTitle)
+
+            'Change flag status
+            status = True
+
+        End If
+
+        'Return
+        Return status
+
+    End Function
 
 #End Region
 
@@ -49,7 +75,10 @@ Public Class ScrNewMaq
         cboPersonal.DisplayMember = "NomApll"
 
         'Index a cero
-        cboPersonal.SelectedIndex = 0
+        'cboPersonal.SelectedIndex = 0
+
+        cboPersonal.Text = "Nombre, Apellidos"
+
     End Sub
 
     ''' <summary>
@@ -73,9 +102,11 @@ Public Class ScrNewMaq
         cboSerial.DisplayMember = "Serial"
 
         'Index a cero
-        cboSerial.SelectedIndex = 0
-    End Sub
+        'cboSerial.SelectedIndex = 0
 
+        cboSerial.Text = "No. de Serie"
+
+    End Sub
 
 #End Region
 
@@ -168,6 +199,18 @@ Public Class ScrNewMaq
 
         'Color Original
         mskCantidad.BackColor = Color.FromArgb(0, 67, 70)
+
+    End Sub
+
+    ''' <summary>
+    ''' Validación de datos
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
+
+        'Validate
+        ValidTxt()
 
     End Sub
 
