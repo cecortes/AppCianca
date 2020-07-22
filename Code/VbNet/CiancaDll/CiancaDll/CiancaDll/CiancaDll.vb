@@ -375,3 +375,67 @@ Public Class Datos
 
 #End Region
 End Class
+
+Public Class Consulta
+
+    'En esta región se concentran las consultas así como también las variables necesarias
+    'para enviar los resultados a los cbo y datagrid necesarios.
+    'La conexión a firebase se realiza desde aquí.
+
+#Region "DATAMEMBERS"
+    'Firebase
+    Dim res As FirebaseResponse
+    Dim dataDic As Dictionary(Of String, Datos)
+
+    'Referente a los cbo
+    Public cboUsrDS As New DataSet      'ComboBox Only USUARIOS
+
+    'Referente a los dgv
+    'Public dgvPedidosDS As New DataSet  'Datagrid Only PEDIDOS
+#End Region
+
+#Region "USUARIOS"
+
+    ''' <summary>
+    ''' Se encarga de obtener el nombre y apellido del usuario y pasarlo a una tabla
+    ''' </summary>
+    Public Sub getNomApllUsr()
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode USR
+        cboUsrDS.Tables.Add("USR")
+        cboUsrDS.Tables("USR").Columns.Add("Nombre", GetType(String))
+
+        'Manejo de excepciones
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("USUARIOS/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Nombre) Then
+                Else
+                    cboUsrDS.Tables("USR").Rows.Add(item.Value.Nombre)
+                End If
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+    End Sub
+
+#End Region
+End Class
