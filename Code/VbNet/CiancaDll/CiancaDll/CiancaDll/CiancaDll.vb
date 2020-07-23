@@ -511,6 +511,7 @@ Public Class Datos
     Private _FotoAf_mtom As String
     Private _HoraE_mtom As String
     Private _HoraF_mtom As String
+    Private _IdAf_mtom As String
     Private _Id_mtom As String
     Private _MarcaAf_mtom As String
     Private _ModeloAf_mtom As String
@@ -602,6 +603,15 @@ Public Class Datos
         End Get
         Set(value As String)
             _HoraF_mtom = value
+        End Set
+    End Property
+
+    Public Property IdAf_mtom As String
+        Get
+            Return _IdAf_mtom
+        End Get
+        Set(value As String)
+            _IdAf_mtom = value
         End Set
     End Property
 

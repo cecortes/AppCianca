@@ -7,9 +7,12 @@ Public Class ScrNewMaq
 #Region "VARIABLES"
     Dim strMsgTitle As String = "Empacadora Cianca - 2020 (C)"
     Dim flgEndFill As Boolean = False       'Bandera para indicar la terminación de la carga de los cbo
+    Dim nomUsr As String = ""               'Nombre de usuario seleccionado
+    Dim apllUsr As String = ""              'Apellidos de usuario seleccionado
     Dim tokenUsr As String = ""             'Token del usuario
-    Dim serieMaq As String = ""              'No. de control interno de maquinaria
+    Dim serieMaq As String = ""             'No. de control interno de maquinaria
     Dim dataMaq As New Datos                'Objeto para almacenar los datos de INVENTARIO_AF
+    Dim dataMTO As New Datos                'Objeto para almacenar los datos de MANTOMAQ
 
     'CiancaDll
     Dim fbData As New Datos
@@ -271,7 +274,9 @@ Public Class ScrNewMaq
 
             'Captura del cbo
             strArr = cboPersonal.Text.ToString.Split(",")
+            nomUsr = strArr(0)      'Variables globales
             fbData.Nombre = strArr(0)
+            apllUsr = strArr(1)     'Variables globales
             fbData.Apellidos = strArr(1)
 
             'Consulta
@@ -325,28 +330,28 @@ Public Class ScrNewMaq
         ValidTxt()
 
         'Captura y Conversión
-        fbData.Apll_mtom = fbData.Apellidos
-        fbData.AreaAf_mtom = lblArea.Text
-        fbData.Cantidad_mtom = mskCantidad.Text
-        fbData.DescAf_mtom = lblDesc.Text
-        fbData.FechaE_mtom = dtpEntregaFecha.Value.ToShortDateString
-        fbData.FechaF_mtom = dtpFechaFalla.Value.ToShortDateString
-        fbData.FotoAf_mtom = ImgIntoBase64Str(pbFoto)
-        fbData.HoraE_mtom = mskHoraEntrega.Text
-        fbData.HoraF_mtom = mskHoraFalla.Text
+        dataMTO.Apll_mtom = apllUsr
+        dataMTO.AreaAf_mtom = lblArea.Text
+        dataMTO.Cantidad_mtom = mskCantidad.Text
+        dataMTO.DescAf_mtom = lblDesc.Text
+        dataMTO.FechaE_mtom = dtpEntregaFecha.Value.ToShortDateString
+        dataMTO.FechaF_mtom = dtpFechaFalla.Value.ToShortDateString
+        dataMTO.FotoAf_mtom = ImgIntoBase64Str(pbFoto)
+        dataMTO.HoraE_mtom = mskHoraEntrega.Text
+        dataMTO.HoraF_mtom = mskHoraFalla.Text
         Dim hhmm As String = mskHoraFalla.Text
         hhmm = hhmm.Replace(":", "")
-        fbData.Id_mtom = serieMaq + "-" + dtpFechaFalla.Value.Day.ToString + dtpFechaFalla.Value.Month.ToString + dtpFechaFalla.Value.Year.ToString + hhmm
-        fbData.MarcaAf_mtom = lblMarca.Text
-        fbData.ModeloAf_mtom = lblModelo.Text
-        fbData.Nombre_mtom = fbData.Nombre
-        fbData.Recomen_mtom = txtRecomen.Text
-        fbData.SerAf_mtom = serieMaq
-        fbData.Tareas_mtom = txtTareas.Text
-        fbData.TokenUsr_mtom = tokenUsr
+        dataMTO.Id_mtom = serieMaq + "-" + dtpFechaFalla.Value.Day.ToString + dtpFechaFalla.Value.Month.ToString + dtpFechaFalla.Value.Year.ToString + hhmm
+        dataMTO.MarcaAf_mtom = lblMarca.Text
+        dataMTO.ModeloAf_mtom = lblModelo.Text
+        dataMTO.Nombre_mtom = nomUsr
+        dataMTO.Recomen_mtom = txtRecomen.Text
+        dataMTO.SerAf_mtom = serieMaq
+        dataMTO.Tareas_mtom = txtTareas.Text
+        dataMTO.TokenUsr_mtom = tokenUsr
 
         'Agregar a firebase
-        agregar.AddMANTOMAQ(fbData)
+        agregar.AddMANTOMAQ(dataMTO)
 
         MsgBox("Registro agregado...", MsgBoxStyle.Information, strMsgTitle)
 
