@@ -7,6 +7,7 @@ Public Class ScrNewMaq
     Dim strMsgTitle As String = "Empacadora Cianca - 2020 (C)"
     Dim flgEndFill As Boolean = False       'Bandera para indicar la terminación de la carga de los cbo
     Dim tokenUsr As String = ""             'Token del usuario
+    Dim dataMaq As New Datos                'Objeto para almacenar los datos de INVENTARIO_AF
 
     'CiancaDll
     Dim fbData As New Datos
@@ -245,6 +246,13 @@ Public Class ScrNewMaq
         'Validación
         If flgEndFill Then
 
+            'Captura del serial del cbo
+            fbData.Serie_af = cboSerial.Text.ToString
+
+            'Consulta
+            dataMaq = buscar.getMaqData(fbData)
+
+            'MsgBox(dataMaq.Desc_af)
         End If
 
     End Sub

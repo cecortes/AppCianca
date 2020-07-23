@@ -592,9 +592,9 @@ Public Class Consulta
             'Rutina para recorrer los elementos
             For Each item In dataDic
                 'Validamos que no sea null
-                If String.IsNullOrEmpty(item.Value.Serie_af) Then
+                If String.IsNullOrEmpty(item.Value.Id_af) Then
                 Else
-                    cboMaqDS.Tables("MAQ").Rows.Add(item.Value.Serie_af)
+                    cboMaqDS.Tables("MAQ").Rows.Add(item.Value.Id_af)
                 End If
             Next
 
