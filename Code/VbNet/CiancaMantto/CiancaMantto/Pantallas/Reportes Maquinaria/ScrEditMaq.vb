@@ -121,24 +121,24 @@ Public Class ScrEditMaq
     ''' Carga la tabla y actualiza los valores
     ''' Pone el index en 0
     ''' </summary>
-    Private Sub FillCboNomApll()
+    Private Sub FillCboRepMaq()
 
         'Reset
-        buscar.cboUsrDS.Reset()
+        buscar.cboMtoMaqDs.Reset()
 
         'Llamamos a la consulta de los datos
-        buscar.getNomApllUsr()
+        buscar.getMtoMaqRepor()
 
         'Cargamos los datos de la tabla en el combo para actualizar
-        cboPersonal.DataSource = buscar.cboUsrDS.Tables("USR")
+        cboReporte.DataSource = buscar.cboMtoMaqDs.Tables("MTOMAQ")
 
         'Cargamos los datos de la columna apellidos en el combo para actualizar
-        cboPersonal.DisplayMember = "NomApll"
+        cboReporte.DisplayMember = "Reporte"
 
         'Index a cero
         'cboPersonal.SelectedIndex = 0
 
-        cboPersonal.Text = "Nombre, Apellidos"
+        cboReporte.Text = "No. de reporte"
 
     End Sub
 
@@ -180,6 +180,12 @@ Public Class ScrEditMaq
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub ScrEditMaq_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+        'DTP
+        FormatDtp()
+
+        'Referente a los cbo
+        FillCboRepMaq()
 
     End Sub
 

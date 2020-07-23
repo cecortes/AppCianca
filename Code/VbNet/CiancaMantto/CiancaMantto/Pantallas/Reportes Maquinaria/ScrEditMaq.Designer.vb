@@ -61,9 +61,9 @@ Partial Class ScrEditMaq
         Me.txtRecomen = New System.Windows.Forms.TextBox()
         Me.lbl7 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlBottom = New System.Windows.Forms.Panel()
-        Me.cboReporte = New System.Windows.Forms.ComboBox()
-        Me.lblSearch = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.btnEdit = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.lblSearch = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.cboReporte = New System.Windows.Forms.ComboBox()
         Me.pnlTop.SuspendLayout()
         Me.pnlTop2.SuspendLayout()
         Me.pnlPersonal.SuspendLayout()
@@ -570,21 +570,19 @@ Partial Class ScrEditMaq
         Me.pnlBottom.Size = New System.Drawing.Size(1024, 130)
         Me.pnlBottom.TabIndex = 6
         '
-        'cboReporte
+        'btnEdit
         '
-        Me.cboReporte.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cboReporte.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboReporte.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboReporte.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.cboReporte.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cboReporte.Font = New System.Drawing.Font("Poppins Medium", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboReporte.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.cboReporte.FormattingEnabled = True
-        Me.cboReporte.Location = New System.Drawing.Point(321, 52)
-        Me.cboReporte.Name = "cboReporte"
-        Me.cboReporte.Size = New System.Drawing.Size(215, 33)
-        Me.cboReporte.TabIndex = 53
-        Me.cboReporte.Text = "No. de reporte"
+        Me.btnEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnEdit.Image = CType(resources.GetObject("btnEdit.Image"), System.Drawing.Image)
+        Me.btnEdit.ImageActive = Nothing
+        Me.btnEdit.Location = New System.Drawing.Point(826, 40)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(100, 50)
+        Me.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnEdit.TabIndex = 55
+        Me.btnEdit.TabStop = False
+        Me.btnEdit.Zoom = 10
         '
         'lblSearch
         '
@@ -599,19 +597,21 @@ Partial Class ScrEditMaq
         Me.lblSearch.TabIndex = 54
         Me.lblSearch.Text = "Búsqueda por No. de Reporte:"
         '
-        'btnEdit
+        'cboReporte
         '
-        Me.btnEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnEdit.Image = CType(resources.GetObject("btnEdit.Image"), System.Drawing.Image)
-        Me.btnEdit.ImageActive = Nothing
-        Me.btnEdit.Location = New System.Drawing.Point(826, 40)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(100, 50)
-        Me.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnEdit.TabIndex = 55
-        Me.btnEdit.TabStop = False
-        Me.btnEdit.Zoom = 10
+        Me.cboReporte.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.cboReporte.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboReporte.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboReporte.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
+        Me.cboReporte.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cboReporte.Font = New System.Drawing.Font("Poppins Medium", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboReporte.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.cboReporte.FormattingEnabled = True
+        Me.cboReporte.Location = New System.Drawing.Point(314, 52)
+        Me.cboReporte.Name = "cboReporte"
+        Me.cboReporte.Size = New System.Drawing.Size(301, 33)
+        Me.cboReporte.TabIndex = 53
+        Me.cboReporte.Text = "No. de reporte"
         '
         'ScrEditMaq
         '
