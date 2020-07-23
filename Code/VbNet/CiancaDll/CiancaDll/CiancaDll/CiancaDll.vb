@@ -576,11 +576,10 @@ Public Class Consulta
 
         'Init Tabla, hardcode USR
         cboMaqDS.Tables.Add("MAQ")
-        cboMaqDS.Tables("MAQ").Columns.Add("Serial", GetType(String))
+        cboMaqDS.Tables("MAQ").Columns.Add("Serie", GetType(String))
 
         'Manejo de excepciones
         Try
-
             'Firebase conection
             con.Con_Global()
 
@@ -593,7 +592,7 @@ Public Class Consulta
             'Rutina para recorrer los elementos
             For Each item In dataDic
                 'Validamos que no sea null
-                If String.IsNullOrEmpty(item.Value.Nombre) Then
+                If String.IsNullOrEmpty(item.Value.Serie_af) Then
                 Else
                     cboMaqDS.Tables("MAQ").Rows.Add(item.Value.Serie_af)
                 End If

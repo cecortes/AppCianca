@@ -7,7 +7,7 @@ Public Class ScrNewMaq
     Public strMsgTitle As String = "Empacadora Cianca - 2020 (C)"
 
     'CiancaDll
-    Dim data As New Datos
+    'Dim data As New Datos
     Dim buscar As New Consulta
 #End Region
 
@@ -99,12 +99,13 @@ Public Class ScrNewMaq
         cboSerial.DataSource = buscar.cboMaqDS.Tables("MAQ")
 
         'Cargamos los datos de la columna apellidos en el combo para actualizar
-        cboSerial.DisplayMember = "Serial"
+        cboSerial.DisplayMember = "Serie"
 
         'Index a cero
-        'cboSerial.SelectedIndex = 0
+        'cboPersonal.SelectedIndex = 0
 
         cboSerial.Text = "No. de Serie"
+
     End Sub
 
 #End Region
