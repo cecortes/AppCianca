@@ -105,7 +105,6 @@ Public Class ScrNewMaq
         'cboSerial.SelectedIndex = 0
 
         cboSerial.Text = "No. de Serie"
-
     End Sub
 
 #End Region
@@ -125,7 +124,7 @@ Public Class ScrNewMaq
         FormatDtp()
 
         'Referente a los combo box
-        FillCboNomApll()
+        'FillCboNomApll()
         FillSerialAF()
 
     End Sub
@@ -203,6 +202,39 @@ Public Class ScrNewMaq
     End Sub
 
     ''' <summary>
+    ''' Se encarga de llamar a la consulta para obtener el token, nombre y apellido del usuario seleccionado
+    ''' Los captura y guarda en variables globales
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub cboPersonal_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboPersonal.SelectedValueChanged
+        'Locales
+        'Dim strArr() As String
+        'Dim cbo As String = cboPersonal.SelectedItem.ToString
+        'MsgBox(cbo)
+        'Consulta
+        'strArr = cbo.Split(",")
+        'data.Nombre = strArr(0)
+        'data.Apellidos = strArr(1)
+        'Dim usuario As String = buscar.getUsrData(data)
+
+        'Captura
+        'MsgBox(usuario)
+
+        Try
+
+            'Locales
+            'Dim strArr() As String
+            Dim p As String = cboSerial.SelectedItem.ToString
+            MsgBox(p)
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    ''' <summary>
     ''' Validación de datos
     ''' </summary>
     ''' <param name="sender"></param>
@@ -211,7 +243,9 @@ Public Class ScrNewMaq
 
         'Validate
         ValidTxt()
+        'Dim usuario As Datos = buscar.getUsrData(data)
 
+        'MsgBox(usuario.Token)
     End Sub
 
 #End Region

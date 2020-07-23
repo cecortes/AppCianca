@@ -510,6 +510,8 @@ Public Class Consulta
     'Firebase
     Dim res As FirebaseResponse
     Dim dataDic As Dictionary(Of String, Datos)
+    'Dim dataUsr As Datos
+    Dim tokenUsr As String
 
     'Referente a los cbo
     Public cboUsrDS As New DataSet      'ComboBox Only USUARIOS
@@ -569,7 +571,6 @@ Public Class Consulta
     ''' </summary>
     Public Sub getSerialMaq()
 
-
         'Conexión Firebase
         Dim con As New Conexion
 
@@ -592,7 +593,7 @@ Public Class Consulta
             'Rutina para recorrer los elementos
             For Each item In dataDic
                 'Validamos que no sea null
-                If String.IsNullOrEmpty(item.Value.Serie_af) Then
+                If String.IsNullOrEmpty(item.Value.Nombre) Then
                 Else
                     cboMaqDS.Tables("MAQ").Rows.Add(item.Value.Serie_af)
                 End If
@@ -607,5 +608,75 @@ Public Class Consulta
 
     End Sub
 
+    Public Function getUsrData(ByVal data As Datos) As String
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("USUARIOS/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Nombre) Then
+                ElseIf (data.Nombre = item.Value.Nombre And data.Apellidos = item.Value.Apellidos) Then
+
+                    'Pasamos los elementos necesarios a la variable
+                    'dataUsr.Nombre = item.Value.Nombre
+                    'dataUsr.Apellidos = item.Value.Apellidos
+                    tokenUsr = item.Value.Token
+
+                    'Salida del ciclo
+                    'Exit For
+                End If
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Return
+        Return tokenUsr
+
+    End Function
+
 #End Region
 End Class
+
+'Public Function getUsrData(ByVal data As Datos) As Datos
+'    'Locales
+'    'Dim res As Datos
+
+'    'Conexión Firebase
+'    Dim con As New Conexion
+
+'    'Excepción controlada
+'    Try
+
+'        'Firebase conection
+'        con.Con_Global()
+
+'        'Query firebase
+'        Res = con.firebase.Get("USUARIOS/Uzx8bb7YX1cMKe6LRyGzUqzWdDX2")
+
+'        dataUsr = Res.ResultAs(Of Datos)
+
+'    Catch ex As Exception
+
+'    End Try
+
+'    Return dataUsr
+'End Function
