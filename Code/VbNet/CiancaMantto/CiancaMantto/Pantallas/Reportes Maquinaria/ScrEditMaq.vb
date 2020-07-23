@@ -149,6 +149,7 @@ Public Class ScrEditMaq
     ''' <summary>
     ''' Formato para los datetime pickers
     ''' Carga la lista de reportes de mantenimiento
+    ''' Cambia el estado de la bandera para indicar la carga de los cbo
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
@@ -159,6 +160,9 @@ Public Class ScrEditMaq
 
         'Referente a los cbo
         FillCboRepMaq()
+
+        'Bandera de finalización de carga
+        flgEndFill = True
 
     End Sub
 
@@ -231,6 +235,26 @@ Public Class ScrEditMaq
 
         'Color Original
         mskHoraFalla.BackColor = Color.FromArgb(9, 188, 138)
+
+    End Sub
+
+    ''' <summary>
+    ''' Valida que el cbo haya terminado de cargar el contenido
+    ''' Consulta al nodo MANTOMAQ/id_mtom
+    ''' Guarda el resultado en sus respectivas variables
+    ''' Actualiza los campos necesarios
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub cboReporte_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboReporte.SelectedValueChanged
+
+        'Validación
+        If flgEndFill Then
+
+            'Captura del cbo
+
+
+        End If
 
     End Sub
 

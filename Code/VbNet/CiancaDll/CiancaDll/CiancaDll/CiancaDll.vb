@@ -704,7 +704,8 @@ Public Class Consulta
     Dim res As FirebaseResponse
     Dim dataDic As Dictionary(Of String, Datos)
     Dim tokenUsr As String
-    Dim dataMaq As Datos
+    Dim dataMaq As Datos                'Datos de la maquinaria en INVENTARIO_AF
+    Dim dataRpoMaq As Datos             'Reportes de mantenimiento para maquinaria en MANTOMAQ
 
     'Referente a los cbo
     Public cboUsrDS As New DataSet      'ComboBox Only USUARIOS
@@ -858,7 +859,7 @@ Public Class Consulta
 #Region "MAQUINARIA"
 
     ''' <summary>
-    ''' Consulta el nodo INVENTARIO_AF/data.SerieAf
+    ''' Consulta el nodo INVENTARIO_AF/
     ''' Recibe el resultado como Datos
     ''' Devuelve un objeto del tipo datos
     ''' </summary>
@@ -941,6 +942,42 @@ Public Class Consulta
         End Try
 
     End Sub
+
+    ''' <summary>
+    ''' Consulta el nodo MANTOMAQ/Id_mtom
+    ''' Recibe el resultado como Datos
+    ''' Devuelve un objeto del tipo datos
+    ''' </summary>
+    ''' <param name="data"></param>
+    ''' <returns></returns>
+    Public Function getMtoMaq(ByVal data As Datos) As Datos
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("MANTOMAQ/" + data.Id_mtom)
+
+            'Resultado
+            dataRpoMaq = res.ResultAs(Of Datos)
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Devuelve el resultado
+        Return dataRpoMaq
+
+    End Function
 
 #End Region
 End Class
