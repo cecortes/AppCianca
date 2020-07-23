@@ -11,6 +11,8 @@ Public Class ScrNewMaq
     Dim apllUsr As String = ""              'Apellidos de usuario seleccionado
     Dim tokenUsr As String = ""             'Token del usuario
     Dim serieMaq As String = ""             'No. de control interno de maquinaria
+    Dim FechaFalla As String = ""           'Variable para almacenar la fecha de la falla
+    Dim FechaEntrega As String = ""         'Variable para almacenar la fecha de la entrega
     Dim dataMaq As New Datos                'Objeto para almacenar los datos de INVENTARIO_AF
     Dim dataMTO As New Datos                'Objeto para almacenar los datos de MANTOMAQ
 
@@ -97,6 +99,7 @@ Public Class ScrNewMaq
 
     ''' <summary>
     ''' Se encarga de darle formato a los date time picker del formulario
+    ''' Carga los valores iniciales en sus respectivas variables globales.
     ''' </summary>
     Private Sub FormatDtp()
 
@@ -105,6 +108,10 @@ Public Class ScrNewMaq
         dtpFechaFalla.Style.colhover = Color.FromArgb(23, 42, 58)
         dtpEntregaFecha.Style.TextAlign = ContentAlignment.MiddleCenter
         dtpEntregaFecha.Style.colhover = Color.FromArgb(23, 42, 58)
+
+        'Captura de las fechas
+        FechaFalla = dtpFechaFalla.Value.ToShortDateString
+        FechaEntrega = dtpEntregaFecha.Value.ToShortDateString
 
     End Sub
 
@@ -329,13 +336,17 @@ Public Class ScrNewMaq
         'Validate
         ValidTxt()
 
+        'Captura de las fechas
+        FechaFalla = dtpFechaFalla.Value.ToShortDateString
+        FechaEntrega = dtpEntregaFecha.Value.ToShortDateString
+
         'Captura y Conversión
         dataMTO.Apll_mtom = apllUsr
         dataMTO.AreaAf_mtom = lblArea.Text
         dataMTO.Cantidad_mtom = mskCantidad.Text
         dataMTO.DescAf_mtom = lblDesc.Text
-        dataMTO.FechaE_mtom = dtpEntregaFecha.Value.ToShortDateString
-        dataMTO.FechaF_mtom = dtpFechaFalla.Value.ToShortDateString
+        dataMTO.FechaE_mtom = FechaEntrega
+        dataMTO.FechaF_mtom = FechaFalla
         dataMTO.FotoAf_mtom = ImgIntoBase64Str(pbFoto)
         dataMTO.HoraE_mtom = mskHoraEntrega.Text
         dataMTO.HoraF_mtom = mskHoraFalla.Text
