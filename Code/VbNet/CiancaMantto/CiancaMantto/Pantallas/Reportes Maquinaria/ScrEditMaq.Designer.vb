@@ -387,6 +387,7 @@ Partial Class ScrEditMaq
         Me.cboSerial.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cboSerial.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cboSerial.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.cboSerial.Enabled = False
         Me.cboSerial.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cboSerial.Font = New System.Drawing.Font("Poppins Medium", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboSerial.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))

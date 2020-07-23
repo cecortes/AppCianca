@@ -334,7 +334,9 @@ Public Class ScrNewMaq
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
 
         'Validate
-        ValidTxt()
+        If (ValidTxt()) Then
+            Return
+        End If
 
         'Captura de las fechas
         FechaFalla = dtpFechaFalla.Value.ToShortDateString

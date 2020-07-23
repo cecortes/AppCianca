@@ -277,6 +277,56 @@ Public Class ScrEditMaq
 
     End Sub
 
+    ''' <summary>
+    ''' Validación de los campos
+    ''' Captura y conversión de los datos
+    ''' Actualizar en firebase
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+
+        'Locales
+        Dim strArr() As String
+
+        'Validate
+        If (ValidTxt()) Then
+            Return
+        End If
+
+        'Captura de las fechas
+        FechaFalla = dtpFechaFalla.Value.ToShortDateString
+        FechaEntrega = dtpEntregaFecha.Value.ToShortDateString
+
+        'Captura del cboPersonal
+        strArr = cboPersonal.Text.ToString.Split(",")
+        nomUsr = strArr(0)      'Variables globales
+        apllUsr = strArr(1)     'Variables globales
+
+        'Captura y Conversión
+        dataMTO.Apll_mtom = apllUsr
+
+        dataMTO.Cantidad_mtom = mskCantidad.Text
+
+        dataMTO.FechaE_mtom = FechaEntrega
+        dataMTO.FechaF_mtom = FechaFalla
+
+        dataMTO.HoraE_mtom = mskHoraEntrega.Text
+        dataMTO.HoraF_mtom = mskHoraFalla.Text
+
+        dataMTO.Id_mtom = cboReporte.Text.ToString
+
+        dataMTO.Nombre_mtom = nomUsr
+        dataMTO.Recomen_mtom = txtRecomen.Text
+        dataMTO.Tareas_mtom = txtTareas.Text
+
+        'Agregar a firebase
+        agregar.AddMANTOMAQ(dataMTO)
+
+        MsgBox("Registro editado...", MsgBoxStyle.Information, strMsgTitle)
+
+    End Sub
+
 #End Region
 
 End Class
