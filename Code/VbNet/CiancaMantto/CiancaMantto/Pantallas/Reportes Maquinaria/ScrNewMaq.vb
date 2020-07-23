@@ -1,5 +1,6 @@
 ﻿'Imports
 Imports CiancaDll
+Imports System.IO
 
 Public Class ScrNewMaq
 
@@ -38,6 +39,25 @@ Public Class ScrNewMaq
         'Return
         Return status
 
+    End Function
+
+    ''' <summary>
+    ''' Convierte la cadena recibida como parámetro en un array de byte
+    ''' Pasa el arreglo de bytes a un stream de memoria
+    ''' Escribe el arreglo de la memoria en un objeto image
+    ''' Devuelve el objeto image
+    ''' </summary>
+    ''' <param name="base64String"></param>
+    ''' <returns></returns>
+    Public Function Base64ToImage(base64String As String) As Image
+        ' Convert Base64 String to byte[]  
+        Dim imageBytes As Byte() = Convert.FromBase64String(base64String)
+        Dim ms As New MemoryStream(imageBytes, 0, imageBytes.Length)
+
+        ' Convert byte[] to Image  
+        ms.Write(imageBytes, 0, imageBytes.Length)
+        Dim image__1 As Image = System.Drawing.Image.FromStream(ms, True)
+        Return image__1
     End Function
 
 #End Region
@@ -257,6 +277,7 @@ Public Class ScrNewMaq
             lblArea.Text = dataMaq.Area_af
             lblMarca.Text = dataMaq.Marca_af
             lblModelo.Text = dataMaq.Modelo_af
+            pbFoto.Image = Base64ToImage(dataMaq.Pic_af)
 
         End If
 
