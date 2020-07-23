@@ -327,6 +327,7 @@ Public Class ScrNewMaq
         'Captura y Conversión
         fbData.Apll_mtom = fbData.Apellidos
         fbData.AreaAf_mtom = lblArea.Text
+        fbData.Cantidad_mtom = mskCantidad.Text
         fbData.DescAf_mtom = lblDesc.Text
         fbData.FechaE_mtom = dtpEntregaFecha.Value.ToShortDateString
         fbData.FechaF_mtom = dtpFechaFalla.Value.ToShortDateString
@@ -346,6 +347,8 @@ Public Class ScrNewMaq
 
         'Agregar a firebase
         agregar.AddMANTOMAQ(fbData)
+
+        MsgBox("Registro agregado...", MsgBoxStyle.Information, strMsgTitle)
 
     End Sub
 
