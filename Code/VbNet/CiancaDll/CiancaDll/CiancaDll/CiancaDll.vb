@@ -869,29 +869,44 @@ Public Class Consulta
     End Function
 
 #End Region
+
 End Class
 
-'Public Function getUsrData(ByVal data As Datos) As Datos
-'    'Locales
-'    'Dim res As Datos
+Public Class Insertar
 
-'    'Conexión Firebase
-'    Dim con As New Conexion
+    ' En esta región se encuentran las funciones para agregar datos a las tablas.
 
-'    'Excepción controlada
-'    Try
+#Region "DATAMEMBERS"
 
-'        'Firebase conection
-'        con.Con_Global()
+    'Firebase
+    Dim res As FirebaseResponse
 
-'        'Query firebase
-'        Res = con.firebase.Get("USUARIOS/Uzx8bb7YX1cMKe6LRyGzUqzWdDX2")
+#End Region
 
-'        dataUsr = Res.ResultAs(Of Datos)
+#Region "MANTOMAQ"
 
-'    Catch ex As Exception
+    Public Sub AddMANTOMAQ(ByVal datos As Datos)
 
-'    End Try
+        'Conexión Firebase
+        Dim con As New Conexion
 
-'    Return dataUsr
-'End Function
+        'Manejo de excepciones
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Update(Of Datos)("MANTOMAQ/" + datos.Id_af, datos)
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+#End Region
+
+End Class
