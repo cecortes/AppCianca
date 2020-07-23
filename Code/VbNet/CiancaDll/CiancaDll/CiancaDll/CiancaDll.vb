@@ -511,7 +511,7 @@ Public Class Consulta
     Dim res As FirebaseResponse
     Dim dataDic As Dictionary(Of String, Datos)
     'Dim dataUsr As Datos
-    Dim tokenUsr As String
+    'Dim tokenUsr As String
 
     'Referente a los cbo
     Public cboUsrDS As New DataSet      'ComboBox Only USUARIOS
@@ -608,50 +608,50 @@ Public Class Consulta
 
     End Sub
 
-    Public Function getUsrData(ByVal data As Datos) As String
+    'Public Function getUsrData(ByVal data As Datos) As String
 
-        'Conexión Firebase
-        Dim con As New Conexion
+    '    'Conexión Firebase
+    '    Dim con As New Conexion
 
-        'Excepción controlada
-        Try
+    '    'Excepción controlada
+    '    Try
 
-            'Firebase conection
-            con.Con_Global()
+    '        'Firebase conection
+    '        con.Con_Global()
 
-            'Query firebase
-            res = con.firebase.Get("USUARIOS/")
+    '        'Query firebase
+    '        res = con.firebase.Get("USUARIOS/")
 
-            'Diccionario para almacenar las respuestas
-            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+    '        'Diccionario para almacenar las respuestas
+    '        dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
 
-            'Rutina para recorrer los elementos
-            For Each item In dataDic
-                'Validamos que no sea null
-                If String.IsNullOrEmpty(item.Value.Nombre) Then
-                ElseIf (data.Nombre = item.Value.Nombre And data.Apellidos = item.Value.Apellidos) Then
+    '        'Rutina para recorrer los elementos
+    '        For Each item In dataDic
+    '            'Validamos que no sea null
+    '            If String.IsNullOrEmpty(item.Value.Nombre) Then
+    '            ElseIf (data.Nombre = item.Value.Nombre And data.Apellidos = item.Value.Apellidos) Then
 
-                    'Pasamos los elementos necesarios a la variable
-                    'dataUsr.Nombre = item.Value.Nombre
-                    'dataUsr.Apellidos = item.Value.Apellidos
-                    tokenUsr = item.Value.Token
+    '                'Pasamos los elementos necesarios a la variable
+    '                'dataUsr.Nombre = item.Value.Nombre
+    '                'dataUsr.Apellidos = item.Value.Apellidos
+    '                tokenUsr = item.Value.Token
 
-                    'Salida del ciclo
-                    'Exit For
-                End If
-            Next
+    '                'Salida del ciclo
+    '                'Exit For
+    '            End If
+    '        Next
 
-        Catch ex As Exception
+    '    Catch ex As Exception
 
-            'USUARIO
-            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+    '        'USUARIO
+    '        MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
 
-        End Try
+    '    End Try
 
-        'Return
-        Return tokenUsr
+    '    'Return
+    '    Return tokenUsr
 
-    End Function
+    'End Function
 
 #End Region
 End Class
