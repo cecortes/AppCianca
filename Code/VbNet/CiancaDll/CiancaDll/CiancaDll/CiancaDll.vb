@@ -511,7 +511,7 @@ Public Class Consulta
     Dim res As FirebaseResponse
     Dim dataDic As Dictionary(Of String, Datos)
     'Dim dataUsr As Datos
-    'Dim tokenUsr As String
+    Dim tokenUsr As String
 
     'Referente a los cbo
     Public cboUsrDS As New DataSet      'ComboBox Only USUARIOS
@@ -607,50 +607,57 @@ Public Class Consulta
 
     End Sub
 
-    'Public Function getUsrData(ByVal data As Datos) As String
+    ''' <summary>
+    ''' Consulta el nodo USUARIOS/
+    ''' Recibe el resultado como un diccionario
+    ''' Recorre el diccionario en búsqueda del nombre y apellidos recibidos como parámetros
+    ''' Cuando valida el resultado captura el token de usuario
+    ''' Devuelve el token como cadena
+    ''' </summary>
+    ''' <param name="data"></param>
+    ''' <returns>token de usuario como String</returns>
+    Public Function getUsrData(ByVal data As Datos) As String
 
-    '    'Conexión Firebase
-    '    Dim con As New Conexion
+        'Conexión Firebase
+        Dim con As New Conexion
 
-    '    'Excepción controlada
-    '    Try
+        'Excepción controlada
+        Try
 
-    '        'Firebase conection
-    '        con.Con_Global()
+            'Firebase conection
+            con.Con_Global()
 
-    '        'Query firebase
-    '        res = con.firebase.Get("USUARIOS/")
+            'Query firebase
+            res = con.firebase.Get("USUARIOS/")
 
-    '        'Diccionario para almacenar las respuestas
-    '        dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
 
-    '        'Rutina para recorrer los elementos
-    '        For Each item In dataDic
-    '            'Validamos que no sea null
-    '            If String.IsNullOrEmpty(item.Value.Nombre) Then
-    '            ElseIf (data.Nombre = item.Value.Nombre And data.Apellidos = item.Value.Apellidos) Then
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Nombre) Then
 
-    '                'Pasamos los elementos necesarios a la variable
-    '                'dataUsr.Nombre = item.Value.Nombre
-    '                'dataUsr.Apellidos = item.Value.Apellidos
-    '                tokenUsr = item.Value.Token
+                    'Validamos que el nombre y apellidos correspondan a los recibidos como parámetro
+                ElseIf (data.Nombre = item.Value.Nombre And data.Apellidos = item.Value.Apellidos) Then
 
-    '                'Salida del ciclo
-    '                'Exit For
-    '            End If
-    '        Next
+                    'Captura del token de usuario
+                    tokenUsr = item.Value.Token
 
-    '    Catch ex As Exception
+                End If
+            Next
 
-    '        'USUARIO
-    '        MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+        Catch ex As Exception
 
-    '    End Try
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
 
-    '    'Return
-    '    Return tokenUsr
+        End Try
 
-    'End Function
+        'Return
+        Return tokenUsr
+
+    End Function
 
 #End Region
 End Class
