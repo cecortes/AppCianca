@@ -498,6 +498,179 @@ Public Class Datos
 
 #End Region
 
+#Region "MANTOMAQ"
+
+#Region "DATAMEMBERS"
+
+    Private _Apll_mtom As String
+    Private _AreaAf_mtom As String
+    Private _DescAf_mtom As String
+    Private _FechaE_mtom As String
+    Private _FechaF_mtom As String
+    Private _FotoAf_mtom As String
+    Private _HoraE_mtom As String
+    Private _HoraF_mtom As String
+    Private _Id_mtom As String
+    Private _MarcaAf_mtom As String
+    Private _ModeloAf_mtom As String
+    Private _Nombre_mtom As String
+    Private _Recomen_mtom As String
+    Private _SerAf_mtom As String
+    Private _Tareas_mtom As String
+    Private _TokenUsr_mtom As String
+
+#End Region
+
+#Region "PROPIEDADES"
+
+    Public Property Apll_mtom As String
+        Get
+            Return _Apll_mtom
+        End Get
+        Set(value As String)
+            _Apll_mtom = value
+        End Set
+    End Property
+
+    Public Property AreaAf_mtom As String
+        Get
+            Return _AreaAf_mtom
+        End Get
+        Set(value As String)
+            _AreaAf_mtom = value
+        End Set
+    End Property
+
+    Public Property DescAf_mtom As String
+        Get
+            Return _DescAf_mtom
+        End Get
+        Set(value As String)
+            _DescAf_mtom = value
+        End Set
+    End Property
+
+    Public Property FechaE_mtom As String
+        Get
+            Return _FechaE_mtom
+        End Get
+        Set(value As String)
+            _FechaE_mtom = value
+        End Set
+    End Property
+
+    Public Property FechaF_mtom As String
+        Get
+            Return _FechaF_mtom
+        End Get
+        Set(value As String)
+            _FechaF_mtom = value
+        End Set
+    End Property
+
+    Public Property FotoAf_mtom As String
+        Get
+            Return _FotoAf_mtom
+        End Get
+        Set(value As String)
+            _FotoAf_mtom = value
+        End Set
+    End Property
+
+    Public Property HoraE_mtom As String
+        Get
+            Return _HoraE_mtom
+        End Get
+        Set(value As String)
+            _HoraE_mtom = value
+        End Set
+    End Property
+
+    Public Property HoraF_mtom As String
+        Get
+            Return _HoraF_mtom
+        End Get
+        Set(value As String)
+            _HoraF_mtom = value
+        End Set
+    End Property
+
+    Public Property Id_mtom As String
+        Get
+            Return _Id_mtom
+        End Get
+        Set(value As String)
+            _Id_mtom = value
+        End Set
+    End Property
+
+    Public Property MarcaAf_mtom As String
+        Get
+            Return _MarcaAf_mtom
+        End Get
+        Set(value As String)
+            _MarcaAf_mtom = value
+        End Set
+    End Property
+
+    Public Property ModeloAf_mtom As String
+        Get
+            Return _ModeloAf_mtom
+        End Get
+        Set(value As String)
+            _ModeloAf_mtom = value
+        End Set
+    End Property
+
+    Public Property Nombre_mtom As String
+        Get
+            Return _Nombre_mtom
+        End Get
+        Set(value As String)
+            _Nombre_mtom = value
+        End Set
+    End Property
+
+    Public Property Recomen_mtom As String
+        Get
+            Return _Recomen_mtom
+        End Get
+        Set(value As String)
+            _Recomen_mtom = value
+        End Set
+    End Property
+
+    Public Property SerAf_mtom As String
+        Get
+            Return _SerAf_mtom
+        End Get
+        Set(value As String)
+            _SerAf_mtom = value
+        End Set
+    End Property
+
+    Public Property Tareas_mtom As String
+        Get
+            Return _Tareas_mtom
+        End Get
+        Set(value As String)
+            _Tareas_mtom = value
+        End Set
+    End Property
+
+    Public Property TokenUsr_mtom As String
+        Get
+            Return _TokenUsr_mtom
+        End Get
+        Set(value As String)
+            _TokenUsr_mtom = value
+        End Set
+    End Property
+
+#End Region
+
+#End Region
+
 End Class
 
 Public Class Consulta

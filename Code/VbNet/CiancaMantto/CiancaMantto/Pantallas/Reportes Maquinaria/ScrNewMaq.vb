@@ -60,6 +60,32 @@ Public Class ScrNewMaq
         Return image__1
     End Function
 
+    ''' <summary>
+    ''' Se encarga de recibir el pbox con la imágen
+    ''' La convierte en cadena
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function ImgIntoBase64Str(pbox As PictureBox) As String
+
+        'Objeto para el stream
+        Using ms As New MemoryStream()
+
+            'Pasamos la imágen en formato raw
+            pbox.Image.Save(ms, pbox.Image.RawFormat)
+
+            'Array para almacenar el stream
+            Dim imageBytes As Byte() = ms.ToArray()
+
+            ' Convert byte[] to Base64 String  
+            Dim base64String As String = Convert.ToBase64String(imageBytes)
+
+            'Regresamos la imágen convertida en cadena
+            Return base64String
+
+        End Using
+
+    End Function
+
 #End Region
 
 #Region "MÉTODOS"
@@ -285,6 +311,8 @@ Public Class ScrNewMaq
 
     ''' <summary>
     ''' Validación de datos
+    ''' Captura de datos
+    ''' Convertir la imágen en cadena
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
@@ -292,6 +320,10 @@ Public Class ScrNewMaq
 
         'Validate
         ValidTxt()
+
+        'Captura y Conversión
+        MsgBox(dtpFechaFalla.Value.ToShortDateString)
+        fbData.Pic_af = ImgIntoBase64Str(pbFoto)
 
     End Sub
 
