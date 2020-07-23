@@ -897,7 +897,7 @@ Public Class Insertar
             con.Con_Global()
 
             'Query Firebase
-            res = con.firebase.Update(Of Datos)("MANTOMAQ/" + datos.Id_af, datos)
+            res = con.firebase.Update(Of Datos)("MANTOMAQ/" + datos.Id_mtom, datos)
 
         Catch ex As Exception
 

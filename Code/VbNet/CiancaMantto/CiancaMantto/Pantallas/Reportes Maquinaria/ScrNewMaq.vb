@@ -13,6 +13,7 @@ Public Class ScrNewMaq
     'CiancaDll
     Dim fbData As New Datos
     Dim buscar As New Consulta
+    Dim agregar As New Insertar
 #End Region
 
 #Region "FUNCIONES"
@@ -340,6 +341,9 @@ Public Class ScrNewMaq
         fbData.SerAf_mtom = fbData.Id_af
         fbData.Tareas_mtom = txtTareas.Text
         fbData.TokenUsr_mtom = tokenUsr
+
+        'Agregar a firebase
+        agregar.AddMANTOMAQ(fbData)
 
     End Sub
 
