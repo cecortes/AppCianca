@@ -8,6 +8,7 @@ Public Class ScrNewMaq
     Dim strMsgTitle As String = "Empacadora Cianca - 2020 (C)"
     Dim flgEndFill As Boolean = False       'Bandera para indicar la terminación de la carga de los cbo
     Dim tokenUsr As String = ""             'Token del usuario
+    Dim serieMaq As String = ""              'No. de control interno de maquinaria
     Dim dataMaq As New Datos                'Objeto para almacenar los datos de INVENTARIO_AF
 
     'CiancaDll
@@ -300,6 +301,7 @@ Public Class ScrNewMaq
             dataMaq = buscar.getMaqData(fbData)
 
             'Actualización de etiquetas y pbox
+            serieMaq = dataMaq.Serie_af
             lblDesc.Text = dataMaq.Desc_af
             lblArea.Text = dataMaq.Area_af
             lblMarca.Text = dataMaq.Marca_af
@@ -333,12 +335,12 @@ Public Class ScrNewMaq
         fbData.HoraF_mtom = mskHoraFalla.Text
         Dim hhmm As String = mskHoraFalla.Text
         hhmm = hhmm.Replace(":", "")
-        fbData.Id_mtom = dtpFechaFalla.Value.Day.ToString + dtpFechaFalla.Value.Month.ToString + dtpFechaFalla.Value.Year.ToString + hhmm
+        fbData.Id_mtom = serieMaq + "-" + dtpFechaFalla.Value.Day.ToString + dtpFechaFalla.Value.Month.ToString + dtpFechaFalla.Value.Year.ToString + hhmm
         fbData.MarcaAf_mtom = lblMarca.Text
         fbData.ModeloAf_mtom = lblModelo.Text
         fbData.Nombre_mtom = fbData.Nombre
         fbData.Recomen_mtom = txtRecomen.Text
-        fbData.SerAf_mtom = fbData.Id_af
+        fbData.SerAf_mtom = serieMaq
         fbData.Tareas_mtom = txtTareas.Text
         fbData.TokenUsr_mtom = tokenUsr
 

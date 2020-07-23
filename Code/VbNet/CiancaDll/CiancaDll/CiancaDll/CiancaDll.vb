@@ -504,6 +504,7 @@ Public Class Datos
 
     Private _Apll_mtom As String
     Private _AreaAf_mtom As String
+    Private _Cantidad_mtom As String
     Private _DescAf_mtom As String
     Private _FechaE_mtom As String
     Private _FechaF_mtom As String
@@ -538,6 +539,15 @@ Public Class Datos
         End Get
         Set(value As String)
             _AreaAf_mtom = value
+        End Set
+    End Property
+
+    Public Property Cantidad_mtom As String
+        Get
+            Return _Cantidad_mtom
+        End Get
+        Set(value As String)
+            _Cantidad_mtom = value
         End Set
     End Property
 
@@ -885,6 +895,11 @@ Public Class Insertar
 
 #Region "MANTOMAQ"
 
+    ''' <summary>
+    ''' Recibe los datos necesarios como parámetros
+    ''' Agrega los datos en el nodo MANTOMAQ/id_mtom
+    ''' </summary>
+    ''' <param name="datos"></param>
     Public Sub AddMANTOMAQ(ByVal datos As Datos)
 
         'Conexión Firebase
@@ -907,6 +922,7 @@ Public Class Insertar
         End Try
 
     End Sub
+
 #End Region
 
 End Class
