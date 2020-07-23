@@ -325,6 +325,7 @@ Partial Class ScrNewMaq
         'pnlMaq
         '
         Me.pnlMaq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlMaq.Controls.Add(Me.pbFoto)
         Me.pnlMaq.Controls.Add(Me.lblDesc)
         Me.pnlMaq.Controls.Add(Me.lbl5)
         Me.pnlMaq.Controls.Add(Me.lbl4)
@@ -333,9 +334,8 @@ Partial Class ScrNewMaq
         Me.pnlMaq.Controls.Add(Me.lbl3)
         Me.pnlMaq.Controls.Add(Me.lblMarca)
         Me.pnlMaq.Controls.Add(Me.lbl2)
-        Me.pnlMaq.Controls.Add(Me.lblArea)
         Me.pnlMaq.Controls.Add(Me.lbl1)
-        Me.pnlMaq.Controls.Add(Me.pbFoto)
+        Me.pnlMaq.Controls.Add(Me.lblArea)
         Me.pnlMaq.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlMaq.Location = New System.Drawing.Point(0, 136)
         Me.pnlMaq.Name = "pnlMaq"
@@ -348,7 +348,7 @@ Partial Class ScrNewMaq
         Me.lblDesc.BackColor = System.Drawing.Color.Transparent
         Me.lblDesc.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDesc.ForeColor = System.Drawing.Color.White
-        Me.lblDesc.Location = New System.Drawing.Point(109, 163)
+        Me.lblDesc.Location = New System.Drawing.Point(12, 163)
         Me.lblDesc.Name = "lblDesc"
         Me.lblDesc.Size = New System.Drawing.Size(40, 31)
         Me.lblDesc.TabIndex = 55
@@ -400,7 +400,7 @@ Partial Class ScrNewMaq
         Me.lblModelo.BackColor = System.Drawing.Color.Transparent
         Me.lblModelo.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblModelo.ForeColor = System.Drawing.Color.White
-        Me.lblModelo.Location = New System.Drawing.Point(470, 161)
+        Me.lblModelo.Location = New System.Drawing.Point(425, 161)
         Me.lblModelo.Name = "lblModelo"
         Me.lblModelo.Size = New System.Drawing.Size(40, 31)
         Me.lblModelo.TabIndex = 51
@@ -427,7 +427,7 @@ Partial Class ScrNewMaq
         Me.lblMarca.BackColor = System.Drawing.Color.Transparent
         Me.lblMarca.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMarca.ForeColor = System.Drawing.Color.White
-        Me.lblMarca.Location = New System.Drawing.Point(470, 86)
+        Me.lblMarca.Location = New System.Drawing.Point(425, 86)
         Me.lblMarca.Name = "lblMarca"
         Me.lblMarca.Size = New System.Drawing.Size(40, 31)
         Me.lblMarca.TabIndex = 49
@@ -453,7 +453,7 @@ Partial Class ScrNewMaq
         Me.lblArea.BackColor = System.Drawing.Color.Transparent
         Me.lblArea.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblArea.ForeColor = System.Drawing.Color.White
-        Me.lblArea.Location = New System.Drawing.Point(470, 17)
+        Me.lblArea.Location = New System.Drawing.Point(425, 17)
         Me.lblArea.Name = "lblArea"
         Me.lblArea.Size = New System.Drawing.Size(40, 31)
         Me.lblArea.TabIndex = 47

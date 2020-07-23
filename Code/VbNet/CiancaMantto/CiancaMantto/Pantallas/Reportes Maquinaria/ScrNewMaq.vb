@@ -247,12 +247,17 @@ Public Class ScrNewMaq
         If flgEndFill Then
 
             'Captura del serial del cbo
-            fbData.Serie_af = cboSerial.Text.ToString
+            fbData.Id_af = cboSerial.Text.ToString
 
             'Consulta
             dataMaq = buscar.getMaqData(fbData)
 
-            'MsgBox(dataMaq.Desc_af)
+            'Actualización de etiquetas y pbox
+            lblDesc.Text = dataMaq.Desc_af
+            lblArea.Text = dataMaq.Area_af
+            lblMarca.Text = dataMaq.Marca_af
+            lblModelo.Text = dataMaq.Modelo_af
+
         End If
 
     End Sub

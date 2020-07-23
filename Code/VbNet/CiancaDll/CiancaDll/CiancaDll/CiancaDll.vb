@@ -678,7 +678,7 @@ Public Class Consulta
             con.Con_Global()
 
             'Query firebase
-            res = con.firebase.Get("INVENTARIO_AF/" + data.Serie_af)
+            res = con.firebase.Get("INVENTARIO_AF/" + data.Id_af)
 
             'Resultado
             dataMaq = res.ResultAs(Of Datos)
