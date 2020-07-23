@@ -252,7 +252,26 @@ Public Class ScrEditMaq
         If flgEndFill Then
 
             'Captura del cbo
+            fbData.Id_mtom = cboReporte.Text.ToString
 
+            'Consulta
+            dataMTO = buscar.getMtoMaq(fbData)
+
+            'Actualización de campos y objetos
+            txtRecomen.Text = dataMTO.Recomen_mtom
+            txtTareas.Text = dataMTO.Tareas_mtom
+            lblModelo.Text = dataMTO.ModeloAf_mtom
+            lblMarca.Text = dataMTO.MarcaAf_mtom
+            lblArea.Text = dataMTO.AreaAf_mtom
+            lblDesc.Text = dataMTO.DescAf_mtom
+            mskHoraEntrega.Text = dataMTO.HoraE_mtom
+            mskCantidad.Text = dataMTO.Cantidad_mtom
+            mskHoraFalla.Text = dataMTO.FechaF_mtom
+            pbFoto.Image = Base64ToImage(dataMTO.FotoAf_mtom)
+            cboSerial.Text = dataMTO.SerAf_mtom
+            cboPersonal.Text = dataMTO.Nombre_mtom + "," + dataMTO.Apll_mtom
+            dtpEntregaFecha.Value = dataMTO.FechaE_mtom
+            dtpFechaFalla.Value = dataMTO.FechaF_mtom
 
         End If
 
