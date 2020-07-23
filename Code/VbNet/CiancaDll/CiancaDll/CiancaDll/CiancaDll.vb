@@ -709,6 +709,7 @@ Public Class Consulta
     'Referente a los cbo
     Public cboUsrDS As New DataSet      'ComboBox Only USUARIOS
     Public cboMaqDS As New DataSet      'ComboBox Only INVENTARIO_AF
+    Public cboMtoMaqDs As New DataSet   'Combobox Only MANTOMAQ
 
     'Referente a los dgv
     'Public dgvPedidosDS As New DataSet  'Datagrid Only PEDIDOS
@@ -852,6 +853,10 @@ Public Class Consulta
 
     End Function
 
+#End Region
+
+#Region "MAQUINARIA"
+
     ''' <summary>
     ''' Consulta el nodo INVENTARIO_AF/data.SerieAf
     ''' Recibe el resultado como Datos
@@ -890,6 +895,54 @@ Public Class Consulta
 
 #End Region
 
+#Region "MANTOMAQ"
+
+    ''' <summary>
+    ''' Crea una tabla dentro de un dataset
+    ''' Se encarga de consultar el nodo MANTOMAQ/
+    ''' Recibe la respuesta como diccionario y la guarda en un dataset
+    ''' El dataset es accesible gracias a DATAMEMBERS
+    ''' </summary>
+    Public Sub getMtoMaqRepor()
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode USR
+        cboMtoMaqDs.Tables.Add("MTOMAQ")
+        cboMtoMaqDs.Tables("MTOMAQ").Columns.Add("Reporte", GetType(String))
+
+        'Manejo de excepciones
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("MANTOMAQ/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Id_mtom) Then
+                Else
+                    cboMtoMaqDs.Tables("MTOMAQ").Rows.Add(item.Value.Id_mtom)
+                End If
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+
+#End Region
 End Class
 
 Public Class Insertar
