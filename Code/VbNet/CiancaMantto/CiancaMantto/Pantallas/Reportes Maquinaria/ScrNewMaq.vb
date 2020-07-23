@@ -4,10 +4,11 @@ Imports CiancaDll
 Public Class ScrNewMaq
 
 #Region "VARIABLES"
-    Public strMsgTitle As String = "Empacadora Cianca - 2020 (C)"
+    Dim strMsgTitle As String = "Empacadora Cianca - 2020 (C)"
+    Dim flgEndFill As Boolean = False       'Bandera para indicar la terminación de la carga de los cbo
 
     'CiancaDll
-    'Dim data As New Datos
+    Dim fbData As New Datos
     Dim buscar As New Consulta
 #End Region
 
@@ -125,8 +126,11 @@ Public Class ScrNewMaq
         FormatDtp()
 
         'Referente a los combo box
-        'FillCboNomApll()
+        FillCboNomApll()
         FillSerialAF()
+
+        'Cambiamos el estado de la bandera para indicar que se termino la carga de los cbo
+        flgEndFill = True
 
     End Sub
 
@@ -210,7 +214,7 @@ Public Class ScrNewMaq
     ''' <param name="e"></param>
     Private Sub cboPersonal_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboPersonal.SelectedValueChanged
         'Locales
-        'Dim strArr() As String
+        Dim strArr() As String
         'Dim cbo As String = cboPersonal.SelectedItem.ToString
         'MsgBox(cbo)
         'Consulta
@@ -221,17 +225,16 @@ Public Class ScrNewMaq
 
         'Captura
         'MsgBox(usuario)
+        If flgEndFill Then
 
-        Try
+            'Captura del cbo
+            strArr = cboPersonal.Text.ToString.Split(",")
+            fbData.Nombre = strArr(0)
+            fbData.Apellidos = strArr(1)
 
-            'Locales
-            'Dim strArr() As String
-            Dim p As String = cboSerial.SelectedItem.ToString
-            MsgBox(p)
+            'Consulta
 
-        Catch ex As Exception
-
-        End Try
+        End If
 
     End Sub
 
@@ -244,9 +247,7 @@ Public Class ScrNewMaq
 
         'Validate
         ValidTxt()
-        'Dim usuario As Datos = buscar.getUsrData(data)
 
-        'MsgBox(usuario.Token)
     End Sub
 
 #End Region
