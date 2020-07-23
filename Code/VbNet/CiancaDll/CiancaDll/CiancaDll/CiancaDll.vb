@@ -510,8 +510,8 @@ Public Class Consulta
     'Firebase
     Dim res As FirebaseResponse
     Dim dataDic As Dictionary(Of String, Datos)
-    'Dim dataUsr As Datos
     Dim tokenUsr As String
+    Dim dataMaq As Datos
 
     'Referente a los cbo
     Public cboUsrDS As New DataSet      'ComboBox Only USUARIOS
@@ -656,6 +656,42 @@ Public Class Consulta
 
         'Return
         Return tokenUsr
+
+    End Function
+
+    ''' <summary>
+    ''' Consulta el nodo INVENTARIO_AF/data.SerieAf
+    ''' Recibe el resultado como Datos
+    ''' Devuelve un objeto del tipo datos
+    ''' </summary>
+    ''' <param name="data"></param>
+    ''' <returns></returns>
+    Public Function getMaqData(ByVal data As Datos) As Datos
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("INVENTARIO_AF/" + data.Serie_af)
+
+            'Resultado
+            dataMaq = res.ResultAs(Of Datos)
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Devuelve el resultado
+        Return dataMaq
 
     End Function
 
