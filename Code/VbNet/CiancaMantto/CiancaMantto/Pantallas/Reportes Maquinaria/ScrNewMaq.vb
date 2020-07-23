@@ -6,6 +6,7 @@ Public Class ScrNewMaq
 #Region "VARIABLES"
     Dim strMsgTitle As String = "Empacadora Cianca - 2020 (C)"
     Dim flgEndFill As Boolean = False       'Bandera para indicar la terminación de la carga de los cbo
+    Dim tokenUsr As String = ""             'Token del usuario
 
     'CiancaDll
     Dim fbData As New Datos
@@ -215,16 +216,8 @@ Public Class ScrNewMaq
     Private Sub cboPersonal_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboPersonal.SelectedValueChanged
         'Locales
         Dim strArr() As String
-        'Dim cbo As String = cboPersonal.SelectedItem.ToString
-        'MsgBox(cbo)
-        'Consulta
-        'strArr = cbo.Split(",")
-        'data.Nombre = strArr(0)
-        'data.Apellidos = strArr(1)
-        'Dim usuario As String = buscar.getUsrData(data)
 
-        'Captura
-        'MsgBox(usuario)
+        'Validación
         If flgEndFill Then
 
             'Captura del cbo
@@ -233,6 +226,24 @@ Public Class ScrNewMaq
             fbData.Apellidos = strArr(1)
 
             'Consulta
+            tokenUsr = buscar.getUsrData(fbData)
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Valida que los cbo hayan terminado de actualizarse
+    ''' Captura el valor del serial seleccionado.
+    ''' Llama a la consulta del nodo INVENTARIO_AF/cboSerial.Text
+    ''' Captura el resultado de la consulta
+    ''' Actualiza las etiquetas y picture box con los datos
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub cboSerial_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboSerial.SelectedValueChanged
+
+        'Validación
+        If flgEndFill Then
 
         End If
 
