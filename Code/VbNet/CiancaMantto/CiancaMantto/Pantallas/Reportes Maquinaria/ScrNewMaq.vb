@@ -339,6 +339,7 @@ Public Class ScrNewMaq
         dataMTO.FotoAf_mtom = ImgIntoBase64Str(pbFoto)
         dataMTO.HoraE_mtom = mskHoraEntrega.Text
         dataMTO.HoraF_mtom = mskHoraFalla.Text
+        dataMTO.IdAf_mtom = fbData.Id_af
         Dim hhmm As String = mskHoraFalla.Text
         hhmm = hhmm.Replace(":", "")
         dataMTO.Id_mtom = serieMaq + "-" + dtpFechaFalla.Value.Day.ToString + dtpFechaFalla.Value.Month.ToString + dtpFechaFalla.Value.Year.ToString + hhmm
