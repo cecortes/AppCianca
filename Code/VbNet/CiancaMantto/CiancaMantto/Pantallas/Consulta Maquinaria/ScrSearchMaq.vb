@@ -103,24 +103,128 @@ Public Class ScrSearchMaq
         'pnlSplash.Visible = True
 
         'Reset
-        buscar.cboMtoMaqDs.Reset()
+        buscar.cboMaqDS.Reset()
 
         'Llamamos a la consulta de los datos
-        buscar.getMtoMaqRepor()
+        buscar.getSerialMaq()
 
         'Cargamos los datos de la tabla en el combo para actualizar
-        cboSerial.DataSource = buscar.cboMtoMaqDs.Tables("MTOMAQ")
+        cboSerial.DataSource = buscar.cboMaqDS.Tables("MAQ")
 
         'Cargamos los datos de la columna apellidos en el combo para actualizar
-        'cboReporte.DisplayMember = "Reporte"
+        cboSerial.DisplayMember = "Serie"
 
         'Index a cero
         'cboPersonal.SelectedIndex = 0
 
-        'cboReporte.Text = "No. de reporte"
+        cboSerial.Text = "No. de Serie"
 
         'Splash
         'pnlSplash.Visible = False
+
+    End Sub
+
+#End Region
+
+#Region "EVENTOS"
+
+#Region "CHK"
+
+    ''' <summary>
+    ''' Valida el estado del chk para que solamente exista uno activado
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkPeriodo_OnChange(sender As Object, e As EventArgs) Handles chkPeriodo.OnChange
+
+        'Validación
+        If chkPeriodo.Checked = True Then
+            chkSerie.Checked = False
+            chkIncidencias.Checked = False
+            chkRecursos.Checked = False
+            cboSerial.Enabled = False
+            dtpIni.Enabled = True
+            dtpFin.Enabled = True
+            btnSearch.Enabled = True
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Valida el estado del chk para que solamente exista uno activado
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkSerie_OnChange(sender As Object, e As EventArgs) Handles chkSerie.OnChange
+
+        'Validación
+        If chkSerie.Checked = True Then
+            chkPeriodo.Checked = False
+            chkIncidencias.Checked = False
+            chkRecursos.Checked = False
+            dtpIni.Enabled = False
+            dtpFin.Enabled = False
+            btnSearch.Enabled = False
+            cboSerial.Enabled = True
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Valida el estado del chk para que solamente exista uno activado
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkIncidencias_OnChange(sender As Object, e As EventArgs) Handles chkIncidencias.OnChange
+
+        'Validación
+        If chkIncidencias.Checked = True Then
+            chkPeriodo.Checked = False
+            chkSerie.Checked = False
+            chkRecursos.Checked = False
+            dtpIni.Enabled = False
+            dtpFin.Enabled = False
+            btnSearch.Enabled = True
+            cboSerial.Enabled = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Valida el estado del chk para que solamente exista uno activado
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkRecursos_OnChange(sender As Object, e As EventArgs) Handles chkRecursos.OnChange
+
+        'Validación
+        If chkRecursos.Checked = True Then
+            chkPeriodo.Checked = False
+            chkSerie.Checked = False
+            chkIncidencias.Checked = False
+            dtpIni.Enabled = False
+            dtpFin.Enabled = False
+            btnSearch.Enabled = True
+            cboSerial.Enabled = False
+        End If
+
+    End Sub
+
+#End Region
+
+    ''' <summary>
+    ''' Estado inicial de los controles
+    ''' Formato DTP
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub ScrSearchMaq_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+        'Inicial
+        cboSerial.Enabled = False
+
+        'Dtp
+        FormatDtp()
 
     End Sub
 
