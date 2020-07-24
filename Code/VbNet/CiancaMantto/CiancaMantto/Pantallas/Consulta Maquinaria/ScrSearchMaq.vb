@@ -140,6 +140,24 @@ Public Class ScrSearchMaq
         'Llenamos el datagrid con los datos
         dgvData.DataSource = buscar.dgvMaqRepDS.Tables("MAQREP")
 
+        'Formato Dgv
+        FormatDgv()
+
+        For Each filas As DataGridViewRow In dgvData.Rows
+            MsgBox(filas.Cells(0).Value.ToString)
+        Next
+
+    End Sub
+
+    ''' <summary>
+    ''' Formato para el datagridview
+    ''' </summary>
+    Private Sub FormatDgv()
+        dgvData.Columns("FOTO").AutoSizeMode = DataGridViewImageCellLayout.Stretch
+        dgvData.Columns("FOTO").Width = 500
+        dgvData.Rows(0).Height = 500
+
+
     End Sub
 
 #End Region

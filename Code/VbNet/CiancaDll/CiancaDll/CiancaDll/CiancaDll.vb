@@ -3,7 +3,6 @@ Imports FireSharp.Config
 Imports FireSharp.Response
 Imports FireSharp.Interfaces
 Imports System.IO
-Imports System.Drawing
 
 Public Class Conexion
 
@@ -705,6 +704,7 @@ Public Class Consulta
     'Firebase
     Dim res As FirebaseResponse
     Dim dataDic As Dictionary(Of String, Datos)
+    Dim dataDic2 As Dictionary(Of String, Datos)
     Dim tokenUsr As String
     Dim dataMaq As Datos                'Datos de la maquinaria en INVENTARIO_AF
     Dim dataRpoMaq As Datos             'Reportes de mantenimiento para maquinaria en MANTOMAQ
@@ -960,7 +960,7 @@ Public Class Consulta
 
         'Init Tabla, hardcode MAQREP
         dgvMaqRepDS.Tables.Add("MAQREP")
-        dgvMaqRepDS.Tables("MAQREP").Columns.Add("FOTO", GetType(String))
+        dgvMaqRepDS.Tables("MAQREP").Columns.Add("FOTO", GetType(Byte()))
         dgvMaqRepDS.Tables("MAQREP").Columns.Add("SERIE", GetType(String))
         dgvMaqRepDS.Tables("MAQREP").Columns.Add("DESCRIPCION", GetType(String))
         dgvMaqRepDS.Tables("MAQREP").Columns.Add("FECHAFALLA", GetType(String))
@@ -979,14 +979,22 @@ Public Class Consulta
             res = con.firebase.Get("MANTOMAQ/")
 
             'Diccionario para almacenar las respuestas
-            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+            dataDic2 = res.ResultAs(Of Dictionary(Of String, Datos))
 
             'Rutina para recorrer los elementos
-            For Each item In dataDic
+            For Each item In dataDic2
                 'Validamos que no sea null
                 If String.IsNullOrEmpty(item.Value.Id_mtom) Then
                 Else
-                    dgvMaqRepDS.Tables("MAQREP").Rows.Add(item.Value.FotoAf_mtom, item.Value.SerAf_mtom, item.Value.DescAf_mtom, item.Value.FechaF_mtom + " " + item.Value.HoraF_mtom, item.Value.Nombre_mtom + " " + item.Value.Apll_mtom, item.Value.Cantidad_mtom, item.Value.Tareas_mtom, item.Value.Recomen_mtom)
+
+                    'Pasamos el dato a una variable local
+                    Dim p As String = item.Value.FotoAf_mtom
+
+                    ' Convert Base64 String to byte[]
+                    Dim imageBytes As Byte() = Convert.FromBase64String(p)
+
+                    'Agregamos el arreglo byte para la foto y los demás datos
+                    dgvMaqRepDS.Tables("MAQREP").Rows.Add(imageBytes, item.Value.SerAf_mtom, item.Value.DescAf_mtom, item.Value.FechaF_mtom + " " + item.Value.HoraF_mtom, item.Value.Nombre_mtom + " " + item.Value.Apll_mtom, item.Value.Cantidad_mtom, item.Value.Tareas_mtom, item.Value.Recomen_mtom)
                 End If
             Next
 
