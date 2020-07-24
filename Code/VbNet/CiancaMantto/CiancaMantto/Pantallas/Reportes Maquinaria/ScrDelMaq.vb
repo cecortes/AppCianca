@@ -73,7 +73,6 @@ Public Class ScrDelMaq
 
 #End Region
 
-
 #Region "MÉTODOS"
 
     ''' <summary>
@@ -103,6 +102,35 @@ Public Class ScrDelMaq
 
     End Sub
 
+    ''' <summary>
+    ''' Se encarga de limpiar los campos y las variables necesarias
+    ''' </summary>
+    Private Sub ClearFields()
+
+        'lbl
+        lblFechaFalla.Text = "NA"
+        lblFechaEntrega.Text = "NA"
+        lblHoraFalla.Text = "NA"
+        lblCantidad.Text = "NA"
+        lblHoraEntrega.Text = "NA"
+        lblDesc.Text = "NA"
+        lblArea.Text = "NA"
+        lblMarca.Text = "NA"
+        lblModelo.Text = "NA"
+        lblPersonal.Text = "NA"
+        lblSerial.Text = "NA"
+
+        'Txt
+        txtTareas.Text = ""
+        txtRecomen.Text = ""
+
+        'Pbox
+        pbFoto.Image = My.Resources.camera
+
+        'Cbo
+        cboReporte.Text = "No. de reporte"
+
+    End Sub
 #End Region
 
 #Region "EVENTOS"
@@ -186,7 +214,20 @@ Public Class ScrDelMaq
         'Borrar
         eliminar.DelMANTOMAQ(fbData)
 
+        'Flag
+        flgEndFill = False
+
+        'Refresh
+        FillCboRepMaq()
+
+        'Flag
+        flgEndFill = True
+
+        'Splash
         pnlSplash.Visible = False
+
+        'Clear
+        ClearFields()
 
     End Sub
 
