@@ -2,6 +2,8 @@
 Imports FireSharp.Config
 Imports FireSharp.Response
 Imports FireSharp.Interfaces
+Imports System.IO
+Imports System.Drawing
 
 Public Class Conexion
 
@@ -713,7 +715,8 @@ Public Class Consulta
     Public cboMtoMaqDs As New DataSet   'Combobox Only MANTOMAQ
 
     'Referente a los dgv
-    'Public dgvPedidosDS As New DataSet  'Datagrid Only PEDIDOS
+    Public dgvMaqRepDS As New DataSet   'Datagrid Only MANTOMAQ
+
 #End Region
 
 #Region "USUARIOS"
@@ -931,6 +934,58 @@ Public Class Consulta
                 If String.IsNullOrEmpty(item.Value.Id_mtom) Then
                 Else
                     cboMtoMaqDs.Tables("MTOMAQ").Rows.Add(item.Value.Id_mtom)
+                End If
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Crea una tabla dentro de un dataset
+    ''' Se encarga de consultar el nodo MANTOMAQ/
+    ''' Recibe la respuesta como diccionario y valida que se encuentre en el rango de periodo recibido como parámetro
+    ''' Si es así guarda los datos en un dataset
+    ''' El dataset es accesible gracias a DATAMEMBERS
+    ''' </summary>
+    Public Sub getMaqRepFromPeriod(ByVal inicio As Date, final As Date)
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode MAQREP
+        dgvMaqRepDS.Tables.Add("MAQREP")
+        dgvMaqRepDS.Tables("MAQREP").Columns.Add("SERIE", GetType(String))
+        dgvMaqRepDS.Tables("MAQREP").Columns.Add("DESCRIPCION", GetType(String))
+        dgvMaqRepDS.Tables("MAQREP").Columns.Add("FECHAFALLA", GetType(String))
+        dgvMaqRepDS.Tables("MAQREP").Columns.Add("RESPONSABLE", GetType(String))
+        dgvMaqRepDS.Tables("MAQREP").Columns.Add("RECURSOS", GetType(String))
+        dgvMaqRepDS.Tables("MAQREP").Columns.Add("ACCIONES", GetType(String))
+        dgvMaqRepDS.Tables("MAQREP").Columns.Add("RECOMENDACIONES", GetType(String))
+
+        'Excepción
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("MANTOMAQ/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Id_mtom) Then
+                Else
+                    dgvMaqRepDS.Tables("MAQREP").Rows.Add(item.Value.SerAf_mtom, item.Value.DescAf_mtom, item.Value.FechaF_mtom + " " + item.Value.HoraF_mtom, item.Value.Nombre_mtom + " " + item.Value.Apll_mtom, item.Value.Cantidad_mtom, item.Value.Tareas_mtom, item.Value.Recomen_mtom)
                 End If
             Next
 
