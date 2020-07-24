@@ -115,6 +115,9 @@ Public Class ScrDelMaq
     ''' <param name="e"></param>
     Private Sub ScrDelMaq_Load(sender As Object, e As EventArgs) Handles Me.Load
 
+        'Splash
+        pnlSplash.Visible = False
+
         'Referente a los cbo
         FillCboRepMaq()
 
@@ -173,8 +176,12 @@ Public Class ScrDelMaq
         'Captura del id
         fbData.Id_mtom = cboReporte.Text.ToString
 
+        pnlSplash.Visible = True
+
         'Borrar
         eliminar.DelMANTOMAQ(fbData)
+
+        pnlSplash.Visible = False
 
     End Sub
 

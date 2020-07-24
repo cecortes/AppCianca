@@ -123,6 +123,9 @@ Public Class ScrEditMaq
     ''' </summary>
     Private Sub FillCboRepMaq()
 
+        'Splash
+        pnlSplash.Visible = True
+
         'Reset
         buscar.cboMtoMaqDs.Reset()
 
@@ -140,6 +143,9 @@ Public Class ScrEditMaq
 
         cboReporte.Text = "No. de reporte"
 
+        'Splash
+        pnlSplash.Visible = False
+
     End Sub
 
 #End Region
@@ -154,6 +160,9 @@ Public Class ScrEditMaq
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub ScrEditMaq_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+        'Splash
+        pnlSplash.Visible = False
 
         'DTP
         FormatDtp()
@@ -251,6 +260,9 @@ Public Class ScrEditMaq
         'Validación
         If flgEndFill Then
 
+            'Splash
+            pnlSplash.Visible = True
+
             'Captura del cbo
             fbData.Id_mtom = cboReporte.Text.ToString
 
@@ -273,6 +285,9 @@ Public Class ScrEditMaq
             dtpEntregaFecha.Value = dataMTO.FechaE_mtom
             dtpFechaFalla.Value = dataMTO.FechaF_mtom
 
+            'Splash
+            pnlSplash.Visible = False
+
         End If
 
     End Sub
@@ -293,6 +308,8 @@ Public Class ScrEditMaq
         If (ValidTxt()) Then
             Return
         End If
+
+        pnlSplash.Visible = True
 
         'Captura de las fechas
         FechaFalla = dtpFechaFalla.Value.ToShortDateString
@@ -322,6 +339,8 @@ Public Class ScrEditMaq
 
         'Agregar a firebase
         agregar.AddMANTOMAQ(dataMTO)
+
+        pnlSplash.Visible = False
 
     End Sub
 

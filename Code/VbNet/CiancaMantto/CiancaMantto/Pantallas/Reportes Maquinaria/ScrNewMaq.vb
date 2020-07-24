@@ -126,6 +126,8 @@ Public Class ScrNewMaq
         'Reset
         buscar.cboUsrDS.Reset()
 
+        pnlSplash.Visible = True
+
         'Llamamos a la consulta de los datos
         buscar.getNomApllUsr()
 
@@ -140,6 +142,8 @@ Public Class ScrNewMaq
 
         cboPersonal.Text = "Nombre, Apellidos"
 
+        pnlSplash.Visible = False
+
     End Sub
 
     ''' <summary>
@@ -152,6 +156,8 @@ Public Class ScrNewMaq
 
         'Reset
         buscar.cboMaqDS.Reset()
+
+        pnlSplash.Visible = True
 
         'Llamamos a la consulta de los datos
         buscar.getSerialMaq()
@@ -167,6 +173,8 @@ Public Class ScrNewMaq
 
         cboSerial.Text = "No. de Serie"
 
+        pnlSplash.Visible = False
+
     End Sub
 
 #End Region
@@ -181,6 +189,9 @@ Public Class ScrNewMaq
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub ScrNewMaq_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+        'Splash
+        pnlSplash.Visible = False
 
         'DTP
         FormatDtp()
@@ -306,6 +317,9 @@ Public Class ScrNewMaq
         'Validación
         If flgEndFill Then
 
+            'Splash
+            pnlSplash.Visible = True
+
             'Captura del serial del cbo
             fbData.Id_af = cboSerial.Text.ToString
 
@@ -319,6 +333,8 @@ Public Class ScrNewMaq
             lblMarca.Text = dataMaq.Marca_af
             lblModelo.Text = dataMaq.Modelo_af
             pbFoto.Image = Base64ToImage(dataMaq.Pic_af)
+
+            pnlSplash.Visible = False
 
         End If
 
@@ -337,6 +353,9 @@ Public Class ScrNewMaq
         If (ValidTxt()) Then
             Return
         End If
+
+        'Splash
+        pnlSplash.Visible = True
 
         'Captura de las fechas
         FechaFalla = dtpFechaFalla.Value.ToShortDateString
@@ -367,6 +386,7 @@ Public Class ScrNewMaq
         'Agregar a firebase
         agregar.AddMANTOMAQ(dataMTO)
 
+        pnlSplash.Visible = False
     End Sub
 
 #End Region

@@ -64,6 +64,10 @@ Partial Class ScrEditMaq
         Me.btnEdit = New Bunifu.Framework.UI.BunifuImageButton()
         Me.lblSearch = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.cboReporte = New System.Windows.Forms.ComboBox()
+        Me.pnlSplash = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.BunifuSeparator2 = New Bunifu.Framework.UI.BunifuSeparator()
         Me.pnlTop.SuspendLayout()
         Me.pnlTop2.SuspendLayout()
         Me.pnlPersonal.SuspendLayout()
@@ -75,6 +79,7 @@ Partial Class ScrEditMaq
         Me.pnlReco.SuspendLayout()
         Me.pnlBottom.SuspendLayout()
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlSplash.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlTop
@@ -492,6 +497,7 @@ Partial Class ScrEditMaq
         '
         'pnlDatos
         '
+        Me.pnlDatos.Controls.Add(Me.pnlSplash)
         Me.pnlDatos.Controls.Add(Me.txtTareas)
         Me.pnlDatos.Controls.Add(Me.lbl6)
         Me.pnlDatos.Dock = System.Windows.Forms.DockStyle.Top
@@ -614,6 +620,59 @@ Partial Class ScrEditMaq
         Me.cboReporte.TabIndex = 53
         Me.cboReporte.Text = "No. de reporte"
         '
+        'pnlSplash
+        '
+        Me.pnlSplash.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.pnlSplash.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.pnlSplash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlSplash.Controls.Add(Me.Label2)
+        Me.pnlSplash.Controls.Add(Me.Label1)
+        Me.pnlSplash.Controls.Add(Me.BunifuSeparator2)
+        Me.pnlSplash.Location = New System.Drawing.Point(350, 14)
+        Me.pnlSplash.Name = "pnlSplash"
+        Me.pnlSplash.Size = New System.Drawing.Size(325, 112)
+        Me.pnlSplash.TabIndex = 72
+        Me.pnlSplash.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.Location = New System.Drawing.Point(135, 67)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(181, 33)
+        Me.Label2.TabIndex = 32
+        Me.Label2.Text = "Espere por favor."
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label1.Location = New System.Drawing.Point(6, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(155, 33)
+        Me.Label1.TabIndex = 31
+        Me.Label1.Text = "Conectando..."
+        '
+        'BunifuSeparator2
+        '
+        Me.BunifuSeparator2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BunifuSeparator2.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BunifuSeparator2.LineThickness = 1
+        Me.BunifuSeparator2.Location = New System.Drawing.Point(0, 16)
+        Me.BunifuSeparator2.Margin = New System.Windows.Forms.Padding(4, 16, 4, 16)
+        Me.BunifuSeparator2.Name = "BunifuSeparator2"
+        Me.BunifuSeparator2.Size = New System.Drawing.Size(323, 35)
+        Me.BunifuSeparator2.TabIndex = 30
+        Me.BunifuSeparator2.Transparency = 255
+        Me.BunifuSeparator2.Vertical = False
+        '
         'ScrEditMaq
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 21.0!)
@@ -651,6 +710,8 @@ Partial Class ScrEditMaq
         Me.pnlBottom.ResumeLayout(False)
         Me.pnlBottom.PerformLayout()
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlSplash.ResumeLayout(False)
+        Me.pnlSplash.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -696,4 +757,8 @@ Partial Class ScrEditMaq
     Friend WithEvents lblSearch As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents cboReporte As ComboBox
     Friend WithEvents btnEdit As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents pnlSplash As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents BunifuSeparator2 As Bunifu.Framework.UI.BunifuSeparator
 End Class
