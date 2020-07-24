@@ -213,5 +213,11 @@
   <ItemGroup>
     <None Include="Resources\camera.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel %285%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
