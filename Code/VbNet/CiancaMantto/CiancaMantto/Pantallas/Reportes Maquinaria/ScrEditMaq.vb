@@ -148,6 +148,39 @@ Public Class ScrEditMaq
 
     End Sub
 
+    ''' <summary>
+    ''' Se encarga de limpiar los campos y las variables necesarias
+    ''' </summary>
+    Private Sub ClearFields()
+
+        'Dtp
+        dtpFechaFalla.Value = Date.Now.ToShortDateString
+        dtpEntregaFecha.Value = Date.Now.ToShortDateString
+        FechaFalla = dtpFechaFalla.Value.ToShortDateString
+        FechaEntrega = dtpEntregaFecha.Value.ToShortDateString
+
+        'lbl
+        mskHoraFalla.Text = ""
+        mskCantidad.Text = ""
+        mskHoraEntrega.Text = ""
+        lblDesc.Text = "NA"
+        lblArea.Text = "NA"
+        lblMarca.Text = "NA"
+        lblModelo.Text = "NA"
+
+        'Txt
+        txtTareas.Text = ""
+        txtRecomen.Text = ""
+
+        'Pbox
+        pbFoto.Image = My.Resources.camera
+
+        'Cbo
+        cboPersonal.Text = "Nombre, Apellidos"
+        cboSerial.Text = "No. de Serie"
+        cboReporte.Text = "No. de reporte"
+
+    End Sub
 #End Region
 
 #Region "EVENTOS"
@@ -278,7 +311,7 @@ Public Class ScrEditMaq
             lblDesc.Text = dataMTO.DescAf_mtom
             mskHoraEntrega.Text = dataMTO.HoraE_mtom
             mskCantidad.Text = dataMTO.Cantidad_mtom
-            mskHoraFalla.Text = dataMTO.FechaF_mtom
+            mskHoraFalla.Text = dataMTO.HoraF_mtom
             pbFoto.Image = Base64ToImage(dataMTO.FotoAf_mtom)
             cboSerial.Text = dataMTO.SerAf_mtom
             cboPersonal.Text = dataMTO.Nombre_mtom + "," + dataMTO.Apll_mtom
@@ -340,7 +373,11 @@ Public Class ScrEditMaq
         'Agregar a firebase
         agregar.AddMANTOMAQ(dataMTO)
 
+        'Splash
         pnlSplash.Visible = False
+
+        'Clear
+        ClearFields()
 
     End Sub
 
