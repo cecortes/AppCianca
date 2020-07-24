@@ -124,6 +124,24 @@ Public Class ScrSearchMaq
 
     End Sub
 
+    ''' <summary>
+    ''' Se encarga de consultar el nodo MANTOMAQ/
+    ''' Valida que el resultado se encuentre en el rango del periódo seleccionado
+    ''' Llena la tabla con los resultados
+    ''' </summary>
+    Private Sub getPeriodo()
+
+        'Clear
+        buscar.dgvMaqRepDS.Reset()
+
+        'Llamamos a la consulta de los datos
+        buscar.getMaqRepFromPeriod(dtpIni.Value.ToShortDateString, dtpFin.Value.ToShortDateString)
+
+        'Llenamos el datagrid con los datos
+        dgvData.DataSource = buscar.dgvMaqRepDS.Tables("MAQREP")
+
+    End Sub
+
 #End Region
 
 #Region "EVENTOS"
@@ -225,6 +243,23 @@ Public Class ScrSearchMaq
 
         'Dtp
         FormatDtp()
+
+    End Sub
+
+    ''' <summary>
+    ''' Evalúa que chk está activado para llamar al método que le corresponde
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+
+        'Validación
+        If (chkPeriodo.Checked = True) Then
+
+            'Método
+            getPeriodo()
+
+        End If
 
     End Sub
 

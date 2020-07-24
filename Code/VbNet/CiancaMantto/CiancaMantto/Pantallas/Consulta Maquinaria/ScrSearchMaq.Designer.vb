@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ScrSearchMaq
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,46 +20,37 @@ Partial Class ScrSearchMaq
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ScrSearchMaq))
         Me.pnlTop = New System.Windows.Forms.Panel()
         Me.lblTitle = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuSeparator1 = New Bunifu.Framework.UI.BunifuSeparator()
         Me.pnlOpt = New System.Windows.Forms.Panel()
-        Me.chkPeriodo = New Bunifu.Framework.UI.BunifuCheckbox()
-        Me.lbl1 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.dtpIni = New Bunifu.Framework.UI.BunifuDatepicker()
-        Me.dtpFin = New Bunifu.Framework.UI.BunifuDatepicker()
-        Me.lbl2 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.lbl3 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.chkSerie = New Bunifu.Framework.UI.BunifuCheckbox()
-        Me.cboSerial = New System.Windows.Forms.ComboBox()
-        Me.lbl4 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.chkIncidencias = New Bunifu.Framework.UI.BunifuCheckbox()
         Me.chkRecursos = New Bunifu.Framework.UI.BunifuCheckbox()
         Me.lbl6 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.chkIncidencias = New Bunifu.Framework.UI.BunifuCheckbox()
+        Me.lbl4 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.cboSerial = New System.Windows.Forms.ComboBox()
+        Me.lbl3 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.chkSerie = New Bunifu.Framework.UI.BunifuCheckbox()
+        Me.dtpFin = New Bunifu.Framework.UI.BunifuDatepicker()
+        Me.lbl2 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.dtpIni = New Bunifu.Framework.UI.BunifuDatepicker()
+        Me.lbl1 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.chkPeriodo = New Bunifu.Framework.UI.BunifuCheckbox()
         Me.pnlData = New System.Windows.Forms.Panel()
-        Me.pnlBott = New System.Windows.Forms.Panel()
         Me.dgvData = New Bunifu.Framework.UI.BunifuCustomDataGrid()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.pnlBott = New System.Windows.Forms.Panel()
         Me.btnExcel = New Bunifu.Framework.UI.BunifuImageButton()
         Me.btnSearch = New Bunifu.Framework.UI.BunifuImageButton()
         Me.pnlTop.SuspendLayout()
         Me.pnlOpt.SuspendLayout()
         Me.pnlData.SuspendLayout()
-        Me.pnlBott.SuspendLayout()
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlBott.SuspendLayout()
         CType(Me.btnExcel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -121,44 +112,102 @@ Partial Class ScrSearchMaq
         Me.pnlOpt.Size = New System.Drawing.Size(1024, 95)
         Me.pnlOpt.TabIndex = 2
         '
-        'chkPeriodo
+        'chkRecursos
         '
-        Me.chkPeriodo.BackColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.chkPeriodo.ChechedOffColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
-        Me.chkPeriodo.Checked = True
-        Me.chkPeriodo.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.chkPeriodo.ForeColor = System.Drawing.Color.Black
-        Me.chkPeriodo.Location = New System.Drawing.Point(13, 10)
-        Me.chkPeriodo.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.chkPeriodo.Name = "chkPeriodo"
-        Me.chkPeriodo.Size = New System.Drawing.Size(20, 20)
-        Me.chkPeriodo.TabIndex = 0
+        Me.chkRecursos.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.chkRecursos.BackColor = System.Drawing.Color.Gray
+        Me.chkRecursos.ChechedOffColor = System.Drawing.Color.Gray
+        Me.chkRecursos.Checked = False
+        Me.chkRecursos.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.chkRecursos.ForeColor = System.Drawing.Color.Black
+        Me.chkRecursos.Location = New System.Drawing.Point(933, 46)
+        Me.chkRecursos.Margin = New System.Windows.Forms.Padding(4, 12, 4, 12)
+        Me.chkRecursos.Name = "chkRecursos"
+        Me.chkRecursos.Size = New System.Drawing.Size(20, 20)
+        Me.chkRecursos.TabIndex = 57
         '
-        'lbl1
+        'lbl6
         '
-        Me.lbl1.AutoSize = True
-        Me.lbl1.BackColor = System.Drawing.Color.Transparent
-        Me.lbl1.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.lbl1.Location = New System.Drawing.Point(40, 6)
-        Me.lbl1.Name = "lbl1"
-        Me.lbl1.Size = New System.Drawing.Size(133, 28)
-        Me.lbl1.TabIndex = 15
-        Me.lbl1.Text = "Periódo Inicial:"
+        Me.lbl6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl6.AutoSize = True
+        Me.lbl6.BackColor = System.Drawing.Color.Transparent
+        Me.lbl6.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.lbl6.Location = New System.Drawing.Point(833, 46)
+        Me.lbl6.Name = "lbl6"
+        Me.lbl6.Size = New System.Drawing.Size(93, 28)
+        Me.lbl6.TabIndex = 56
+        Me.lbl6.Text = "Recursos:"
         '
-        'dtpIni
+        'chkIncidencias
         '
-        Me.dtpIni.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.dtpIni.BorderRadius = 5
-        Me.dtpIni.ForeColor = System.Drawing.Color.White
-        Me.dtpIni.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpIni.FormatCustom = Nothing
-        Me.dtpIni.Location = New System.Drawing.Point(180, 7)
-        Me.dtpIni.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.dtpIni.Name = "dtpIni"
-        Me.dtpIni.Size = New System.Drawing.Size(146, 25)
-        Me.dtpIni.TabIndex = 17
-        Me.dtpIni.Value = New Date(2020, 7, 21, 20, 4, 35, 0)
+        Me.chkIncidencias.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.chkIncidencias.BackColor = System.Drawing.Color.Gray
+        Me.chkIncidencias.ChechedOffColor = System.Drawing.Color.Gray
+        Me.chkIncidencias.Checked = False
+        Me.chkIncidencias.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.chkIncidencias.ForeColor = System.Drawing.Color.Black
+        Me.chkIncidencias.Location = New System.Drawing.Point(933, 10)
+        Me.chkIncidencias.Margin = New System.Windows.Forms.Padding(4, 9, 4, 9)
+        Me.chkIncidencias.Name = "chkIncidencias"
+        Me.chkIncidencias.Size = New System.Drawing.Size(20, 20)
+        Me.chkIncidencias.TabIndex = 55
+        '
+        'lbl4
+        '
+        Me.lbl4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl4.AutoSize = True
+        Me.lbl4.BackColor = System.Drawing.Color.Transparent
+        Me.lbl4.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.lbl4.Location = New System.Drawing.Point(814, 6)
+        Me.lbl4.Name = "lbl4"
+        Me.lbl4.Size = New System.Drawing.Size(112, 28)
+        Me.lbl4.TabIndex = 54
+        Me.lbl4.Text = "Incidencias:"
+        '
+        'cboSerial
+        '
+        Me.cboSerial.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.cboSerial.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboSerial.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboSerial.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.cboSerial.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cboSerial.Font = New System.Drawing.Font("Poppins Medium", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSerial.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.cboSerial.FormattingEnabled = True
+        Me.cboSerial.Location = New System.Drawing.Point(462, 45)
+        Me.cboSerial.Name = "cboSerial"
+        Me.cboSerial.Size = New System.Drawing.Size(215, 33)
+        Me.cboSerial.TabIndex = 53
+        Me.cboSerial.Text = "No. de Serie"
+        '
+        'lbl3
+        '
+        Me.lbl3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lbl3.AutoSize = True
+        Me.lbl3.BackColor = System.Drawing.Color.Transparent
+        Me.lbl3.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.lbl3.Location = New System.Drawing.Point(509, 6)
+        Me.lbl3.Name = "lbl3"
+        Me.lbl3.Size = New System.Drawing.Size(148, 28)
+        Me.lbl3.TabIndex = 21
+        Me.lbl3.Text = "No. Serie Interno"
+        '
+        'chkSerie
+        '
+        Me.chkSerie.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.chkSerie.BackColor = System.Drawing.Color.Gray
+        Me.chkSerie.ChechedOffColor = System.Drawing.Color.Gray
+        Me.chkSerie.Checked = False
+        Me.chkSerie.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.chkSerie.ForeColor = System.Drawing.Color.Black
+        Me.chkSerie.Location = New System.Drawing.Point(482, 10)
+        Me.chkSerie.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
+        Me.chkSerie.Name = "chkSerie"
+        Me.chkSerie.Size = New System.Drawing.Size(20, 20)
+        Me.chkSerie.TabIndex = 20
         '
         'dtpFin
         '
@@ -186,102 +235,44 @@ Partial Class ScrSearchMaq
         Me.lbl2.TabIndex = 18
         Me.lbl2.Text = "Periódo Final:"
         '
-        'lbl3
+        'dtpIni
         '
-        Me.lbl3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lbl3.AutoSize = True
-        Me.lbl3.BackColor = System.Drawing.Color.Transparent
-        Me.lbl3.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.lbl3.Location = New System.Drawing.Point(509, 6)
-        Me.lbl3.Name = "lbl3"
-        Me.lbl3.Size = New System.Drawing.Size(148, 28)
-        Me.lbl3.TabIndex = 21
-        Me.lbl3.Text = "No. Serie Interno"
+        Me.dtpIni.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.dtpIni.BorderRadius = 5
+        Me.dtpIni.ForeColor = System.Drawing.Color.White
+        Me.dtpIni.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpIni.FormatCustom = Nothing
+        Me.dtpIni.Location = New System.Drawing.Point(180, 7)
+        Me.dtpIni.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
+        Me.dtpIni.Name = "dtpIni"
+        Me.dtpIni.Size = New System.Drawing.Size(146, 25)
+        Me.dtpIni.TabIndex = 17
+        Me.dtpIni.Value = New Date(2020, 7, 21, 20, 4, 35, 0)
         '
-        'chkSerie
+        'lbl1
         '
-        Me.chkSerie.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.chkSerie.BackColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.chkSerie.ChechedOffColor = System.Drawing.Color.Gray
-        Me.chkSerie.Checked = False
-        Me.chkSerie.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.chkSerie.ForeColor = System.Drawing.Color.Black
-        Me.chkSerie.Location = New System.Drawing.Point(482, 10)
-        Me.chkSerie.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.chkSerie.Name = "chkSerie"
-        Me.chkSerie.Size = New System.Drawing.Size(20, 20)
-        Me.chkSerie.TabIndex = 20
+        Me.lbl1.AutoSize = True
+        Me.lbl1.BackColor = System.Drawing.Color.Transparent
+        Me.lbl1.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.lbl1.Location = New System.Drawing.Point(40, 6)
+        Me.lbl1.Name = "lbl1"
+        Me.lbl1.Size = New System.Drawing.Size(133, 28)
+        Me.lbl1.TabIndex = 15
+        Me.lbl1.Text = "Periódo Inicial:"
         '
-        'cboSerial
+        'chkPeriodo
         '
-        Me.cboSerial.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.cboSerial.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboSerial.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboSerial.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.cboSerial.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cboSerial.Font = New System.Drawing.Font("Poppins Medium", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboSerial.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.cboSerial.FormattingEnabled = True
-        Me.cboSerial.Location = New System.Drawing.Point(462, 45)
-        Me.cboSerial.Name = "cboSerial"
-        Me.cboSerial.Size = New System.Drawing.Size(215, 33)
-        Me.cboSerial.TabIndex = 53
-        Me.cboSerial.Text = "No. de Serie"
-        '
-        'lbl4
-        '
-        Me.lbl4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl4.AutoSize = True
-        Me.lbl4.BackColor = System.Drawing.Color.Transparent
-        Me.lbl4.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.lbl4.Location = New System.Drawing.Point(814, 6)
-        Me.lbl4.Name = "lbl4"
-        Me.lbl4.Size = New System.Drawing.Size(112, 28)
-        Me.lbl4.TabIndex = 54
-        Me.lbl4.Text = "Incidencias:"
-        '
-        'chkIncidencias
-        '
-        Me.chkIncidencias.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.chkIncidencias.BackColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.chkIncidencias.ChechedOffColor = System.Drawing.Color.Gray
-        Me.chkIncidencias.Checked = False
-        Me.chkIncidencias.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.chkIncidencias.ForeColor = System.Drawing.Color.Black
-        Me.chkIncidencias.Location = New System.Drawing.Point(933, 10)
-        Me.chkIncidencias.Margin = New System.Windows.Forms.Padding(4, 9, 4, 9)
-        Me.chkIncidencias.Name = "chkIncidencias"
-        Me.chkIncidencias.Size = New System.Drawing.Size(20, 20)
-        Me.chkIncidencias.TabIndex = 55
-        '
-        'chkRecursos
-        '
-        Me.chkRecursos.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.chkRecursos.BackColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.chkRecursos.ChechedOffColor = System.Drawing.Color.Gray
-        Me.chkRecursos.Checked = False
-        Me.chkRecursos.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.chkRecursos.ForeColor = System.Drawing.Color.Black
-        Me.chkRecursos.Location = New System.Drawing.Point(933, 46)
-        Me.chkRecursos.Margin = New System.Windows.Forms.Padding(4, 12, 4, 12)
-        Me.chkRecursos.Name = "chkRecursos"
-        Me.chkRecursos.Size = New System.Drawing.Size(20, 20)
-        Me.chkRecursos.TabIndex = 57
-        '
-        'lbl6
-        '
-        Me.lbl6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl6.AutoSize = True
-        Me.lbl6.BackColor = System.Drawing.Color.Transparent
-        Me.lbl6.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.lbl6.Location = New System.Drawing.Point(833, 46)
-        Me.lbl6.Name = "lbl6"
-        Me.lbl6.Size = New System.Drawing.Size(93, 28)
-        Me.lbl6.TabIndex = 56
-        Me.lbl6.Text = "Recursos:"
+        Me.chkPeriodo.BackColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.chkPeriodo.ChechedOffColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(140, Byte), Integer))
+        Me.chkPeriodo.Checked = True
+        Me.chkPeriodo.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.chkPeriodo.ForeColor = System.Drawing.Color.Black
+        Me.chkPeriodo.Location = New System.Drawing.Point(13, 10)
+        Me.chkPeriodo.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.chkPeriodo.Name = "chkPeriodo"
+        Me.chkPeriodo.Size = New System.Drawing.Size(20, 20)
+        Me.chkPeriodo.TabIndex = 0
         '
         'pnlData
         '
@@ -292,35 +283,24 @@ Partial Class ScrSearchMaq
         Me.pnlData.Size = New System.Drawing.Size(1024, 628)
         Me.pnlData.TabIndex = 3
         '
-        'pnlBott
-        '
-        Me.pnlBott.Controls.Add(Me.btnExcel)
-        Me.pnlBott.Controls.Add(Me.btnSearch)
-        Me.pnlBott.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlBott.Location = New System.Drawing.Point(0, 678)
-        Me.pnlBott.Name = "pnlBott"
-        Me.pnlBott.Size = New System.Drawing.Size(1024, 90)
-        Me.pnlBott.TabIndex = 4
-        '
         'dgvData
         '
         Me.dgvData.AllowUserToAddRows = False
         Me.dgvData.AllowUserToDeleteRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvData.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvData.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvData.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(158, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.dgvData.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvData.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvData.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvData.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9})
         Me.dgvData.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvData.DoubleBuffered = True
         Me.dgvData.EnableHeadersVisualStyles = False
@@ -334,76 +314,15 @@ Partial Class ScrSearchMaq
         Me.dgvData.Size = New System.Drawing.Size(1024, 628)
         Me.dgvData.TabIndex = 0
         '
-        'Column1
+        'pnlBott
         '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.Column1.HeaderText = "SERIAL"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 80
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.Column2.HeaderText = "DESCRIPCION"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 128
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.Column3.HeaderText = "FECHA FALLA"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 125
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.Column4.HeaderText = "FECHA ENTREGA"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 148
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.Column5.HeaderText = "RESPONSABLE"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 130
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.Column6.HeaderText = "RECURSOS"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 109
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.Column7.HeaderText = "ACCIONES"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 108
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.Column8.HeaderText = "RECOMENDACIONES"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        Me.Column8.Width = 174
-        '
-        'Column9
-        '
-        Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column9.HeaderText = "FOTOGRAFIA"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
+        Me.pnlBott.Controls.Add(Me.btnExcel)
+        Me.pnlBott.Controls.Add(Me.btnSearch)
+        Me.pnlBott.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlBott.Location = New System.Drawing.Point(0, 678)
+        Me.pnlBott.Name = "pnlBott"
+        Me.pnlBott.Size = New System.Drawing.Size(1024, 90)
+        Me.pnlBott.TabIndex = 4
         '
         'btnExcel
         '
@@ -455,8 +374,8 @@ Partial Class ScrSearchMaq
         Me.pnlOpt.ResumeLayout(False)
         Me.pnlOpt.PerformLayout()
         Me.pnlData.ResumeLayout(False)
-        Me.pnlBott.ResumeLayout(False)
         CType(Me.dgvData, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlBott.ResumeLayout(False)
         CType(Me.btnExcel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnSearch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -482,15 +401,6 @@ Partial Class ScrSearchMaq
     Friend WithEvents pnlData As Panel
     Friend WithEvents pnlBott As Panel
     Friend WithEvents dgvData As Bunifu.Framework.UI.BunifuCustomDataGrid
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewImageColumn
     Friend WithEvents btnSearch As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents btnExcel As Bunifu.Framework.UI.BunifuImageButton
 End Class

@@ -960,6 +960,7 @@ Public Class Consulta
 
         'Init Tabla, hardcode MAQREP
         dgvMaqRepDS.Tables.Add("MAQREP")
+        dgvMaqRepDS.Tables("MAQREP").Columns.Add("FOTO", GetType(String))
         dgvMaqRepDS.Tables("MAQREP").Columns.Add("SERIE", GetType(String))
         dgvMaqRepDS.Tables("MAQREP").Columns.Add("DESCRIPCION", GetType(String))
         dgvMaqRepDS.Tables("MAQREP").Columns.Add("FECHAFALLA", GetType(String))
@@ -985,7 +986,7 @@ Public Class Consulta
                 'Validamos que no sea null
                 If String.IsNullOrEmpty(item.Value.Id_mtom) Then
                 Else
-                    dgvMaqRepDS.Tables("MAQREP").Rows.Add(item.Value.SerAf_mtom, item.Value.DescAf_mtom, item.Value.FechaF_mtom + " " + item.Value.HoraF_mtom, item.Value.Nombre_mtom + " " + item.Value.Apll_mtom, item.Value.Cantidad_mtom, item.Value.Tareas_mtom, item.Value.Recomen_mtom)
+                    dgvMaqRepDS.Tables("MAQREP").Rows.Add(item.Value.FotoAf_mtom, item.Value.SerAf_mtom, item.Value.DescAf_mtom, item.Value.FechaF_mtom + " " + item.Value.HoraF_mtom, item.Value.Nombre_mtom + " " + item.Value.Apll_mtom, item.Value.Cantidad_mtom, item.Value.Tareas_mtom, item.Value.Recomen_mtom)
                 End If
             Next
 
