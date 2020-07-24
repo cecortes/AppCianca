@@ -1026,3 +1026,50 @@ Public Class Insertar
 #End Region
 
 End Class
+
+Public Class Borrar
+
+    'En esta región se encuentran las funciones y rutinas para borrar datos de Firebase
+
+#Region "DATAMEMBERS"
+
+    'Firebase
+    Dim res As FirebaseResponse
+
+#End Region
+
+#Region "MANTOMAQ"
+
+    ''' <summary>
+    ''' Recibe los datos necesarios como parámetros
+    ''' Borra los datos en el nodo MANTOMAQ/id_mtom
+    ''' </summary>
+    ''' <param name="datos"></param>
+    Public Sub DelMANTOMAQ(ByVal datos As Datos)
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Manejo de excepciones
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Delete("MANTOMAQ/" + datos.Id_mtom)
+
+            'Usuario
+            MsgBox("Registro " + datos.Id_mtom + " borrado", MsgBoxStyle.Critical, con.strMsgTitle)
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+
+#End Region
+End Class
