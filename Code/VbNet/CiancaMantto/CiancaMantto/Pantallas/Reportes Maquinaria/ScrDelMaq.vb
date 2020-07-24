@@ -20,7 +20,8 @@ Public Class ScrDelMaq
     'CiancaDll
     Dim fbData As New Datos
     Dim buscar As New Consulta
-    Dim agregar As New Insertar
+    Dim eliminar As New Borrar
+
 #End Region
 
 #Region "FUNCIONES"
@@ -173,7 +174,7 @@ Public Class ScrDelMaq
         fbData.Id_mtom = cboReporte.Text.ToString
 
         'Borrar
-
+        eliminar.DelMANTOMAQ(fbData)
 
     End Sub
 

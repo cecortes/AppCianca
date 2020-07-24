@@ -323,8 +323,6 @@ Public Class ScrEditMaq
         'Agregar a firebase
         agregar.AddMANTOMAQ(dataMTO)
 
-        MsgBox("Registro editado...", MsgBoxStyle.Information, strMsgTitle)
-
     End Sub
 
 #End Region

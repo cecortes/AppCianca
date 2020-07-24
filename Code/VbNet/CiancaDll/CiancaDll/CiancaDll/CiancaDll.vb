@@ -991,6 +991,7 @@ Public Class Insertar
     'Firebase
     Dim res As FirebaseResponse
 
+    Public strMsgTitle As String = "Empacadora Cianca - 2020 (C)"
 #End Region
 
 #Region "MANTOMAQ"
@@ -1013,6 +1014,9 @@ Public Class Insertar
 
             'Query Firebase
             res = con.firebase.Update(Of Datos)("MANTOMAQ/" + datos.Id_mtom, datos)
+
+            'Usuario
+            MsgBox("Registro agregado...", MsgBoxStyle.Information, strMsgTitle)
 
         Catch ex As Exception
 
@@ -1072,4 +1076,5 @@ Public Class Borrar
     End Sub
 
 #End Region
+
 End Class

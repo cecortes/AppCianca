@@ -367,8 +367,6 @@ Public Class ScrNewMaq
         'Agregar a firebase
         agregar.AddMANTOMAQ(dataMTO)
 
-        MsgBox("Registro agregado...", MsgBoxStyle.Information, strMsgTitle)
-
     End Sub
 
 #End Region
