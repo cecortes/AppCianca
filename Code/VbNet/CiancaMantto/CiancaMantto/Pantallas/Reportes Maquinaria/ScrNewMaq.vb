@@ -110,6 +110,8 @@ Public Class ScrNewMaq
         dtpEntregaFecha.Style.colhover = Color.FromArgb(23, 42, 58)
 
         'Captura de las fechas
+        dtpFechaFalla.Value = Date.Now.ToShortDateString
+        dtpEntregaFecha.Value = Date.Now.ToShortDateString
         FechaFalla = dtpFechaFalla.Value.ToShortDateString
         FechaEntrega = dtpEntregaFecha.Value.ToShortDateString
 
@@ -174,6 +176,39 @@ Public Class ScrNewMaq
         cboSerial.Text = "No. de Serie"
 
         pnlSplash.Visible = False
+
+    End Sub
+
+    ''' <summary>
+    ''' Se encarga de limpiar los campos y las variables necesarias
+    ''' </summary>
+    Private Sub ClearFields()
+
+        'Dtp
+        dtpFechaFalla.Value = Date.Now.ToShortDateString
+        dtpEntregaFecha.Value = Date.Now.ToShortDateString
+        FechaFalla = dtpFechaFalla.Value.ToShortDateString
+        FechaEntrega = dtpEntregaFecha.Value.ToShortDateString
+
+        'lbl
+        mskHoraFalla.Text = ""
+        mskCantidad.Text = ""
+        mskHoraEntrega.Text = ""
+        lblDesc.Text = "NA"
+        lblArea.Text = "NA"
+        lblMarca.Text = "NA"
+        lblModelo.Text = "NA"
+
+        'Txt
+        txtTareas.Text = ""
+        txtRecomen.Text = ""
+
+        'Pbox
+        pbFoto.Image = My.Resources.camera
+
+        'Cbo
+        cboPersonal.Text = "Nombre, Apellidos"
+        cboSerial.Text = "No. de Serie"
 
     End Sub
 
@@ -386,7 +421,12 @@ Public Class ScrNewMaq
         'Agregar a firebase
         agregar.AddMANTOMAQ(dataMTO)
 
+        'Splash
         pnlSplash.Visible = False
+
+        'Clear
+        ClearFields()
+
     End Sub
 
 #End Region
