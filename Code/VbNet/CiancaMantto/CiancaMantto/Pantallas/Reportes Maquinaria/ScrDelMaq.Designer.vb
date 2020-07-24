@@ -28,21 +28,22 @@ Partial Class ScrDelMaq
         Me.BunifuSeparator1 = New Bunifu.Framework.UI.BunifuSeparator()
         Me.pnlTop2 = New System.Windows.Forms.Panel()
         Me.pnlPersonal = New System.Windows.Forms.Panel()
+        Me.lblCantidad = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.lblPersonal = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl4 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl3 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlDateEntrega = New System.Windows.Forms.Panel()
+        Me.lblHoraEntrega = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.lblFechaEntrega = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl6 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl5 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlDateFalla = New System.Windows.Forms.Panel()
+        Me.lblHoraFalla = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.lblFechaFalla = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl1 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl2 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.lblFechaFalla = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.lblHoraFalla = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.lblPersonal = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.lblCantidad = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.lblFechaEntrega = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.lblHoraEntrega = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlMaq = New System.Windows.Forms.Panel()
+        Me.lblSerial = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lblDesc = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuCustomLabel1 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuCustomLabel2 = New Bunifu.Framework.UI.BunifuCustomLabel()
@@ -53,7 +54,6 @@ Partial Class ScrDelMaq
         Me.lblArea = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuCustomLabel5 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pbFoto = New System.Windows.Forms.PictureBox()
-        Me.lblSerial = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlDatos = New System.Windows.Forms.Panel()
         Me.txtTareas = New System.Windows.Forms.TextBox()
         Me.BunifuCustomLabel6 = New Bunifu.Framework.UI.BunifuCustomLabel()
@@ -137,6 +137,31 @@ Partial Class ScrDelMaq
         Me.pnlPersonal.Size = New System.Drawing.Size(437, 91)
         Me.pnlPersonal.TabIndex = 2
         '
+        'lblCantidad
+        '
+        Me.lblCantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCantidad.AutoSize = True
+        Me.lblCantidad.BackColor = System.Drawing.Color.Transparent
+        Me.lblCantidad.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCantidad.ForeColor = System.Drawing.Color.White
+        Me.lblCantidad.Location = New System.Drawing.Point(378, 47)
+        Me.lblCantidad.Name = "lblCantidad"
+        Me.lblCantidad.Size = New System.Drawing.Size(32, 25)
+        Me.lblCantidad.TabIndex = 50
+        Me.lblCantidad.Text = "NA"
+        '
+        'lblPersonal
+        '
+        Me.lblPersonal.AutoSize = True
+        Me.lblPersonal.BackColor = System.Drawing.Color.Transparent
+        Me.lblPersonal.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPersonal.ForeColor = System.Drawing.Color.White
+        Me.lblPersonal.Location = New System.Drawing.Point(18, 47)
+        Me.lblPersonal.Name = "lblPersonal"
+        Me.lblPersonal.Size = New System.Drawing.Size(32, 25)
+        Me.lblPersonal.TabIndex = 50
+        Me.lblPersonal.Text = "NA"
+        '
         'lbl4
         '
         Me.lbl4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -173,6 +198,31 @@ Partial Class ScrDelMaq
         Me.pnlDateEntrega.Name = "pnlDateEntrega"
         Me.pnlDateEntrega.Size = New System.Drawing.Size(302, 91)
         Me.pnlDateEntrega.TabIndex = 1
+        '
+        'lblHoraEntrega
+        '
+        Me.lblHoraEntrega.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblHoraEntrega.AutoSize = True
+        Me.lblHoraEntrega.BackColor = System.Drawing.Color.Transparent
+        Me.lblHoraEntrega.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHoraEntrega.ForeColor = System.Drawing.Color.White
+        Me.lblHoraEntrega.Location = New System.Drawing.Point(194, 47)
+        Me.lblHoraEntrega.Name = "lblHoraEntrega"
+        Me.lblHoraEntrega.Size = New System.Drawing.Size(32, 25)
+        Me.lblHoraEntrega.TabIndex = 50
+        Me.lblHoraEntrega.Text = "NA"
+        '
+        'lblFechaEntrega
+        '
+        Me.lblFechaEntrega.AutoSize = True
+        Me.lblFechaEntrega.BackColor = System.Drawing.Color.Transparent
+        Me.lblFechaEntrega.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaEntrega.ForeColor = System.Drawing.Color.White
+        Me.lblFechaEntrega.Location = New System.Drawing.Point(22, 47)
+        Me.lblFechaEntrega.Name = "lblFechaEntrega"
+        Me.lblFechaEntrega.Size = New System.Drawing.Size(32, 25)
+        Me.lblFechaEntrega.TabIndex = 49
+        Me.lblFechaEntrega.Text = "NA"
         '
         'lbl6
         '
@@ -211,6 +261,31 @@ Partial Class ScrDelMaq
         Me.pnlDateFalla.Size = New System.Drawing.Size(285, 91)
         Me.pnlDateFalla.TabIndex = 0
         '
+        'lblHoraFalla
+        '
+        Me.lblHoraFalla.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblHoraFalla.AutoSize = True
+        Me.lblHoraFalla.BackColor = System.Drawing.Color.Transparent
+        Me.lblHoraFalla.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHoraFalla.ForeColor = System.Drawing.Color.White
+        Me.lblHoraFalla.Location = New System.Drawing.Point(184, 47)
+        Me.lblHoraFalla.Name = "lblHoraFalla"
+        Me.lblHoraFalla.Size = New System.Drawing.Size(32, 25)
+        Me.lblHoraFalla.TabIndex = 49
+        Me.lblHoraFalla.Text = "NA"
+        '
+        'lblFechaFalla
+        '
+        Me.lblFechaFalla.AutoSize = True
+        Me.lblFechaFalla.BackColor = System.Drawing.Color.Transparent
+        Me.lblFechaFalla.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaFalla.ForeColor = System.Drawing.Color.White
+        Me.lblFechaFalla.Location = New System.Drawing.Point(25, 47)
+        Me.lblFechaFalla.Name = "lblFechaFalla"
+        Me.lblFechaFalla.Size = New System.Drawing.Size(32, 25)
+        Me.lblFechaFalla.TabIndex = 48
+        Me.lblFechaFalla.Text = "NA"
+        '
         'lbl1
         '
         Me.lbl1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -236,81 +311,6 @@ Partial Class ScrDelMaq
         Me.lbl2.TabIndex = 15
         Me.lbl2.Text = "Fecha de la Falla:"
         '
-        'lblFechaFalla
-        '
-        Me.lblFechaFalla.AutoSize = True
-        Me.lblFechaFalla.BackColor = System.Drawing.Color.Transparent
-        Me.lblFechaFalla.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFechaFalla.ForeColor = System.Drawing.Color.White
-        Me.lblFechaFalla.Location = New System.Drawing.Point(57, 47)
-        Me.lblFechaFalla.Name = "lblFechaFalla"
-        Me.lblFechaFalla.Size = New System.Drawing.Size(32, 25)
-        Me.lblFechaFalla.TabIndex = 48
-        Me.lblFechaFalla.Text = "NA"
-        '
-        'lblHoraFalla
-        '
-        Me.lblHoraFalla.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblHoraFalla.AutoSize = True
-        Me.lblHoraFalla.BackColor = System.Drawing.Color.Transparent
-        Me.lblHoraFalla.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHoraFalla.ForeColor = System.Drawing.Color.White
-        Me.lblHoraFalla.Location = New System.Drawing.Point(194, 47)
-        Me.lblHoraFalla.Name = "lblHoraFalla"
-        Me.lblHoraFalla.Size = New System.Drawing.Size(32, 25)
-        Me.lblHoraFalla.TabIndex = 49
-        Me.lblHoraFalla.Text = "NA"
-        '
-        'lblPersonal
-        '
-        Me.lblPersonal.AutoSize = True
-        Me.lblPersonal.BackColor = System.Drawing.Color.Transparent
-        Me.lblPersonal.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPersonal.ForeColor = System.Drawing.Color.White
-        Me.lblPersonal.Location = New System.Drawing.Point(67, 47)
-        Me.lblPersonal.Name = "lblPersonal"
-        Me.lblPersonal.Size = New System.Drawing.Size(32, 25)
-        Me.lblPersonal.TabIndex = 50
-        Me.lblPersonal.Text = "NA"
-        '
-        'lblCantidad
-        '
-        Me.lblCantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblCantidad.AutoSize = True
-        Me.lblCantidad.BackColor = System.Drawing.Color.Transparent
-        Me.lblCantidad.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCantidad.ForeColor = System.Drawing.Color.White
-        Me.lblCantidad.Location = New System.Drawing.Point(383, 47)
-        Me.lblCantidad.Name = "lblCantidad"
-        Me.lblCantidad.Size = New System.Drawing.Size(32, 25)
-        Me.lblCantidad.TabIndex = 50
-        Me.lblCantidad.Text = "NA"
-        '
-        'lblFechaEntrega
-        '
-        Me.lblFechaEntrega.AutoSize = True
-        Me.lblFechaEntrega.BackColor = System.Drawing.Color.Transparent
-        Me.lblFechaEntrega.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFechaEntrega.ForeColor = System.Drawing.Color.White
-        Me.lblFechaEntrega.Location = New System.Drawing.Point(52, 47)
-        Me.lblFechaEntrega.Name = "lblFechaEntrega"
-        Me.lblFechaEntrega.Size = New System.Drawing.Size(32, 25)
-        Me.lblFechaEntrega.TabIndex = 49
-        Me.lblFechaEntrega.Text = "NA"
-        '
-        'lblHoraEntrega
-        '
-        Me.lblHoraEntrega.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblHoraEntrega.AutoSize = True
-        Me.lblHoraEntrega.BackColor = System.Drawing.Color.Transparent
-        Me.lblHoraEntrega.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHoraEntrega.ForeColor = System.Drawing.Color.White
-        Me.lblHoraEntrega.Location = New System.Drawing.Point(210, 47)
-        Me.lblHoraEntrega.Name = "lblHoraEntrega"
-        Me.lblHoraEntrega.Size = New System.Drawing.Size(32, 25)
-        Me.lblHoraEntrega.TabIndex = 50
-        Me.lblHoraEntrega.Text = "NA"
-        '
         'pnlMaq
         '
         Me.pnlMaq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -331,13 +331,25 @@ Partial Class ScrDelMaq
         Me.pnlMaq.Size = New System.Drawing.Size(1024, 216)
         Me.pnlMaq.TabIndex = 4
         '
+        'lblSerial
+        '
+        Me.lblSerial.AutoSize = True
+        Me.lblSerial.BackColor = System.Drawing.Color.Transparent
+        Me.lblSerial.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSerial.ForeColor = System.Drawing.Color.White
+        Me.lblSerial.Location = New System.Drawing.Point(78, 48)
+        Me.lblSerial.Name = "lblSerial"
+        Me.lblSerial.Size = New System.Drawing.Size(40, 31)
+        Me.lblSerial.TabIndex = 56
+        Me.lblSerial.Text = "NA"
+        '
         'lblDesc
         '
         Me.lblDesc.AutoSize = True
         Me.lblDesc.BackColor = System.Drawing.Color.Transparent
         Me.lblDesc.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDesc.ForeColor = System.Drawing.Color.White
-        Me.lblDesc.Location = New System.Drawing.Point(109, 163)
+        Me.lblDesc.Location = New System.Drawing.Point(26, 163)
         Me.lblDesc.Name = "lblDesc"
         Me.lblDesc.Size = New System.Drawing.Size(40, 31)
         Me.lblDesc.TabIndex = 55
@@ -458,18 +470,6 @@ Partial Class ScrDelMaq
         Me.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbFoto.TabIndex = 45
         Me.pbFoto.TabStop = False
-        '
-        'lblSerial
-        '
-        Me.lblSerial.AutoSize = True
-        Me.lblSerial.BackColor = System.Drawing.Color.Transparent
-        Me.lblSerial.Font = New System.Drawing.Font("Poppins", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSerial.ForeColor = System.Drawing.Color.White
-        Me.lblSerial.Location = New System.Drawing.Point(103, 48)
-        Me.lblSerial.Name = "lblSerial"
-        Me.lblSerial.Size = New System.Drawing.Size(40, 31)
-        Me.lblSerial.TabIndex = 56
-        Me.lblSerial.Text = "NA"
         '
         'pnlDatos
         '
