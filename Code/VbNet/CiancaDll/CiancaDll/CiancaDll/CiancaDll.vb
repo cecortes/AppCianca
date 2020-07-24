@@ -761,48 +761,6 @@ Public Class Consulta
     End Sub
 
     ''' <summary>
-    ''' Se encarga de obtener el número de serie de las maquinas en el nodo INVENTARIO_AF para
-    ''' pasarlo a una tabla.
-    ''' </summary>
-    Public Sub getSerialMaq()
-
-        'Conexión Firebase
-        Dim con As New Conexion
-
-        'Init Tabla, hardcode USR
-        cboMaqDS.Tables.Add("MAQ")
-        cboMaqDS.Tables("MAQ").Columns.Add("Serie", GetType(String))
-
-        'Manejo de excepciones
-        Try
-            'Firebase conection
-            con.Con_Global()
-
-            'Query Firebase
-            res = con.firebase.Get("INVENTARIO_AF/")
-
-            'Diccionario para almacenar las respuestas
-            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
-
-            'Rutina para recorrer los elementos
-            For Each item In dataDic
-                'Validamos que no sea null
-                If String.IsNullOrEmpty(item.Value.Id_af) Then
-                Else
-                    cboMaqDS.Tables("MAQ").Rows.Add(item.Value.Id_af)
-                End If
-            Next
-
-        Catch ex As Exception
-
-            'USUARIO
-            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
-
-        End Try
-
-    End Sub
-
-    ''' <summary>
     ''' Consulta el nodo USUARIOS/
     ''' Recibe el resultado como un diccionario
     ''' Recorre el diccionario en búsqueda del nombre y apellidos recibidos como parámetros
@@ -857,6 +815,48 @@ Public Class Consulta
 #End Region
 
 #Region "MAQUINARIA"
+
+    ''' <summary>
+    ''' Se encarga de obtener el número de serie de las maquinas en el nodo INVENTARIO_AF para
+    ''' pasarlo a una tabla.
+    ''' </summary>
+    Public Sub getSerialMaq()
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode USR
+        cboMaqDS.Tables.Add("MAQ")
+        cboMaqDS.Tables("MAQ").Columns.Add("Serie", GetType(String))
+
+        'Manejo de excepciones
+        Try
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("INVENTARIO_AF/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Id_af) Then
+                Else
+                    cboMaqDS.Tables("MAQ").Rows.Add(item.Value.Id_af)
+                End If
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
 
     ''' <summary>
     ''' Consulta el nodo INVENTARIO_AF/
