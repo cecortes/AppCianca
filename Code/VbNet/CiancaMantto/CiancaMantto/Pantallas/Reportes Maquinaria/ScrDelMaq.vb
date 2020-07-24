@@ -139,6 +139,9 @@ Public Class ScrDelMaq
         'Validación
         If flgEndFill Then
 
+            'Splash
+            pnlSplash.Visible = True
+
             'Captura del cbo
             fbData.Id_mtom = cboReporte.Text.ToString
 
@@ -161,8 +164,10 @@ Public Class ScrDelMaq
             lblFechaEntrega.Text = dataMTO.FechaE_mtom
             lblFechaFalla.Text = dataMTO.FechaF_mtom
 
-        End If
+            'Splash
+            pnlSplash.Visible = False
 
+        End If
 
     End Sub
 
