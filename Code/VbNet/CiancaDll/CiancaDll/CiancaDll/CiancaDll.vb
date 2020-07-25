@@ -704,7 +704,6 @@ Public Class Consulta
     'Firebase
     Dim res As FirebaseResponse
     Dim dataDic As Dictionary(Of String, Datos)
-    Dim dataDic2 As Dictionary(Of String, Datos)
     Dim tokenUsr As String
     Dim dataMaq As Datos                'Datos de la maquinaria en INVENTARIO_AF
     Dim dataRpoMaq As Datos             'Reportes de mantenimiento para maquinaria en MANTOMAQ
@@ -953,7 +952,7 @@ Public Class Consulta
     ''' Si es así guarda los datos en un dataset
     ''' El dataset es accesible gracias a DATAMEMBERS
     ''' </summary>
-    Public Sub getMaqRepFromPeriod(ByVal inicio As Date, final As Date)
+    Public Sub getMaqRepFromPeriod(ByVal inicio As Date, ByVal final As Date)
 
         'Conexión Firebase
         Dim con As New Conexion
@@ -979,13 +978,16 @@ Public Class Consulta
             res = con.firebase.Get("MANTOMAQ/")
 
             'Diccionario para almacenar las respuestas
-            dataDic2 = res.ResultAs(Of Dictionary(Of String, Datos))
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
 
             'Rutina para recorrer los elementos
-            For Each item In dataDic2
+            For Each item In dataDic
+
                 'Validamos que no sea null
                 If String.IsNullOrEmpty(item.Value.Id_mtom) Then
-                Else
+
+                    'Validamos el rango de periódo
+                ElseIf (final < item.Value.FechaF_mtom) Then
 
                     'Pasamos el dato a una variable local
                     Dim p As String = item.Value.FotoAf_mtom

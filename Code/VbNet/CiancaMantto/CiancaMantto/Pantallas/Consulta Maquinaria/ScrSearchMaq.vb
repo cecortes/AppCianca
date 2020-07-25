@@ -87,6 +87,8 @@ Public Class ScrSearchMaq
         dtpFin.Style.colhover = Color.FromArgb(23, 42, 58)
 
         'Captura de las fechas
+        dtpIni.Value = Date.Now.ToShortDateString
+        dtpFin.Value = Date.Now.ToShortDateString
         fechaIni = dtpIni.Value.ToShortDateString
         fechaFin = dtpFin.Value.ToShortDateString
     End Sub
@@ -143,21 +145,36 @@ Public Class ScrSearchMaq
         'Formato Dgv
         FormatDgv()
 
-        For Each filas As DataGridViewRow In dgvData.Rows
-            MsgBox(filas.Cells(0).Value.ToString)
-        Next
-
     End Sub
 
     ''' <summary>
     ''' Formato para el datagridview
     ''' </summary>
     Private Sub FormatDgv()
-        dgvData.Columns("FOTO").AutoSizeMode = DataGridViewImageCellLayout.Stretch
-        dgvData.Columns("FOTO").Width = 500
-        dgvData.Rows(0).Height = 500
 
+        'Size mode para las columnas
+        dgvData.Columns("SERIE").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("DESCRIPCION").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("FECHAFALLA").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("RESPONSABLE").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("RECURSOS").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("ACCIONES").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("RECOMENDACIONES").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
 
+        'Rutina para configurar la altura de las filas
+        For Each filas As DataGridViewRow In dgvData.Rows
+            filas.Height = 150
+        Next
+
+        'Cambio de tipo para la columna que almacena la fotografía
+        dgvData.Columns("FOTO").ValueType = GetType(DataGridViewImageColumn)
+        dgvData.Columns("FOTO").Width = 180
+
+        'Rutina para configurar el tamaño de la foto
+        For Each col As DataGridViewImageColumn In dgvData.Columns
+            col.ImageLayout = DataGridViewImageCellLayout.Stretch
+            Exit For
+        Next
     End Sub
 
 #End Region
