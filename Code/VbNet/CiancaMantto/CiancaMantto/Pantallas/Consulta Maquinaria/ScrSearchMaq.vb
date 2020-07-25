@@ -10,17 +10,13 @@ Public Class ScrSearchMaq
     Dim flgEndFill As Boolean = False       'Bandera para indicar la terminación de la carga de los cbo
     Dim nomUsr As String = ""               'Nombre de usuario seleccionado
     Dim apllUsr As String = ""              'Apellidos de usuario seleccionado
-    'Dim tokenUsr As String = ""             'Token del usuario
     Dim serieMaq As String = ""             'No. de control interno de maquinaria
-    Dim fechaIni As String = ""           'Variable para almacenar la fecha de la falla
-    Dim fechaFin As String = ""         'Variable para almacenar la fecha de la entrega
-    'Dim dataMaq As New Datos                'Objeto para almacenar los datos de INVENTARIO_AF
-    'Dim dataMTO As New Datos                'Objeto para almacenar los datos de MANTOMAQ
+    Dim fechaIni As String = ""             'Variable para almacenar la fecha de la falla
+    Dim fechaFin As String = ""             'Variable para almacenar la fecha de la entrega
 
     'CiancaDll
     Dim fbData As New Datos
     Dim buscar As New Consulta
-    'Dim agregar As New Insertar
 #End Region
 
 #Region "FUNCIONES"
@@ -104,6 +100,9 @@ Public Class ScrSearchMaq
         'Splash
         'pnlSplash.Visible = True
 
+        'Flag
+        flgEndFill = False
+
         'Reset
         buscar.cboMaqDS.Reset()
 
@@ -124,6 +123,9 @@ Public Class ScrSearchMaq
         'Splash
         'pnlSplash.Visible = False
 
+        'Flag
+        flgEndFill = True
+
     End Sub
 
     ''' <summary>
@@ -136,6 +138,9 @@ Public Class ScrSearchMaq
         'Clear
         buscar.dgvMaqRepDS.Reset()
 
+        'Splash
+        'pnlSplash.Visible = True
+
         'Llamamos a la consulta de los datos
         buscar.getMaqRepFromPeriod(dtpIni.Value.ToShortDateString, dtpFin.Value.ToShortDateString)
 
@@ -144,6 +149,9 @@ Public Class ScrSearchMaq
 
         'Formato Dgv
         FormatDgv()
+
+        'Splash
+        'pnlSplash.Visible = False
 
     End Sub
 
@@ -185,6 +193,15 @@ Public Class ScrSearchMaq
             col.ImageLayout = DataGridViewImageCellLayout.Stretch
             Exit For
         Next
+
+    End Sub
+
+    ''' <summary>
+    ''' Se encarga de consultar el nodo MANTOMAQ/
+    ''' Valida que el resultado concuerde con el serial seleccionado en el cbo
+    ''' Llena la tabla con el resultado
+    ''' </summary>
+    Private Sub getSerialRep()
 
     End Sub
 
@@ -230,6 +247,10 @@ Public Class ScrSearchMaq
             dtpFin.Enabled = False
             btnSearch.Enabled = False
             cboSerial.Enabled = True
+
+            'Método
+            FillSerieMaq()
+
         End If
 
     End Sub
@@ -304,6 +325,32 @@ Public Class ScrSearchMaq
 
             'Método
             getPeriodo()
+
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Valida que haya terminado de cargarse el cbo
+    ''' Captura el id
+    ''' Realiza la consulta por medio de la Dll
+    ''' Llama al método para llenar el dgv
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub cboSerial_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboSerial.SelectedValueChanged
+
+        'Validación
+        If flgEndFill Then
+
+            'Splash
+            'pnlSplash.Visible = True
+
+            'Captura
+            fbData.IdAf_mtom = cboSerial.Text.ToString
+
+            'Método
+
 
         End If
 
