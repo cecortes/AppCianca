@@ -152,14 +152,24 @@ Public Class ScrSearchMaq
     ''' </summary>
     Private Sub FormatDgv()
 
+        'Sort Descending
+        dgvData.Sort(dgvData.Columns("FECHAFALLA"), System.ComponentModel.ListSortDirection.Descending)
+
         'Size mode para las columnas
         dgvData.Columns("SERIE").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("SERIE").SortMode = DataGridViewColumnSortMode.Programmatic
         dgvData.Columns("DESCRIPCION").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("DESCRIPCION").SortMode = DataGridViewColumnSortMode.Programmatic
         dgvData.Columns("FECHAFALLA").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("FECHAFALLA").SortMode = DataGridViewColumnSortMode.Programmatic
         dgvData.Columns("RESPONSABLE").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("RESPONSABLE").SortMode = DataGridViewColumnSortMode.Programmatic
         dgvData.Columns("RECURSOS").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        dgvData.Columns("ACCIONES").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        dgvData.Columns("RECOMENDACIONES").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("RECURSOS").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("ACCIONES").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        dgvData.Columns("ACCIONES").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("RECOMENDACIONES").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        dgvData.Columns("RECOMENDACIONES").SortMode = DataGridViewColumnSortMode.Programmatic
 
         'Rutina para configurar la altura de las filas
         For Each filas As DataGridViewRow In dgvData.Rows
@@ -175,6 +185,7 @@ Public Class ScrSearchMaq
             col.ImageLayout = DataGridViewImageCellLayout.Stretch
             Exit For
         Next
+
     End Sub
 
 #End Region
