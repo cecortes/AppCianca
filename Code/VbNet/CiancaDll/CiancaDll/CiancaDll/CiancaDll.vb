@@ -952,7 +952,7 @@ Public Class Consulta
     ''' Si es así guarda los datos en un dataset
     ''' El dataset es accesible gracias a DATAMEMBERS
     ''' </summary>
-    Public Sub getMaqRepFromPeriod(ByVal inicio As Date, ByVal final As Date)
+    Public Sub getMaqRepFromPeriod(ByVal inicio As Date, ByVal fin As Date)
 
         'Conexión Firebase
         Dim con As New Conexion
@@ -987,7 +987,7 @@ Public Class Consulta
                 If String.IsNullOrEmpty(item.Value.Id_mtom) Then
 
                     'Validamos el rango de periódo
-                ElseIf (final < item.Value.FechaF_mtom) Then
+                ElseIf (item.Value.FechaF_mtom >= inicio And item.Value.FechaF_mtom <= fin) Then
 
                     'Pasamos el dato a una variable local
                     Dim p As String = item.Value.FotoAf_mtom
