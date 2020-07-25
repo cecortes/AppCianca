@@ -203,6 +203,54 @@ Public Class ScrSearchMaq
     ''' </summary>
     Private Sub getSerialRep()
 
+        'Clear
+        buscar.dgvMaqRepSerDS.Reset()
+
+        'Splash
+        'pnlSplash.Visible = True
+
+        'Llamamos a la consulta de los datos
+        buscar.getMaqRepFromSerial(fbData, fechaIni, fechaFin)
+
+        'Llenamos el datagrid con los datos
+        dgvData.DataSource = buscar.dgvMaqRepSerDS.Tables("MAQREPSER")
+
+        'Formato Dgv
+        FormatDgvSerial()
+
+        'Splash
+        'pnlSplash.Visible = False
+
+    End Sub
+
+    ''' <summary>
+    ''' Formato para el datagridview serial
+    ''' </summary>
+    Private Sub FormatDgvSerial()
+
+        'Size mode para las columnas
+        dgvData.Columns("SERIE").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("SERIE").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("DESCRIPCION").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("DESCRIPCION").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("INCIDENCIAS").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("INCIDENCIAS").SortMode = DataGridViewColumnSortMode.Programmatic
+
+        'Rutina para configurar la altura de las filas
+        For Each filas As DataGridViewRow In dgvData.Rows
+            filas.Height = 150
+        Next
+
+        'Cambio de tipo para la columna que almacena la fotografía
+        dgvData.Columns("FOTO").ValueType = GetType(DataGridViewImageColumn)
+        dgvData.Columns("FOTO").Width = 180
+
+        'Rutina para configurar el tamaño de la foto
+        For Each col As DataGridViewImageColumn In dgvData.Columns
+            col.ImageLayout = DataGridViewImageCellLayout.Stretch
+            Exit For
+        Next
+
     End Sub
 
 #End Region
@@ -224,8 +272,6 @@ Public Class ScrSearchMaq
             chkIncidencias.Checked = False
             chkRecursos.Checked = False
             cboSerial.Enabled = False
-            dtpIni.Enabled = True
-            dtpFin.Enabled = True
             btnSearch.Enabled = True
         End If
 
@@ -243,8 +289,6 @@ Public Class ScrSearchMaq
             chkPeriodo.Checked = False
             chkIncidencias.Checked = False
             chkRecursos.Checked = False
-            dtpIni.Enabled = False
-            dtpFin.Enabled = False
             btnSearch.Enabled = False
             cboSerial.Enabled = True
 
@@ -267,8 +311,6 @@ Public Class ScrSearchMaq
             chkPeriodo.Checked = False
             chkSerie.Checked = False
             chkRecursos.Checked = False
-            dtpIni.Enabled = False
-            dtpFin.Enabled = False
             btnSearch.Enabled = True
             cboSerial.Enabled = False
         End If
@@ -287,8 +329,6 @@ Public Class ScrSearchMaq
             chkPeriodo.Checked = False
             chkSerie.Checked = False
             chkIncidencias.Checked = False
-            dtpIni.Enabled = False
-            dtpFin.Enabled = False
             btnSearch.Enabled = True
             cboSerial.Enabled = False
         End If
@@ -348,9 +388,11 @@ Public Class ScrSearchMaq
 
             'Captura
             fbData.IdAf_mtom = cboSerial.Text.ToString
+            fechaIni = dtpIni.Value.ToShortDateString
+            fechaFin = dtpFin.Value.ToShortDateString
 
             'Método
-
+            getSerialRep()
 
         End If
 

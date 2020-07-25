@@ -714,7 +714,8 @@ Public Class Consulta
     Public cboMtoMaqDs As New DataSet   'Combobox Only MANTOMAQ
 
     'Referente a los dgv
-    Public dgvMaqRepDS As New DataSet   'Datagrid Only MANTOMAQ
+    Public dgvMaqRepDS As New DataSet    'Datagrid Only MANTOMAQ
+    Public dgvMaqRepSerDS As New DataSet 'Datagrid Only MANTOMAQ
 
 #End Region
 
@@ -999,6 +1000,85 @@ Public Class Consulta
                     dgvMaqRepDS.Tables("MAQREP").Rows.Add(imageBytes, item.Value.SerAf_mtom, item.Value.DescAf_mtom, item.Value.FechaF_mtom + " " + item.Value.HoraF_mtom, item.Value.Nombre_mtom + " " + item.Value.Apll_mtom, item.Value.Cantidad_mtom, item.Value.Tareas_mtom, item.Value.Recomen_mtom)
                 End If
             Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Crea una tabla dentro de un dataset
+    ''' Se encarga de consultar el nodo MANTOMAQ/
+    ''' Recibe la respuesta como diccionario y valida que se concuerde con el serial recibido como parámetro
+    ''' Si es así guarda los datos en un dataset
+    ''' El dataset es accesible gracias a DATAMEMBERS
+    ''' </summary>
+    ''' <param name="dat"></param>
+    Public Sub getMaqRepFromSerial(ByVal dat As Datos, ByVal inicio As Date, ByVal fin As Date)
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode MAQREP
+        dgvMaqRepSerDS.Tables.Add("MAQREPSER")
+        dgvMaqRepSerDS.Tables("MAQREPSER").Columns.Add("FOTO", GetType(Byte()))
+        dgvMaqRepSerDS.Tables("MAQREPSER").Columns.Add("SERIE", GetType(String))
+        dgvMaqRepSerDS.Tables("MAQREPSER").Columns.Add("DESCRIPCION", GetType(String))
+        dgvMaqRepSerDS.Tables("MAQREPSER").Columns.Add("INCIDENCIAS", GetType(Integer))
+
+        'Locales
+        Dim incidencias As Integer = 0
+        Dim p As String = ""
+        Dim imageBytes As Byte()
+        Dim serial As String = ""
+        Dim desc As String = ""
+
+        'Excepción
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("MANTOMAQ/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Id_mtom) Then
+
+                    'Validamos el serial y el rango de periódo
+                ElseIf (dat.IdAf_mtom = item.Value.IdAf_mtom And item.Value.FechaF_mtom >= inicio And item.Value.FechaF_mtom <= fin) Then
+
+                    'Pasamos el dato a una variable local
+                    p = item.Value.FotoAf_mtom
+
+                    ' Convert Base64 String to byte[]
+                    imageBytes = Convert.FromBase64String(p)
+
+                    'Serial
+                    serial = item.Value.SerAf_mtom
+
+                    'Descripción
+                    desc = item.Value.DescAf_mtom
+
+                    'Incidencias
+                    incidencias += 1
+
+                End If
+
+            Next
+
+            'Agregamos el arreglo byte para la foto y los demás datos
+            dgvMaqRepSerDS.Tables("MAQREPSER").Rows.Add(imageBytes, serial, desc, incidencias)
 
         Catch ex As Exception
 
