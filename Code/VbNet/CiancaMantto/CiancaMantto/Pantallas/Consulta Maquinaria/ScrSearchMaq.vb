@@ -253,6 +253,15 @@ Public Class ScrSearchMaq
 
     End Sub
 
+    ''' <summary>
+    ''' Se encarga de consultar el nodo MANTOMAQ/
+    ''' Valida que el resultado concuerde con el periódo seleccionado
+    ''' Llena la tabla con el resultado.
+    ''' </summary>
+    Private Sub GetIncidencias()
+
+    End Sub
+
 #End Region
 
 #Region "EVENTOS"
@@ -313,6 +322,10 @@ Public Class ScrSearchMaq
             chkRecursos.Checked = False
             btnSearch.Enabled = True
             cboSerial.Enabled = False
+
+            'Método
+            GetIncidencias()
+
         End If
 
     End Sub
