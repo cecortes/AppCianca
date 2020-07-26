@@ -260,6 +260,57 @@ Public Class ScrSearchMaq
     ''' </summary>
     Private Sub GetIncidencias()
 
+        'Clear
+        buscar.dgvMaqRepInciDS.Reset()
+
+        'Splash
+        'pnlSplash.Visible = True
+
+        'Llamamos a la consulta de los datos
+        buscar.GetMaqRepInci(fechaIni, fechaFin)
+
+        'Llenamos el datagrid con los datos
+        dgvData.DataSource = buscar.dgvMaqRepInciDS.Tables("MAQREPINCI")
+
+        'Formato Dgv
+        FormatDgvInci()
+
+        'Splash
+        'pnlSplash.Visible = False
+
+    End Sub
+
+    ''' <summary>
+    ''' Formato para el datagridview incidencias
+    ''' </summary>
+    Private Sub FormatDgvInci()
+
+        'Sort Descending
+        dgvData.Sort(dgvData.Columns("INCIDENCIAS"), System.ComponentModel.ListSortDirection.Descending)
+
+        'Size mode para las columnas
+        dgvData.Columns("SERIE").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("SERIE").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("DESCRIPCION").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("DESCRIPCION").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("INCIDENCIAS").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("INCIDENCIAS").SortMode = DataGridViewColumnSortMode.Programmatic
+
+        'Rutina para configurar la altura de las filas
+        For Each filas As DataGridViewRow In dgvData.Rows
+            filas.Height = 150
+        Next
+
+        'Cambio de tipo para la columna que almacena la fotografía
+        dgvData.Columns("FOTO").ValueType = GetType(DataGridViewImageColumn)
+        dgvData.Columns("FOTO").Width = 180
+
+        'Rutina para configurar el tamaño de la foto
+        For Each col As DataGridViewImageColumn In dgvData.Columns
+            col.ImageLayout = DataGridViewImageCellLayout.Stretch
+            Exit For
+        Next
+
     End Sub
 
 #End Region
@@ -322,10 +373,6 @@ Public Class ScrSearchMaq
             chkRecursos.Checked = False
             btnSearch.Enabled = True
             cboSerial.Enabled = False
-
-            'Método
-            GetIncidencias()
-
         End If
 
     End Sub
@@ -379,6 +426,11 @@ Public Class ScrSearchMaq
             'Método
             getPeriodo()
 
+        ElseIf (chkIncidencias.Checked) Then
+
+            'Método
+            GetIncidencias()
+
         End If
 
     End Sub
@@ -408,6 +460,30 @@ Public Class ScrSearchMaq
             getSerialRep()
 
         End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del date time picker de inicio
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub dtpIni_onValueChanged(sender As Object, e As EventArgs) Handles dtpIni.onValueChanged
+
+        'Captura
+        fechaIni = dtpIni.Value.ToShortDateString
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del date time picker final
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub dtpFin_onValueChanged(sender As Object, e As EventArgs) Handles dtpFin.onValueChanged
+
+        'Captura
+        fechaFin = dtpFin.Value.ToShortDateString
 
     End Sub
 

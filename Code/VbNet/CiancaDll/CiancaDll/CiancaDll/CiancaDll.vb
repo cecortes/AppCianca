@@ -1163,8 +1163,13 @@ Public Class Consulta
 
                 Next
 
-                'Agregamos el arreglo byte para la foto y los demás datos
-                dgvMaqRepInciDS.Tables("MAQREPINCI").Rows.Add(imageBytes, serial, desc, incidencias)
+                'Valida que existan incidencias
+                If (incidencias > 0) Then
+
+                    'Agregamos el arreglo byte para la foto y los demás datos
+                    dgvMaqRepInciDS.Tables("MAQREPINCI").Rows.Add(imageBytes, serial, desc, incidencias)
+
+                End If
 
                 'Reset de incidencias
                 incidencias = 0
