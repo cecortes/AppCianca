@@ -256,30 +256,8 @@ Public Class ScrSearchMaq
     ''' <summary>
     ''' Se encarga de consultar el nodo MANTOMAQ/
     ''' Valida que el resultado concuerde con el periódo seleccionado
-    ''' Llena la tabla con el resultado.
+    ''' Llena la tabla con el resultado de las incidencias por maquinaria.
     ''' </summary>
-    Private Sub GetIncidencias()
-
-        'Clear
-        buscar.dgvMaqRepInciDS.Reset()
-
-        'Splash
-        'pnlSplash.Visible = True
-
-        'Llamamos a la consulta de los datos
-        buscar.GetMaqRepInci(fechaIni, fechaFin)
-
-        'Llenamos el datagrid con los datos
-        dgvData.DataSource = buscar.dgvMaqRepInciDS.Tables("MAQREPINCI")
-
-        'Formato Dgv
-        FormatDgvInci()
-
-        'Splash
-        'pnlSplash.Visible = False
-
-    End Sub
-
     Private Sub GetInci()
         'Clear
         buscar.dgvMaqRepInciDS.Reset()
@@ -448,7 +426,7 @@ Public Class ScrSearchMaq
 
         ElseIf (chkIncidencias.Checked) Then
 
-            'Método
+            'Método para mostrar las incidencias por rango de fechas
             GetInci()
 
         End If

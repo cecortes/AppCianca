@@ -761,7 +761,7 @@ Public Class Consulta
     Dim tokenUsr As String
     Dim dataMaq As Datos                'Datos de la maquinaria en INVENTARIO_AF
     Dim dataRpoMaq As Datos             'Reportes de mantenimiento para maquinaria en MANTOMAQ
-    Dim datosInci As Datos
+    Dim datosInci As Datos              'Diccionario para guardar los reportes de incidencias y contarlos.
 
     'Referente a los cbo
     Public cboUsrDS As New DataSet      'ComboBox Only USUARIOS
