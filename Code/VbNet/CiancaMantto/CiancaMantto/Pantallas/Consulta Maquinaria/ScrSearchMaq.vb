@@ -280,6 +280,26 @@ Public Class ScrSearchMaq
 
     End Sub
 
+    Private Sub GetInci()
+        'Clear
+        buscar.dgvMaqRepInciDS.Reset()
+
+        'Splash
+        'pnlSplash.Visible = True
+
+        'Llamamos a la consulta de los datos
+        buscar.ReporMaqInci(fechaIni, fechaFin)
+
+        'Llenamos el datagrid con los datos
+        dgvData.DataSource = buscar.dgvMaqRepInciDS.Tables("MAQREPINCI")
+
+        'Formato Dgv
+        FormatDgvInci()
+
+        'Splash
+        'pnlSplash.Visible = False
+    End Sub
+
     ''' <summary>
     ''' Formato para el datagridview incidencias
     ''' </summary>
@@ -429,7 +449,7 @@ Public Class ScrSearchMaq
         ElseIf (chkIncidencias.Checked) Then
 
             'Método
-            GetIncidencias()
+            GetInci()
 
         End If
 

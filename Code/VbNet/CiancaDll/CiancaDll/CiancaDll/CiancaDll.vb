@@ -692,6 +692,59 @@ Public Class Datos
 
 #End Region
 
+#Region "INCIDENCIAS"
+
+#Region "DATAMEMBERS"
+
+    Private _Foto_Inci As String
+    Private _Serie_Inci As String
+    Private _Desc_Inci As String
+    Private _Cont_Inci As String
+
+#End Region
+
+#Region "PROPIEDADES"
+
+    Public Property Foto_Inci As String
+        Get
+            Return _Foto_Inci
+        End Get
+        Set(value As String)
+            _Foto_Inci = value
+        End Set
+    End Property
+
+    Public Property Serie_Inci As String
+        Get
+            Return _Serie_Inci
+        End Get
+        Set(value As String)
+            _Serie_Inci = value
+        End Set
+    End Property
+
+    Public Property Desc_Inci As String
+        Get
+            Return _Desc_Inci
+        End Get
+        Set(value As String)
+            _Desc_Inci = value
+        End Set
+    End Property
+
+    Public Property Cont_Inci As String
+        Get
+            Return _Cont_Inci
+        End Get
+        Set(value As String)
+            _Cont_Inci = value
+        End Set
+    End Property
+
+#End Region
+
+#End Region
+
 End Class
 
 Public Class Consulta
@@ -704,9 +757,11 @@ Public Class Consulta
     'Firebase
     Dim res As FirebaseResponse
     Dim dataDic As Dictionary(Of String, Datos)
+    Dim inciDic As Dictionary(Of String, Datos)
     Dim tokenUsr As String
     Dim dataMaq As Datos                'Datos de la maquinaria en INVENTARIO_AF
     Dim dataRpoMaq As Datos             'Reportes de mantenimiento para maquinaria en MANTOMAQ
+    Dim datosInci As Datos
 
     'Referente a los cbo
     Public cboUsrDS As New DataSet      'ComboBox Only USUARIOS
@@ -1175,6 +1230,114 @@ Public Class Consulta
                 incidencias = 0
 
             Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Crea una tabla dentro de un dataset
+    ''' Se encarga de consultar el nodo MANTOMAQ/
+    ''' Recibe la respuesta como diccionario y valida que se concuerde con el serial recibido como parámetro
+    ''' Si es así guarda los datos en un dataset
+    ''' El dataset es accesible gracias a DATAMEMBERS
+    ''' </summary>
+    ''' <param name="inicio"></param>
+    ''' <param name="fin"></param>
+    Public Sub ReporMaqInci(ByVal inicio As Date, ByVal fin As Date)
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode MAQREP
+        dgvMaqRepInciDS.Tables.Add("MAQREPINCI")
+        dgvMaqRepInciDS.Tables("MAQREPINCI").Columns.Add("FOTO", GetType(Byte()))
+        dgvMaqRepInciDS.Tables("MAQREPINCI").Columns.Add("SERIE", GetType(String))
+        dgvMaqRepInciDS.Tables("MAQREPINCI").Columns.Add("DESCRIPCION", GetType(String))
+        dgvMaqRepInciDS.Tables("MAQREPINCI").Columns.Add("INCIDENCIAS", GetType(Integer))
+
+        'Locales
+        Dim incidencias As Integer = 0
+        Dim photo As String = ""
+        Dim imageBytes As Byte()
+        Dim serial As String = ""
+        Dim desc As String = ""
+
+        'Instance del diccionario para incidencias necesario para agregar datos
+        inciDic = New Dictionary(Of String, Datos)
+
+
+        'Excepción
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("MANTOMAQ/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer el resultado
+            For Each item In dataDic
+
+                'Captura del número de control interno
+                Dim interno() As String = (item.Value.Id_mtom).Split("-")
+                Dim internoStr As String = interno(0)
+
+                'Captura de los datos necesarios
+                photo = item.Value.FotoAf_mtom
+                serial = item.Value.SerAf_mtom
+                desc = item.Value.DescAf_mtom
+
+                'Validamos el periódo recibido
+                If (item.Value.FechaF_mtom >= inicio And item.Value.FechaF_mtom <= fin) Then
+
+                    'Instance para el objeto de la clase datos, uno por cada item. Necesario para agregar datos
+                    datosInci = New Datos
+
+                    'Validamos que no exitsta la llave en el diccionario incidencias
+                    If inciDic.ContainsKey(internoStr) Then
+
+                        'Actualizamos el contador de incidencias
+                        incidencias = Integer.Parse(inciDic.Item(internoStr).Cont_Inci)
+                        incidencias += 1
+                        inciDic.Item(internoStr).Cont_Inci = incidencias.ToString
+
+                    Else
+
+                        'Agregamos los datos al diccionario
+                        datosInci.Foto_Inci = photo
+                        datosInci.Serie_Inci = serial
+                        datosInci.Desc_Inci = desc
+                        datosInci.Cont_Inci = "1"
+                        inciDic.Add(internoStr, datosInci)
+
+                    End If
+
+                End If
+
+            Next
+
+            'Rutina para recorrer el diccionario de incidencias
+            Dim kvp As KeyValuePair(Of String, Datos)
+
+            For Each kvp In inciDic
+
+                ' Convert Base64 String to byte[]
+                imageBytes = Convert.FromBase64String(kvp.Value.Foto_Inci)
+
+                'Agregamos el arreglo byte para la foto y los demás datos
+                dgvMaqRepInciDS.Tables("MAQREPINCI").Rows.Add(imageBytes, kvp.Value.Serie_Inci, kvp.Value.Desc_Inci, CInt(kvp.Value.Cont_Inci))
+
+            Next
+
 
         Catch ex As Exception
 
