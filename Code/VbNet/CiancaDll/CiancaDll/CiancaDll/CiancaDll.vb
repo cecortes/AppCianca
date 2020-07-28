@@ -765,6 +765,39 @@ Public Class Datos
 
 #End Region
 
+#Region "OPCIONES DE MANTENIMIENTO Y REFACCIONES"
+
+#Region "DATAMEMBERS"
+
+    Private _FallasMaq As String()
+    Private _RefaMaq As String()
+
+#End Region
+
+#Region "PROPIEDADES"
+
+    Public Property FallasMaq As String()
+        Get
+            Return _FallasMaq
+        End Get
+        Set(value As String())
+            _FallasMaq = value
+        End Set
+    End Property
+
+    Public Property RefaMaq As String()
+        Get
+            Return _RefaMaq
+        End Get
+        Set(value As String())
+            _RefaMaq = value
+        End Set
+    End Property
+
+#End Region
+
+#End Region
+
 End Class
 
 Public Class Consulta
@@ -1449,6 +1482,15 @@ Public Class Insertar
             MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
 
         End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Recibe los datos necesarios como parámetros.
+    ''' Agrega los datos en el nodo OPTMTOMAQ/.
+    ''' </summary>
+    ''' <param name="datos"></param>
+    Public Sub AddOPTMTOMAQ(ByVal datos As Datos)
 
     End Sub
 

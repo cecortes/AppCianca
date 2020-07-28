@@ -209,6 +209,8 @@ Public Class ScrNewMaq
         'Cbo
         cboPersonal.Text = "Nombre, Apellidos"
         cboSerial.Text = "No. de Serie"
+        cboDescFalla.Text = "Descripción de falla"
+        cboNoParte.Text = "No. de parte"
 
     End Sub
 
