@@ -521,6 +521,8 @@ Public Class Datos
     Private _SerAf_mtom As String
     Private _Tareas_mtom As String
     Private _TokenUsr_mtom As String
+    Private _DescFalla_mtom As String
+    Private _NoParte_mtom As String
 
 #End Region
 
@@ -685,6 +687,24 @@ Public Class Datos
         End Get
         Set(value As String)
             _TokenUsr_mtom = value
+        End Set
+    End Property
+
+    Public Property DescFalla_mtom As String
+        Get
+            Return _DescFalla_mtom
+        End Get
+        Set(value As String)
+            _DescFalla_mtom = value
+        End Set
+    End Property
+
+    Public Property NoParte_mtom As String
+        Get
+            Return _NoParte_mtom
+        End Get
+        Set(value As String)
+            _NoParte_mtom = value
         End Set
     End Property
 
