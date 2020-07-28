@@ -417,6 +417,9 @@ Public Class ScrNewMaq
         dataMTO.SerAf_mtom = serieMaq
         dataMTO.Tareas_mtom = txtTareas.Text
         dataMTO.TokenUsr_mtom = tokenUsr
+        'Captura datos cbo descripción de falla y no. de parte
+        dataMTO.DescFalla_mtom = cboDescFalla.Text.ToString
+        dataMTO.NoParte_mtom = cboNoParte.Text.ToString
 
         'Agregar a firebase
         agregar.AddMANTOMAQ(dataMTO)
