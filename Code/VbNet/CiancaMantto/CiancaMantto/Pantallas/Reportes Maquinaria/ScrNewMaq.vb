@@ -425,7 +425,6 @@ Public Class ScrNewMaq
 
         'Agregar a firebase
         agregar.AddOPTMTOMAQ(dataMTO)
-        Return
         agregar.AddMANTOMAQ(dataMTO)
 
         'Splash
