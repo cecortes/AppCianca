@@ -769,27 +769,27 @@ Public Class Datos
 
 #Region "DATAMEMBERS"
 
-    Private _FallasMaq As String()
-    Private _RefaMaq As String()
+    Private _FallasMaq As String
+    Private _RefaMaq As String
 
 #End Region
 
 #Region "PROPIEDADES"
 
-    Public Property FallasMaq As String()
+    Public Property FallasMaq As String
         Get
             Return _FallasMaq
         End Get
-        Set(value As String())
+        Set(value As String)
             _FallasMaq = value
         End Set
     End Property
 
-    Public Property RefaMaq As String()
+    Public Property RefaMaq As String
         Get
             Return _RefaMaq
         End Get
-        Set(value As String())
+        Set(value As String)
             _RefaMaq = value
         End Set
     End Property
@@ -1470,7 +1470,7 @@ Public Class Consulta
             resFallas = res.ResultAs(Of Datos)
 
             'Captura de la lista de fallas
-            arrFallas = resFallas.DescFalla_mtom.Clone
+            arrFallas = resFallas.DescFalla_mtom.Split(",")
 
             'Rutina para recorrer el arreglo
             For i = 0 To arrFallas.Length - 1

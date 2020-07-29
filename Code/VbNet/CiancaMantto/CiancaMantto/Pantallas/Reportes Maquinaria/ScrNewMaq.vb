@@ -424,6 +424,8 @@ Public Class ScrNewMaq
         dataMTO.NoParte_mtom = cboNoParte.Text.ToString
 
         'Agregar a firebase
+        agregar.AddOPTMTOMAQ(dataMTO)
+        Return
         agregar.AddMANTOMAQ(dataMTO)
 
         'Splash
