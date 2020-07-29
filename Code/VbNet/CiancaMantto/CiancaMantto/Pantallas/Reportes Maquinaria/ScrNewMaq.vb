@@ -149,6 +149,16 @@ Public Class ScrNewMaq
     End Sub
 
     ''' <summary>
+    ''' Re inicia los datos de los cbo para Fallas y Refacciones
+    ''' Consulta la tabla OPTMTOMAQ
+    ''' Cara el resultado en ambos cbo
+    ''' Pone el index a 0 en ambos cbo
+    ''' </summary>
+    Private Sub FillCboOptMaq()
+
+    End Sub
+
+    ''' <summary>
     ''' Re inicia los datos del cbo
     ''' Consulta a la tabla de inventarios_af
     ''' Carga la tabla y actualiza los valores
