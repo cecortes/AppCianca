@@ -1494,7 +1494,7 @@ Public Class Consulta
             Next
 
             'Firebase conection
-            con.Con_Global()
+            'con.Con_Global()
 
             'Query Firebase
             res = con.firebase.Get("OPTMTOMAQ/Refas")
