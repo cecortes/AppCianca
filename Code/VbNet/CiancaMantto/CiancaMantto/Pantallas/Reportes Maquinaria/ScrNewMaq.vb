@@ -158,6 +158,7 @@ Public Class ScrNewMaq
 
         'Reset
         buscar.cboOptFallDs.Reset()
+        buscar.cboOptRefaDs.Reset()
 
         pnlSplash.Visible = True
 
@@ -166,14 +167,17 @@ Public Class ScrNewMaq
 
         'Cargamos los datos de la tabla en el combo para actualizar
         cboDescFalla.DataSource = buscar.cboOptFallDs.Tables("FALLAS")
+        cboNoParte.DataSource = buscar.cboOptRefaDs.Tables("REFAS")
 
         'Cargamos los datos de la columna FallasMaq en el combo para actualizar
         cboDescFalla.DisplayMember = "FallasMaq"
+        cboNoParte.DisplayMember = "RefaMaq"
 
         'Index a cero
         'cboPersonal.SelectedIndex = 0
 
         cboDescFalla.Text = "Descripción de falla"
+        cboNoParte.Text = "No. de parte"
 
         pnlSplash.Visible = False
 
