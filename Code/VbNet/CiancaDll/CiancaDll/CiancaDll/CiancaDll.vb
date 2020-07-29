@@ -1503,7 +1503,7 @@ Public Class Consulta
             resRefas = res.ResultAs(Of Datos)
 
             'Captura de la lista de fallas
-            Dim strRefas As String = resFallas.RefaMaq
+            Dim strRefas As String = resRefas.RefaMaq
             arrRefas = strRefas.Split(",")
 
             'Rutina para recorrer el arreglo
