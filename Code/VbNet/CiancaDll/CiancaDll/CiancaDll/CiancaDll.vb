@@ -822,6 +822,8 @@ Public Class Consulta
     Public cboUsrDS As New DataSet      'ComboBox Only USUARIOS
     Public cboMaqDS As New DataSet      'ComboBox Only INVENTARIO_AF
     Public cboMtoMaqDs As New DataSet   'Combobox Only MANTOMAQ
+    Public cboOptFallDs As New DataSet  'Combobox Only OPTMTOMAQ/Fallas
+    Public cboOptRefaDs As New DataSet  'Combobox Only OPTMTOMAQ/Refas
 
     'Referente a los dgv
     Public dgvMaqRepDS As New DataSet     'Datagrid Only MANTOMAQ
@@ -1442,6 +1444,60 @@ Public Class Consulta
 #End Region
 
 #Region "OPCIONES FALLAS Y REFACCIONES"
+
+    ''' <summary>
+    ''' Crea una tabla dentro de un dataset
+    ''' Se encarga de consultar el nodo OPTMTOMAQ/Fallas
+    ''' Recibe la respuesta como diccionario y la guarda en un dataset
+    ''' El dataset es accesible gracias a DATAMEMBERS
+    ''' Se encarga de consultar el nodo OPTMTOMAQ/Refas
+    ''' Recibe la respuesta como diccionario y la guarda en un dataset
+    ''' El dataset es accesible gracias a DATAMEMBERS
+    ''' </summary>
+    Public Sub FillFallasRefas()
+
+        'Locales
+        Dim arrFallas() As String
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode USR
+        cboOptFallDs.Tables.Add("FALLAS")
+        cboOptFallDs.Tables("FALLAS").Columns.Add("FallasMaq", GetType(String))
+
+        'Manejo de excepciones
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("OPTMTOMAQ/Fallas")
+
+            'Resultado
+            resFallas = res.ResultAs(Of Datos)
+
+            'Captura de la lista de fallas
+            Dim strFallas As String = resFallas.FallasMaq
+            arrFallas = strFallas.Split(",")
+
+            'Rutina para recorrer el arreglo
+            For i = 0 To arrFallas.Length - 1
+
+                'Agregamos los items separados en el Data Set
+                cboOptFallDs.Tables("FALLAS").Rows.Add(arrFallas(i))
+
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
 
     ''' <summary>
     ''' Consulta el nodo OPTMTOMAQ/
