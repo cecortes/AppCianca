@@ -1458,13 +1458,16 @@ Public Class Consulta
 
         'Locales
         Dim arrFallas() As String
+        Dim arrRefas() As String
 
         'Conexión Firebase
         Dim con As New Conexion
 
-        'Init Tabla, hardcode USR
+        'Init Tabla, hardcode FALLAS y REFAS
         cboOptFallDs.Tables.Add("FALLAS")
         cboOptFallDs.Tables("FALLAS").Columns.Add("FallasMaq", GetType(String))
+        cboOptRefaDs.Tables.Add("REFAS")
+        cboOptRefaDs.Tables("REFAS").Columns.Add("RefaMaq", GetType(String))
 
         'Manejo de excepciones
         Try
@@ -1487,6 +1490,27 @@ Public Class Consulta
 
                 'Agregamos los items separados en el Data Set
                 cboOptFallDs.Tables("FALLAS").Rows.Add(arrFallas(i))
+
+            Next
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("OPTMTOMAQ/Refas")
+
+            'Resultado
+            resRefas = res.ResultAs(Of Datos)
+
+            'Captura de la lista de fallas
+            Dim strRefas As String = resFallas.RefaMaq
+            arrRefas = strRefas.Split(",")
+
+            'Rutina para recorrer el arreglo
+            For i = 0 To arrRefas.Length - 1
+
+                'Agregamos los items separados en el Data Set
+                cboOptRefaDs.Tables("REFAS").Rows.Add(arrRefas(i))
 
             Next
 
