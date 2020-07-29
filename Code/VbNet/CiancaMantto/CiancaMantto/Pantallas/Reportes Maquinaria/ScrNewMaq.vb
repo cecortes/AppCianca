@@ -156,6 +156,27 @@ Public Class ScrNewMaq
     ''' </summary>
     Private Sub FillCboOptMaq()
 
+        'Reset
+        buscar.cboOptFallDs.Reset()
+
+        pnlSplash.Visible = True
+
+        'Llamamos a la consulta de los datos
+        buscar.FillFallasRefas()
+
+        'Cargamos los datos de la tabla en el combo para actualizar
+        cboDescFalla.DataSource = buscar.cboOptFallDs.Tables("FALLAS")
+
+        'Cargamos los datos de la columna FallasMaq en el combo para actualizar
+        cboDescFalla.DisplayMember = "FallasMaq"
+
+        'Index a cero
+        'cboPersonal.SelectedIndex = 0
+
+        cboDescFalla.Text = "Descripción de falla"
+
+        pnlSplash.Visible = False
+
     End Sub
 
     ''' <summary>
@@ -246,6 +267,7 @@ Public Class ScrNewMaq
         'Referente a los combo box
         FillCboNomApll()
         FillSerialAF()
+        FillCboOptMaq()
 
         'Cambiamos el estado de la bandera para indicar que se termino la carga de los cbo
         flgEndFill = True
