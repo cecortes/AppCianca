@@ -59,16 +59,16 @@ Partial Class ScrNewMaq
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BunifuSeparator2 = New Bunifu.Framework.UI.BunifuSeparator()
+        Me.cboNoParte = New System.Windows.Forms.ComboBox()
+        Me.BunifuCustomLabel1 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.cboDescFalla = New System.Windows.Forms.ComboBox()
+        Me.lbl10 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.txtTareas = New System.Windows.Forms.TextBox()
         Me.lbl6 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlReco = New System.Windows.Forms.Panel()
         Me.txtRecomen = New System.Windows.Forms.TextBox()
         Me.lbl7 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.btnAlta = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.lbl10 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.cboDescFalla = New System.Windows.Forms.ComboBox()
-        Me.cboNoParte = New System.Windows.Forms.ComboBox()
-        Me.BunifuCustomLabel1 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlTop.SuspendLayout()
         Me.pnlTop2.SuspendLayout()
         Me.pnlPersonal.SuspendLayout()
@@ -562,6 +562,64 @@ Partial Class ScrNewMaq
         Me.BunifuSeparator2.Transparency = 255
         Me.BunifuSeparator2.Vertical = False
         '
+        'cboNoParte
+        '
+        Me.cboNoParte.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cboNoParte.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboNoParte.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboNoParte.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.cboNoParte.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cboNoParte.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboNoParte.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.cboNoParte.FormattingEnabled = True
+        Me.cboNoParte.Location = New System.Drawing.Point(716, 94)
+        Me.cboNoParte.Name = "cboNoParte"
+        Me.cboNoParte.Size = New System.Drawing.Size(292, 33)
+        Me.cboNoParte.TabIndex = 55
+        Me.cboNoParte.Text = "No. de parte"
+        '
+        'BunifuCustomLabel1
+        '
+        Me.BunifuCustomLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BunifuCustomLabel1.AutoSize = True
+        Me.BunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuCustomLabel1.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.BunifuCustomLabel1.Location = New System.Drawing.Point(715, 65)
+        Me.BunifuCustomLabel1.Name = "BunifuCustomLabel1"
+        Me.BunifuCustomLabel1.Size = New System.Drawing.Size(107, 25)
+        Me.BunifuCustomLabel1.TabIndex = 54
+        Me.BunifuCustomLabel1.Text = "Refacciones:"
+        '
+        'cboDescFalla
+        '
+        Me.cboDescFalla.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cboDescFalla.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboDescFalla.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboDescFalla.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.cboDescFalla.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cboDescFalla.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboDescFalla.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.cboDescFalla.FormattingEnabled = True
+        Me.cboDescFalla.Location = New System.Drawing.Point(716, 32)
+        Me.cboDescFalla.Name = "cboDescFalla"
+        Me.cboDescFalla.Size = New System.Drawing.Size(292, 33)
+        Me.cboDescFalla.TabIndex = 53
+        Me.cboDescFalla.Text = "Descripción de falla"
+        '
+        'lbl10
+        '
+        Me.lbl10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl10.AutoSize = True
+        Me.lbl10.BackColor = System.Drawing.Color.Transparent
+        Me.lbl10.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.lbl10.Location = New System.Drawing.Point(714, 3)
+        Me.lbl10.Name = "lbl10"
+        Me.lbl10.Size = New System.Drawing.Size(182, 25)
+        Me.lbl10.TabIndex = 18
+        Me.lbl10.Text = "Descripción de la falla:"
+        '
         'txtTareas
         '
         Me.txtTareas.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -635,64 +693,6 @@ Partial Class ScrNewMaq
         Me.btnAlta.TabIndex = 48
         Me.btnAlta.TabStop = False
         Me.btnAlta.Zoom = 10
-        '
-        'lbl10
-        '
-        Me.lbl10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbl10.AutoSize = True
-        Me.lbl10.BackColor = System.Drawing.Color.Transparent
-        Me.lbl10.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.lbl10.Location = New System.Drawing.Point(714, 3)
-        Me.lbl10.Name = "lbl10"
-        Me.lbl10.Size = New System.Drawing.Size(182, 25)
-        Me.lbl10.TabIndex = 18
-        Me.lbl10.Text = "Descripción de la falla:"
-        '
-        'cboDescFalla
-        '
-        Me.cboDescFalla.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cboDescFalla.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboDescFalla.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboDescFalla.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.cboDescFalla.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cboDescFalla.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboDescFalla.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.cboDescFalla.FormattingEnabled = True
-        Me.cboDescFalla.Location = New System.Drawing.Point(716, 32)
-        Me.cboDescFalla.Name = "cboDescFalla"
-        Me.cboDescFalla.Size = New System.Drawing.Size(292, 29)
-        Me.cboDescFalla.TabIndex = 53
-        Me.cboDescFalla.Text = "Descripción de falla"
-        '
-        'cboNoParte
-        '
-        Me.cboNoParte.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cboNoParte.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboNoParte.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboNoParte.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.cboNoParte.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cboNoParte.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboNoParte.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.cboNoParte.FormattingEnabled = True
-        Me.cboNoParte.Location = New System.Drawing.Point(716, 94)
-        Me.cboNoParte.Name = "cboNoParte"
-        Me.cboNoParte.Size = New System.Drawing.Size(292, 29)
-        Me.cboNoParte.TabIndex = 55
-        Me.cboNoParte.Text = "No. de parte"
-        '
-        'BunifuCustomLabel1
-        '
-        Me.BunifuCustomLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BunifuCustomLabel1.AutoSize = True
-        Me.BunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuCustomLabel1.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.BunifuCustomLabel1.Location = New System.Drawing.Point(715, 65)
-        Me.BunifuCustomLabel1.Name = "BunifuCustomLabel1"
-        Me.BunifuCustomLabel1.Size = New System.Drawing.Size(107, 25)
-        Me.BunifuCustomLabel1.TabIndex = 54
-        Me.BunifuCustomLabel1.Text = "Refacciones:"
         '
         'ScrNewMaq
         '
