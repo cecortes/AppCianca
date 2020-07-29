@@ -1462,6 +1462,7 @@ Public Class Consulta
 
         'Conexión Firebase
         Dim con As New Conexion
+        Dim con2 As New Conexion
 
         'Init Tabla, hardcode FALLAS y REFAS
         cboOptFallDs.Tables.Add("FALLAS")
@@ -1494,10 +1495,10 @@ Public Class Consulta
             Next
 
             'Firebase conection
-            'con.Con_Global()
+            con2.Con_Global()
 
             'Query Firebase
-            res = con.firebase.Get("OPTMTOMAQ/Refas")
+            res = con2.firebase.Get("OPTMTOMAQ/Refas")
 
             'Resultado
             resRefas = res.ResultAs(Of Datos)
