@@ -1438,6 +1438,69 @@ Public Class Consulta
     End Function
 
 #End Region
+
+#Region "OPCIONES FALLAS Y REFACCIONES"
+
+    ''' <summary>
+    ''' Consulta el nodo OPTMTOMAQ/
+    ''' Recibe el resultado como Datos
+    ''' Evalúa si existe la falla comparando con el parámetro recibido
+    ''' Cambia el estado de la bandera y la devuelve.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function GetFallas(ByVal falla As String) As Boolean
+        'Locales
+        Dim estado As Boolean = False
+        Dim resFallas As Datos
+        Dim arrFallas() As String
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("OPTMTOMAQ/")
+
+            'Resultado
+            resFallas = res.ResultAs(Of Datos)
+
+            'Captura de la lista de fallas
+            arrFallas = resFallas.DescFalla_mtom.Clone
+
+            'Rutina para recorrer el arreglo
+            For i = 0 To arrFallas.Length - 1
+
+                'Evaluación del parámetro recibido contra el contenido del arreglo
+                If (falla = arrFallas(i)) Then
+
+                    'Cambio del estado de la bandera y salida de la rutina
+                    MsgBox("La falla existe")
+                    estado = True
+                    Exit For
+
+                End If
+
+            Next
+
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Devuelve el resultado de la evaluación
+        Return estado
+    End Function
+
+#End Region
+
 End Class
 
 Public Class Insertar
@@ -1491,6 +1554,12 @@ Public Class Insertar
     ''' </summary>
     ''' <param name="datos"></param>
     Public Sub AddOPTMTOMAQ(ByVal datos As Datos)
+        'Locales
+        Dim flgFalla As Boolean
+        Dim verifica As New Consulta
+
+        'Valida que la dedscripción de la falla no sea repetida
+        flgFalla = verifica.GetFallas(datos.DescFalla_mtom)
 
     End Sub
 
