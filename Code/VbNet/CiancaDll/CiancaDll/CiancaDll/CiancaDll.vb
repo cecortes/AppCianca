@@ -521,6 +521,8 @@ Public Class Datos
     Private _SerAf_mtom As String
     Private _Tareas_mtom As String
     Private _TokenUsr_mtom As String
+    Private _DescFalla_mtom As String
+    Private _NoParte_mtom As String
 
 #End Region
 
@@ -688,6 +690,24 @@ Public Class Datos
         End Set
     End Property
 
+    Public Property DescFalla_mtom As String
+        Get
+            Return _DescFalla_mtom
+        End Get
+        Set(value As String)
+            _DescFalla_mtom = value
+        End Set
+    End Property
+
+    Public Property NoParte_mtom As String
+        Get
+            Return _NoParte_mtom
+        End Get
+        Set(value As String)
+            _NoParte_mtom = value
+        End Set
+    End Property
+
 #End Region
 
 #End Region
@@ -745,6 +765,39 @@ Public Class Datos
 
 #End Region
 
+#Region "OPCIONES DE MANTENIMIENTO Y REFACCIONES"
+
+#Region "DATAMEMBERS"
+
+    Private _FallasMaq As String
+    Private _RefaMaq As String
+
+#End Region
+
+#Region "PROPIEDADES"
+
+    Public Property FallasMaq As String
+        Get
+            Return _FallasMaq
+        End Get
+        Set(value As String)
+            _FallasMaq = value
+        End Set
+    End Property
+
+    Public Property RefaMaq As String
+        Get
+            Return _RefaMaq
+        End Get
+        Set(value As String)
+            _RefaMaq = value
+        End Set
+    End Property
+
+#End Region
+
+#End Region
+
 End Class
 
 Public Class Consulta
@@ -762,11 +815,15 @@ Public Class Consulta
     Dim dataMaq As Datos                'Datos de la maquinaria en INVENTARIO_AF
     Dim dataRpoMaq As Datos             'Reportes de mantenimiento para maquinaria en MANTOMAQ
     Dim datosInci As Datos              'Diccionario para guardar los reportes de incidencias y contarlos.
+    Dim resFallas As Datos              'Datos de la tabla OPTMTOMAQ
+    Dim resRefas As Datos              'Datos de la tabla OPTMTOMAQ
 
     'Referente a los cbo
     Public cboUsrDS As New DataSet      'ComboBox Only USUARIOS
     Public cboMaqDS As New DataSet      'ComboBox Only INVENTARIO_AF
     Public cboMtoMaqDs As New DataSet   'Combobox Only MANTOMAQ
+    Public cboOptFallDs As New DataSet  'Combobox Only OPTMTOMAQ/Fallas
+    Public cboOptRefaDs As New DataSet  'Combobox Only OPTMTOMAQ/Refas
 
     'Referente a los dgv
     Public dgvMaqRepDS As New DataSet     'Datagrid Only MANTOMAQ
@@ -1385,6 +1442,290 @@ Public Class Consulta
     End Function
 
 #End Region
+
+#Region "OPCIONES FALLAS Y REFACCIONES"
+
+    ''' <summary>
+    ''' Crea una tabla dentro de un dataset
+    ''' Se encarga de consultar el nodo OPTMTOMAQ/Fallas
+    ''' Recibe la respuesta como diccionario y la guarda en un dataset
+    ''' El dataset es accesible gracias a DATAMEMBERS
+    ''' Se encarga de consultar el nodo OPTMTOMAQ/Refas
+    ''' Recibe la respuesta como diccionario y la guarda en un dataset
+    ''' El dataset es accesible gracias a DATAMEMBERS
+    ''' </summary>
+    Public Sub FillFallasRefas()
+
+        'Locales
+        Dim arrFallas() As String
+        Dim arrRefas() As String
+
+        'Conexión Firebase
+        Dim con As New Conexion
+        Dim con2 As New Conexion
+
+        'Init Tabla, hardcode FALLAS y REFAS
+        cboOptFallDs.Tables.Add("FALLAS")
+        cboOptFallDs.Tables("FALLAS").Columns.Add("FallasMaq", GetType(String))
+        cboOptRefaDs.Tables.Add("REFAS")
+        cboOptRefaDs.Tables("REFAS").Columns.Add("RefaMaq", GetType(String))
+
+        'Manejo de excepciones
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("OPTMTOMAQ/Fallas")
+
+            'Resultado
+            resFallas = res.ResultAs(Of Datos)
+
+            'Captura de la lista de fallas
+            Dim strFallas As String = resFallas.FallasMaq
+            arrFallas = strFallas.Split(",")
+
+            'Rutina para recorrer el arreglo
+            For i = 0 To arrFallas.Length - 1
+
+                'Agregamos los items separados en el Data Set
+                cboOptFallDs.Tables("FALLAS").Rows.Add(arrFallas(i))
+
+            Next
+
+            'Firebase conection
+            con2.Con_Global()
+
+            'Query Firebase
+            res = con2.firebase.Get("OPTMTOMAQ/Refas")
+
+            'Resultado
+            resRefas = res.ResultAs(Of Datos)
+
+            'Captura de la lista de fallas
+            Dim strRefas As String = resRefas.RefaMaq
+            arrRefas = strRefas.Split(",")
+
+            'Rutina para recorrer el arreglo
+            For i = 0 To arrRefas.Length - 1
+
+                'Agregamos los items separados en el Data Set
+                cboOptRefaDs.Tables("REFAS").Rows.Add(arrRefas(i))
+
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Consulta el nodo OPTMTOMAQ/
+    ''' Recibe el resultado como Datos
+    ''' Evalúa si existe la falla comparando con el parámetro recibido
+    ''' Cambia el estado de la bandera y la devuelve.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function GetFallas(ByVal falla As String) As Boolean
+        'Locales
+        Dim estado As Boolean = False
+        Dim arrFallas() As String
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("OPTMTOMAQ/Fallas")
+
+            'Resultado
+            resFallas = res.ResultAs(Of Datos)
+
+            'Captura de la lista de fallas
+            Dim strFallas As String = resFallas.FallasMaq
+            arrFallas = strFallas.Split(",")
+
+            'Rutina para recorrer el arreglo
+            For i = 0 To arrFallas.Length - 1
+
+                'Evaluación del parámetro recibido contra el contenido del arreglo
+                If (falla = arrFallas(i)) Then
+
+                    'Cambio del estado de la bandera y salida de la rutina
+                    estado = True
+                    Exit For
+
+                End If
+
+            Next
+
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Devuelve el resultado de la evaluación
+        Return estado
+
+    End Function
+
+    ''' <summary>
+    ''' Consulta el nodo OPTMTOMAQ/Fallas
+    ''' Guarda el resultado como una cadena
+    ''' Devuelve la cadena
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function GetListaFallas() As String
+
+        'Locales
+        Dim lista As String = ""
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("OPTMTOMAQ/Fallas")
+
+            'Resultado
+            resFallas = res.ResultAs(Of Datos)
+
+            'Captura de la lista de fallas
+            lista = resFallas.FallasMaq
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Devuelve el resultado de la evaluación
+        Return lista
+
+    End Function
+
+    ''' <summary>
+    ''' Consulta el nodo OPTMTOMAQ/
+    ''' Recibe el resultado como Datos
+    ''' Evalúa si existe la falla comparando con el parámetro recibido
+    ''' Cambia el estado de la bandera y la devuelve.
+    ''' </summary>
+    ''' <param name="refa"></param>
+    ''' <returns></returns>
+    Public Function GetRefas(ByVal refa As String) As Boolean
+
+        'Locales
+        Dim estado As Boolean = False
+        Dim arrRefas() As String
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("OPTMTOMAQ/Refas")
+
+            'Resultado
+            resFallas = res.ResultAs(Of Datos)
+
+            'Captura de la lista de fallas
+            Dim strRefas As String = resFallas.RefaMaq
+            arrRefas = strRefas.Split(",")
+
+            'Rutina para recorrer el arreglo
+            For i = 0 To arrRefas.Length - 1
+
+                'Evaluación del parámetro recibido contra el contenido del arreglo
+                If (refa = arrRefas(i)) Then
+
+                    'Cambio del estado de la bandera y salida de la rutina
+                    estado = True
+                    Exit For
+
+                End If
+
+            Next
+
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Devuelve el resultado de la evaluación
+        Return estado
+
+    End Function
+
+    ''' <summary>
+    ''' Consulta el nodo OPTMTOMAQ/Refas
+    ''' Guarda el resultado como una cadena
+    ''' Devuelve la cadena
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function GetListaRefas() As String
+
+        'Locales
+        Dim lista As String = ""
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("OPTMTOMAQ/Refas")
+
+            'Resultado
+            resRefas = res.ResultAs(Of Datos)
+
+            'Captura de la lista de fallas
+            lista = resRefas.RefaMaq
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Devuelve el resultado de la evaluación
+        Return lista
+
+    End Function
+
+#End Region
+
 End Class
 
 Public Class Insertar
@@ -1429,6 +1770,86 @@ Public Class Insertar
             MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
 
         End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Recibe los datos necesarios como parámetros.
+    ''' Agrega los datos en el nodo OPTMTOMAQ/.
+    ''' </summary>
+    ''' <param name="datos"></param>
+    Public Sub AddOPTMTOMAQ(ByVal datos As Datos)
+        'Locales
+        Dim flgFalla As Boolean
+        Dim verifica As New Consulta
+        Dim fallas As New Datos
+        Dim refas As New Datos
+        Dim lista As String
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Valida que la dedscripción de la falla no sea repetida
+        flgFalla = verifica.GetFallas(datos.DescFalla_mtom)
+        If (flgFalla) Then
+        Else
+
+            'Agrega la falla a la lista
+            Try
+
+                'Captura la lista existente en firebase
+                lista = verifica.GetListaFallas()
+                lista += "," & datos.DescFalla_mtom
+                fallas.FallasMaq = lista
+
+                'Firebase conection
+                con.Con_Global()
+
+                'Query Firebase
+                res = con.firebase.Update(Of Datos)("OPTMTOMAQ/Fallas", fallas)
+
+                'Usuario
+                'MsgBox("Lista agregada...", MsgBoxStyle.Information, strMsgTitle)
+
+            Catch ex As Exception
+
+                'USUARIO
+                MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+            End Try
+
+        End If
+
+        'Valida que la dedscripción de la falla no sea repetida
+        flgFalla = verifica.GetRefas(datos.NoParte_mtom)
+        If (flgFalla) Then
+        Else
+
+            'Agrega la falla a la lista
+            Try
+
+                'Captura la lista existente en firebase
+                lista = verifica.GetListaRefas()
+                lista += "," & datos.NoParte_mtom
+                refas.RefaMaq = lista
+
+                'Firebase conection
+                con.Con_Global()
+
+                'Query Firebase
+                res = con.firebase.Update(Of Datos)("OPTMTOMAQ/Refas", refas)
+
+                'Usuario
+                'MsgBox("Refacción agregada...", MsgBoxStyle.Information, strMsgTitle)
+
+            Catch ex As Exception
+
+                'USUARIO
+                MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+            End Try
+
+        End If
 
     End Sub
 

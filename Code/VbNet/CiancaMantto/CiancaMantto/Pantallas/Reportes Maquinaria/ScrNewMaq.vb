@@ -149,6 +149,41 @@ Public Class ScrNewMaq
     End Sub
 
     ''' <summary>
+    ''' Re inicia los datos de los cbo para Fallas y Refacciones
+    ''' Consulta la tabla OPTMTOMAQ
+    ''' Cara el resultado en ambos cbo
+    ''' Pone el index a 0 en ambos cbo
+    ''' </summary>
+    Private Sub FillCboOptMaq()
+
+        'Reset
+        buscar.cboOptFallDs.Reset()
+        buscar.cboOptRefaDs.Reset()
+
+        pnlSplash.Visible = True
+
+        'Llamamos a la consulta de los datos
+        buscar.FillFallasRefas()
+
+        'Cargamos los datos de la tabla en el combo para actualizar
+        cboDescFalla.DataSource = buscar.cboOptFallDs.Tables("FALLAS")
+        cboNoParte.DataSource = buscar.cboOptRefaDs.Tables("REFAS")
+
+        'Cargamos los datos de la columna FallasMaq en el combo para actualizar
+        cboDescFalla.DisplayMember = "FallasMaq"
+        cboNoParte.DisplayMember = "RefaMaq"
+
+        'Index a cero
+        'cboPersonal.SelectedIndex = 0
+
+        cboDescFalla.Text = "Descripción de falla"
+        cboNoParte.Text = "No. de parte"
+
+        pnlSplash.Visible = False
+
+    End Sub
+
+    ''' <summary>
     ''' Re inicia los datos del cbo
     ''' Consulta a la tabla de inventarios_af
     ''' Carga la tabla y actualiza los valores
@@ -209,6 +244,8 @@ Public Class ScrNewMaq
         'Cbo
         cboPersonal.Text = "Nombre, Apellidos"
         cboSerial.Text = "No. de Serie"
+        cboDescFalla.Text = "Descripción de falla"
+        cboNoParte.Text = "No. de parte"
 
     End Sub
 
@@ -234,6 +271,7 @@ Public Class ScrNewMaq
         'Referente a los combo box
         FillCboNomApll()
         FillSerialAF()
+        FillCboOptMaq()
 
         'Cambiamos el estado de la bandera para indicar que se termino la carga de los cbo
         flgEndFill = True
@@ -417,8 +455,12 @@ Public Class ScrNewMaq
         dataMTO.SerAf_mtom = serieMaq
         dataMTO.Tareas_mtom = txtTareas.Text
         dataMTO.TokenUsr_mtom = tokenUsr
+        'Captura datos cbo descripción de falla y no. de parte
+        dataMTO.DescFalla_mtom = cboDescFalla.Text.ToString
+        dataMTO.NoParte_mtom = cboNoParte.Text.ToString
 
         'Agregar a firebase
+        agregar.AddOPTMTOMAQ(dataMTO)
         agregar.AddMANTOMAQ(dataMTO)
 
         'Splash
