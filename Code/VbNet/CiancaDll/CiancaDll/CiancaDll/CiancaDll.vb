@@ -245,6 +245,109 @@ Public Class Datos
 
 #End Region
 
+#Region "PROVEEDORES"
+
+#Region "DATAMEMBERS"
+
+    Private _Col_P As String
+    Private _Dir_P As String
+    Private _Edo_P As String
+    Private _Mail_P As String
+    Private _Muni_P As String
+    Private _Nom_P As String
+    Private _Rfc_P As String
+    Private _Tel_P As String
+    Private _Tipo_P As String
+
+#End Region
+
+#Region "PROPIEDADES"
+
+    Public Property Col_P As String
+        Get
+            Return _Col_P
+        End Get
+        Set(value As String)
+            _Col_P = value
+        End Set
+    End Property
+
+    Public Property Dir_P As String
+        Get
+            Return _Dir_P
+        End Get
+        Set(value As String)
+            _Dir_P = value
+        End Set
+    End Property
+
+    Public Property Edo_P As String
+        Get
+            Return _Edo_P
+        End Get
+        Set(value As String)
+            _Edo_P = value
+        End Set
+    End Property
+
+    Public Property Mail_P As String
+        Get
+            Return _Mail_P
+        End Get
+        Set(value As String)
+            _Mail_P = value
+        End Set
+    End Property
+
+    Public Property Muni_P As String
+        Get
+            Return _Muni_P
+        End Get
+        Set(value As String)
+            _Muni_P = value
+        End Set
+    End Property
+
+    Public Property Nom_P As String
+        Get
+            Return _Nom_P
+        End Get
+        Set(value As String)
+            _Nom_P = value
+        End Set
+    End Property
+
+    Public Property Rfc_P As String
+        Get
+            Return _Rfc_P
+        End Get
+        Set(value As String)
+            _Rfc_P = value
+        End Set
+    End Property
+
+    Public Property Tel_P As String
+        Get
+            Return _Tel_P
+        End Get
+        Set(value As String)
+            _Tel_P = value
+        End Set
+    End Property
+
+    Public Property Tipo_P As String
+        Get
+            Return _Tipo_P
+        End Get
+        Set(value As String)
+            _Tipo_P = value
+        End Set
+    End Property
+
+#End Region
+
+#End Region
+
 #Region "AUTOS"
 
 #Region "DATAMEMBERS"
@@ -825,6 +928,7 @@ Public Class Consulta
     Public cboOptFallDs As New DataSet  'Combobox Only OPTMTOMAQ/Fallas
     Public cboOptRefaDs As New DataSet  'Combobox Only OPTMTOMAQ/Refas
     Public cboPlacasDS As New DataSet   'Combobox Only AUTOS
+    Public cboRfcProvDS As New DataSet  'Combobox Only PROVEEDORES
 
     'Referente a los dgv
     Public dgvMaqRepDS As New DataSet     'Datagrid Only MANTOMAQ
@@ -1045,6 +1149,52 @@ Public Class Consulta
                 If String.IsNullOrEmpty(item.Value.Placas) Then
                 Else
                     cboPlacasDS.Tables("PLACAS").Rows.Add(item.Value.Placas)
+                End If
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "PROVEEDORES"
+
+    ''' <summary>
+    ''' Se encarga de obtener el rfc del proveedor del nodo PROVEEDORES y pasarlo
+    ''' al cbo necesario.
+    ''' </summary>
+    Public Sub getRfcProv()
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode USR
+        cboRfcProvDS.Tables.Add("RFC")
+        cboRfcProvDS.Tables("RFC").Columns.Add("Rfc_P", GetType(String))
+
+        'Manejo de excepciones
+        Try
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("AUTOS/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Rfc_P) Then
+                Else
+                    cboRfcProvDS.Tables("RFC").Rows.Add(item.Value.Rfc_P)
                 End If
             Next
 
