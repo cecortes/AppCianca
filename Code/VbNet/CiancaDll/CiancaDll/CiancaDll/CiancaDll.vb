@@ -824,6 +824,7 @@ Public Class Consulta
     Public cboMtoMaqDs As New DataSet   'Combobox Only MANTOMAQ
     Public cboOptFallDs As New DataSet  'Combobox Only OPTMTOMAQ/Fallas
     Public cboOptRefaDs As New DataSet  'Combobox Only OPTMTOMAQ/Refas
+    Public cboPlacasDS As New DataSet   'Combobox Only AUTOS
 
     'Referente a los dgv
     Public dgvMaqRepDS As New DataSet     'Datagrid Only MANTOMAQ
@@ -1009,6 +1010,52 @@ Public Class Consulta
         Return dataMaq
 
     End Function
+
+#End Region
+
+#Region "AUTOS"
+
+    ''' <summary>
+    ''' Se encarga de obtener el número de placas de los autos en el nodo AUTOS
+    ''' para llenar el cbo necesario.
+    ''' </summary>
+    Public Sub getPlacas()
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode USR
+        cboPlacasDS.Tables.Add("PLACAS")
+        cboPlacasDS.Tables("PLACAS").Columns.Add("Placas", GetType(String))
+
+        'Manejo de excepciones
+        Try
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("AUTOS/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Placas) Then
+                Else
+                    cboPlacasDS.Tables("PLACAS").Rows.Add(item.Value.Placas)
+                End If
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
 
 #End Region
 
