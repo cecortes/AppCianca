@@ -47,6 +47,8 @@ Partial Class ScrNewAuto
         Me.lbl2 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lblMarca = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlFactura = New System.Windows.Forms.Panel()
+        Me.btnAlta = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.txtCosto = New System.Windows.Forms.TextBox()
         Me.lbl22 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl21 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.txtDesc = New System.Windows.Forms.TextBox()
@@ -74,8 +76,6 @@ Partial Class ScrNewAuto
         Me.dtpFecha = New Bunifu.Framework.UI.BunifuDatepicker()
         Me.txtNoFac = New System.Windows.Forms.TextBox()
         Me.lbl9 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.txtCosto = New System.Windows.Forms.TextBox()
-        Me.btnAlta = New Bunifu.Framework.UI.BunifuImageButton()
         Me.pnlTop.SuspendLayout()
         Me.pnlDatos.SuspendLayout()
         Me.pnlProve.SuspendLayout()
@@ -421,6 +421,31 @@ Partial Class ScrNewAuto
         Me.pnlFactura.Size = New System.Drawing.Size(1024, 574)
         Me.pnlFactura.TabIndex = 3
         '
+        'btnAlta
+        '
+        Me.btnAlta.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnAlta.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnAlta.Image = CType(resources.GetObject("btnAlta.Image"), System.Drawing.Image)
+        Me.btnAlta.ImageActive = Nothing
+        Me.btnAlta.Location = New System.Drawing.Point(463, 500)
+        Me.btnAlta.Name = "btnAlta"
+        Me.btnAlta.Size = New System.Drawing.Size(81, 50)
+        Me.btnAlta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnAlta.TabIndex = 84
+        Me.btnAlta.TabStop = False
+        Me.btnAlta.Zoom = 10
+        '
+        'txtCosto
+        '
+        Me.txtCosto.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
+        Me.txtCosto.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCosto.ForeColor = System.Drawing.Color.Black
+        Me.txtCosto.Location = New System.Drawing.Point(477, 58)
+        Me.txtCosto.Name = "txtCosto"
+        Me.txtCosto.Size = New System.Drawing.Size(101, 22)
+        Me.txtCosto.TabIndex = 83
+        Me.txtCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'lbl22
         '
         Me.lbl22.AutoSize = True
@@ -458,7 +483,6 @@ Partial Class ScrNewAuto
         Me.txtDesc.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.txtDesc.Size = New System.Drawing.Size(535, 233)
         Me.txtDesc.TabIndex = 80
-        Me.txtDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'chkFrio
         '
@@ -772,31 +796,6 @@ Partial Class ScrNewAuto
         Me.lbl9.Size = New System.Drawing.Size(96, 25)
         Me.lbl9.TabIndex = 55
         Me.lbl9.Text = "Factura No:"
-        '
-        'txtCosto
-        '
-        Me.txtCosto.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.txtCosto.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCosto.ForeColor = System.Drawing.Color.Black
-        Me.txtCosto.Location = New System.Drawing.Point(477, 58)
-        Me.txtCosto.Name = "txtCosto"
-        Me.txtCosto.Size = New System.Drawing.Size(101, 22)
-        Me.txtCosto.TabIndex = 83
-        Me.txtCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btnAlta
-        '
-        Me.btnAlta.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnAlta.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnAlta.Image = CType(resources.GetObject("btnAlta.Image"), System.Drawing.Image)
-        Me.btnAlta.ImageActive = Nothing
-        Me.btnAlta.Location = New System.Drawing.Point(463, 500)
-        Me.btnAlta.Name = "btnAlta"
-        Me.btnAlta.Size = New System.Drawing.Size(81, 50)
-        Me.btnAlta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnAlta.TabIndex = 84
-        Me.btnAlta.TabStop = False
-        Me.btnAlta.Zoom = 10
         '
         'ScrNewAuto
         '
