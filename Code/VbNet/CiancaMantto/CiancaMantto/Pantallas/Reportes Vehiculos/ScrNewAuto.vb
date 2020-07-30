@@ -115,27 +115,28 @@ Public Class ScrNewAuto
     Private Sub FillCboPlacasRfc()
 
         'Reset
-        'buscar.cboOptFallDs.Reset()
-        'buscar.cboOptRefaDs.Reset()
+        buscar.cboPlacasDS.Reset()
+        buscar.cboRfcProvDS.Reset()
 
         'pnlSplash.Visible = True
 
-        ''Llamamos a la consulta de los datos
-        'buscar.FillFallasRefas()
+        'Llamamos a la consulta de los datos
+        buscar.getPlacas()
+        buscar.getRfcProv()
 
-        ''Cargamos los datos de la tabla en el combo para actualizar
-        'cboDescFalla.DataSource = buscar.cboOptFallDs.Tables("FALLAS")
-        'cboNoParte.DataSource = buscar.cboOptRefaDs.Tables("REFAS")
+        'Cargamos los datos de la tabla en el combo para actualizar
+        cboPlacas.DataSource = buscar.cboPlacasDS.Tables("PLACAS")
+        cboRfc.DataSource = buscar.cboRfcProvDS.Tables("RFC")
 
-        ''Cargamos los datos de la columna FallasMaq en el combo para actualizar
-        'cboDescFalla.DisplayMember = "FallasMaq"
-        'cboNoParte.DisplayMember = "RefaMaq"
+        'Cargamos los datos de la columna FallasMaq en el combo para actualizar
+        cboPlacas.DisplayMember = "Placas"
+        cboRfc.DisplayMember = "Rfc_P"
 
         ''Index a cero
         ''cboPersonal.SelectedIndex = 0
 
-        'cboDescFalla.Text = "Descripción de falla"
-        'cboNoParte.Text = "No. de parte"
+        cboPlacas.Text = "No. de placas"
+        cboRfc.Text = "RFC Proveedor"
 
         'pnlSplash.Visible = False
 
@@ -178,5 +179,22 @@ Public Class ScrNewAuto
 
 #Region "EVENTOS"
 
+    ''' <summary>
+    ''' Carga el formato para el datetime picker
+    ''' Llama al método para cargar con información a los cbo correspondientes
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub ScrNewAuto_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+        'Dtp
+        FormatDtp()
+
+        'Cbo
+        FillCboPlacasRfc()
+
+    End Sub
+
 #End Region
+
 End Class

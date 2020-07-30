@@ -1184,7 +1184,7 @@ Public Class Consulta
             con.Con_Global()
 
             'Query Firebase
-            res = con.firebase.Get("AUTOS/")
+            res = con.firebase.Get("PROVEEDORES/")
 
             'Diccionario para almacenar las respuestas
             dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
