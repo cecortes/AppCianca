@@ -133,6 +133,42 @@ Public Class ScrEditAuto
     End Sub
 
     ''' <summary>
+    ''' Re inicia los datos de los cbo para reportes de mantenimiento autos
+    ''' Consulta la tabla MANTOAUTO
+    ''' Carga el resultado en el cbo cbo
+    ''' Pone el index a 0 en el cbo
+    ''' </summary>
+    Private Sub FillCboRepor()
+
+        'Reset
+        buscar.cboPlacasDS.Reset()
+        buscar.cboRfcProvDS.Reset()
+
+        'pnlSplash.Visible = True
+
+        'Llamamos a la consulta de los datos
+        buscar.getPlacas()
+        buscar.getRfcProv()
+
+        'Cargamos los datos de la tabla en el combo para actualizar
+        cboPlacas.DataSource = buscar.cboPlacasDS.Tables("PLACAS")
+        cboRfc.DataSource = buscar.cboRfcProvDS.Tables("RFC")
+
+        'Cargamos los datos de la columna FallasMaq en el combo para actualizar
+        cboPlacas.DisplayMember = "Placas"
+        cboRfc.DisplayMember = "Rfc_P"
+
+        ''Index a cero
+        ''cboPersonal.SelectedIndex = 0
+
+        cboPlacas.Text = "No. de placas"
+        cboRfc.Text = "RFC Proveedor"
+
+        'pnlSplash.Visible = False
+
+    End Sub
+
+    ''' <summary>
     ''' Se encarga de limpiar los campos y las variables necesarias
     ''' </summary>
     Private Sub ClearFields()
@@ -178,6 +214,26 @@ Public Class ScrEditAuto
 #End Region
 
 #Region "EVENTOS"
+
+    ''' <summary>
+    ''' Carga el formato para el datetime picker
+    ''' Llama al método para cargar con información a los cbo correspondientes
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub ScrEditAuto_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+        'Dtp
+        FormatDtp()
+
+        'Cbo
+        FillCboPlacasRfc()
+        FillCboRepor()
+
+        'Cambiamos el estado de la bandera para indicar que se termino la carga de los cbo
+        flgEndFill = True
+
+    End Sub
 
 #End Region
 
