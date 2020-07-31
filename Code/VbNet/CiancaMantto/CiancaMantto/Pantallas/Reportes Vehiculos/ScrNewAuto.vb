@@ -195,6 +195,9 @@ Public Class ScrNewAuto
         'Cbo
         FillCboPlacasRfc()
 
+        'Cambiamos el estado de la bandera para indicar que se termino la carga de los cbo
+        flgEndFill = True
+
     End Sub
 
     ''' <summary>
@@ -218,17 +221,15 @@ Public Class ScrNewAuto
             fbData.Placas = cboPlacas.Text.ToString
 
             'Consulta
-            dataAutos = buscar.getMaqData(fbData)
+            dataAutos = buscar.getAutosData(fbData)
 
             'Actualización de etiquetas y pbox
-            serieMaq = dataMaq.Serie_af
-            lblDesc.Text = dataMaq.Desc_af
-            lblArea.Text = dataMaq.Area_af
-            lblMarca.Text = dataMaq.Marca_af
-            lblModelo.Text = dataMaq.Modelo_af
-            pbFoto.Image = Base64ToImage(dataMaq.Pic_af)
+            lblYear.Text = dataAutos.Year_Autos
+            lblMarca.Text = dataAutos.Marca
+            lblModelo.Text = dataAutos.Modelo
+            pbFoto.Image = Base64ToImage(dataAutos.Foto_Autos)
 
-            pnlSplash.Visible = False
+            'pnlSplash.Visible = False
 
         End If
 
@@ -249,23 +250,20 @@ Public Class ScrNewAuto
         If flgEndFill Then
 
             'Splash
-            pnlSplash.Visible = True
+            'pnlSplash.Visible = True
 
             'Captura del serial del cbo
-            fbData.Id_af = cboSerial.Text.ToString
+            fbData.Rfc_P = cboRfc.Text.ToString
 
             'Consulta
-            dataMaq = buscar.getMaqData(fbData)
+            dataProv = buscar.getProvData(fbData)
 
             'Actualización de etiquetas y pbox
-            serieMaq = dataMaq.Serie_af
-            lblDesc.Text = dataMaq.Desc_af
-            lblArea.Text = dataMaq.Area_af
-            lblMarca.Text = dataMaq.Marca_af
-            lblModelo.Text = dataMaq.Modelo_af
-            pbFoto.Image = Base64ToImage(dataMaq.Pic_af)
+            lblNombre.Text = dataProv.Nom_P
+            lblTel.Text = dataProv.Tel_P
+            lblMail.Text = dataProv.Mail_P
 
-            pnlSplash.Visible = False
+            'pnlSplash.Visible = False
 
         End If
 
