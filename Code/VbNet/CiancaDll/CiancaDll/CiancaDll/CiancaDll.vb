@@ -2539,4 +2539,39 @@ Public Class Borrar
 
 #End Region
 
+#Region "MANTOAUTO"
+
+    ''' <summary>
+    ''' Recibe los datos necesarios como parámetros
+    ''' Borra los datos en el nodo MANTOAUTO/id_mto
+    ''' </summary>
+    ''' <param name="datos"></param>
+    Public Sub DelMANTOAUTO(ByVal datos As Datos)
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Manejo de excepciones
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Delete("MANTOAUTO/" + datos.Id_mto)
+
+            'Usuario
+            MsgBox("Registro " + datos.Id_mto + " borrado", MsgBoxStyle.Critical, con.strMsgTitle)
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+
+#End Region
+
 End Class

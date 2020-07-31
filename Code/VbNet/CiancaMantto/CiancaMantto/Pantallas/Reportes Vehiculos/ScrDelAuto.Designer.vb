@@ -32,6 +32,7 @@ Partial Class ScrDelAuto
         Me.cboReporte = New System.Windows.Forms.ComboBox()
         Me.pnlDatos = New System.Windows.Forms.Panel()
         Me.pnlProve = New System.Windows.Forms.Panel()
+        Me.txtRfc = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl8 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lblMail = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl7 = New Bunifu.Framework.UI.BunifuCustomLabel()
@@ -40,6 +41,7 @@ Partial Class ScrDelAuto
         Me.lblNombre = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl5 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlAutos = New System.Windows.Forms.Panel()
+        Me.txtPlacas = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lblYear = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl4 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuCustomLabel1 = New Bunifu.Framework.UI.BunifuCustomLabel()
@@ -47,9 +49,8 @@ Partial Class ScrDelAuto
         Me.BunifuCustomLabel2 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuCustomLabel3 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lblMarca = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.txtPlacas = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.txtRfc = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlFactura = New System.Windows.Forms.Panel()
+        Me.txtFecha = New System.Windows.Forms.TextBox()
         Me.txtCosto = New System.Windows.Forms.TextBox()
         Me.lbl22 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl21 = New Bunifu.Framework.UI.BunifuCustomLabel()
@@ -77,7 +78,6 @@ Partial Class ScrDelAuto
         Me.lbl10 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.txtNoFac = New System.Windows.Forms.TextBox()
         Me.lbl9 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.txtFecha = New System.Windows.Forms.TextBox()
         Me.pnlTop.SuspendLayout()
         Me.pnlBottom.SuspendLayout()
         CType(Me.btnDel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,7 +141,7 @@ Partial Class ScrDelAuto
         Me.btnDel.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.btnDel.Image = CType(resources.GetObject("btnDel.Image"), System.Drawing.Image)
         Me.btnDel.ImageActive = Nothing
-        Me.btnDel.Location = New System.Drawing.Point(826, 40)
+        Me.btnDel.Location = New System.Drawing.Point(848, 40)
         Me.btnDel.Name = "btnDel"
         Me.btnDel.Size = New System.Drawing.Size(100, 50)
         Me.btnDel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -172,9 +172,9 @@ Partial Class ScrDelAuto
         Me.cboReporte.Font = New System.Drawing.Font("Poppins Medium", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboReporte.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
         Me.cboReporte.FormattingEnabled = True
-        Me.cboReporte.Location = New System.Drawing.Point(321, 52)
+        Me.cboReporte.Location = New System.Drawing.Point(245, 52)
         Me.cboReporte.Name = "cboReporte"
-        Me.cboReporte.Size = New System.Drawing.Size(215, 33)
+        Me.cboReporte.Size = New System.Drawing.Size(308, 33)
         Me.cboReporte.TabIndex = 53
         Me.cboReporte.Text = "No. de reporte"
         '
@@ -204,6 +204,19 @@ Partial Class ScrDelAuto
         Me.pnlProve.Name = "pnlProve"
         Me.pnlProve.Size = New System.Drawing.Size(536, 147)
         Me.pnlProve.TabIndex = 3
+        '
+        'txtRfc
+        '
+        Me.txtRfc.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtRfc.AutoSize = True
+        Me.txtRfc.BackColor = System.Drawing.Color.Transparent
+        Me.txtRfc.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRfc.ForeColor = System.Drawing.Color.White
+        Me.txtRfc.Location = New System.Drawing.Point(334, 6)
+        Me.txtRfc.Name = "txtRfc"
+        Me.txtRfc.Size = New System.Drawing.Size(32, 25)
+        Me.txtRfc.TabIndex = 58
+        Me.txtRfc.Text = "NA"
         '
         'lbl8
         '
@@ -312,6 +325,18 @@ Partial Class ScrDelAuto
         Me.pnlAutos.Size = New System.Drawing.Size(486, 147)
         Me.pnlAutos.TabIndex = 3
         '
+        'txtPlacas
+        '
+        Me.txtPlacas.AutoSize = True
+        Me.txtPlacas.BackColor = System.Drawing.Color.Transparent
+        Me.txtPlacas.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPlacas.ForeColor = System.Drawing.Color.White
+        Me.txtPlacas.Location = New System.Drawing.Point(20, 31)
+        Me.txtPlacas.Name = "txtPlacas"
+        Me.txtPlacas.Size = New System.Drawing.Size(32, 25)
+        Me.txtPlacas.TabIndex = 60
+        Me.txtPlacas.Text = "NA"
+        '
         'lblYear
         '
         Me.lblYear.AutoSize = True
@@ -396,31 +421,6 @@ Partial Class ScrDelAuto
         Me.lblMarca.TabIndex = 55
         Me.lblMarca.Text = "NA"
         '
-        'txtPlacas
-        '
-        Me.txtPlacas.AutoSize = True
-        Me.txtPlacas.BackColor = System.Drawing.Color.Transparent
-        Me.txtPlacas.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPlacas.ForeColor = System.Drawing.Color.White
-        Me.txtPlacas.Location = New System.Drawing.Point(20, 31)
-        Me.txtPlacas.Name = "txtPlacas"
-        Me.txtPlacas.Size = New System.Drawing.Size(32, 25)
-        Me.txtPlacas.TabIndex = 60
-        Me.txtPlacas.Text = "NA"
-        '
-        'txtRfc
-        '
-        Me.txtRfc.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtRfc.AutoSize = True
-        Me.txtRfc.BackColor = System.Drawing.Color.Transparent
-        Me.txtRfc.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRfc.ForeColor = System.Drawing.Color.White
-        Me.txtRfc.Location = New System.Drawing.Point(334, 6)
-        Me.txtRfc.Name = "txtRfc"
-        Me.txtRfc.Size = New System.Drawing.Size(32, 25)
-        Me.txtRfc.TabIndex = 58
-        Me.txtRfc.Text = "NA"
-        '
         'pnlFactura
         '
         Me.pnlFactura.Controls.Add(Me.txtFecha)
@@ -456,6 +456,19 @@ Partial Class ScrDelAuto
         Me.pnlFactura.Name = "pnlFactura"
         Me.pnlFactura.Size = New System.Drawing.Size(1024, 444)
         Me.pnlFactura.TabIndex = 10
+        '
+        'txtFecha
+        '
+        Me.txtFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtFecha.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtFecha.ForeColor = System.Drawing.Color.White
+        Me.txtFecha.Location = New System.Drawing.Point(842, 26)
+        Me.txtFecha.Name = "txtFecha"
+        Me.txtFecha.Size = New System.Drawing.Size(170, 22)
+        Me.txtFecha.TabIndex = 84
+        Me.txtFecha.Text = "NA"
+        Me.txtFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtCosto
         '
@@ -815,19 +828,6 @@ Partial Class ScrDelAuto
         Me.lbl9.Size = New System.Drawing.Size(96, 25)
         Me.lbl9.TabIndex = 55
         Me.lbl9.Text = "Factura No:"
-        '
-        'txtFecha
-        '
-        Me.txtFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtFecha.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtFecha.ForeColor = System.Drawing.Color.White
-        Me.txtFecha.Location = New System.Drawing.Point(842, 26)
-        Me.txtFecha.Name = "txtFecha"
-        Me.txtFecha.Size = New System.Drawing.Size(170, 22)
-        Me.txtFecha.TabIndex = 84
-        Me.txtFecha.Text = "NA"
-        Me.txtFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ScrDelAuto
         '
