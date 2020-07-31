@@ -141,28 +141,23 @@ Public Class ScrEditAuto
     Private Sub FillCboRepor()
 
         'Reset
-        buscar.cboPlacasDS.Reset()
-        buscar.cboRfcProvDS.Reset()
+        buscar.cboMtoAutoDs.Reset()
 
         'pnlSplash.Visible = True
 
         'Llamamos a la consulta de los datos
-        buscar.getPlacas()
-        buscar.getRfcProv()
+        buscar.getMtoAutoRepor()
 
         'Cargamos los datos de la tabla en el combo para actualizar
-        cboPlacas.DataSource = buscar.cboPlacasDS.Tables("PLACAS")
-        cboRfc.DataSource = buscar.cboRfcProvDS.Tables("RFC")
+        cboRepor.DataSource = buscar.cboMtoAutoDs.Tables("MTOAUTO")
 
         'Cargamos los datos de la columna FallasMaq en el combo para actualizar
-        cboPlacas.DisplayMember = "Placas"
-        cboRfc.DisplayMember = "Rfc_P"
+        cboRepor.DisplayMember = "Reporte"
 
         ''Index a cero
         ''cboPersonal.SelectedIndex = 0
 
-        cboPlacas.Text = "No. de placas"
-        cboRfc.Text = "RFC Proveedor"
+        cboRepor.Text = "Reporte"
 
         'pnlSplash.Visible = False
 
@@ -189,9 +184,6 @@ Public Class ScrEditAuto
         txtNoFac.Text = ""
         txtCosto.Text = ""
         txtDesc.Text = ""
-
-        'Pbox
-        pbFoto.Image = My.Resources.camera
 
         'Cbo
         cboPlacas.Text = "No. de placas"
@@ -232,6 +224,41 @@ Public Class ScrEditAuto
 
         'Cambiamos el estado de la bandera para indicar que se termino la carga de los cbo
         flgEndFill = True
+
+    End Sub
+
+    ''' <summary>
+    ''' Valida que los cbo hayan terminado de actualizarse
+    ''' Captura el valor del reporte seleccionado.
+    ''' Llama a la consulta del nodo MANTOAUTO/cboRepor.Text
+    ''' Captura el resultado de la consulta
+    ''' Actualiza las etiquetas con los datos
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub cboRepor_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboRepor.SelectedValueChanged
+
+        'Validación
+        If flgEndFill Then
+
+            'Splash
+            'pnlSplash.Visible = True
+
+            'Captura del reporte del cbo
+            fbData.Id_mto = cboRepor.Text.ToString
+
+            'Consulta
+            dataMtoAuto = buscar.getAutosData(fbData)
+
+            'Actualización de etiquetas y pbox
+            lblYear.Text = dataAutos.Year_Autos
+            lblMarca.Text = dataAutos.Marca
+            lblModelo.Text = dataAutos.Modelo
+
+
+            'pnlSplash.Visible = False
+
+        End If
 
     End Sub
 

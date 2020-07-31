@@ -1160,11 +1160,12 @@ Public Class Consulta
     Dim tokenUsr As String
     Dim dataMaq As Datos                'Datos de la maquinaria en INVENTARIO_AF
     Dim dataRpoMaq As Datos             'Reportes de mantenimiento para maquinaria en MANTOMAQ
+    Dim dataRpoAuto As Datos            'Reportes de mantenimiento para vehículos en MANTOAUTO
     Dim dataAut As Datos                'Datos de un vehículo en AUTOS
     Dim dataPrv As Datos                'Datos de un proveedor en PROVEEDORES
     Dim datosInci As Datos              'Diccionario para guardar los reportes de incidencias y contarlos.
     Dim resFallas As Datos              'Datos de la tabla OPTMTOMAQ
-    Dim resRefas As Datos              'Datos de la tabla OPTMTOMAQ
+    Dim resRefas As Datos               'Datos de la tabla OPTMTOMAQ
 
     'Referente a los cbo
     Public cboUsrDS As New DataSet      'ComboBox Only USUARIOS
@@ -2004,6 +2005,42 @@ Public Class Consulta
         End Try
 
     End Sub
+
+    ''' <summary>
+    ''' Consulta el nodo MANTOAUTO/Id_mto
+    ''' Recibe el resultado como Datos
+    ''' Devuelve un objeto del tipo datos
+    ''' </summary>
+    ''' <param name="data"></param>
+    ''' <returns></returns>
+    Public Function getMtoAuto(ByVal data As Datos) As Datos
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("MANTOAUTO/" + data.Id_mto)
+
+            'Resultado
+            dataRpoAuto = res.ResultAs(Of Datos)
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Devuelve el resultado
+        Return dataRpoAuto
+
+    End Function
 
 #End Region
 
