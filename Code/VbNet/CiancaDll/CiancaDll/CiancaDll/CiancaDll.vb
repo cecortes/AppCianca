@@ -245,6 +245,109 @@ Public Class Datos
 
 #End Region
 
+#Region "PROVEEDORES"
+
+#Region "DATAMEMBERS"
+
+    Private _Col_P As String
+    Private _Dir_P As String
+    Private _Edo_P As String
+    Private _Mail_P As String
+    Private _Muni_P As String
+    Private _Nom_P As String
+    Private _Rfc_P As String
+    Private _Tel_P As String
+    Private _Tipo_P As String
+
+#End Region
+
+#Region "PROPIEDADES"
+
+    Public Property Col_P As String
+        Get
+            Return _Col_P
+        End Get
+        Set(value As String)
+            _Col_P = value
+        End Set
+    End Property
+
+    Public Property Dir_P As String
+        Get
+            Return _Dir_P
+        End Get
+        Set(value As String)
+            _Dir_P = value
+        End Set
+    End Property
+
+    Public Property Edo_P As String
+        Get
+            Return _Edo_P
+        End Get
+        Set(value As String)
+            _Edo_P = value
+        End Set
+    End Property
+
+    Public Property Mail_P As String
+        Get
+            Return _Mail_P
+        End Get
+        Set(value As String)
+            _Mail_P = value
+        End Set
+    End Property
+
+    Public Property Muni_P As String
+        Get
+            Return _Muni_P
+        End Get
+        Set(value As String)
+            _Muni_P = value
+        End Set
+    End Property
+
+    Public Property Nom_P As String
+        Get
+            Return _Nom_P
+        End Get
+        Set(value As String)
+            _Nom_P = value
+        End Set
+    End Property
+
+    Public Property Rfc_P As String
+        Get
+            Return _Rfc_P
+        End Get
+        Set(value As String)
+            _Rfc_P = value
+        End Set
+    End Property
+
+    Public Property Tel_P As String
+        Get
+            Return _Tel_P
+        End Get
+        Set(value As String)
+            _Tel_P = value
+        End Set
+    End Property
+
+    Public Property Tipo_P As String
+        Get
+            Return _Tipo_P
+        End Get
+        Set(value As String)
+            _Tipo_P = value
+        End Set
+    End Property
+
+#End Region
+
+#End Region
+
 #Region "AUTOS"
 
 #Region "DATAMEMBERS"
@@ -712,6 +815,249 @@ Public Class Datos
 
 #End Region
 
+#Region "MANTOAUTO"
+
+#Region "DATAMEMBERS"
+
+    Private _Id_mto As String
+    Private _Placa_mto As String
+    Private _Marca_mto As String
+    Private _Modelo_mto As String
+    Private _Year_mto As String
+    Private _Rfc_mto As String
+    Private _Nom_mto As String
+    Private _Tel_mto As String
+    Private _Mail_mto As String
+    Private _Fac_mto As String
+    Private _Monto_mto As String
+    Private _Fecha_mto As String
+    Private _Servicio_mto As String
+    Private _Llantas_mto As String
+    Private _Bateria_mto As String
+    Private _Bujias_mto As String
+    Private _SerElec_mto As String
+    Private _Motor_mto As String
+    Private _Radiador_mto As String
+    Private _Inyeccion_mto As String
+    Private _Frenos_mto As String
+    Private _Frio_mto As String
+    Private _Desc_mto As String
+
+#End Region
+
+#Region "PROPIEDADES"
+
+    Public Property Id_mto As String
+        Get
+            Return _Id_mto
+        End Get
+        Set(value As String)
+            _Id_mto = value
+        End Set
+    End Property
+
+    Public Property Placa_mto As String
+        Get
+            Return _Placa_mto
+        End Get
+        Set(value As String)
+            _Placa_mto = value
+        End Set
+    End Property
+
+    Public Property Marca_mto As String
+        Get
+            Return _Marca_mto
+        End Get
+        Set(value As String)
+            _Marca_mto = value
+        End Set
+    End Property
+
+    Public Property Modelo_mto As String
+        Get
+            Return _Modelo_mto
+        End Get
+        Set(value As String)
+            _Modelo_mto = value
+        End Set
+    End Property
+
+    Public Property Year_mto As String
+        Get
+            Return _Year_mto
+        End Get
+        Set(value As String)
+            _Year_mto = value
+        End Set
+    End Property
+
+    Public Property Rfc_mto As String
+        Get
+            Return _Rfc_mto
+        End Get
+        Set(value As String)
+            _Rfc_mto = value
+        End Set
+    End Property
+
+    Public Property Nom_mto As String
+        Get
+            Return _Nom_mto
+        End Get
+        Set(value As String)
+            _Nom_mto = value
+        End Set
+    End Property
+
+    Public Property Tel_mto As String
+        Get
+            Return _Tel_mto
+        End Get
+        Set(value As String)
+            _Tel_mto = value
+        End Set
+    End Property
+
+    Public Property Mail_mto As String
+        Get
+            Return _Mail_mto
+        End Get
+        Set(value As String)
+            _Mail_mto = value
+        End Set
+    End Property
+
+    Public Property Fac_mto As String
+        Get
+            Return _Fac_mto
+        End Get
+        Set(value As String)
+            _Fac_mto = value
+        End Set
+    End Property
+
+    Public Property Monto_mto As String
+        Get
+            Return _Monto_mto
+        End Get
+        Set(value As String)
+            _Monto_mto = value
+        End Set
+    End Property
+
+    Public Property Fecha_mto As String
+        Get
+            Return _Fecha_mto
+        End Get
+        Set(value As String)
+            _Fecha_mto = value
+        End Set
+    End Property
+
+    Public Property Servicio_mto As String
+        Get
+            Return _Servicio_mto
+        End Get
+        Set(value As String)
+            _Servicio_mto = value
+        End Set
+    End Property
+
+    Public Property Llantas_mto As String
+        Get
+            Return _Llantas_mto
+        End Get
+        Set(value As String)
+            _Llantas_mto = value
+        End Set
+    End Property
+
+    Public Property Bateria_mto As String
+        Get
+            Return _Bateria_mto
+        End Get
+        Set(value As String)
+            _Bateria_mto = value
+        End Set
+    End Property
+
+    Public Property Bujias_mto As String
+        Get
+            Return _Bujias_mto
+        End Get
+        Set(value As String)
+            _Bujias_mto = value
+        End Set
+    End Property
+
+    Public Property SerElec_mto As String
+        Get
+            Return _SerElec_mto
+        End Get
+        Set(value As String)
+            _SerElec_mto = value
+        End Set
+    End Property
+
+    Public Property Motor_mto As String
+        Get
+            Return _Motor_mto
+        End Get
+        Set(value As String)
+            _Motor_mto = value
+        End Set
+    End Property
+
+    Public Property Radiador_mto As String
+        Get
+            Return _Radiador_mto
+        End Get
+        Set(value As String)
+            _Radiador_mto = value
+        End Set
+    End Property
+
+    Public Property Inyeccion_mto As String
+        Get
+            Return _Inyeccion_mto
+        End Get
+        Set(value As String)
+            _Inyeccion_mto = value
+        End Set
+    End Property
+
+    Public Property Frenos_mto As String
+        Get
+            Return _Frenos_mto
+        End Get
+        Set(value As String)
+            _Frenos_mto = value
+        End Set
+    End Property
+
+    Public Property Frio_mto As String
+        Get
+            Return _Frio_mto
+        End Get
+        Set(value As String)
+            _Frio_mto = value
+        End Set
+    End Property
+
+    Public Property Desc_mto As String
+        Get
+            Return _Desc_mto
+        End Get
+        Set(value As String)
+            _Desc_mto = value
+        End Set
+    End Property
+
+#End Region
+
+#End Region
+
 #Region "INCIDENCIAS"
 
 #Region "DATAMEMBERS"
@@ -814,6 +1160,8 @@ Public Class Consulta
     Dim tokenUsr As String
     Dim dataMaq As Datos                'Datos de la maquinaria en INVENTARIO_AF
     Dim dataRpoMaq As Datos             'Reportes de mantenimiento para maquinaria en MANTOMAQ
+    Dim dataAut As Datos                'Datos de un vehículo en AUTOS
+    Dim dataPrv As Datos                'Datos de un proveedor en PROVEEDORES
     Dim datosInci As Datos              'Diccionario para guardar los reportes de incidencias y contarlos.
     Dim resFallas As Datos              'Datos de la tabla OPTMTOMAQ
     Dim resRefas As Datos              'Datos de la tabla OPTMTOMAQ
@@ -824,6 +1172,8 @@ Public Class Consulta
     Public cboMtoMaqDs As New DataSet   'Combobox Only MANTOMAQ
     Public cboOptFallDs As New DataSet  'Combobox Only OPTMTOMAQ/Fallas
     Public cboOptRefaDs As New DataSet  'Combobox Only OPTMTOMAQ/Refas
+    Public cboPlacasDS As New DataSet   'Combobox Only AUTOS
+    Public cboRfcProvDS As New DataSet  'Combobox Only PROVEEDORES
 
     'Referente a los dgv
     Public dgvMaqRepDS As New DataSet     'Datagrid Only MANTOMAQ
@@ -1007,6 +1357,170 @@ Public Class Consulta
 
         'Devuelve el resultado
         Return dataMaq
+
+    End Function
+
+#End Region
+
+#Region "AUTOS"
+
+    ''' <summary>
+    ''' Se encarga de obtener el número de placas de los autos en el nodo AUTOS
+    ''' para llenar el cbo necesario.
+    ''' </summary>
+    Public Sub getPlacas()
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode USR
+        cboPlacasDS.Tables.Add("PLACAS")
+        cboPlacasDS.Tables("PLACAS").Columns.Add("Placas", GetType(String))
+
+        'Manejo de excepciones
+        Try
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("AUTOS/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Placas) Then
+                Else
+                    cboPlacasDS.Tables("PLACAS").Rows.Add(item.Value.Placas)
+                End If
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Consulta el nodo AUTOS/
+    ''' Recibe el resultado como Datos
+    ''' Devuelve un objeto del tipo datos
+    ''' </summary>
+    ''' <param name="data"></param>
+    ''' <returns></returns>
+    Public Function getAutosData(ByVal data As Datos) As Datos
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("AUTOS/" + data.Placas)
+
+            'Resultado
+            dataAut = res.ResultAs(Of Datos)
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Devuelve el resultado
+        Return dataAut
+
+    End Function
+
+#End Region
+
+#Region "PROVEEDORES"
+
+    ''' <summary>
+    ''' Se encarga de obtener el rfc del proveedor del nodo PROVEEDORES y pasarlo
+    ''' al cbo necesario.
+    ''' </summary>
+    Public Sub getRfcProv()
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode USR
+        cboRfcProvDS.Tables.Add("RFC")
+        cboRfcProvDS.Tables("RFC").Columns.Add("Rfc_P", GetType(String))
+
+        'Manejo de excepciones
+        Try
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("PROVEEDORES/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Rfc_P) Then
+                Else
+                    cboRfcProvDS.Tables("RFC").Rows.Add(item.Value.Rfc_P)
+                End If
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Consulta el nodo PROVEEDORES/
+    ''' Recibe el resultado como Datos
+    ''' Devuelve un objeto del tipo datos
+    ''' </summary>
+    ''' <param name="data"></param>
+    ''' <returns></returns>
+    Public Function getProvData(ByVal data As Datos) As Datos
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("PROVEEDORES/" + data.Rfc_P)
+
+            'Resultado
+            dataPrv = res.ResultAs(Of Datos)
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Devuelve el resultado
+        Return dataPrv
 
     End Function
 
@@ -1850,6 +2364,41 @@ Public Class Insertar
             End Try
 
         End If
+
+    End Sub
+
+#End Region
+
+#Region "MANTOAUTO"
+
+    ''' <summary>
+    '''  Recibe los datos necesarios como parámetros
+    ''' Agrega los datos en el nodo MANTOAUTO/placas-fecha-rfc
+    ''' </summary>
+    ''' <param name="datos"></param>
+    Public Sub AddMANTOAUTO(ByVal datos As Datos)
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Manejo de excepciones
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Update(Of Datos)("MANTOAUTO/" + datos.Id_mto, datos)
+
+            'Usuario
+            MsgBox("Registro agregado...", MsgBoxStyle.Information, strMsgTitle)
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
 
     End Sub
 
