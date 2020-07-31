@@ -8,8 +8,19 @@ Public Class ScrNewAuto
     Dim strMsgTitle As String = "Empacadora Cianca - 2020 (C)"
     Dim flgEndFill As Boolean = False       'Bandera para indicar la terminación de la carga de los cbo
     Dim fechaFac As String = ""             'Variable para almacenar la fecha de la factura
+    Dim flgBat As Boolean = False           'Variable para almacenar estado del checkbox
+    Dim flgBujias As Boolean = False        'Variable para almacenar estado del checkbox
+    Dim flgElec As Boolean = False          'Variable para almacenar estado del checkbox
+    Dim flgFrenos As Boolean = False        'Variable para almacenar estado del checkbox
+    Dim flgFrio As Boolean = False          'Variable para almacenar estado del checkbox
+    Dim flgGas As Boolean = False           'Variable para almacenar estado del checkbox
+    Dim flgLlantas As Boolean = False       'Variable para almacenar estado del checkbox
+    Dim flgMotor As Boolean = False         'Variable para almacenar estado del checkbox
+    Dim flgRadiador As Boolean = False      'Variable para almacenar estado del checkbox
+    Dim flgServicio As Boolean = False      'Variable para almacenar estado del checkbox
     Dim dataAutos As New Datos              'Objeto para almacenar los datos de AUTOS
     Dim dataProv As New Datos               'Objeto para almacenar los datos de PROVEEDORES
+    Dim dataMtoAuto As New Datos            'Objeto para almacenar los datos de MANTOAUTO
 
     'CiancaDll
     Dim fbData As New Datos
@@ -268,6 +279,212 @@ Public Class ScrNewAuto
         End If
 
     End Sub
+
+    ''' <summary>
+    ''' Captura los datos necesarios
+    ''' Utiliza el método para realizar la inserción
+    ''' Llama al método para limpiar los campos
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
+
+        'Splash
+        'pnlSplash.Visible = True
+
+        'Captura de las fechas
+        fechaFac = dtpFecha.Value.ToShortDateString
+
+        'Captura
+        dataMtoAuto. = apllUsr
+        dataMTO.AreaAf_mtom = lblArea.Text
+        dataMTO.Cantidad_mtom = mskCantidad.Text
+        dataMTO.DescAf_mtom = lblDesc.Text
+        dataMTO.FechaE_mtom = FechaEntrega
+        dataMTO.FechaF_mtom = FechaFalla
+        dataMTO.FotoAf_mtom = ImgIntoBase64Str(pbFoto)
+        dataMTO.HoraE_mtom = mskHoraEntrega.Text
+        dataMTO.HoraF_mtom = mskHoraFalla.Text
+        dataMTO.IdAf_mtom = fbData.Id_af
+        Dim hhmm As String = mskHoraFalla.Text
+        hhmm = hhmm.Replace(":", "")
+        dataMTO.Id_mtom = serieMaq + "-" + dtpFechaFalla.Value.Day.ToString + dtpFechaFalla.Value.Month.ToString + dtpFechaFalla.Value.Year.ToString + hhmm
+        dataMTO.MarcaAf_mtom = lblMarca.Text
+        dataMTO.ModeloAf_mtom = lblModelo.Text
+        dataMTO.Nombre_mtom = nomUsr
+        dataMTO.Recomen_mtom = txtRecomen.Text
+        dataMTO.SerAf_mtom = serieMaq
+        dataMTO.Tareas_mtom = txtTareas.Text
+        dataMTO.TokenUsr_mtom = tokenUsr
+        'Captura datos cbo descripción de falla y no. de parte
+        dataMTO.DescFalla_mtom = cboDescFalla.Text.ToString
+        dataMTO.NoParte_mtom = cboNoParte.Text.ToString
+
+        'Agregar a firebase
+        agregar.AddOPTMTOMAQ(dataMTO)
+        agregar.AddMANTOMAQ(dataMTO)
+
+        'Splash
+        pnlSplash.Visible = False
+
+        'Clear
+        ClearFields()
+
+    End Sub
+
+#Region "CHK"
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkBat_OnChange(sender As Object, e As EventArgs) Handles chkBat.OnChange
+
+        If chkBat.Checked Then
+            flgBat = True
+        Else
+            flgBat = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkBujia_OnChange(sender As Object, e As EventArgs) Handles chkBujia.OnChange
+
+        If chkBujia.Checked Then
+            flgBujias = True
+        Else
+            flgBujias = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkElec_OnChange(sender As Object, e As EventArgs) Handles chkElec.OnChange
+
+        If chkElec.Checked Then
+            flgElec = True
+        Else
+            flgElec = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkFrenos_OnChange(sender As Object, e As EventArgs) Handles chkFrenos.OnChange
+
+        If chkFrenos.Checked Then
+            flgFrenos = True
+        Else
+            flgFrenos = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkFrio_OnChange(sender As Object, e As EventArgs) Handles chkFrio.OnChange
+
+        If chkFrio.Checked Then
+            flgFrio = True
+        Else
+            flgFrio = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkGas_OnChange(sender As Object, e As EventArgs) Handles chkGas.OnChange
+
+        If chkGas.Checked Then
+            flgGas = True
+        Else
+            flgGas = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkLlantas_OnChange(sender As Object, e As EventArgs) Handles chkLlantas.OnChange
+
+        If chkLlantas.Checked Then
+            flgLlantas = True
+        Else
+            flgLlantas = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkMotor_OnChange(sender As Object, e As EventArgs) Handles chkMotor.OnChange
+
+        If chkMotor.Checked Then
+            flgMotor = True
+        Else
+            flgMotor = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkRadia_OnChange(sender As Object, e As EventArgs) Handles chkRadia.OnChange
+
+        If chkRadia.Checked Then
+            flgRadiador = True
+        Else
+            flgRadiador = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkServicio_OnChange(sender As Object, e As EventArgs) Handles chkServicio.OnChange
+
+        If chkServicio.Checked Then
+            flgServicio = True
+        Else
+            flgServicio = False
+        End If
+
+    End Sub
+
+#End Region
 
 #End Region
 

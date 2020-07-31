@@ -815,6 +815,229 @@ Public Class Datos
 
 #End Region
 
+#Region "MANTOAUTO"
+
+#Region "DATAMEMBERS"
+
+    Private _Placa_mto As String
+    Private _Marca_mto As String
+    Private _Modelo_mto As String
+    Private _Year_mto As String
+    Private _Rfc_mto As String
+    Private _Nom_mto As String
+    Private _Tel_mto As String
+    Private _Mail_mto As String
+    Private _Fac_mto As String
+    Private _Monto_mto As String
+    Private _Fecha_mto As String
+    Private _Servicio_mto As String
+    Private _Llantas_mto As String
+    Private _Bateria_mto As String
+    Private _Bujias_mto As String
+    Private _SerElec_mto As String
+    Private _Motor_mto As String
+    Private _Radiador_mto As String
+    Private _Inyeccion_mto As String
+    Private _Frenos_mto As String
+    Private _Frio_mto As String
+
+#End Region
+
+#Region "PROPIEDADES"
+
+    Public Property Placa_mto As String
+        Get
+            Return _Placa_mto
+        End Get
+        Set(value As String)
+            _Placa_mto = value
+        End Set
+    End Property
+
+    Public Property Marca_mto As String
+        Get
+            Return _Marca_mto
+        End Get
+        Set(value As String)
+            _Marca_mto = value
+        End Set
+    End Property
+
+    Public Property Modelo_mto As String
+        Get
+            Return _Modelo_mto
+        End Get
+        Set(value As String)
+            _Modelo_mto = value
+        End Set
+    End Property
+
+    Public Property Year_mto As String
+        Get
+            Return _Year_mto
+        End Get
+        Set(value As String)
+            _Year_mto = value
+        End Set
+    End Property
+
+    Public Property Rfc_mto As String
+        Get
+            Return _Rfc_mto
+        End Get
+        Set(value As String)
+            _Rfc_mto = value
+        End Set
+    End Property
+
+    Public Property Nom_mto As String
+        Get
+            Return _Nom_mto
+        End Get
+        Set(value As String)
+            _Nom_mto = value
+        End Set
+    End Property
+
+    Public Property Tel_mto As String
+        Get
+            Return _Tel_mto
+        End Get
+        Set(value As String)
+            _Tel_mto = value
+        End Set
+    End Property
+
+    Public Property Mail_mto As String
+        Get
+            Return _Mail_mto
+        End Get
+        Set(value As String)
+            _Mail_mto = value
+        End Set
+    End Property
+
+    Public Property Fac_mto As String
+        Get
+            Return _Fac_mto
+        End Get
+        Set(value As String)
+            _Fac_mto = value
+        End Set
+    End Property
+
+    Public Property Monto_mto As String
+        Get
+            Return _Monto_mto
+        End Get
+        Set(value As String)
+            _Monto_mto = value
+        End Set
+    End Property
+
+    Public Property Fecha_mto As String
+        Get
+            Return _Fecha_mto
+        End Get
+        Set(value As String)
+            _Fecha_mto = value
+        End Set
+    End Property
+
+    Public Property Servicio_mto As String
+        Get
+            Return _Servicio_mto
+        End Get
+        Set(value As String)
+            _Servicio_mto = value
+        End Set
+    End Property
+
+    Public Property Llantas_mto As String
+        Get
+            Return _Llantas_mto
+        End Get
+        Set(value As String)
+            _Llantas_mto = value
+        End Set
+    End Property
+
+    Public Property Bateria_mto As String
+        Get
+            Return _Bateria_mto
+        End Get
+        Set(value As String)
+            _Bateria_mto = value
+        End Set
+    End Property
+
+    Public Property Bujias_mto As String
+        Get
+            Return _Bujias_mto
+        End Get
+        Set(value As String)
+            _Bujias_mto = value
+        End Set
+    End Property
+
+    Public Property SerElec_mto As String
+        Get
+            Return _SerElec_mto
+        End Get
+        Set(value As String)
+            _SerElec_mto = value
+        End Set
+    End Property
+
+    Public Property Motor_mto As String
+        Get
+            Return _Motor_mto
+        End Get
+        Set(value As String)
+            _Motor_mto = value
+        End Set
+    End Property
+
+    Public Property Radiador_mto As String
+        Get
+            Return _Radiador_mto
+        End Get
+        Set(value As String)
+            _Radiador_mto = value
+        End Set
+    End Property
+
+    Public Property Inyeccion_mto As String
+        Get
+            Return _Inyeccion_mto
+        End Get
+        Set(value As String)
+            _Inyeccion_mto = value
+        End Set
+    End Property
+
+    Public Property Frenos_mto As String
+        Get
+            Return _Frenos_mto
+        End Get
+        Set(value As String)
+            _Frenos_mto = value
+        End Set
+    End Property
+
+    Public Property Frio_mto As String
+        Get
+            Return _Frio_mto
+        End Get
+        Set(value As String)
+            _Frio_mto = value
+        End Set
+    End Property
+
+#End Region
+
+#End Region
+
 #Region "INCIDENCIAS"
 
 #Region "DATAMEMBERS"
