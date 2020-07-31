@@ -306,7 +306,7 @@ Public Class ScrNewAuto
         dataMtoAuto.Mail_mto = lblMail.Text
         dataMtoAuto.Fac_mto = txtNoFac.Text
         dataMtoAuto.Monto_mto = txtCosto.Text
-        dataMtoAuto.des
+        dataMtoAuto.Desc_mto = txtDesc.Text
         dataMtoAuto.Fecha_mto = fechaFac
         dataMtoAuto.Servicio_mto = flgServicio
         dataMtoAuto.Llantas_mto = flgLlantas
@@ -320,10 +320,9 @@ Public Class ScrNewAuto
 
         'Agregar a firebase
         agregar.AddOPTMTOMAQ(dataMTO)
-        agregar.AddMANTOMAQ(dataMTO)
 
         'Splash
-        pnlSplash.Visible = False
+        'pnlSplash.Visible = False
 
         'Clear
         ClearFields()

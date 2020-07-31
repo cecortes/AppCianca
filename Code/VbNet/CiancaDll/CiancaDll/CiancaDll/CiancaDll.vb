@@ -2359,6 +2359,41 @@ Public Class Insertar
 
 #End Region
 
+#Region "MANTOAUTO"
+
+    ''' <summary>
+    '''  Recibe los datos necesarios como parámetros
+    ''' Agrega los datos en el nodo MANTOAUTO/placas-fecha-rfc
+    ''' </summary>
+    ''' <param name="datos"></param>
+    Public Sub AddMANTOAUTO(ByVal datos As Datos)
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Manejo de excepciones
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Update(Of Datos)("MANTOAUTO/" + datos.Placa_mto + "-" + datos.Fecha_mto + "-" + datos.Rfc_mto, datos)
+
+            'Usuario
+            MsgBox("Registro agregado...", MsgBoxStyle.Information, strMsgTitle)
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+
+#End Region
+
 End Class
 
 Public Class Borrar
