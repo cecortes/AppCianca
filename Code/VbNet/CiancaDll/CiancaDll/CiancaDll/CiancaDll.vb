@@ -840,6 +840,7 @@ Public Class Datos
     Private _Inyeccion_mto As String
     Private _Frenos_mto As String
     Private _Frio_mto As String
+    Private _Desc_mto As String
 
 #End Region
 
@@ -1031,6 +1032,15 @@ Public Class Datos
         End Get
         Set(value As String)
             _Frio_mto = value
+        End Set
+    End Property
+
+    Public Property Desc_mto As String
+        Get
+            Return _Desc_mto
+        End Get
+        Set(value As String)
+            _Desc_mto = value
         End Set
     End Property
 

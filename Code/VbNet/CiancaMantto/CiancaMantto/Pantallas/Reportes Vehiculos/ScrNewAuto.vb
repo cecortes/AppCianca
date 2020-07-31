@@ -296,29 +296,27 @@ Public Class ScrNewAuto
         fechaFac = dtpFecha.Value.ToShortDateString
 
         'Captura
-        dataMtoAuto. = apllUsr
-        dataMTO.AreaAf_mtom = lblArea.Text
-        dataMTO.Cantidad_mtom = mskCantidad.Text
-        dataMTO.DescAf_mtom = lblDesc.Text
-        dataMTO.FechaE_mtom = FechaEntrega
-        dataMTO.FechaF_mtom = FechaFalla
-        dataMTO.FotoAf_mtom = ImgIntoBase64Str(pbFoto)
-        dataMTO.HoraE_mtom = mskHoraEntrega.Text
-        dataMTO.HoraF_mtom = mskHoraFalla.Text
-        dataMTO.IdAf_mtom = fbData.Id_af
-        Dim hhmm As String = mskHoraFalla.Text
-        hhmm = hhmm.Replace(":", "")
-        dataMTO.Id_mtom = serieMaq + "-" + dtpFechaFalla.Value.Day.ToString + dtpFechaFalla.Value.Month.ToString + dtpFechaFalla.Value.Year.ToString + hhmm
-        dataMTO.MarcaAf_mtom = lblMarca.Text
-        dataMTO.ModeloAf_mtom = lblModelo.Text
-        dataMTO.Nombre_mtom = nomUsr
-        dataMTO.Recomen_mtom = txtRecomen.Text
-        dataMTO.SerAf_mtom = serieMaq
-        dataMTO.Tareas_mtom = txtTareas.Text
-        dataMTO.TokenUsr_mtom = tokenUsr
-        'Captura datos cbo descripción de falla y no. de parte
-        dataMTO.DescFalla_mtom = cboDescFalla.Text.ToString
-        dataMTO.NoParte_mtom = cboNoParte.Text.ToString
+        dataMtoAuto.Placa_mto = cboPlacas.Text.ToString
+        dataMtoAuto.Marca_mto = lblMarca.Text
+        dataMtoAuto.Modelo_mto = lblModelo.Text
+        dataMtoAuto.Year_mto = lblYear.Text
+        dataMtoAuto.Rfc_mto = cboRfc.Text.ToString
+        dataMtoAuto.Nom_mto = lblNombre.Text
+        dataMtoAuto.Tel_mto = lblTel.Text
+        dataMtoAuto.Mail_mto = lblMail.Text
+        dataMtoAuto.Fac_mto = txtNoFac.Text
+        dataMtoAuto.Monto_mto = txtCosto.Text
+        dataMtoAuto.des
+        dataMtoAuto.Fecha_mto = fechaFac
+        dataMtoAuto.Servicio_mto = flgServicio
+        dataMtoAuto.Llantas_mto = flgLlantas
+        dataMtoAuto.Bateria_mto = flgBat
+        dataMtoAuto.Bujias_mto = flgBujias
+        dataMtoAuto.Motor_mto = flgMotor
+        dataMtoAuto.Radiador_mto = flgRadiador
+        dataMtoAuto.Inyeccion_mto = flgGas
+        dataMtoAuto.Frenos_mto = flgFrenos
+        dataMtoAuto.Frio_mto = flgFrio
 
         'Agregar a firebase
         agregar.AddOPTMTOMAQ(dataMTO)
