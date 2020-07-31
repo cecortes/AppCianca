@@ -24,27 +24,26 @@ Partial Class ScrEditAuto
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ScrEditAuto))
         Me.pnlTop = New System.Windows.Forms.Panel()
-        Me.btnSearch = New Bunifu.Framework.UI.BunifuImageButton()
         Me.cboRepor = New System.Windows.Forms.ComboBox()
         Me.lbl1 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lblTitle = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuSeparator1 = New Bunifu.Framework.UI.BunifuSeparator()
         Me.pnlDatos = New System.Windows.Forms.Panel()
         Me.pnlProve = New System.Windows.Forms.Panel()
+        Me.lblRfc = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl8 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lblMail = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl7 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lblTel = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl6 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lblNombre = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.cboRfc = New System.Windows.Forms.ComboBox()
         Me.lbl5 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlAutos = New System.Windows.Forms.Panel()
+        Me.lblPlacas = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lblYear = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lbl4 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuCustomLabel1 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lblModelo = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.cboPlacas = New System.Windows.Forms.ComboBox()
         Me.BunifuCustomLabel2 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuCustomLabel3 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lblMarca = New Bunifu.Framework.UI.BunifuCustomLabel()
@@ -79,7 +78,6 @@ Partial Class ScrEditAuto
         Me.txtNoFac = New System.Windows.Forms.TextBox()
         Me.lbl9 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlTop.SuspendLayout()
-        CType(Me.btnSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlDatos.SuspendLayout()
         Me.pnlProve.SuspendLayout()
         Me.pnlAutos.SuspendLayout()
@@ -89,7 +87,6 @@ Partial Class ScrEditAuto
         '
         'pnlTop
         '
-        Me.pnlTop.Controls.Add(Me.btnSearch)
         Me.pnlTop.Controls.Add(Me.cboRepor)
         Me.pnlTop.Controls.Add(Me.lbl1)
         Me.pnlTop.Controls.Add(Me.lblTitle)
@@ -99,20 +96,6 @@ Partial Class ScrEditAuto
         Me.pnlTop.Name = "pnlTop"
         Me.pnlTop.Size = New System.Drawing.Size(1024, 106)
         Me.pnlTop.TabIndex = 2
-        '
-        'btnSearch
-        '
-        Me.btnSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
-        Me.btnSearch.ImageActive = Nothing
-        Me.btnSearch.Location = New System.Drawing.Point(956, 48)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(55, 40)
-        Me.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnSearch.TabIndex = 85
-        Me.btnSearch.TabStop = False
-        Me.btnSearch.Zoom = 10
         '
         'cboRepor
         '
@@ -181,19 +164,32 @@ Partial Class ScrEditAuto
         '
         'pnlProve
         '
+        Me.pnlProve.Controls.Add(Me.lblRfc)
         Me.pnlProve.Controls.Add(Me.lbl8)
         Me.pnlProve.Controls.Add(Me.lblMail)
         Me.pnlProve.Controls.Add(Me.lbl7)
         Me.pnlProve.Controls.Add(Me.lblTel)
         Me.pnlProve.Controls.Add(Me.lbl6)
         Me.pnlProve.Controls.Add(Me.lblNombre)
-        Me.pnlProve.Controls.Add(Me.cboRfc)
         Me.pnlProve.Controls.Add(Me.lbl5)
         Me.pnlProve.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlProve.Location = New System.Drawing.Point(486, 0)
         Me.pnlProve.Name = "pnlProve"
         Me.pnlProve.Size = New System.Drawing.Size(536, 147)
         Me.pnlProve.TabIndex = 3
+        '
+        'lblRfc
+        '
+        Me.lblRfc.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblRfc.AutoSize = True
+        Me.lblRfc.BackColor = System.Drawing.Color.Transparent
+        Me.lblRfc.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRfc.ForeColor = System.Drawing.Color.White
+        Me.lblRfc.Location = New System.Drawing.Point(300, 6)
+        Me.lblRfc.Name = "lblRfc"
+        Me.lblRfc.Size = New System.Drawing.Size(32, 25)
+        Me.lblRfc.TabIndex = 62
+        Me.lblRfc.Text = "NA"
         '
         'lbl8
         '
@@ -273,22 +269,6 @@ Partial Class ScrEditAuto
         Me.lblNombre.TabIndex = 57
         Me.lblNombre.Text = "NA"
         '
-        'cboRfc
-        '
-        Me.cboRfc.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cboRfc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboRfc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboRfc.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.cboRfc.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cboRfc.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboRfc.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.cboRfc.FormattingEnabled = True
-        Me.cboRfc.Location = New System.Drawing.Point(296, 6)
-        Me.cboRfc.Name = "cboRfc"
-        Me.cboRfc.Size = New System.Drawing.Size(174, 29)
-        Me.cboRfc.TabIndex = 54
-        Me.cboRfc.Text = "RFC Proveedor"
-        '
         'lbl5
         '
         Me.lbl5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -304,11 +284,11 @@ Partial Class ScrEditAuto
         '
         'pnlAutos
         '
+        Me.pnlAutos.Controls.Add(Me.lblPlacas)
         Me.pnlAutos.Controls.Add(Me.lblYear)
         Me.pnlAutos.Controls.Add(Me.lbl4)
         Me.pnlAutos.Controls.Add(Me.BunifuCustomLabel1)
         Me.pnlAutos.Controls.Add(Me.lblModelo)
-        Me.pnlAutos.Controls.Add(Me.cboPlacas)
         Me.pnlAutos.Controls.Add(Me.BunifuCustomLabel2)
         Me.pnlAutos.Controls.Add(Me.BunifuCustomLabel3)
         Me.pnlAutos.Controls.Add(Me.lblMarca)
@@ -317,6 +297,18 @@ Partial Class ScrEditAuto
         Me.pnlAutos.Name = "pnlAutos"
         Me.pnlAutos.Size = New System.Drawing.Size(486, 147)
         Me.pnlAutos.TabIndex = 3
+        '
+        'lblPlacas
+        '
+        Me.lblPlacas.AutoSize = True
+        Me.lblPlacas.BackColor = System.Drawing.Color.Transparent
+        Me.lblPlacas.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPlacas.ForeColor = System.Drawing.Color.White
+        Me.lblPlacas.Location = New System.Drawing.Point(104, 31)
+        Me.lblPlacas.Name = "lblPlacas"
+        Me.lblPlacas.Size = New System.Drawing.Size(32, 25)
+        Me.lblPlacas.TabIndex = 60
+        Me.lblPlacas.Text = "NA"
         '
         'lblYear
         '
@@ -365,21 +357,6 @@ Partial Class ScrEditAuto
         Me.lblModelo.Size = New System.Drawing.Size(32, 25)
         Me.lblModelo.TabIndex = 57
         Me.lblModelo.Text = "NA"
-        '
-        'cboPlacas
-        '
-        Me.cboPlacas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboPlacas.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboPlacas.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.cboPlacas.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cboPlacas.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboPlacas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.cboPlacas.FormattingEnabled = True
-        Me.cboPlacas.Location = New System.Drawing.Point(17, 34)
-        Me.cboPlacas.Name = "cboPlacas"
-        Me.cboPlacas.Size = New System.Drawing.Size(148, 29)
-        Me.cboPlacas.TabIndex = 53
-        Me.cboPlacas.Text = "No. de placas"
         '
         'BunifuCustomLabel2
         '
@@ -472,6 +449,7 @@ Partial Class ScrEditAuto
         '
         Me.txtCosto.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
         Me.txtCosto.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCosto.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCosto.ForeColor = System.Drawing.Color.Black
         Me.txtCosto.Location = New System.Drawing.Point(477, 26)
         Me.txtCosto.Name = "txtCosto"
@@ -516,7 +494,6 @@ Partial Class ScrEditAuto
         Me.txtDesc.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.txtDesc.Size = New System.Drawing.Size(535, 188)
         Me.txtDesc.TabIndex = 80
-        Me.txtDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'chkFrio
         '
@@ -812,6 +789,7 @@ Partial Class ScrEditAuto
         '
         Me.txtNoFac.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
         Me.txtNoFac.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtNoFac.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNoFac.ForeColor = System.Drawing.Color.Black
         Me.txtNoFac.Location = New System.Drawing.Point(114, 26)
         Me.txtNoFac.Name = "txtNoFac"
@@ -848,7 +826,6 @@ Partial Class ScrEditAuto
         Me.Text = "ScrEditAuto"
         Me.pnlTop.ResumeLayout(False)
         Me.pnlTop.PerformLayout()
-        CType(Me.btnSearch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlDatos.ResumeLayout(False)
         Me.pnlProve.ResumeLayout(False)
         Me.pnlProve.PerformLayout()
@@ -866,7 +843,6 @@ Partial Class ScrEditAuto
     Friend WithEvents BunifuSeparator1 As Bunifu.Framework.UI.BunifuSeparator
     Friend WithEvents lbl1 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents cboRepor As ComboBox
-    Friend WithEvents btnSearch As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents pnlDatos As Panel
     Friend WithEvents pnlProve As Panel
     Friend WithEvents lbl8 As Bunifu.Framework.UI.BunifuCustomLabel
@@ -875,14 +851,12 @@ Partial Class ScrEditAuto
     Friend WithEvents lblTel As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents lbl6 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents lblNombre As Bunifu.Framework.UI.BunifuCustomLabel
-    Friend WithEvents cboRfc As ComboBox
     Friend WithEvents lbl5 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents pnlAutos As Panel
     Friend WithEvents lblYear As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents lbl4 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents BunifuCustomLabel1 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents lblModelo As Bunifu.Framework.UI.BunifuCustomLabel
-    Friend WithEvents cboPlacas As ComboBox
     Friend WithEvents BunifuCustomLabel2 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents BunifuCustomLabel3 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents lblMarca As Bunifu.Framework.UI.BunifuCustomLabel
@@ -916,4 +890,6 @@ Partial Class ScrEditAuto
     Friend WithEvents dtpFecha As Bunifu.Framework.UI.BunifuDatepicker
     Friend WithEvents txtNoFac As TextBox
     Friend WithEvents lbl9 As Bunifu.Framework.UI.BunifuCustomLabel
+    Friend WithEvents lblRfc As Bunifu.Framework.UI.BunifuCustomLabel
+    Friend WithEvents lblPlacas As Bunifu.Framework.UI.BunifuCustomLabel
 End Class
