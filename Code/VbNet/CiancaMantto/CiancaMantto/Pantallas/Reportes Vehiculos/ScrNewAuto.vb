@@ -26,6 +26,7 @@ Public Class ScrNewAuto
     Dim fbData As New Datos
     Dim buscar As New Consulta
     Dim agregar As New Insertar
+
 #End Region
 
 #Region "FUNCIONES"
@@ -335,6 +336,7 @@ Public Class ScrNewAuto
         idStr += fechaStr
         idStr += "-"
         idStr += cboRfc.Text.ToString
+        dataMtoAuto.Id_mto = idStr
 
         'Agregar a firebas
         agregar.AddMANTOAUTO(dataMtoAuto)
