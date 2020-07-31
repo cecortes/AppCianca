@@ -819,6 +819,7 @@ Public Class Datos
 
 #Region "DATAMEMBERS"
 
+    Private _Id_mto As String
     Private _Placa_mto As String
     Private _Marca_mto As String
     Private _Modelo_mto As String
@@ -845,6 +846,15 @@ Public Class Datos
 #End Region
 
 #Region "PROPIEDADES"
+
+    Public Property Id_mto As String
+        Get
+            Return _Id_mto
+        End Get
+        Set(value As String)
+            _Id_mto = value
+        End Set
+    End Property
 
     Public Property Placa_mto As String
         Get
@@ -2378,7 +2388,7 @@ Public Class Insertar
             con.Con_Global()
 
             'Query Firebase
-            res = con.firebase.Update(Of Datos)("MANTOAUTO/" + datos.Placa_mto + "-" + datos.Fecha_mto + "-" + datos.Rfc_mto, datos)
+            res = con.firebase.Update(Of Datos)("MANTOAUTO/" + datos.Id_mto, datos)
 
             'Usuario
             MsgBox("Registro agregado...", MsgBoxStyle.Information, strMsgTitle)

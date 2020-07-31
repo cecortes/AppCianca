@@ -165,26 +165,36 @@ Public Class ScrNewAuto
         fechaFac = dtpFecha.Value.ToShortDateString
 
         'lbl
-        'mskHoraFalla.Text = ""
-        'mskCantidad.Text = ""
-        'mskHoraEntrega.Text = ""
-        'lblDesc.Text = "NA"
-        'lblArea.Text = "NA"
         lblMarca.Text = "NA"
         lblModelo.Text = "NA"
+        lblYear.Text = "NA"
+        lblNombre.Text = "NA"
+        lblTel.Text = "NA"
+        lblMail.Text = "NA"
 
         'Txt
-        'txtTareas.Text = ""
-        'txtRecomen.Text = ""
+        txtNoFac.Text = ""
+        txtCosto.Text = ""
+        txtDesc.Text = ""
 
         'Pbox
         pbFoto.Image = My.Resources.camera
 
         'Cbo
-        'cboPersonal.Text = "Nombre, Apellidos"
-        'cboSerial.Text = "No. de Serie"
-        'cboDescFalla.Text = "Descripción de falla"
-        'cboNoParte.Text = "No. de parte"
+        cboPlacas.Text = "No. de placas"
+        cboRfc.Text = "RFC Proveedor"
+
+        'CHK
+        chkServicio.Checked = False
+        chkLlantas.Checked = False
+        chkBat.Checked = False
+        chkBujia.Checked = False
+        chkElec.Checked = False
+        chkMotor.Checked = False
+        chkRadia.Checked = False
+        chkGas.Checked = False
+        chkFrenos.Checked = False
+        chkFrio.Checked = False
 
     End Sub
 
@@ -318,8 +328,16 @@ Public Class ScrNewAuto
         dataMtoAuto.Frenos_mto = flgFrenos
         dataMtoAuto.Frio_mto = flgFrio
 
-        'Agregar a firebase
-        agregar.AddOPTMTOMAQ(dataMTO)
+        'Id para Firebase
+        Dim fechaStr As String = fechaFac.Replace("/", "")
+        Dim idStr As String = cboPlacas.Text.ToString
+        idStr += "-"
+        idStr += fechaStr
+        idStr += "-"
+        idStr += cboRfc.Text.ToString
+
+        'Agregar a firebas
+        agregar.AddMANTOAUTO(dataMtoAuto)
 
         'Splash
         'pnlSplash.Visible = False
