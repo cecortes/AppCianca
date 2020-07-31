@@ -2,7 +2,6 @@
 Imports CiancaDll
 Imports System.IO
 
-
 Public Class ScrDelAuto
 
 #Region "VARIABLES"
@@ -244,7 +243,7 @@ Public Class ScrDelAuto
         'pnlSplash.Visible = True
 
         'Borrar
-        eliminar.DelMANTOMAQ(fbData)
+        eliminar.DelMANTOAUTO(fbData)
 
         'Clear
         ClearFields()
