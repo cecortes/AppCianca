@@ -24,15 +24,11 @@ Partial Class ScrEditAuto
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ScrEditAuto))
         Me.pnlTop = New System.Windows.Forms.Panel()
+        Me.btnSearch = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.cboRepor = New System.Windows.Forms.ComboBox()
+        Me.lbl1 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.lblTitle = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuSeparator1 = New Bunifu.Framework.UI.BunifuSeparator()
-        Me.lbl1 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.cboRepor = New System.Windows.Forms.ComboBox()
-        Me.lbl2 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.dtpInicial = New Bunifu.Framework.UI.BunifuDatepicker()
-        Me.dtpFinal = New Bunifu.Framework.UI.BunifuDatepicker()
-        Me.lbl3 = New Bunifu.Framework.UI.BunifuCustomLabel()
-        Me.btnSearch = New Bunifu.Framework.UI.BunifuImageButton()
         Me.pnlDatos = New System.Windows.Forms.Panel()
         Me.pnlProve = New System.Windows.Forms.Panel()
         Me.lbl8 = New Bunifu.Framework.UI.BunifuCustomLabel()
@@ -94,10 +90,6 @@ Partial Class ScrEditAuto
         'pnlTop
         '
         Me.pnlTop.Controls.Add(Me.btnSearch)
-        Me.pnlTop.Controls.Add(Me.dtpFinal)
-        Me.pnlTop.Controls.Add(Me.dtpInicial)
-        Me.pnlTop.Controls.Add(Me.lbl3)
-        Me.pnlTop.Controls.Add(Me.lbl2)
         Me.pnlTop.Controls.Add(Me.cboRepor)
         Me.pnlTop.Controls.Add(Me.lbl1)
         Me.pnlTop.Controls.Add(Me.lblTitle)
@@ -107,6 +99,47 @@ Partial Class ScrEditAuto
         Me.pnlTop.Name = "pnlTop"
         Me.pnlTop.Size = New System.Drawing.Size(1024, 106)
         Me.pnlTop.TabIndex = 2
+        '
+        'btnSearch
+        '
+        Me.btnSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
+        Me.btnSearch.ImageActive = Nothing
+        Me.btnSearch.Location = New System.Drawing.Point(956, 48)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(55, 40)
+        Me.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnSearch.TabIndex = 85
+        Me.btnSearch.TabStop = False
+        Me.btnSearch.Zoom = 10
+        '
+        'cboRepor
+        '
+        Me.cboRepor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboRepor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboRepor.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
+        Me.cboRepor.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cboRepor.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboRepor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
+        Me.cboRepor.FormattingEnabled = True
+        Me.cboRepor.Location = New System.Drawing.Point(141, 54)
+        Me.cboRepor.Name = "cboRepor"
+        Me.cboRepor.Size = New System.Drawing.Size(240, 29)
+        Me.cboRepor.TabIndex = 54
+        Me.cboRepor.Text = "Reporte"
+        '
+        'lbl1
+        '
+        Me.lbl1.AutoSize = True
+        Me.lbl1.BackColor = System.Drawing.Color.Transparent
+        Me.lbl1.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.lbl1.Location = New System.Drawing.Point(10, 54)
+        Me.lbl1.Name = "lbl1"
+        Me.lbl1.Size = New System.Drawing.Size(125, 25)
+        Me.lbl1.TabIndex = 48
+        Me.lbl1.Text = "No. de entrada:"
         '
         'lblTitle
         '
@@ -134,103 +167,6 @@ Partial Class ScrEditAuto
         Me.BunifuSeparator1.TabIndex = 15
         Me.BunifuSeparator1.Transparency = 255
         Me.BunifuSeparator1.Vertical = False
-        '
-        'lbl1
-        '
-        Me.lbl1.AutoSize = True
-        Me.lbl1.BackColor = System.Drawing.Color.Transparent
-        Me.lbl1.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.lbl1.Location = New System.Drawing.Point(10, 54)
-        Me.lbl1.Name = "lbl1"
-        Me.lbl1.Size = New System.Drawing.Size(125, 25)
-        Me.lbl1.TabIndex = 48
-        Me.lbl1.Text = "No. de entrada:"
-        '
-        'cboRepor
-        '
-        Me.cboRepor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboRepor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboRepor.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.cboRepor.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.cboRepor.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboRepor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.cboRepor.FormattingEnabled = True
-        Me.cboRepor.Location = New System.Drawing.Point(118, 50)
-        Me.cboRepor.Name = "cboRepor"
-        Me.cboRepor.Size = New System.Drawing.Size(160, 29)
-        Me.cboRepor.TabIndex = 54
-        Me.cboRepor.Text = "Reporte"
-        '
-        'lbl2
-        '
-        Me.lbl2.AutoSize = True
-        Me.lbl2.BackColor = System.Drawing.Color.Transparent
-        Me.lbl2.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.lbl2.Location = New System.Drawing.Point(288, 54)
-        Me.lbl2.Name = "lbl2"
-        Me.lbl2.Size = New System.Drawing.Size(109, 25)
-        Me.lbl2.TabIndex = 61
-        Me.lbl2.Text = "Fecha Inicial:"
-        Me.lbl2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'dtpInicial
-        '
-        Me.dtpInicial.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.dtpInicial.BorderRadius = 5
-        Me.dtpInicial.Font = New System.Drawing.Font("Poppins", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpInicial.ForeColor = System.Drawing.Color.White
-        Me.dtpInicial.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpInicial.FormatCustom = Nothing
-        Me.dtpInicial.Location = New System.Drawing.Point(381, 48)
-        Me.dtpInicial.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.dtpInicial.Name = "dtpInicial"
-        Me.dtpInicial.Size = New System.Drawing.Size(155, 33)
-        Me.dtpInicial.TabIndex = 60
-        Me.dtpInicial.Value = New Date(2020, 7, 21, 20, 4, 35, 0)
-        '
-        'dtpFinal
-        '
-        Me.dtpFinal.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(206, Byte), Integer))
-        Me.dtpFinal.BorderRadius = 5
-        Me.dtpFinal.Font = New System.Drawing.Font("Poppins", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFinal.ForeColor = System.Drawing.Color.White
-        Me.dtpFinal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFinal.FormatCustom = Nothing
-        Me.dtpFinal.Location = New System.Drawing.Point(633, 48)
-        Me.dtpFinal.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.dtpFinal.Name = "dtpFinal"
-        Me.dtpFinal.Size = New System.Drawing.Size(155, 33)
-        Me.dtpFinal.TabIndex = 62
-        Me.dtpFinal.Value = New Date(2020, 7, 21, 20, 4, 35, 0)
-        '
-        'lbl3
-        '
-        Me.lbl3.AutoSize = True
-        Me.lbl3.BackColor = System.Drawing.Color.Transparent
-        Me.lbl3.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(147, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.lbl3.Location = New System.Drawing.Point(550, 54)
-        Me.lbl3.Name = "lbl3"
-        Me.lbl3.Size = New System.Drawing.Size(99, 25)
-        Me.lbl3.TabIndex = 63
-        Me.lbl3.Text = "Fecha Final:"
-        Me.lbl3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnSearch
-        '
-        Me.btnSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
-        Me.btnSearch.ImageActive = Nothing
-        Me.btnSearch.Location = New System.Drawing.Point(956, 48)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(55, 40)
-        Me.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btnSearch.TabIndex = 85
-        Me.btnSearch.TabStop = False
-        Me.btnSearch.Zoom = 10
         '
         'pnlDatos
         '
@@ -930,10 +866,6 @@ Partial Class ScrEditAuto
     Friend WithEvents BunifuSeparator1 As Bunifu.Framework.UI.BunifuSeparator
     Friend WithEvents lbl1 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents cboRepor As ComboBox
-    Friend WithEvents lbl2 As Bunifu.Framework.UI.BunifuCustomLabel
-    Friend WithEvents dtpInicial As Bunifu.Framework.UI.BunifuDatepicker
-    Friend WithEvents dtpFinal As Bunifu.Framework.UI.BunifuDatepicker
-    Friend WithEvents lbl3 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents btnSearch As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents pnlDatos As Panel
     Friend WithEvents pnlProve As Panel
