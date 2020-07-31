@@ -8,6 +8,8 @@ Public Class ScrNewAuto
     Dim strMsgTitle As String = "Empacadora Cianca - 2020 (C)"
     Dim flgEndFill As Boolean = False       'Bandera para indicar la terminación de la carga de los cbo
     Dim fechaFac As String = ""             'Variable para almacenar la fecha de la factura
+    Dim dataAutos As New Datos              'Objeto para almacenar los datos de AUTOS
+    Dim dataProv As New Datos               'Objeto para almacenar los datos de PROVEEDORES
 
     'CiancaDll
     Dim fbData As New Datos
@@ -192,6 +194,80 @@ Public Class ScrNewAuto
 
         'Cbo
         FillCboPlacasRfc()
+
+    End Sub
+
+    ''' <summary>
+    ''' Valida que los cbo hayan terminado de actualizarse
+    ''' Captura el valor de la placa seleccionada.
+    ''' Llama a la consulta del nodo AUTOS/cboPlacas.Text
+    ''' Captura el resultado de la consulta
+    ''' Actualiza las etiquetas y picture box con los datos
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub cboPlacas_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboPlacas.SelectedValueChanged
+
+        'Validación
+        If flgEndFill Then
+
+            'Splash
+            'pnlSplash.Visible = True
+
+            'Captura del serial del cbo
+            fbData.Placas = cboPlacas.Text.ToString
+
+            'Consulta
+            dataAutos = buscar.getMaqData(fbData)
+
+            'Actualización de etiquetas y pbox
+            serieMaq = dataMaq.Serie_af
+            lblDesc.Text = dataMaq.Desc_af
+            lblArea.Text = dataMaq.Area_af
+            lblMarca.Text = dataMaq.Marca_af
+            lblModelo.Text = dataMaq.Modelo_af
+            pbFoto.Image = Base64ToImage(dataMaq.Pic_af)
+
+            pnlSplash.Visible = False
+
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Valida que los cbo hayan terminado de actualizarse
+    ''' Captura el valor del rfc seleccionado.
+    ''' Llama a la consulta del nodo PROVEEDORES/cboRfc.Text
+    ''' Captura el resultado de la consulta
+    ''' Actualiza las etiquetas y picture box con los datos
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub cboRfc_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboRfc.SelectedValueChanged
+
+        'Validación
+        If flgEndFill Then
+
+            'Splash
+            pnlSplash.Visible = True
+
+            'Captura del serial del cbo
+            fbData.Id_af = cboSerial.Text.ToString
+
+            'Consulta
+            dataMaq = buscar.getMaqData(fbData)
+
+            'Actualización de etiquetas y pbox
+            serieMaq = dataMaq.Serie_af
+            lblDesc.Text = dataMaq.Desc_af
+            lblArea.Text = dataMaq.Area_af
+            lblMarca.Text = dataMaq.Marca_af
+            lblModelo.Text = dataMaq.Modelo_af
+            pbFoto.Image = Base64ToImage(dataMaq.Pic_af)
+
+            pnlSplash.Visible = False
+
+        End If
 
     End Sub
 

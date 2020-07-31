@@ -917,6 +917,8 @@ Public Class Consulta
     Dim tokenUsr As String
     Dim dataMaq As Datos                'Datos de la maquinaria en INVENTARIO_AF
     Dim dataRpoMaq As Datos             'Reportes de mantenimiento para maquinaria en MANTOMAQ
+    Dim dataAut As Datos                'Datos de un vehículo en AUTOS
+    Dim dataPrv As Datos                'Datos de un proveedor en PROVEEDORES
     Dim datosInci As Datos              'Diccionario para guardar los reportes de incidencias y contarlos.
     Dim resFallas As Datos              'Datos de la tabla OPTMTOMAQ
     Dim resRefas As Datos              'Datos de la tabla OPTMTOMAQ
@@ -1161,6 +1163,42 @@ Public Class Consulta
 
     End Sub
 
+    ''' <summary>
+    ''' Consulta el nodo AUTOS/
+    ''' Recibe el resultado como Datos
+    ''' Devuelve un objeto del tipo datos
+    ''' </summary>
+    ''' <param name="data"></param>
+    ''' <returns></returns>
+    Public Function getAutosData(ByVal data As Datos) As Datos
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("AUTOS/" + data.Placas)
+
+            'Resultado
+            dataAut = res.ResultAs(Of Datos)
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Devuelve el resultado
+        Return dataAut
+
+    End Function
+
 #End Region
 
 #Region "PROVEEDORES"
@@ -1206,6 +1244,42 @@ Public Class Consulta
         End Try
 
     End Sub
+
+    ''' <summary>
+    ''' Consulta el nodo PROVEEDORES/
+    ''' Recibe el resultado como Datos
+    ''' Devuelve un objeto del tipo datos
+    ''' </summary>
+    ''' <param name="data"></param>
+    ''' <returns></returns>
+    Public Function getProvData(ByVal data As Datos) As Datos
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("PROVEEDORES/" + data.Rfc_P)
+
+            'Resultado
+            dataPrv = res.ResultAs(Of Datos)
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Devuelve el resultado
+        Return dataPrv
+
+    End Function
 
 #End Region
 
