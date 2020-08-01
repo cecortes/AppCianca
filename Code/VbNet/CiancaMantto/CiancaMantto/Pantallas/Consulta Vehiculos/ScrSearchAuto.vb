@@ -202,7 +202,7 @@ Public Class ScrSearchAuto
     Private Sub getMantoAutoRep()
 
         'Clear
-        buscar.dgvMaqRepSerDS.Reset()
+        buscar.dgvAutoRepNoDS.Reset()
 
         'Splash
         'pnlSplash.Visible = True
@@ -211,10 +211,10 @@ Public Class ScrSearchAuto
         buscar.getAutoRep(fbData)
 
         'Llenamos el datagrid con los datos
-        dgvData.DataSource = buscar.dgvMaqRepSerDS.Tables("AUTOREP")
+        dgvData.DataSource = buscar.dgvAutoRepNoDS.Tables("AUTOREP")
 
         'Formato Dgv
-        'FormatDgvSerial()
+        FormatDgvRep()
 
         'Splash
         'pnlSplash.Visible = False
@@ -224,30 +224,43 @@ Public Class ScrSearchAuto
     ''' <summary>
     ''' Formato para el datagridview serial
     ''' </summary>
-    Private Sub FormatDgvSerial()
+    Private Sub FormatDgvRep()
 
         'Size mode para las columnas
-        dgvData.Columns("SERIE").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        dgvData.Columns("SERIE").SortMode = DataGridViewColumnSortMode.Programmatic
-        dgvData.Columns("DESCRIPCION").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        dgvData.Columns("DESCRIPCION").SortMode = DataGridViewColumnSortMode.Programmatic
-        dgvData.Columns("INCIDENCIAS").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        dgvData.Columns("INCIDENCIAS").SortMode = DataGridViewColumnSortMode.Programmatic
-
-        'Rutina para configurar la altura de las filas
-        For Each filas As DataGridViewRow In dgvData.Rows
-            filas.Height = 150
-        Next
-
-        'Cambio de tipo para la columna que almacena la fotografía
-        dgvData.Columns("FOTO").ValueType = GetType(DataGridViewImageColumn)
-        dgvData.Columns("FOTO").Width = 180
-
-        'Rutina para configurar el tamaño de la foto
-        For Each col As DataGridViewImageColumn In dgvData.Columns
-            col.ImageLayout = DataGridViewImageCellLayout.Stretch
-            Exit For
-        Next
+        dgvData.Columns("MARCA").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("MARCA").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("MODELO").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("MODELO").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("PLACA").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("PLACA").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("FECHA").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("FECHA").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("PROVEEDOR").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("PROVEEDOR").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("No. FACTURA").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("No. FACTURA").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("MONTO").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("MONTO").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("BATERIA").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("BATERIA").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("BUJIAS").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("BUJIAS").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("FRENOS").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("FRENOS").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("CAM. FRIO").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("CAM. FRIO").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("INYECCION").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("INYECCION").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("LLANTAS").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("LLANTAS").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("MOTOR").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("MOTOR").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("RADIADOR").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("RADIADOR").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("ELECTRICO").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("ELECTRICO").SortMode = DataGridViewColumnSortMode.Programmatic
+        dgvData.Columns("SERVICIO").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgvData.Columns("SERVICIO").SortMode = DataGridViewColumnSortMode.Programmatic
 
     End Sub
 
