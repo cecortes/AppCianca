@@ -1181,6 +1181,7 @@ Public Class Consulta
     Public dgvMaqRepDS As New DataSet     'Datagrid Only MANTOMAQ
     Public dgvMaqRepSerDS As New DataSet  'Datagrid Only MANTOMAQ
     Public dgvMaqRepInciDS As New DataSet 'Datagrid Only MANTOMAQ
+    Public dgvAutoRepNoDS As New DataSet  'Datagrid Only MANTOAUTO
 
 #End Region
 
@@ -1996,6 +1997,86 @@ Public Class Consulta
                     cboMtoAutoDs.Tables("MTOAUTO").Rows.Add(item.Value.Id_mto)
                 End If
             Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Crea una tabla dentro de un dataset
+    ''' Se encarga de consultar el nodo MANTOAUTO/
+    ''' Recibe la respuesta como diccionario y valida que se concuerde con el serial recibido como parámetro
+    ''' Si es así guarda los datos en un dataset
+    ''' El dataset es accesible gracias a DATAMEMBERS
+    ''' </summary>
+    Public Sub getAutoRep(ByVal dat As Datos, ByVal inicio As Date, ByVal fin As Date)
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode MAQREP
+        dgvAutoRepNoDS.Tables.Add("AUTOREP")
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("MARCA", GetType(String))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("MODELO", GetType(String))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("PLACA", GetType(String))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("FECHA", GetType(String))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("PROVEEDOR", GetType(String))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("No. FACTURA", GetType(String))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("MONTO", GetType(Decimal))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("BATERIA", GetType(Boolean))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("BUJIAS", GetType(Boolean))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("FRENOS", GetType(Boolean))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("CAM. FRIO", GetType(Boolean))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("INYECCION", GetType(Boolean))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("LLANTAS", GetType(Boolean))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("MOTOR", GetType(Boolean))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("RADIADOR", GetType(Boolean))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("ELECTRICO", GetType(Boolean))
+        dgvAutoRepNoDS.Tables("AUTOREP").Columns.Add("SERVICIO", GetType(Boolean))
+
+        'Locales
+
+        'Excepción
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("MANTOAUTO/" + dat.Id_mto)
+
+            'Diccionario para almacenar las respuestas
+            dataAut = res.ResultAs(Of Datos)
+
+            'Captura
+            Dim marca As String = dat.Marca_mto
+            Dim modelo As String = dat.Modelo_mto
+            Dim placa As String = dat.Placa_mto
+            Dim fecha As String = dat.Fecha_mto
+            Dim prov As String = dat.Nom_mto
+            Dim fact As String = dat.Fac_mto
+            Dim montoStr As String = dat.Monto_mto
+            montoStr = montoStr.Replace("$", "")
+            montoStr = montoStr.Replace(",", "")
+            Dim monto As Decimal = Decimal.Parse(montoStr)
+            Dim bat As Boolean = Boolean.Parse(dat.Bateria_mto)
+            Dim buj As Boolean = Boolean.Parse(dat.Bujias_mto)
+            Dim fre As Boolean = Boolean.Parse(dat.Frenos_mto)
+            Dim fri As Boolean = Boolean.Parse(dat.Frio_mto)
+            Dim gas As Boolean = Boolean.Parse(dat.Inyeccion_mto)
+            Dim lln As Boolean = Boolean.Parse(dat.Llantas_mto)
+            Dim mtr As Boolean = Boolean.Parse(dat.Motor_mto)
+            Dim rad As Boolean = Boolean.Parse(dat.Radiador_mto)
+            Dim ele As Boolean = Boolean.Parse(dat.SerElec_mto)
+            Dim ser As Boolean = Boolean.Parse(dat.Servicio_mto)
+
+            'Agregamos el arreglo byte para la foto y los demás datos
+            dgvAutoRepNoDS.Tables("AUTOREP").Rows.Add(marca, modelo, placa, fecha, prov, fact, monto, bat, buj, fre, fri, gas, lln, mtr, rad, ele, ser)
 
         Catch ex As Exception
 
