@@ -208,13 +208,13 @@ Public Class ScrSearchAuto
         'pnlSplash.Visible = True
 
         'Llamamos a la consulta de los datos
-        buscar.getMaqRepFromSerial(fbData, fechaIni, fechaFin)
+        buscar.getAutoRep(fbData)
 
         'Llenamos el datagrid con los datos
-        dgvData.DataSource = buscar.dgvMaqRepSerDS.Tables("MAQREPSER")
+        dgvData.DataSource = buscar.dgvMaqRepSerDS.Tables("AUTOREP")
 
         'Formato Dgv
-        FormatDgvSerial()
+        'FormatDgvSerial()
 
         'Splash
         'pnlSplash.Visible = False

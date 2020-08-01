@@ -2014,7 +2014,7 @@ Public Class Consulta
     ''' Si es así guarda los datos en un dataset
     ''' El dataset es accesible gracias a DATAMEMBERS
     ''' </summary>
-    Public Sub getAutoRep(ByVal dat As Datos, ByVal inicio As Date, ByVal fin As Date)
+    Public Sub getAutoRep(ByVal dat As Datos)
 
         'Conexión Firebase
         Dim con As New Conexion
@@ -2054,26 +2054,26 @@ Public Class Consulta
             dataAut = res.ResultAs(Of Datos)
 
             'Captura
-            Dim marca As String = dat.Marca_mto
-            Dim modelo As String = dat.Modelo_mto
-            Dim placa As String = dat.Placa_mto
-            Dim fecha As String = dat.Fecha_mto
-            Dim prov As String = dat.Nom_mto
-            Dim fact As String = dat.Fac_mto
-            Dim montoStr As String = dat.Monto_mto
+            Dim marca As String = dataAut.Marca_mto
+            Dim modelo As String = dataAut.Modelo_mto
+            Dim placa As String = dataAut.Placa_mto
+            Dim fecha As String = dataAut.Fecha_mto
+            Dim prov As String = dataAut.Nom_mto
+            Dim fact As String = dataAut.Fac_mto
+            Dim montoStr As String = dataAut.Monto_mto
             montoStr = montoStr.Replace("$", "")
             montoStr = montoStr.Replace(",", "")
             Dim monto As Decimal = Decimal.Parse(montoStr)
-            Dim bat As Boolean = Boolean.Parse(dat.Bateria_mto)
-            Dim buj As Boolean = Boolean.Parse(dat.Bujias_mto)
-            Dim fre As Boolean = Boolean.Parse(dat.Frenos_mto)
-            Dim fri As Boolean = Boolean.Parse(dat.Frio_mto)
-            Dim gas As Boolean = Boolean.Parse(dat.Inyeccion_mto)
-            Dim lln As Boolean = Boolean.Parse(dat.Llantas_mto)
-            Dim mtr As Boolean = Boolean.Parse(dat.Motor_mto)
-            Dim rad As Boolean = Boolean.Parse(dat.Radiador_mto)
-            Dim ele As Boolean = Boolean.Parse(dat.SerElec_mto)
-            Dim ser As Boolean = Boolean.Parse(dat.Servicio_mto)
+            Dim bat As Boolean = Boolean.Parse(dataAut.Bateria_mto)
+            Dim buj As Boolean = Boolean.Parse(dataAut.Bujias_mto)
+            Dim fre As Boolean = Boolean.Parse(dataAut.Frenos_mto)
+            Dim fri As Boolean = Boolean.Parse(dataAut.Frio_mto)
+            Dim gas As Boolean = Boolean.Parse(dataAut.Inyeccion_mto)
+            Dim lln As Boolean = Boolean.Parse(dataAut.Llantas_mto)
+            Dim mtr As Boolean = Boolean.Parse(dataAut.Motor_mto)
+            Dim rad As Boolean = Boolean.Parse(dataAut.Radiador_mto)
+            Dim ele As Boolean = Boolean.Parse(dataAut.SerElec_mto)
+            Dim ser As Boolean = Boolean.Parse(dataAut.Servicio_mto)
 
             'Agregamos el arreglo byte para la foto y los demás datos
             dgvAutoRepNoDS.Tables("AUTOREP").Rows.Add(marca, modelo, placa, fecha, prov, fact, monto, bat, buj, fre, fri, gas, lln, mtr, rad, ele, ser)
