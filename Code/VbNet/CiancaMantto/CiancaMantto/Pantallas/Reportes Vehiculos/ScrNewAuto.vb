@@ -132,7 +132,7 @@ Public Class ScrNewAuto
         buscar.cboPlacasDS.Reset()
         buscar.cboRfcProvDS.Reset()
 
-        'pnlSplash.Visible = True
+        pnlSplash.Visible = True
 
         'Llamamos a la consulta de los datos
         buscar.getPlacas()
@@ -152,7 +152,7 @@ Public Class ScrNewAuto
         cboPlacas.Text = "No. de placas"
         cboRfc.Text = "RFC Proveedor"
 
-        'pnlSplash.Visible = False
+        pnlSplash.Visible = False
 
     End Sub
 
@@ -237,7 +237,7 @@ Public Class ScrNewAuto
         If flgEndFill Then
 
             'Splash
-            'pnlSplash.Visible = True
+            pnlSplash.Visible = True
 
             'Captura del serial del cbo
             fbData.Placas = cboPlacas.Text.ToString
@@ -251,7 +251,7 @@ Public Class ScrNewAuto
             lblModelo.Text = dataAutos.Modelo
             pbFoto.Image = Base64ToImage(dataAutos.Foto_Autos)
 
-            'pnlSplash.Visible = False
+            pnlSplash.Visible = False
 
         End If
 
@@ -272,7 +272,7 @@ Public Class ScrNewAuto
         If flgEndFill Then
 
             'Splash
-            'pnlSplash.Visible = True
+            pnlSplash.Visible = True
 
             'Captura del serial del cbo
             fbData.Rfc_P = cboRfc.Text.ToString
@@ -285,7 +285,7 @@ Public Class ScrNewAuto
             lblTel.Text = dataProv.Tel_P
             lblMail.Text = dataProv.Mail_P
 
-            'pnlSplash.Visible = False
+            pnlSplash.Visible = False
 
         End If
 
@@ -301,7 +301,7 @@ Public Class ScrNewAuto
     Private Sub btnAlta_Click(sender As Object, e As EventArgs) Handles btnAlta.Click
 
         'Splash
-        'pnlSplash.Visible = True
+        pnlSplash.Visible = True
 
         'Captura de las fechas
         fechaFac = dtpFecha.Value.ToShortDateString
@@ -342,13 +342,167 @@ Public Class ScrNewAuto
         'Agregar a firebas
         agregar.AddMANTOAUTO(dataMtoAuto)
 
-        'Splash
-        'pnlSplash.Visible = False
-
         'Clear
         ClearFields()
 
+        'Splash
+        pnlSplash.Visible = False
+
     End Sub
+
+#Region "CHK"
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkBat_OnChange(sender As Object, e As EventArgs) Handles chkBat.OnChange
+
+        If chkBat.Checked Then
+            flgBat = True
+        Else
+            flgBat = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkBujia_OnChange(sender As Object, e As EventArgs) Handles chkBujia.OnChange
+
+        If chkBujia.Checked Then
+            flgBujias = True
+        Else
+            flgBujias = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkElec_OnChange(sender As Object, e As EventArgs) Handles chkElec.OnChange
+
+        If chkElec.Checked Then
+            flgElec = True
+        Else
+            flgElec = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkFrenos_OnChange(sender As Object, e As EventArgs) Handles chkFrenos.OnChange
+
+        If chkFrenos.Checked Then
+            flgFrenos = True
+        Else
+            flgFrenos = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkFrio_OnChange(sender As Object, e As EventArgs) Handles chkFrio.OnChange
+
+        If chkFrio.Checked Then
+            flgFrio = True
+        Else
+            flgFrio = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkGas_OnChange(sender As Object, e As EventArgs) Handles chkGas.OnChange
+
+        If chkGas.Checked Then
+            flgGas = True
+        Else
+            flgGas = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkLlantas_OnChange(sender As Object, e As EventArgs) Handles chkLlantas.OnChange
+
+        If chkLlantas.Checked Then
+            flgLlantas = True
+        Else
+            flgLlantas = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkMotor_OnChange(sender As Object, e As EventArgs) Handles chkMotor.OnChange
+
+        If chkMotor.Checked Then
+            flgMotor = True
+        Else
+            flgMotor = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkRadia_OnChange(sender As Object, e As EventArgs) Handles chkRadia.OnChange
+
+        If chkRadia.Checked Then
+            flgRadiador = True
+        Else
+            flgRadiador = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Captura el valor del chk cuando este cambia
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub chkServicio_OnChange(sender As Object, e As EventArgs) Handles chkServicio.OnChange
+
+        If chkServicio.Checked Then
+            flgServicio = True
+        Else
+            flgServicio = False
+        End If
+
+    End Sub
+
+#End Region
 
 #End Region
 

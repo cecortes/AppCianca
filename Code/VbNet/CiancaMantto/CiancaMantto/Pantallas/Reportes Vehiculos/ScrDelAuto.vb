@@ -91,7 +91,7 @@ Public Class ScrDelAuto
         'Reset
         buscar.cboMtoAutoDs.Reset()
 
-        'pnlSplash.Visible = True
+        pnlSplash.Visible = True
 
         'Llamamos a la consulta de los datos
         buscar.getMtoAutoRepor()
@@ -107,7 +107,7 @@ Public Class ScrDelAuto
 
         cboReporte.Text = "No. de reporte"
 
-        'pnlSplash.Visible = False
+        pnlSplash.Visible = False
 
     End Sub
 
@@ -187,7 +187,7 @@ Public Class ScrDelAuto
         If flgEndFill Then
 
             'Splash
-            'pnlSplash.Visible = True
+            pnlSplash.Visible = True
 
             'Captura del reporte del cbo
             fbData.Id_mto = cboReporte.Text.ToString
@@ -222,7 +222,7 @@ Public Class ScrDelAuto
             chkFrenos.Checked = Boolean.Parse(dataMtoAuto.Frenos_mto)
             chkFrio.Checked = Boolean.Parse(dataMtoAuto.Frio_mto)
 
-            'pnlSplash.Visible = False
+            pnlSplash.Visible = False
 
         End If
 
@@ -240,7 +240,7 @@ Public Class ScrDelAuto
         'Captura del id
         fbData.Id_mto = cboReporte.Text.ToString
 
-        'pnlSplash.Visible = True
+        pnlSplash.Visible = True
 
         'Borrar
         eliminar.DelMANTOAUTO(fbData)
@@ -249,7 +249,7 @@ Public Class ScrDelAuto
         ClearFields()
 
         'Splash
-        'pnlSplash.Visible = False
+        pnlSplash.Visible = False
 
     End Sub
 

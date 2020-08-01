@@ -107,7 +107,7 @@ Public Class ScrEditAuto
         'Reset
         buscar.cboMtoAutoDs.Reset()
 
-        'pnlSplash.Visible = True
+        pnlSplash.Visible = True
 
         'Llamamos a la consulta de los datos
         buscar.getMtoAutoRepor()
@@ -123,7 +123,7 @@ Public Class ScrEditAuto
 
         cboRepor.Text = "Reporte"
 
-        'pnlSplash.Visible = False
+        pnlSplash.Visible = False
 
     End Sub
 
@@ -209,7 +209,7 @@ Public Class ScrEditAuto
         If flgEndFill Then
 
             'Splash
-            'pnlSplash.Visible = True
+            pnlSplash.Visible = True
 
             'Captura del reporte del cbo
             fbData.Id_mto = cboRepor.Text.ToString
@@ -244,7 +244,7 @@ Public Class ScrEditAuto
             chkFrenos.Checked = Boolean.Parse(dataMtoAuto.Frenos_mto)
             chkFrio.Checked = Boolean.Parse(dataMtoAuto.Frio_mto)
 
-            'pnlSplash.Visible = False
+            pnlSplash.Visible = False
 
         End If
 
@@ -260,7 +260,7 @@ Public Class ScrEditAuto
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
 
         'Splash
-        'pnlSplash.Visible = True
+        pnlSplash.Visible = True
 
         'Captura de las fechas
         fechaFac = dtpFecha.Value.ToShortDateString
@@ -292,11 +292,11 @@ Public Class ScrEditAuto
         'Agregar a firebas
         agregar.AddMANTOAUTO(dataMtoAuto)
 
-        'Splash
-        'pnlSplash.Visible = False
-
         'Clear
         ClearFields()
+
+        'Splash
+        pnlSplash.Visible = False
 
     End Sub
 
