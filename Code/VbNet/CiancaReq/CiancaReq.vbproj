@@ -100,6 +100,42 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pantallas\Consultas\ScrConsArea.Designer.vb">
+      <DependentUpon>ScrConsArea.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Consultas\ScrConsArea.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Consultas\ScrConsPer.Designer.vb">
+      <DependentUpon>ScrConsPer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Consultas\ScrConsPer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Consultas\ScrConsUsr.Designer.vb">
+      <DependentUpon>ScrConsUsr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Consultas\ScrConsUsr.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Req\scrAlta.Designer.vb">
+      <DependentUpon>scrAlta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Req\scrAlta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Req\scrDel.Designer.vb">
+      <DependentUpon>scrDel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Req\scrDel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Req\scrEdit.Designer.vb">
+      <DependentUpon>scrEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\Req\scrEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pantallas\scrMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +160,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Pantallas\Consultas\ScrConsArea.resx">
+      <DependentUpon>ScrConsArea.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Consultas\ScrConsPer.resx">
+      <DependentUpon>ScrConsPer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Consultas\ScrConsUsr.resx">
+      <DependentUpon>ScrConsUsr.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Req\scrAlta.resx">
+      <DependentUpon>scrAlta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Req\scrDel.resx">
+      <DependentUpon>scrDel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Req\scrEdit.resx">
+      <DependentUpon>scrEdit.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\scrMain.resx">
       <DependentUpon>scrMain.vb</DependentUpon>
     </EmbeddedResource>

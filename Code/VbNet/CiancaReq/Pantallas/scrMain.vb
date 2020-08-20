@@ -132,6 +132,33 @@
         ShowSubMenu(pnlConsul)
     End Sub
 
+    ''' <summary>
+    ''' Muestra el formulario para nuevo requisición
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnNewReq_Click(sender As Object, e As EventArgs) Handles btnNewReq.Click
+        AbrirFormPanel(Of scrAlta)()
+    End Sub
+
+    ''' <summary>
+    ''' Muestra el formulario para editar requisición
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        AbrirFormPanel(Of scrEdit)()
+    End Sub
+
+    ''' <summary>
+    ''' Muestra el formulario para borrar requisición
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnDelReq_Click(sender As Object, e As EventArgs) Handles btnDelReq.Click
+        AbrirFormPanel(Of scrDel)()
+    End Sub
+
 #End Region
 
 End Class
