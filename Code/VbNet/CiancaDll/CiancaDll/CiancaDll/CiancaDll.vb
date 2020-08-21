@@ -1158,6 +1158,7 @@ Public Class Consulta
     Dim dataDic As Dictionary(Of String, Datos)
     Dim inciDic As Dictionary(Of String, Datos)
     Dim tokenUsr As String
+    Dim unidadUsr As String
     Dim dataMaq As Datos                'Datos de la maquinaria en INVENTARIO_AF
     Dim dataRpoMaq As Datos             'Reportes de mantenimiento para maquinaria en MANTOMAQ
     Dim dataRpoAuto As Datos            'Reportes de mantenimiento para vehículos en MANTOAUTO
@@ -1278,6 +1279,58 @@ Public Class Consulta
 
         'Return
         Return tokenUsr
+
+    End Function
+
+    ''' <summary>
+    ''' Consulta el nodo USUARIOS/
+    ''' Recibe el resultado como un diccionario
+    ''' Recorre el diccionario en búsqueda del nombre y apellidos recibidos como parámetros
+    ''' Cuando valida el resultado captura el departamento del usuario
+    ''' Devuelve el departamento como cadena
+    ''' </summary>
+    ''' <param name="data"></param>
+    ''' <returns>unidad / departamento del usuario como String</returns>
+    Public Function getUsrUnidad(ByVal data As Datos) As String
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("USUARIOS/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Nombre) Then
+
+                    'Validamos que el nombre y apellidos correspondan a los recibidos como parámetro
+                ElseIf (data.Nombre = item.Value.Nombre And data.Apellidos = item.Value.Apellidos) Then
+
+                    'Captura del token de usuario
+                    unidadUsr = item.Value.Unidad
+
+                End If
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Return
+        Return unidadUsr
 
     End Function
 
