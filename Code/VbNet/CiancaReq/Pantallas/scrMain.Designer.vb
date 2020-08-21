@@ -32,8 +32,8 @@ Partial Class scrMain
         Me.BunifuCustomLabel1 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.pnlSide = New System.Windows.Forms.Panel()
         Me.pnlConsul = New System.Windows.Forms.Panel()
-        Me.BunifuThinButton22 = New Bunifu.Framework.UI.BunifuThinButton2()
-        Me.BunifuThinButton21 = New Bunifu.Framework.UI.BunifuThinButton2()
+        Me.btnPeriodo = New Bunifu.Framework.UI.BunifuThinButton2()
+        Me.btnUsr = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.btnArea = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.btnConsultas = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.pnlReq = New System.Windows.Forms.Panel()
@@ -156,8 +156,8 @@ Partial Class scrMain
         '
         'pnlConsul
         '
-        Me.pnlConsul.Controls.Add(Me.BunifuThinButton22)
-        Me.pnlConsul.Controls.Add(Me.BunifuThinButton21)
+        Me.pnlConsul.Controls.Add(Me.btnPeriodo)
+        Me.pnlConsul.Controls.Add(Me.btnUsr)
         Me.pnlConsul.Controls.Add(Me.btnArea)
         Me.pnlConsul.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlConsul.Location = New System.Drawing.Point(0, 289)
@@ -166,57 +166,57 @@ Partial Class scrMain
         Me.pnlConsul.TabIndex = 4
         Me.pnlConsul.Visible = False
         '
-        'BunifuThinButton22
+        'btnPeriodo
         '
-        Me.BunifuThinButton22.ActiveBorderThickness = 1
-        Me.BunifuThinButton22.ActiveCornerRadius = 20
-        Me.BunifuThinButton22.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.BunifuThinButton22.ActiveForecolor = System.Drawing.Color.Black
-        Me.BunifuThinButton22.ActiveLineColor = System.Drawing.Color.Black
-        Me.BunifuThinButton22.BackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.BunifuThinButton22.BackgroundImage = CType(resources.GetObject("BunifuThinButton22.BackgroundImage"), System.Drawing.Image)
-        Me.BunifuThinButton22.ButtonText = "Por periódo"
-        Me.BunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuThinButton22.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BunifuThinButton22.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuThinButton22.ForeColor = System.Drawing.Color.SeaGreen
-        Me.BunifuThinButton22.IdleBorderThickness = 1
-        Me.BunifuThinButton22.IdleCornerRadius = 20
-        Me.BunifuThinButton22.IdleFillColor = System.Drawing.Color.Transparent
-        Me.BunifuThinButton22.IdleForecolor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.BunifuThinButton22.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.BunifuThinButton22.Location = New System.Drawing.Point(0, 68)
-        Me.BunifuThinButton22.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BunifuThinButton22.Name = "BunifuThinButton22"
-        Me.BunifuThinButton22.Size = New System.Drawing.Size(150, 34)
-        Me.BunifuThinButton22.TabIndex = 3
-        Me.BunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnPeriodo.ActiveBorderThickness = 1
+        Me.btnPeriodo.ActiveCornerRadius = 20
+        Me.btnPeriodo.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.btnPeriodo.ActiveForecolor = System.Drawing.Color.Black
+        Me.btnPeriodo.ActiveLineColor = System.Drawing.Color.Black
+        Me.btnPeriodo.BackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.btnPeriodo.BackgroundImage = CType(resources.GetObject("btnPeriodo.BackgroundImage"), System.Drawing.Image)
+        Me.btnPeriodo.ButtonText = "Por periódo"
+        Me.btnPeriodo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPeriodo.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnPeriodo.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPeriodo.ForeColor = System.Drawing.Color.SeaGreen
+        Me.btnPeriodo.IdleBorderThickness = 1
+        Me.btnPeriodo.IdleCornerRadius = 20
+        Me.btnPeriodo.IdleFillColor = System.Drawing.Color.Transparent
+        Me.btnPeriodo.IdleForecolor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.btnPeriodo.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.btnPeriodo.Location = New System.Drawing.Point(0, 68)
+        Me.btnPeriodo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnPeriodo.Name = "btnPeriodo"
+        Me.btnPeriodo.Size = New System.Drawing.Size(150, 34)
+        Me.btnPeriodo.TabIndex = 3
+        Me.btnPeriodo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'BunifuThinButton21
+        'btnUsr
         '
-        Me.BunifuThinButton21.ActiveBorderThickness = 1
-        Me.BunifuThinButton21.ActiveCornerRadius = 20
-        Me.BunifuThinButton21.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.BunifuThinButton21.ActiveForecolor = System.Drawing.Color.Black
-        Me.BunifuThinButton21.ActiveLineColor = System.Drawing.Color.Black
-        Me.BunifuThinButton21.BackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.BunifuThinButton21.BackgroundImage = CType(resources.GetObject("BunifuThinButton21.BackgroundImage"), System.Drawing.Image)
-        Me.BunifuThinButton21.ButtonText = "Por usuario"
-        Me.BunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuThinButton21.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BunifuThinButton21.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen
-        Me.BunifuThinButton21.IdleBorderThickness = 1
-        Me.BunifuThinButton21.IdleCornerRadius = 20
-        Me.BunifuThinButton21.IdleFillColor = System.Drawing.Color.Transparent
-        Me.BunifuThinButton21.IdleForecolor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.BunifuThinButton21.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.BunifuThinButton21.Location = New System.Drawing.Point(0, 34)
-        Me.BunifuThinButton21.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BunifuThinButton21.Name = "BunifuThinButton21"
-        Me.BunifuThinButton21.Size = New System.Drawing.Size(150, 34)
-        Me.BunifuThinButton21.TabIndex = 2
-        Me.BunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnUsr.ActiveBorderThickness = 1
+        Me.btnUsr.ActiveCornerRadius = 20
+        Me.btnUsr.ActiveFillColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.btnUsr.ActiveForecolor = System.Drawing.Color.Black
+        Me.btnUsr.ActiveLineColor = System.Drawing.Color.Black
+        Me.btnUsr.BackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.btnUsr.BackgroundImage = CType(resources.GetObject("btnUsr.BackgroundImage"), System.Drawing.Image)
+        Me.btnUsr.ButtonText = "Por usuario"
+        Me.btnUsr.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUsr.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnUsr.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUsr.ForeColor = System.Drawing.Color.SeaGreen
+        Me.btnUsr.IdleBorderThickness = 1
+        Me.btnUsr.IdleCornerRadius = 20
+        Me.btnUsr.IdleFillColor = System.Drawing.Color.Transparent
+        Me.btnUsr.IdleForecolor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.btnUsr.IdleLineColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.btnUsr.Location = New System.Drawing.Point(0, 34)
+        Me.btnUsr.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnUsr.Name = "btnUsr"
+        Me.btnUsr.Size = New System.Drawing.Size(150, 34)
+        Me.btnUsr.TabIndex = 2
+        Me.btnUsr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnArea
         '
@@ -485,7 +485,7 @@ Partial Class scrMain
     Friend WithEvents btnDelReq As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents pnlConsul As Panel
     Friend WithEvents btnConsultas As Bunifu.Framework.UI.BunifuThinButton2
-    Friend WithEvents BunifuThinButton22 As Bunifu.Framework.UI.BunifuThinButton2
-    Friend WithEvents BunifuThinButton21 As Bunifu.Framework.UI.BunifuThinButton2
+    Friend WithEvents btnPeriodo As Bunifu.Framework.UI.BunifuThinButton2
+    Friend WithEvents btnUsr As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents btnArea As Bunifu.Framework.UI.BunifuThinButton2
 End Class

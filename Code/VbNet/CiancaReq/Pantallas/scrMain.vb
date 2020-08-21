@@ -159,6 +159,33 @@
         AbrirFormPanel(Of scrDel)()
     End Sub
 
+    ''' <summary>
+    ''' Muestra el formulario para consulta por area
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnArea_Click(sender As Object, e As EventArgs) Handles btnArea.Click
+        AbrirFormPanel(Of ScrConsArea)()
+    End Sub
+
+    ''' <summary>
+    ''' Muestra el formulario para consulta por usuario
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnUsr_Click(sender As Object, e As EventArgs) Handles btnUsr.Click
+        AbrirFormPanel(Of ScrConsUsr)()
+    End Sub
+
+    ''' <summary>
+    ''' Muestra el formulario para consulta por periódo
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub btnPeriodo_Click(sender As Object, e As EventArgs) Handles btnPeriodo.Click
+        AbrirFormPanel(Of ScrConsPer)()
+    End Sub
+
 #End Region
 
 End Class
