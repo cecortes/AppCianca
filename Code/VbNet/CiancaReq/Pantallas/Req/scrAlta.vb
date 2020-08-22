@@ -11,9 +11,10 @@ Public Class scrAlta
     Dim apllUsr As String = ""              'Apellidos de usuario seleccionado
     Dim tokenUsr As String = ""             'Token del usuario
     Dim unidadUsr As String = ""            'Unidad del usuario
+    Dim nomProv As String = ""              'Razón social del proveedor
+    Dim rfcProv As String = ""              'Rfc del proveedor
     Dim FechaReq As String = ""             'Variable para almacenar la fecha de la requisición
-    Dim dataMaq As New Datos                'Objeto para almacenar los datos de INVENTARIO_AF
-    Dim dataMTO As New Datos                'Objeto para almacenar los datos de MANTOMAQ
+    Dim dataProv As New Datos               'Objeto para almacenar los datos de PROVEEDORES
 
     'CiancaDll
     Dim fbData As New Datos
@@ -225,6 +226,36 @@ Public Class scrAlta
 
             'Labels
             lblUnidad.Text = unidadUsr
+
+            'Splash
+            pnlSplash.Visible = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Se encarga de llamar a la consulta para obtener el rfc y nombre del proveedor seleccionado
+    ''' Los captura y guarda en variables globales
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub cboProv_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboProv.SelectedValueChanged
+
+        'Validación
+        If flgEndFill Then
+
+            'Splash
+            pnlSplash.Visible = True
+
+            'Captura del cbo
+            nomProv = cboProv.Text.ToString      'Variables globales
+            fbData.Nom_P = rfcProv
+
+            'Consulta
+            dataProv = buscar.getProvDataNom(fbData)
+
+            'Globales
+            rfcProv = dataProv.Rfc_P
 
             'Splash
             pnlSplash.Visible = False
