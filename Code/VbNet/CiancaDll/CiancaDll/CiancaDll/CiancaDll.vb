@@ -1623,6 +1623,42 @@ Public Class Consulta
 
     End Function
 
+    ''' <summary>
+    ''' Consulta el nodo PROVEEDORES/
+    ''' Recibe el resultado como Datos
+    ''' Devuelve un objeto del tipo datos
+    ''' </summary>
+    ''' <param name="data"></param>
+    ''' <returns></returns>
+    Public Function getProvDataNom(ByVal data As Datos) As Datos
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Excepción controlada
+        Try
+
+            'Firebase conection
+            con.Con_Global()
+
+            'Query firebase
+            res = con.firebase.Get("PROVEEDORES/" + data.Nom_P)
+
+            'Resultado
+            dataPrv = res.ResultAs(Of Datos)
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+        'Devuelve el resultado
+        Return dataPrv
+
+    End Function
+
 #End Region
 
 #Region "MANTOMAQ"

@@ -108,25 +108,25 @@ Public Class scrAlta
     Private Sub FillCboProv()
 
         'Reset
-        'buscar.cboOptFallDs.Reset()
+        buscar.cboNomProvDS.Reset()
 
-        'pnlSplash.Visible = True
+        pnlSplash.Visible = True
 
         'Llamamos a la consulta de los datos
-        'buscar.FillFallasRefas()
+        buscar.getNomProv()
 
         'Cargamos los datos de la tabla en el combo para actualizar
-        'cboDescFalla.DataSource = buscar.cboOptFallDs.Tables("FALLAS")
+        cboProv.DataSource = buscar.cboNomProvDS.Tables("NOMPROV")
 
         'Cargamos los datos de la columna FallasMaq en el combo para actualizar
-        'cboDescFalla.DisplayMember = "FallasMaq"
+        cboProv.DisplayMember = "Nom_P"
 
         'Index a cero
         'cboPersonal.SelectedIndex = 0
 
-        'cboDescFalla.Text = "Descripción de falla"
+        cboProv.Text = "Razón Social"
 
-        'pnlSplash.Visible = False
+        pnlSplash.Visible = False
 
     End Sub
 
@@ -188,6 +188,7 @@ Public Class scrAlta
 
         'Cbo
         FillCboNomApll()
+        FillCboProv()
 
         'Cambiamos el estado de la bandera para indicar que se termino la carga de los cbo
         flgEndFill = True
