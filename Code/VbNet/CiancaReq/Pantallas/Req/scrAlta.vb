@@ -10,7 +10,7 @@ Public Class scrAlta
     Dim nomUsr As String = ""               'Nombre de usuario seleccionado
     Dim apllUsr As String = ""              'Apellidos de usuario seleccionado
     Dim tokenUsr As String = ""             'Token del usuario
-    Dim serieMaq As String = ""             'No. de control interno de maquinaria
+    Dim unidadUsr As String = ""            'Unidad del usuario
     Dim FechaReq As String = ""             'Variable para almacenar la fecha de la requisición
     Dim dataMaq As New Datos                'Objeto para almacenar los datos de INVENTARIO_AF
     Dim dataMTO As New Datos                'Objeto para almacenar los datos de MANTOMAQ
@@ -79,7 +79,7 @@ Public Class scrAlta
         'Reset
         buscar.cboUsrDS.Reset()
 
-        'pnlSplash.Visible = True
+        pnlSplash.Visible = True
 
         'Llamamos a la consulta de los datos
         buscar.getNomApllUsr()
@@ -91,11 +91,11 @@ Public Class scrAlta
         cboNom.DisplayMember = "NomApll"
 
         'Index a cero
-        cboNom.SelectedIndex = 0
+        'cboNom.SelectedIndex = 0
 
-        'cboPersonal.Text = "Nombre, Apellidos"
+        cboNom.Text = "Nombre, Apellidos"
 
-        'pnlSplash.Visible = False
+        pnlSplash.Visible = False
 
     End Sub
 
@@ -180,12 +180,98 @@ Public Class scrAlta
     ''' <param name="e"></param>
     Private Sub scrAlta_Load(sender As Object, e As EventArgs) Handles Me.Load
 
+        'Splash
+        pnlSplash.Visible = False
+
         'Formato Dtp
         FormatDtp()
 
         'Cbo
         FillCboNomApll()
 
+        'Cambiamos el estado de la bandera para indicar que se termino la carga de los cbo
+        flgEndFill = True
+
+    End Sub
+
+    ''' <summary>
+    ''' Se encarga de llamar a la consulta para obtener el token, unidad, nombre y apellido del usuario seleccionado
+    ''' Los captura y guarda en variables globales
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub cboNom_SelectedValueChanged(sender As Object, e As EventArgs) Handles cboNom.SelectedValueChanged
+
+        'Locales
+        Dim strArr() As String
+
+        'Validación
+        If flgEndFill Then
+
+            'Splash
+            pnlSplash.Visible = True
+
+            'Captura del cbo
+            strArr = cboNom.Text.ToString.Split(",")
+            nomUsr = strArr(0)      'Variables globales
+            fbData.Nombre = strArr(0)
+            apllUsr = strArr(1)     'Variables globales
+            fbData.Apellidos = strArr(1)
+
+            'Consulta
+            tokenUsr = buscar.getUsrData(fbData)
+            unidadUsr = buscar.getUsrUnidad(fbData)
+
+            'Labels
+            lblUnidad.Text = unidadUsr
+
+            'Splash
+            pnlSplash.Visible = False
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Valida para las opciones de ocultar controles necesarios
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub ChkNoInv_CheckedChanged(sender As Object, e As EventArgs) Handles ChkNoInv.CheckedChanged
+
+        'Validación
+        If ChkNoInv.Checked = True Then
+
+            'No Inventario ON
+            ChkNoInv.Enabled = True
+            txtArt.Enabled = True
+
+            'Inventario OFF
+            ChkInv.Checked = False
+            cboArt.Enabled = False
+
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' Valida para las opciones de ocultar controles necesarios
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub ChkInv_CheckedChanged(sender As Object, e As EventArgs) Handles ChkInv.CheckedChanged
+
+        'Validación
+        If ChkInv.Checked = True Then
+
+            'Inventario ON
+            ChkInv.Checked = True
+            cboArt.Enabled = True
+
+            'No Inventario OFF
+            ChkNoInv.Checked = False
+            txtArt.Enabled = False
+
+        End If
 
     End Sub
 

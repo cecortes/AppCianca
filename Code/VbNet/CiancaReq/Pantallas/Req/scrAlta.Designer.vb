@@ -22,52 +22,57 @@ Partial Class scrAlta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlTop = New System.Windows.Forms.Panel()
-        Me.BunifuSeparator1 = New Bunifu.Framework.UI.BunifuSeparator()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.BunifuSeparator1 = New Bunifu.Framework.UI.BunifuSeparator()
         Me.pnlBot = New System.Windows.Forms.Panel()
         Me.btnCancel = New Bunifu.Framework.UI.BunifuImageButton()
         Me.btnAceptar = New Bunifu.Framework.UI.BunifuImageButton()
         Me.pnlWr = New System.Windows.Forms.Panel()
-        Me.pnlGral = New System.Windows.Forms.Panel()
-        Me.lblNom = New System.Windows.Forms.Label()
-        Me.cboNom = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.dtpFecha = New Bunifu.Framework.UI.BunifuDatepicker()
-        Me.pnlDatos = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtCantidad = New System.Windows.Forms.MaskedTextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.cboUnidad = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.cboProv = New System.Windows.Forms.ComboBox()
-        Me.pnlArt = New System.Windows.Forms.Panel()
-        Me.pnlArtInv = New System.Windows.Forms.Panel()
-        Me.pnlArtNoInv = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.ChkInv = New System.Windows.Forms.CheckBox()
-        Me.ChkNoInv = New System.Windows.Forms.CheckBox()
-        Me.cboArt = New System.Windows.Forms.ComboBox()
-        Me.txtArt = New System.Windows.Forms.TextBox()
-        Me.btnItem = New Bunifu.Framework.UI.BunifuImageButton()
         Me.dgvItems = New Bunifu.Framework.UI.BunifuCustomDataGrid()
+        Me.pnlArt = New System.Windows.Forms.Panel()
+        Me.btnItem = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.pnlArtNoInv = New System.Windows.Forms.Panel()
+        Me.txtArt = New System.Windows.Forms.TextBox()
+        Me.ChkNoInv = New System.Windows.Forms.CheckBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.pnlArtInv = New System.Windows.Forms.Panel()
+        Me.cboArt = New System.Windows.Forms.ComboBox()
+        Me.ChkInv = New System.Windows.Forms.CheckBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.pnlDatos = New System.Windows.Forms.Panel()
+        Me.cboProv = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.cboUnidad = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtCantidad = New System.Windows.Forms.MaskedTextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.pnlGral = New System.Windows.Forms.Panel()
+        Me.dtpFecha = New Bunifu.Framework.UI.BunifuDatepicker()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblUnidad = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cboNom = New System.Windows.Forms.ComboBox()
+        Me.lblNom = New System.Windows.Forms.Label()
+        Me.pnlSplash = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.BunifuSeparator2 = New Bunifu.Framework.UI.BunifuSeparator()
         Me.pnlTop.SuspendLayout()
         Me.pnlBot.SuspendLayout()
         CType(Me.btnCancel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnAceptar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlWr.SuspendLayout()
-        Me.pnlGral.SuspendLayout()
-        Me.pnlDatos.SuspendLayout()
-        Me.pnlArt.SuspendLayout()
-        Me.pnlArtInv.SuspendLayout()
-        Me.pnlArtNoInv.SuspendLayout()
-        CType(Me.btnItem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvItems, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlArt.SuspendLayout()
+        CType(Me.btnItem, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlArtNoInv.SuspendLayout()
+        Me.pnlArtInv.SuspendLayout()
+        Me.pnlDatos.SuspendLayout()
+        Me.pnlGral.SuspendLayout()
+        Me.pnlSplash.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlTop
@@ -79,6 +84,18 @@ Partial Class scrAlta
         Me.pnlTop.Name = "pnlTop"
         Me.pnlTop.Size = New System.Drawing.Size(870, 39)
         Me.pnlTop.TabIndex = 0
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(702, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(165, 28)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Nueva Requisición"
         '
         'BunifuSeparator1
         '
@@ -94,18 +111,6 @@ Partial Class scrAlta
         Me.BunifuSeparator1.TabIndex = 0
         Me.BunifuSeparator1.Transparency = 255
         Me.BunifuSeparator1.Vertical = False
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(702, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(165, 28)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Nueva Requisición"
         '
         'pnlBot
         '
@@ -146,6 +151,7 @@ Partial Class scrAlta
         '
         'pnlWr
         '
+        Me.pnlWr.Controls.Add(Me.pnlSplash)
         Me.pnlWr.Controls.Add(Me.dgvItems)
         Me.pnlWr.Controls.Add(Me.pnlArt)
         Me.pnlWr.Controls.Add(Me.pnlDatos)
@@ -156,96 +162,154 @@ Partial Class scrAlta
         Me.pnlWr.Size = New System.Drawing.Size(870, 613)
         Me.pnlWr.TabIndex = 2
         '
-        'pnlGral
+        'dgvItems
         '
-        Me.pnlGral.Controls.Add(Me.dtpFecha)
-        Me.pnlGral.Controls.Add(Me.Label4)
-        Me.pnlGral.Controls.Add(Me.Label3)
-        Me.pnlGral.Controls.Add(Me.Label2)
-        Me.pnlGral.Controls.Add(Me.cboNom)
-        Me.pnlGral.Controls.Add(Me.lblNom)
-        Me.pnlGral.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlGral.Location = New System.Drawing.Point(0, 0)
-        Me.pnlGral.Name = "pnlGral"
-        Me.pnlGral.Size = New System.Drawing.Size(870, 80)
-        Me.pnlGral.TabIndex = 0
+        Me.dgvItems.AllowUserToAddRows = False
+        Me.dgvItems.AllowUserToDeleteRows = False
+        Me.dgvItems.AllowUserToOrderColumns = True
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvItems.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvItems.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.dgvItems.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvItems.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvItems.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvItems.DoubleBuffered = True
+        Me.dgvItems.EnableHeadersVisualStyles = False
+        Me.dgvItems.HeaderBgColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.dgvItems.HeaderForeColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.dgvItems.Location = New System.Drawing.Point(0, 211)
+        Me.dgvItems.Name = "dgvItems"
+        Me.dgvItems.ReadOnly = True
+        Me.dgvItems.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvItems.RowHeadersWidth = 51
+        Me.dgvItems.RowTemplate.Height = 24
+        Me.dgvItems.Size = New System.Drawing.Size(870, 402)
+        Me.dgvItems.TabIndex = 3
         '
-        'lblNom
+        'pnlArt
         '
-        Me.lblNom.AutoSize = True
-        Me.lblNom.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNom.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.lblNom.Location = New System.Drawing.Point(3, 3)
-        Me.lblNom.Name = "lblNom"
-        Me.lblNom.Size = New System.Drawing.Size(158, 28)
-        Me.lblNom.TabIndex = 0
-        Me.lblNom.Text = "Datos Solicitante:"
+        Me.pnlArt.Controls.Add(Me.btnItem)
+        Me.pnlArt.Controls.Add(Me.pnlArtNoInv)
+        Me.pnlArt.Controls.Add(Me.pnlArtInv)
+        Me.pnlArt.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlArt.Location = New System.Drawing.Point(0, 121)
+        Me.pnlArt.Name = "pnlArt"
+        Me.pnlArt.Size = New System.Drawing.Size(870, 90)
+        Me.pnlArt.TabIndex = 2
         '
-        'cboNom
+        'btnItem
         '
-        Me.cboNom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboNom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboNom.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.cboNom.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cboNom.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboNom.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.cboNom.FormattingEnabled = True
-        Me.cboNom.Location = New System.Drawing.Point(7, 34)
-        Me.cboNom.Name = "cboNom"
-        Me.cboNom.Size = New System.Drawing.Size(295, 33)
-        Me.cboNom.TabIndex = 1
-        Me.cboNom.Text = "Nombre, Apellidos"
+        Me.btnItem.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.btnItem.Image = Global.CiancaReq.My.Resources.Resources.add
+        Me.btnItem.ImageActive = Nothing
+        Me.btnItem.Location = New System.Drawing.Point(403, 29)
+        Me.btnItem.Name = "btnItem"
+        Me.btnItem.Size = New System.Drawing.Size(45, 42)
+        Me.btnItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.btnItem.TabIndex = 10
+        Me.btnItem.TabStop = False
+        Me.btnItem.Zoom = 20
         '
-        'Label2
+        'pnlArtNoInv
         '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(352, 3)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(231, 28)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Departamento Solicitante:"
+        Me.pnlArtNoInv.Controls.Add(Me.txtArt)
+        Me.pnlArtNoInv.Controls.Add(Me.ChkNoInv)
+        Me.pnlArtNoInv.Controls.Add(Me.Label9)
+        Me.pnlArtNoInv.Dock = System.Windows.Forms.DockStyle.Right
+        Me.pnlArtNoInv.Location = New System.Drawing.Point(448, 0)
+        Me.pnlArtNoInv.Name = "pnlArtNoInv"
+        Me.pnlArtNoInv.Size = New System.Drawing.Size(422, 90)
+        Me.pnlArtNoInv.TabIndex = 1
         '
-        'Label3
+        'txtArt
         '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(440, 37)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(32, 25)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "NA"
+        Me.txtArt.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.txtArt.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtArt.Location = New System.Drawing.Point(13, 34)
+        Me.txtArt.Multiline = True
+        Me.txtArt.Name = "txtArt"
+        Me.txtArt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtArt.Size = New System.Drawing.Size(394, 33)
+        Me.txtArt.TabIndex = 6
         '
-        'Label4
+        'ChkNoInv
         '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(751, 3)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(67, 28)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Fecha:"
+        Me.ChkNoInv.AutoSize = True
+        Me.ChkNoInv.Checked = True
+        Me.ChkNoInv.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.ChkNoInv.Location = New System.Drawing.Point(215, 8)
+        Me.ChkNoInv.Name = "ChkNoInv"
+        Me.ChkNoInv.Size = New System.Drawing.Size(18, 17)
+        Me.ChkNoInv.TabIndex = 5
+        Me.ChkNoInv.UseVisualStyleBackColor = True
         '
-        'dtpFecha
+        'Label9
         '
-        Me.dtpFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dtpFecha.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.dtpFecha.BorderRadius = 0
-        Me.dtpFecha.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.FormatCustom = Nothing
-        Me.dtpFecha.Location = New System.Drawing.Point(695, 34)
-        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(167, 33)
-        Me.dtpFecha.TabIndex = 1
-        Me.dtpFecha.Value = New Date(2020, 8, 20, 17, 55, 54, 133)
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Label9.Location = New System.Drawing.Point(8, 3)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(219, 28)
+        Me.Label9.TabIndex = 4
+        Me.Label9.Text = "Artículo No Inventariado:"
+        '
+        'pnlArtInv
+        '
+        Me.pnlArtInv.Controls.Add(Me.cboArt)
+        Me.pnlArtInv.Controls.Add(Me.ChkInv)
+        Me.pnlArtInv.Controls.Add(Me.Label8)
+        Me.pnlArtInv.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnlArtInv.Location = New System.Drawing.Point(0, 0)
+        Me.pnlArtInv.Name = "pnlArtInv"
+        Me.pnlArtInv.Size = New System.Drawing.Size(391, 90)
+        Me.pnlArtInv.TabIndex = 0
+        '
+        'cboArt
+        '
+        Me.cboArt.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cboArt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboArt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboArt.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.cboArt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cboArt.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboArt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.cboArt.FormattingEnabled = True
+        Me.cboArt.Location = New System.Drawing.Point(7, 34)
+        Me.cboArt.Name = "cboArt"
+        Me.cboArt.Size = New System.Drawing.Size(381, 33)
+        Me.cboArt.TabIndex = 9
+        Me.cboArt.Text = "Descripción"
+        '
+        'ChkInv
+        '
+        Me.ChkInv.AutoSize = True
+        Me.ChkInv.Location = New System.Drawing.Point(180, 8)
+        Me.ChkInv.Name = "ChkInv"
+        Me.ChkInv.Size = New System.Drawing.Size(18, 17)
+        Me.ChkInv.TabIndex = 4
+        Me.ChkInv.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Label8.Location = New System.Drawing.Point(3, 3)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(191, 28)
+        Me.Label8.TabIndex = 3
+        Me.Label8.Text = "Artículo Inventariado:"
         '
         'pnlDatos
         '
@@ -261,42 +325,33 @@ Partial Class scrAlta
         Me.pnlDatos.Size = New System.Drawing.Size(870, 41)
         Me.pnlDatos.TabIndex = 1
         '
-        'Label5
+        'cboProv
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(3, 3)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(95, 28)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Cantidad:"
+        Me.cboProv.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cboProv.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboProv.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboProv.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.cboProv.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cboProv.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboProv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.cboProv.FormattingEnabled = True
+        Me.cboProv.Location = New System.Drawing.Point(567, 3)
+        Me.cboProv.Name = "cboProv"
+        Me.cboProv.Size = New System.Drawing.Size(295, 33)
+        Me.cboProv.TabIndex = 8
+        Me.cboProv.Text = "Razón Social"
         '
-        'txtCantidad
+        'Label7
         '
-        Me.txtCantidad.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCantidad.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCantidad.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.txtCantidad.Location = New System.Drawing.Point(104, 6)
-        Me.txtCantidad.Mask = "9999"
-        Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.PromptChar = Global.Microsoft.VisualBasic.ChrW(48)
-        Me.txtCantidad.Size = New System.Drawing.Size(77, 25)
-        Me.txtCantidad.TabIndex = 4
-        Me.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label6
-        '
-        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(197, 3)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(95, 28)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Unidades:"
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(460, 4)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(101, 28)
+        Me.Label7.TabIndex = 7
+        Me.Label7.Text = "Proveedor:"
         '
         'cboUnidad
         '
@@ -315,181 +370,186 @@ Partial Class scrAlta
         Me.cboUnidad.TabIndex = 6
         Me.cboUnidad.Text = "Unidad"
         '
-        'Label7
+        'Label6
         '
-        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(460, 4)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(101, 28)
-        Me.Label7.TabIndex = 7
-        Me.Label7.Text = "Proveedor:"
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(197, 3)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(95, 28)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "Unidades:"
         '
-        'cboProv
+        'txtCantidad
         '
-        Me.cboProv.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cboProv.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboProv.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboProv.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.cboProv.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cboProv.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboProv.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.cboProv.FormattingEnabled = True
-        Me.cboProv.Location = New System.Drawing.Point(567, 3)
-        Me.cboProv.Name = "cboProv"
-        Me.cboProv.Size = New System.Drawing.Size(295, 33)
-        Me.cboProv.TabIndex = 8
-        Me.cboProv.Text = "Razón Social"
+        Me.txtCantidad.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCantidad.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCantidad.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.txtCantidad.Location = New System.Drawing.Point(104, 6)
+        Me.txtCantidad.Mask = "9999"
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.PromptChar = Global.Microsoft.VisualBasic.ChrW(48)
+        Me.txtCantidad.Size = New System.Drawing.Size(77, 25)
+        Me.txtCantidad.TabIndex = 4
+        Me.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'pnlArt
+        'Label5
         '
-        Me.pnlArt.Controls.Add(Me.btnItem)
-        Me.pnlArt.Controls.Add(Me.pnlArtNoInv)
-        Me.pnlArt.Controls.Add(Me.pnlArtInv)
-        Me.pnlArt.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlArt.Location = New System.Drawing.Point(0, 121)
-        Me.pnlArt.Name = "pnlArt"
-        Me.pnlArt.Size = New System.Drawing.Size(870, 90)
-        Me.pnlArt.TabIndex = 2
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(3, 3)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(95, 28)
+        Me.Label5.TabIndex = 3
+        Me.Label5.Text = "Cantidad:"
         '
-        'pnlArtInv
+        'pnlGral
         '
-        Me.pnlArtInv.Controls.Add(Me.cboArt)
-        Me.pnlArtInv.Controls.Add(Me.ChkInv)
-        Me.pnlArtInv.Controls.Add(Me.Label8)
-        Me.pnlArtInv.Dock = System.Windows.Forms.DockStyle.Left
-        Me.pnlArtInv.Location = New System.Drawing.Point(0, 0)
-        Me.pnlArtInv.Name = "pnlArtInv"
-        Me.pnlArtInv.Size = New System.Drawing.Size(391, 90)
-        Me.pnlArtInv.TabIndex = 0
+        Me.pnlGral.Controls.Add(Me.dtpFecha)
+        Me.pnlGral.Controls.Add(Me.Label4)
+        Me.pnlGral.Controls.Add(Me.lblUnidad)
+        Me.pnlGral.Controls.Add(Me.Label2)
+        Me.pnlGral.Controls.Add(Me.cboNom)
+        Me.pnlGral.Controls.Add(Me.lblNom)
+        Me.pnlGral.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pnlGral.Location = New System.Drawing.Point(0, 0)
+        Me.pnlGral.Name = "pnlGral"
+        Me.pnlGral.Size = New System.Drawing.Size(870, 80)
+        Me.pnlGral.TabIndex = 0
         '
-        'pnlArtNoInv
+        'dtpFecha
         '
-        Me.pnlArtNoInv.Controls.Add(Me.txtArt)
-        Me.pnlArtNoInv.Controls.Add(Me.ChkNoInv)
-        Me.pnlArtNoInv.Controls.Add(Me.Label9)
-        Me.pnlArtNoInv.Dock = System.Windows.Forms.DockStyle.Right
-        Me.pnlArtNoInv.Location = New System.Drawing.Point(448, 0)
-        Me.pnlArtNoInv.Name = "pnlArtNoInv"
-        Me.pnlArtNoInv.Size = New System.Drawing.Size(422, 90)
-        Me.pnlArtNoInv.TabIndex = 1
+        Me.dtpFecha.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtpFecha.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.dtpFecha.BorderRadius = 0
+        Me.dtpFecha.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFecha.FormatCustom = Nothing
+        Me.dtpFecha.Location = New System.Drawing.Point(695, 34)
+        Me.dtpFecha.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(167, 33)
+        Me.dtpFecha.TabIndex = 1
+        Me.dtpFecha.Value = New Date(2020, 8, 20, 17, 55, 54, 133)
         '
-        'Label8
+        'Label4
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(3, 3)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(191, 28)
-        Me.Label8.TabIndex = 3
-        Me.Label8.Text = "Artículo Inventariado:"
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(751, 3)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(67, 28)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Fecha:"
         '
-        'Label9
+        'lblUnidad
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(8, 3)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(219, 28)
-        Me.Label9.TabIndex = 4
-        Me.Label9.Text = "Artículo No Inventariado:"
+        Me.lblUnidad.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblUnidad.AutoSize = True
+        Me.lblUnidad.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUnidad.ForeColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.lblUnidad.Location = New System.Drawing.Point(440, 37)
+        Me.lblUnidad.Name = "lblUnidad"
+        Me.lblUnidad.Size = New System.Drawing.Size(32, 25)
+        Me.lblUnidad.TabIndex = 3
+        Me.lblUnidad.Text = "NA"
         '
-        'ChkInv
+        'Label2
         '
-        Me.ChkInv.AutoSize = True
-        Me.ChkInv.Location = New System.Drawing.Point(180, 8)
-        Me.ChkInv.Name = "ChkInv"
-        Me.ChkInv.Size = New System.Drawing.Size(18, 17)
-        Me.ChkInv.TabIndex = 4
-        Me.ChkInv.UseVisualStyleBackColor = True
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(352, 3)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(231, 28)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Departamento Solicitante:"
         '
-        'ChkNoInv
+        'cboNom
         '
-        Me.ChkNoInv.AutoSize = True
-        Me.ChkNoInv.Checked = True
-        Me.ChkNoInv.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.ChkNoInv.Location = New System.Drawing.Point(215, 8)
-        Me.ChkNoInv.Name = "ChkNoInv"
-        Me.ChkNoInv.Size = New System.Drawing.Size(18, 17)
-        Me.ChkNoInv.TabIndex = 5
-        Me.ChkNoInv.UseVisualStyleBackColor = True
+        Me.cboNom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cboNom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cboNom.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.cboNom.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cboNom.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboNom.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.cboNom.FormattingEnabled = True
+        Me.cboNom.Location = New System.Drawing.Point(7, 34)
+        Me.cboNom.Name = "cboNom"
+        Me.cboNom.Size = New System.Drawing.Size(295, 33)
+        Me.cboNom.TabIndex = 1
+        Me.cboNom.Text = "Nombre, Apellidos"
         '
-        'cboArt
+        'lblNom
         '
-        Me.cboArt.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cboArt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboArt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboArt.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.cboArt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cboArt.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboArt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.cboArt.FormattingEnabled = True
-        Me.cboArt.Location = New System.Drawing.Point(7, 34)
-        Me.cboArt.Name = "cboArt"
-        Me.cboArt.Size = New System.Drawing.Size(381, 33)
-        Me.cboArt.TabIndex = 9
-        Me.cboArt.Text = "Descripción"
+        Me.lblNom.AutoSize = True
+        Me.lblNom.Font = New System.Drawing.Font("Poppins", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNom.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.lblNom.Location = New System.Drawing.Point(3, 3)
+        Me.lblNom.Name = "lblNom"
+        Me.lblNom.Size = New System.Drawing.Size(158, 28)
+        Me.lblNom.TabIndex = 0
+        Me.lblNom.Text = "Datos Solicitante:"
         '
-        'txtArt
+        'pnlSplash
         '
-        Me.txtArt.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.txtArt.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtArt.Location = New System.Drawing.Point(13, 34)
-        Me.txtArt.Multiline = True
-        Me.txtArt.Name = "txtArt"
-        Me.txtArt.Size = New System.Drawing.Size(394, 33)
-        Me.txtArt.TabIndex = 6
+        Me.pnlSplash.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.pnlSplash.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
+        Me.pnlSplash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlSplash.Controls.Add(Me.Label3)
+        Me.pnlSplash.Controls.Add(Me.Label10)
+        Me.pnlSplash.Controls.Add(Me.BunifuSeparator2)
+        Me.pnlSplash.Location = New System.Drawing.Point(276, 308)
+        Me.pnlSplash.Name = "pnlSplash"
+        Me.pnlSplash.Size = New System.Drawing.Size(325, 112)
+        Me.pnlSplash.TabIndex = 72
+        Me.pnlSplash.Visible = False
         '
-        'btnItem
+        'Label3
         '
-        Me.btnItem.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.btnItem.Image = Global.CiancaReq.My.Resources.Resources.add
-        Me.btnItem.ImageActive = Nothing
-        Me.btnItem.Location = New System.Drawing.Point(403, 29)
-        Me.btnItem.Name = "btnItem"
-        Me.btnItem.Size = New System.Drawing.Size(45, 42)
-        Me.btnItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.btnItem.TabIndex = 10
-        Me.btnItem.TabStop = False
-        Me.btnItem.Zoom = 20
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label3.Location = New System.Drawing.Point(135, 67)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(181, 33)
+        Me.Label3.TabIndex = 32
+        Me.Label3.Text = "Espere por favor."
         '
-        'dgvItems
+        'Label10
         '
-        Me.dgvItems.AllowUserToAddRows = False
-        Me.dgvItems.AllowUserToDeleteRows = False
-        Me.dgvItems.AllowUserToOrderColumns = True
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvItems.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvItems.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.dgvItems.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgvItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Poppins", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvItems.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvItems.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvItems.DoubleBuffered = True
-        Me.dgvItems.EnableHeadersVisualStyles = False
-        Me.dgvItems.HeaderBgColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(36, Byte), Integer))
-        Me.dgvItems.HeaderForeColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(107, Byte), Integer))
-        Me.dgvItems.Location = New System.Drawing.Point(0, 211)
-        Me.dgvItems.Name = "dgvItems"
-        Me.dgvItems.ReadOnly = True
-        Me.dgvItems.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.dgvItems.RowHeadersWidth = 51
-        Me.dgvItems.RowTemplate.Height = 24
-        Me.dgvItems.Size = New System.Drawing.Size(870, 402)
-        Me.dgvItems.TabIndex = 3
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label10.Location = New System.Drawing.Point(6, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(155, 33)
+        Me.Label10.TabIndex = 31
+        Me.Label10.Text = "Conectando..."
+        '
+        'BunifuSeparator2
+        '
+        Me.BunifuSeparator2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BunifuSeparator2.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BunifuSeparator2.LineThickness = 1
+        Me.BunifuSeparator2.Location = New System.Drawing.Point(0, 16)
+        Me.BunifuSeparator2.Margin = New System.Windows.Forms.Padding(4, 16, 4, 16)
+        Me.BunifuSeparator2.Name = "BunifuSeparator2"
+        Me.BunifuSeparator2.Size = New System.Drawing.Size(323, 35)
+        Me.BunifuSeparator2.TabIndex = 30
+        Me.BunifuSeparator2.Transparency = 255
+        Me.BunifuSeparator2.Vertical = False
         '
         'scrAlta
         '
@@ -512,17 +572,19 @@ Partial Class scrAlta
         CType(Me.btnCancel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnAceptar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlWr.ResumeLayout(False)
-        Me.pnlGral.ResumeLayout(False)
-        Me.pnlGral.PerformLayout()
-        Me.pnlDatos.ResumeLayout(False)
-        Me.pnlDatos.PerformLayout()
+        CType(Me.dgvItems, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlArt.ResumeLayout(False)
-        Me.pnlArtInv.ResumeLayout(False)
-        Me.pnlArtInv.PerformLayout()
+        CType(Me.btnItem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlArtNoInv.ResumeLayout(False)
         Me.pnlArtNoInv.PerformLayout()
-        CType(Me.btnItem, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvItems, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlArtInv.ResumeLayout(False)
+        Me.pnlArtInv.PerformLayout()
+        Me.pnlDatos.ResumeLayout(False)
+        Me.pnlDatos.PerformLayout()
+        Me.pnlGral.ResumeLayout(False)
+        Me.pnlGral.PerformLayout()
+        Me.pnlSplash.ResumeLayout(False)
+        Me.pnlSplash.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -537,7 +599,7 @@ Partial Class scrAlta
     Friend WithEvents pnlGral As Panel
     Friend WithEvents lblNom As Label
     Friend WithEvents cboNom As ComboBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblUnidad As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents dtpFecha As Bunifu.Framework.UI.BunifuDatepicker
@@ -559,4 +621,8 @@ Partial Class scrAlta
     Friend WithEvents cboArt As ComboBox
     Friend WithEvents btnItem As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents dgvItems As Bunifu.Framework.UI.BunifuCustomDataGrid
+    Friend WithEvents pnlSplash As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents BunifuSeparator2 As Bunifu.Framework.UI.BunifuSeparator
 End Class

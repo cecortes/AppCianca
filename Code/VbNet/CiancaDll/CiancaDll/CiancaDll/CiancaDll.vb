@@ -1176,6 +1176,7 @@ Public Class Consulta
     Public cboOptRefaDs As New DataSet  'Combobox Only OPTMTOMAQ/Refas
     Public cboPlacasDS As New DataSet   'Combobox Only AUTOS
     Public cboRfcProvDS As New DataSet  'Combobox Only PROVEEDORES
+    Public cboNomProvDS As New DataSet  'Combobox Only PROVEEDORES
     Public cboMtoAutoDs As New DataSet  'Combobox Only MANTOMAQ
 
     'Referente a los dgv
@@ -1532,6 +1533,48 @@ Public Class Consulta
                 If String.IsNullOrEmpty(item.Value.Rfc_P) Then
                 Else
                     cboRfcProvDS.Tables("RFC").Rows.Add(item.Value.Rfc_P)
+                End If
+            Next
+
+        Catch ex As Exception
+
+            'USUARIO
+            MsgBox(ex.ToString, MsgBoxStyle.Critical, con.strMsgTitle)
+
+        End Try
+
+    End Sub
+
+    ''' <summary>
+    ''' Se encarga de obtener el nombre del proveedor del nodo PROVEEDORES y pasarlo
+    ''' al cbo necesario.
+    ''' </summary>
+    Public Sub getNomProv()
+
+        'Conexión Firebase
+        Dim con As New Conexion
+
+        'Init Tabla, hardcode USR
+        cboNomProvDS.Tables.Add("NOMPROV")
+        cboNomProvDS.Tables("NOMPROV").Columns.Add("Nom_P", GetType(String))
+
+        'Manejo de excepciones
+        Try
+            'Firebase conection
+            con.Con_Global()
+
+            'Query Firebase
+            res = con.firebase.Get("PROVEEDORES/")
+
+            'Diccionario para almacenar las respuestas
+            dataDic = res.ResultAs(Of Dictionary(Of String, Datos))
+
+            'Rutina para recorrer los elementos
+            For Each item In dataDic
+                'Validamos que no sea null
+                If String.IsNullOrEmpty(item.Value.Nom_P) Then
+                Else
+                    cboNomProvDS.Tables("NOMPROV").Rows.Add(item.Value.Nom_P)
                 End If
             Next
 
